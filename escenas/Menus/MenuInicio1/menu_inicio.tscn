@@ -1,0 +1,918 @@
+[gd_scene load_steps=38 format=3 uid="uid://b5iedpw7s5iny"]
+
+[ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_4v0q5"]
+[ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="2_k48sw"]
+[ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="3_8mefa"]
+[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="4_iukku"]
+[ext_resource type="Texture2D" uid="uid://cwjnpooklxj8g" path="res://assets/ui/imagenes/titulo_juego.png" id="5_k48sw"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="5_rkwmd"]
+[ext_resource type="Script" uid="uid://dvd02i0wi5n2c" path="res://escenas/Menus/MenuInicio1/panel_script.gd" id="7_14j3c"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="8_naxbc"]
+[ext_resource type="AudioStream" uid="uid://08relafd8gog" path="res://assets/ui/audio/musica_inicio.mp3" id="9_naxbc"]
+[ext_resource type="Texture2D" uid="uid://dcllp85s2l5cy" path="res://assets/ui/2.png" id="9_yk7oh"]
+[ext_resource type="Texture2D" uid="uid://du5hd6wvxkqgp" path="res://assets/ui/3.png" id="10_muuqm"]
+[ext_resource type="Texture2D" uid="uid://dnjfj3lxaxvdu" path="res://assets/ui/basic_ui_sprites_grabber.png" id="11_0ws3x"]
+[ext_resource type="PackedScene" uid="uid://bxk4vmar1xlqj" path="res://escenas/Menus/MenuAspecto/editordepersonaje.tscn" id="12_muuqm"]
+[ext_resource type="Texture2D" uid="uid://moxgainbwij7" path="res://assets/ui/controles/titulo godotfight (7).png" id="12_r3qu7"]
+[ext_resource type="FontFile" uid="uid://31cepyt2ycy0" path="res://assets/ui/fuentes/Silver.ttf" id="13_efmvd"]
+
+[sub_resource type="GDScript" id="GDScript_2ee37"]
+script/source = "extends Control
+
+# Export de los contenedores
+@export var inicio : VBoxContainer
+@export var modohistoria : VBoxContainer
+@export var modopractica : VBoxContainer
+@export var ranking : VBoxContainer
+@export var opciones : VBoxContainer
+@export var editor : Control
+
+# Export de los labels
+@export var titulo_modohistoria : Label
+@export var titulo_modopractica : Label
+@export var titulo_ranking : Label
+@export var titulo_opciones : Label
+@export var titulojuego : Label
+
+# Export de los botones del menú principal
+@export var boton_modo_historia : Button
+@export var boton_modo_practica : Button
+@export var boton_editar_personaje : Button
+@export var boton_ranking : Button
+@export var boton_opciones : Button
+@export var boton_salir : Button
+
+# Export de los botones \"Volver\" de cada submenú
+@export var volver_historia : Button
+@export var volver_practica : Button
+@export var volver_ranking : Button
+@export var volver_opciones : Button
+@export var volver_editor: Button
+
+@export var idiomat: Label
+@export var idioma: VBoxContainer
+@export var volument: Label
+@export var volumen: HSlider
+@export var controlest: Label
+@export var controles: Panel
+@export var creditost: Label
+@export var creditos: RichTextLabel
+
+var partida_nueva :bool = true
+
+func _ready() -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"SFX\"), linear_to_db(volumen.value))
+	await get_tree().process_frame
+	# Conexiones de los botones del menú principal
+	boton_modo_historia.pressed.connect(on_modohistoria_pressed.bind(modohistoria))
+	boton_modo_practica.pressed.connect(on_modopractica_pressed.bind(modopractica))
+	boton_editar_personaje.pressed.connect(on_editarpersonaje_pressed.bind())
+	boton_ranking.pressed.connect(on_ranking_pressed.bind(ranking))
+	boton_opciones.pressed.connect(on_opciones_pressed.bind(opciones))
+	boton_salir.pressed.connect(_on_salir_pressed)
+
+	# Conexiones de los botones \"Volver\" en cada submenú
+	volver_historia.pressed.connect(_on_volver_pressed.bind(modohistoria))
+	volver_practica.pressed.connect(_on_volver_pressed.bind(modopractica))
+	volver_ranking.pressed.connect(_on_volver_pressed.bind(ranking))
+	volver_opciones.pressed.connect(_on_volver_pressed.bind(opciones))
+	volver_editor.pressed.connect(_on_volver_pressed.bind(opciones))
+
+func _process(_delta: float) -> void:
+	pass
+
+func _on_salir_pressed() -> void:
+	get_tree().quit()
+
+# Oculta el contenedor actual y muestra el menú inicio
+func _on_volver_pressed(contenedor: VBoxContainer) -> void:
+	contenedor.hide()
+	inicio.show()
+	titulo_modohistoria.hide()
+	titulo_modopractica.hide()
+	titulo_ranking.hide()
+	titulo_opciones.hide()
+	titulojuego.show()
+	idioma.hide()
+	idiomat.hide()
+	volumen.hide()
+	volument.hide()
+	controles.hide()
+	controlest.hide()
+	creditos.hide()
+	creditost.hide()
+	editor.hide()
+
+# Oculta el menú inicio y muestra el contenedor seleccionado
+func on_modohistoria_pressed(contenedor: VBoxContainer) -> void:
+	inicio.hide()
+	contenedor.show()
+	titulojuego.hide()
+	titulo_modohistoria.show()
+	titulo_modopractica.hide()
+	titulo_ranking.hide()
+	titulo_opciones.hide()
+
+func on_modopractica_pressed(contenedor: VBoxContainer) -> void:
+	inicio.hide()
+	contenedor.show()
+	titulojuego.hide()
+	titulo_modopractica.show()
+	titulo_modohistoria.hide()
+	titulo_ranking.hide()
+	titulo_opciones.hide()
+
+func on_editarpersonaje_pressed() -> void:
+	editor.show()
+
+func on_ranking_pressed(contenedor: VBoxContainer) -> void:
+	inicio.hide()
+	contenedor.show()
+	titulojuego.hide()
+	titulo_ranking.show()
+	titulo_modohistoria.hide()
+	titulo_modopractica.hide()
+	titulo_opciones.hide()
+
+func on_opciones_pressed(contenedor: VBoxContainer) -> void:
+	inicio.hide()
+	contenedor.show()
+	titulojuego.hide()
+	titulo_opciones.show()
+	titulo_modohistoria.hide()
+	titulo_modopractica.hide()
+	titulo_ranking.hide()
+	idioma.show()
+	idiomat.show()
+
+
+func _on_mapa_aldea_esmeralda_pressed() -> void:
+	Database.abrir_db()
+	if !Database.hay_partida_guardada():
+		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Terremoto/escena_hacker_terremoto.tscn\", false)
+		Cargador.entrar_escena_cargada()
+		#get_tree().change_scene_to_file(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Terremoto/escena_hacker_terremoto.tscn\")
+	else:
+		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn\", true)
+
+
+func _on_volumen_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"SFX\"), linear_to_db(volumen.value))
+
+func _on_audio_pressed() -> void:
+	volumen.show()
+	volument.show()
+	idioma.hide()
+	idiomat.hide()
+	controles.hide()
+	controlest.hide()
+	creditos.hide()
+	creditost.hide()
+
+func _on_idioma_pressed() -> void:
+	idioma.show()
+	idiomat.show()
+	volumen.hide()
+	volument.hide()
+	controles.hide()
+	controlest.hide()
+	creditos.hide()
+	creditost.hide()
+
+func _on_controles_pressed() -> void:
+	controles.show()
+	controlest.show()
+	idioma.hide()
+	idiomat.hide()
+	volumen.hide()
+	volument.hide()
+	creditos.hide()
+	creditost.hide()
+
+func _on_créditos_pressed() -> void:
+	creditos.show()
+	creditost.show()
+	controles.hide()
+	controlest.hide()
+	idioma.hide()
+	idiomat.hide()
+	volumen.hide()
+	volument.hide()
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7003"]
+texture = ExtResource("5_k48sw")
+
+[sub_resource type="FontVariation" id="FontVariation_sej2m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejoup"]
+texture = ExtResource("5_rkwmd")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="SystemFont" id="SystemFont_8la0q"]
+
+[sub_resource type="Theme" id="Theme_nflbw"]
+default_font = SubResource("SystemFont_8la0q")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4v0q5"]
+
+[sub_resource type="FontVariation" id="FontVariation_hymay"]
+
+[sub_resource type="SystemFont" id="SystemFont_5mkd5"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_dw6y1"]
+default_font = SubResource("SystemFont_5mkd5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ta11n"]
+texture = ExtResource("5_rkwmd")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="SystemFont" id="SystemFont_k48sw"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_ta11n"]
+default_font = SubResource("SystemFont_k48sw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aojvl"]
+texture = ExtResource("5_rkwmd")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="SystemFont" id="SystemFont_2ee37"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_synl5"]
+default_font = SubResource("SystemFont_2ee37")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hymay"]
+texture = ExtResource("5_rkwmd")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="FontVariation" id="FontVariation_5mkd5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ws3x"]
+texture = ExtResource("5_rkwmd")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(466, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6si5d"]
+texture = ExtResource("5_rkwmd")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(402, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3qu7"]
+texture = ExtResource("5_rkwmd")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(402, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hf8v"]
+texture = ExtResource("12_r3qu7")
+
+[node name="Menu Inicio" type="Control" node_paths=PackedStringArray("inicio", "modohistoria", "modopractica", "ranking", "opciones", "editor", "titulo_modohistoria", "titulo_modopractica", "titulo_ranking", "titulo_opciones", "titulojuego", "boton_modo_historia", "boton_modo_practica", "boton_editar_personaje", "boton_ranking", "boton_opciones", "boton_salir", "volver_historia", "volver_practica", "volver_ranking", "volver_opciones", "volver_editor", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.9999999)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("1_4v0q5")
+script = SubResource("GDScript_2ee37")
+inicio = NodePath("Inicio")
+modohistoria = NodePath("MODO HISTORIA")
+modopractica = NodePath("MODO PRACTICA")
+ranking = NodePath("RANKING")
+opciones = NodePath("OPCIONES")
+editor = NodePath("Editor De Personaje")
+titulo_modohistoria = NodePath("Modo Historia")
+titulo_modopractica = NodePath("Modo Practica")
+titulo_ranking = NodePath("Ranking")
+titulo_opciones = NodePath("Opciones")
+titulojuego = NodePath("TituloJuego")
+boton_modo_historia = NodePath("Inicio/ModoHistoria")
+boton_modo_practica = NodePath("Inicio/ModoPractica")
+boton_editar_personaje = NodePath("Inicio/EditarPersonaje")
+boton_ranking = NodePath("Inicio/Ranking")
+boton_opciones = NodePath("Inicio/Opciones")
+boton_salir = NodePath("Inicio/Salir")
+volver_historia = NodePath("MODO HISTORIA/Volver")
+volver_practica = NodePath("MODO PRACTICA/Volver")
+volver_ranking = NodePath("RANKING/Volver")
+volver_opciones = NodePath("OPCIONES/Volver")
+volver_editor = NodePath("Editor De Personaje/Volver")
+idiomat = NodePath("IdiomaT")
+idioma = NodePath("CambiarIdioma")
+volument = NodePath("VolumenT")
+volumen = NodePath("Volumen")
+controlest = NodePath("ControlesT")
+controles = NodePath("Controles")
+creditost = NodePath("CreditosT")
+creditos = NodePath("Creditos")
+
+[node name="Fondo" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.999998
+offset_top = -12.999998
+offset_right = 16.000002
+offset_bottom = 27.000002
+scale = Vector2(29.681105, 16.881987)
+theme = ExtResource("1_4v0q5")
+theme_override_styles/panel = ExtResource("2_k48sw")
+script = ExtResource("4_iukku")
+
+[node name="TituloJuego" type="Label" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 69.00001
+offset_right = 732.0
+offset_bottom = 927.00006
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"HeaderLarge"
+theme_override_styles/normal = SubResource("StyleBoxTexture_y7003")
+script = ExtResource("4_iukku")
+
+[node name="Inicio" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 775.0
+offset_top = 58.000023
+offset_right = 947.0
+offset_bottom = 591.0
+scale = Vector2(1.5162222, 1.0408134)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="ModoHistoria" type="Button" parent="Inicio"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_fonts/font = SubResource("FontVariation_sej2m")
+theme_override_font_sizes/font_size = 25
+text = "Modo Historia"
+
+[node name="ModoPractica" type="Button" parent="Inicio"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+disabled = true
+text = "Modo Practica"
+
+[node name="EditarPersonaje" type="Button" parent="Inicio"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_fonts/font = SubResource("FontVariation_sej2m")
+theme_override_font_sizes/font_size = 25
+text = "Editar Personaje"
+
+[node name="Ranking" type="Button" parent="Inicio"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Mejores Tiempos"
+
+[node name="Opciones" type="Button" parent="Inicio"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="Inicio"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Salir"
+
+[node name="Modo Historia" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 183.00002
+offset_top = 49.000008
+offset_right = 1260.0
+offset_bottom = 149.0
+scale = Vector2(0.73650014, 0.601117)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("3_8mefa")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4v0q5")
+text = "MODO HISTORIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="MODO HISTORIA" type="VBoxContainer" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 284.0
+offset_top = 155.0
+offset_right = 485.0
+offset_bottom = 615.0
+scale = Vector2(1.1984383, 0.9643195)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="Mapa Aldea Esmeralda" type="Button" parent="MODO HISTORIA"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_fonts/font = SubResource("FontVariation_hymay")
+theme_override_font_sizes/font_size = 25
+text = "Aldea Esmeralda"
+
+[node name="Mapa Aldea Desierta" type="Button" parent="MODO HISTORIA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Desierta"
+
+[node name="Mapa Aldea Helada" type="Button" parent="MODO HISTORIA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Helada"
+
+[node name="Mapa Aldea Tropical" type="Button" parent="MODO HISTORIA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Tropical"
+
+[node name="Mapa Aldea Volcánica" type="Button" parent="MODO HISTORIA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Volcánica
+"
+
+[node name="Volver" type="Button" parent="MODO HISTORIA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+text = "Volver"
+
+[node name="Modo Practica" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 169.0
+offset_top = 50.000004
+offset_right = 1304.0
+offset_bottom = 150.0
+scale = Vector2(0.7233558, 0.6282858)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("3_8mefa")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4v0q5")
+text = "Modo Práctica"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="MODO PRACTICA" type="VBoxContainer" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 285.0
+offset_top = 157.0
+offset_right = 486.0
+offset_bottom = 617.0
+scale = Vector2(1.1984383, 0.9643195)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="Mapa Aldea Esmeralda" type="Button" parent="MODO PRACTICA"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_fonts/font = SubResource("FontVariation_hymay")
+theme_override_font_sizes/font_size = 25
+text = "Aldea Esmeralda"
+
+[node name="Mapa Aldea Desierta" type="Button" parent="MODO PRACTICA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Desierta"
+
+[node name="Mapa Aldea Helada" type="Button" parent="MODO PRACTICA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Helada"
+
+[node name="Mapa Aldea Tropical" type="Button" parent="MODO PRACTICA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Tropical"
+
+[node name="Mapa Aldea Volcánica" type="Button" parent="MODO PRACTICA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+disabled = true
+text = "Aldea Volcánica
+"
+
+[node name="Volver" type="Button" parent="MODO PRACTICA"]
+layout_mode = 2
+theme = SubResource("Theme_dw6y1")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
+text = "Volver"
+
+[node name="Ranking" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 55.000008
+offset_right = 1492.0
+offset_bottom = 155.0
+scale = Vector2(0.7233558, 0.6282858)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("3_8mefa")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4v0q5")
+text = "mejores tiempos"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="RANKING" type="VBoxContainer" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 372.0
+offset_top = 126.00002
+offset_right = 748.62244
+offset_bottom = 711.14417
+scale = Vector2(1.0961026, 0.8203521)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 2
+script = ExtResource("4_iukku")
+
+[node name="Panel" type="Panel" parent="RANKING"]
+layout_mode = 2
+script = ExtResource("7_14j3c")
+
+[node name="Contenedor" type="GridContainer" parent="RANKING/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.22991
+offset_top = -448.80243
+offset_right = 41.77008
+offset_bottom = -419.80243
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+columns = 3
+
+[node name="Top" type="Label" parent="RANKING/Panel/Contenedor"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("8_naxbc")
+text = "Posición    "
+
+[node name="NombreJugador" type="Label" parent="RANKING/Panel/Contenedor"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("8_naxbc")
+text = "Nombre de jugador    "
+
+[node name="Nivel" type="Label" parent="RANKING/Panel/Contenedor"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("8_naxbc")
+text = "Nivel       "
+
+[node name="DuracionPartida" type="Label" parent="RANKING/Panel/Contenedor"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("8_naxbc")
+text = "Record de tiempo "
+
+[node name="Volver" type="Button" parent="RANKING"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_ta11n")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_aojvl")
+text = "Volver"
+
+[node name="Opciones" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 155.0
+offset_top = 65.00001
+offset_right = 1290.0
+offset_bottom = 165.0
+scale = Vector2(0.7233558, 0.6282858)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("3_8mefa")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4v0q5")
+text = "Opciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_iukku")
+
+[node name="OPCIONES" type="VBoxContainer" parent="." node_paths=PackedStringArray("idioma")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 74.000015
+offset_right = 440.62244
+offset_bottom = 659.14417
+scale = Vector2(1.1288774, 1.0568635)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+script = ExtResource("4_iukku")
+idioma = NodePath("../CambiarIdioma")
+
+[node name="Idioma" type="Button" parent="OPCIONES"]
+layout_mode = 2
+theme = SubResource("Theme_synl5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
+text = "Idioma"
+
+[node name="Audio" type="Button" parent="OPCIONES"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_fonts/font = SubResource("FontVariation_5mkd5")
+theme_override_font_sizes/font_size = 25
+text = "Audio"
+
+[node name="Controles" type="Button" parent="OPCIONES"]
+layout_mode = 2
+theme = SubResource("Theme_synl5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
+text = "Controles"
+
+[node name="Créditos" type="Button" parent="OPCIONES"]
+layout_mode = 2
+theme = SubResource("Theme_synl5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
+text = "Créditos"
+
+[node name="Volver" type="Button" parent="OPCIONES"]
+layout_mode = 2
+theme = SubResource("Theme_synl5")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
+text = "Volver"
+
+[node name="IdiomaT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 763.0
+offset_top = 166.00002
+offset_right = 903.0
+offset_bottom = 206.00002
+text = "Idioma"
+
+[node name="CambiarIdioma" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 620.0
+offset_top = 278.00003
+offset_right = 1040.0
+offset_bottom = 383.0001
+theme = ExtResource("1_4v0q5")
+
+[node name="Idioma2" type="OptionButton" parent="CambiarIdioma"]
+layout_mode = 2
+theme = ExtResource("1_4v0q5")
+language = "es"
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "español"
+popup/item_0/icon = ExtResource("9_yk7oh")
+popup/item_0/id = 0
+popup/item_1/text = "english"
+popup/item_1/icon = ExtResource("10_muuqm")
+popup/item_1/id = 1
+
+[node name="VolumenT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 742.0
+offset_top = 249.00003
+offset_right = 897.0
+offset_bottom = 289.00003
+text = "Volumen"
+
+[node name="Volumen" type="HSlider" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 527.0
+offset_top = -529.00006
+offset_right = 718.0
+offset_bottom = -81.00006
+scale = Vector2(3.1541877, 3.9784298)
+tooltip_text = "Volumen
+"
+theme = ExtResource("1_4v0q5")
+theme_override_icons/grabber = ExtResource("11_0ws3x")
+theme_override_icons/grabber_highlight = ExtResource("11_0ws3x")
+theme_override_styles/slider = SubResource("StyleBoxTexture_0ws3x")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6si5d")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_r3qu7")
+max_value = 1.5
+step = 0.005
+value = 0.5
+
+[node name="ControlesT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 733.0
+offset_top = 146.00002
+offset_right = 898.0
+offset_bottom = 186.00002
+text = "Controles"
+
+[node name="Controles" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 608.0
+offset_top = 157.00003
+offset_right = 648.0
+offset_bottom = 197.00003
+scale = Vector2(9.874621, 12.064967)
+theme_override_styles/panel = SubResource("StyleBoxTexture_7hf8v")
+
+[node name="CreditosT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 738.0
+offset_top = 137.00002
+offset_right = 878.0
+offset_bottom = 177.00002
+theme = ExtResource("1_4v0q5")
+text = "Créditos"
+
+[node name="Creditos" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 536.0
+offset_top = 185.00002
+offset_right = 940.0768
+offset_bottom = 515.05133
+scale = Vector2(1.416689, 1.34113)
+theme_override_colors/default_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/normal_font = ExtResource("13_efmvd")
+theme_override_fonts/bold_font = ExtResource("3_8mefa")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[b]Desarrollo y programación[/b]
+Diseño, programación y desarrollo del juego realizados con el motor Godot Engine.
+
+[b]Diseño y animación[/b]
+Creación de personajes, animaciones y elementos visuales del juego.
+
+[b]Interfaz de usuario (UI)[/b]
+Diseño de menús y experiencia de navegación.
+
+[b]Agradecimientos[/b]
+Las autoras expresan su agradecimiento por el esfuerzo, la dedicación y el aprendizaje adquiridos durante la realización de este proyecto.
+
+[b]Autores[/b]
+María Chico Sánchez
+María de los Ángeles García Valera"
+horizontal_alignment = 1
+
+[node name="Editor De Personaje" parent="." instance=ExtResource("12_muuqm")]
+visible = false
+layout_mode = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_naxbc")
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
+
+[connection signal="pressed" from="MODO HISTORIA/Mapa Aldea Esmeralda" to="." method="_on_mapa_aldea_esmeralda_pressed"]
+[connection signal="pressed" from="MODO PRACTICA/Mapa Aldea Esmeralda" to="." method="_on_mapa_aldea_esmeralda_pressed"]
+[connection signal="pressed" from="OPCIONES/Idioma" to="." method="_on_idioma_pressed"]
+[connection signal="pressed" from="OPCIONES/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="OPCIONES/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="OPCIONES/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="item_selected" from="CambiarIdioma/Idioma2" to="OPCIONES" method="_on_idioma_item_selected"]
+[connection signal="value_changed" from="Volumen" to="." method="_on_volumen_value_changed"]
+
+[editable path="Editor De Personaje"]
+[editable path="Editor De Personaje/PersonajePrincipal"]

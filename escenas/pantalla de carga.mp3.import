@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fj47jy7184sx"
+path="res://.godot/imported/pantalla de carga.mp3-873df38efa5753048e4e38c1381ac31c.mp3str"
+
+[deps]
+
+source_file="res://escenas/pantalla de carga.mp3"
+dest_files=["res://.godot/imported/pantalla de carga.mp3-873df38efa5753048e4e38c1381ac31c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

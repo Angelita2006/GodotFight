@@ -1,0 +1,115 @@
+[gd_scene load_steps=15 format=3 uid="uid://b71uvctsc6mtj"]
+
+[ext_resource type="Script" uid="uid://e8rdk16hlg3u" path="res://escenas/Personajes/Jugador/jugador_en_niveles.gd" id="1_mlke3"]
+[ext_resource type="Texture2D" uid="uid://b1hhryplddqyq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personaje en el código(para niveles).png" id="1_vdvhe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71tkn"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(5376, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4lt7"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(1920, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i873"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(2304, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m0qf"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(2688, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlke3"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(1536, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv6jv"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(0, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lqfw"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(384, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l61u3"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(768, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjd3f"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(1152, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd51m"]
+atlas = ExtResource("1_vdvhe")
+region = Rect2(4992, 0, 384, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hmfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71tkn")
+}],
+"loop": true,
+"name": &"callendo",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4lt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i873")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m0qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlke3")
+}],
+"loop": true,
+"name": &"caminando",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv6jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lqfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l61u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjd3f")
+}],
+"loop": true,
+"name": &"quieto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd51m")
+}],
+"loop": true,
+"name": &"saltando",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0oia"]
+size = Vector2(96, 210.5)
+
+[node name="Personaje Codigo" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_mlke3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6hmfl")
+animation = &"quieto"
+autoplay = "quieto"
+frame_progress = 0.031340938
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.25)
+shape = SubResource("RectangleShape2D_t0oia")

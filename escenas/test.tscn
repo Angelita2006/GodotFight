@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxujxlekem1a"]
+
+[ext_resource type="PackedScene" uid="uid://lr60lw0cq7or" path="res://escenas/Objetos/Puerta.tscn" id="1_ik7up"]
+[ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="2_q0thx"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Puerta" parent="." instance=ExtResource("1_ik7up")]
+position = Vector2(353, 218)
+scale = Vector2(5.52, 5.52)
+
+[node name="PersonajePrincipal" parent="." instance=ExtResource("2_q0thx")]
+position = Vector2(530, 426)
+scale = Vector2(0.36, 0.36)

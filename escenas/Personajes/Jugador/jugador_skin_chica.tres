@@ -1,0 +1,158 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://8qgtemdc46pg"]
+
+[ext_resource type="Texture2D" uid="uid://bk4q6nwlgbvx7" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes1.png" id="1_7b3xc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b3xc"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1125, 0, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6n4i"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1255, 0, 121, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijjfp"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1375, 0, 118, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfaxp"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1125, 564, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsku4"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1257, 570, 117, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wmu6"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1381, 570, 117, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc6nm"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1125, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ekl"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1250, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j4q5"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1375, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_futkr"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1129, 190, 122, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji67v"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1251, 190, 122, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crktr"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1373, 190, 122, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp1vk"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1251, 0, 122, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvx2x"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1250, 564, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmnwv"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1250, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gftyo"]
+atlas = ExtResource("1_7b3xc")
+region = Rect2(1251, 190, 122, 190)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b3xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6n4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijjfp")
+}],
+"loop": true,
+"name": &"correr_abajo_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfaxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsku4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wmu6")
+}],
+"loop": true,
+"name": &"correr_arriba_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc6nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ekl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j4q5")
+}],
+"loop": true,
+"name": &"correr_derecha_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_futkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji67v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crktr")
+}],
+"loop": true,
+"name": &"correr_izquierda_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp1vk")
+}],
+"loop": true,
+"name": &"quieto_abajo_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvx2x")
+}],
+"loop": true,
+"name": &"quieto_arriba_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmnwv")
+}],
+"loop": true,
+"name": &"quieto_derecha_chica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gftyo")
+}],
+"loop": true,
+"name": &"quieto_izquierda_chica",
+"speed": 5.0
+}]

@@ -1,0 +1,124 @@
+[gd_scene load_steps=15 format=3 uid="uid://ysdgfhl3llyi"]
+
+[ext_resource type="Script" uid="uid://ddjg1lvih3j4t" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Entrenamiento/escena_alcalde_tutorial.gd" id="1_ayfnc"]
+[ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="2_jgaw2"]
+[ext_resource type="Texture2D" uid="uid://0tk7sqf2bx41" path="res://assets/juego/animaciones/alcalde/Dialogo1.png" id="3_p8o1u"]
+[ext_resource type="Texture2D" uid="uid://cwtw600qtyyl1" path="res://assets/juego/animaciones/alcalde/Dialogo2.png" id="4_o2sm3"]
+[ext_resource type="Texture2D" uid="uid://bjgefk1tuhhr7" path="res://assets/juego/animaciones/alcalde/Dialogo3.png" id="5_2k5tp"]
+[ext_resource type="Texture2D" uid="uid://t3ccmjc0y2qj" path="res://assets/juego/animaciones/alcalde/Dialogo4.png" id="6_rhdr7"]
+
+[sub_resource type="Animation" id="Animation_qx6fr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_uei1j"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333346, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ecjcf"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uei1j"]
+_data = {
+&"RESET": SubResource("Animation_qx6fr"),
+&"fade_in": SubResource("Animation_uei1j"),
+&"fade_out": SubResource("Animation_ecjcf")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqrn5"]
+texture = ExtResource("3_p8o1u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jrtep"]
+texture = ExtResource("4_o2sm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l6awq"]
+texture = ExtResource("5_2k5tp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7kt4"]
+texture = ExtResource("6_rhdr7")
+
+[node name="Escena Alcalde Tutorial" type="Node2D"]
+script = ExtResource("1_ayfnc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uei1j")
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.748922, 16.161886)
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jgaw2")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
+
+[node name="Dialogo1" type="Panel" parent="."]
+offset_left = 53.0
+offset_top = -3.0
+offset_right = 1129.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sqrn5")
+
+[node name="Dialogo2" type="Panel" parent="."]
+visible = false
+offset_left = 21.0
+offset_right = 1108.0
+offset_bottom = 671.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jrtep")
+
+[node name="Dialogo3" type="Panel" parent="."]
+visible = false
+offset_left = 19.0
+offset_top = -3.0
+offset_right = 1127.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_l6awq")
+
+[node name="Dialogo4" type="Panel" parent="."]
+visible = false
+offset_left = 19.0
+offset_right = 1127.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_d7kt4")
+
+[node name="Avanzar" type="Label" parent="."]
+offset_left = 794.0
+offset_top = 597.0
+offset_right = 986.0
+offset_bottom = 620.0
+text = "Pulsa Enter para avanzar..."
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

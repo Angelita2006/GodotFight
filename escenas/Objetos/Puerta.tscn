@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://lr60lw0cq7or"]
+
+[ext_resource type="Script" uid="uid://be3bh6x0a4spn" path="res://escenas/Objetos/puerta.gd" id="1_ab6ke"]
+[ext_resource type="Texture2D" uid="uid://bmjftjp383ea6" path="res://assets/juego/mapa/aldeaesmeralda/pack2/Doors_windows_animation.png" id="2_ab6ke"]
+[ext_resource type="AudioStream" uid="uid://cx7i55h2elym0" path="res://assets/ui/audio/puerta_abriendose.mp3" id="3_hpf1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dsoy"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 0, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqivo"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 32, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fd12"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 64, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tabxq"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 96, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf4ar"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 0, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab6ke"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 96, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpf1c"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 64, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8ijj"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 32, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc5rh"]
+atlas = ExtResource("2_ab6ke")
+region = Rect2(32, 0, 31, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2op3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dsoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqivo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fd12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tabxq")
+}],
+"loop": false,
+"name": &"abrir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf4ar")
+}],
+"loop": true,
+"name": &"cerrada",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab6ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpf1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8ijj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc5rh")
+}],
+"loop": false,
+"name": &"cerrar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dsoy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqivo"]
+size = Vector2(10, 30)
+
+[node name="Puerta" type="StaticBody2D"]
+script = ExtResource("1_ab6ke")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i2op3")
+animation = &"cerrar"
+autoplay = "cerrada"
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7dsoy")
+disabled = true
+
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Colision2" type="CollisionShape2D" parent="Area"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_xqivo")
+debug_color = Color(0.79899746, 0.042726353, 0.9999998, 0.41960785)
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hpf1c")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://cpoasa60yigg1"]
+
+[ext_resource type="Texture2D" uid="uid://bk4q6nwlgbvx7" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes1.png" id="1_yqigm"]
+[ext_resource type="Texture2D" uid="uid://dsjg471vyt857" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes3.png" id="2_5skmh"]
+[ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="3_oeyqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tesgu"]
+size = Vector2(102, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqigm"]
+atlas = ExtResource("1_yqigm")
+region = Rect2(132, 748, 121, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjc53"]
+atlas = ExtResource("1_yqigm")
+region = Rect2(1251, 752, 124, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3yf2"]
+atlas = ExtResource("1_yqigm")
+region = Rect2(507, 752, 124, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kcua"]
+atlas = ExtResource("2_5skmh")
+region = Rect2(135, 752, 124, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qes8a"]
+atlas = ExtResource("3_oeyqq")
+region = Rect2(1251, 0, 124, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eon2b"]
+atlas = ExtResource("2_5skmh")
+region = Rect2(879, 752, 124, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnp7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqigm")
+}],
+"loop": true,
+"name": &"Concejal1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjc53")
+}],
+"loop": true,
+"name": &"Concejal2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3yf2")
+}],
+"loop": true,
+"name": &"Concejal3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kcua")
+}],
+"loop": true,
+"name": &"Concejal4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qes8a")
+}],
+"loop": true,
+"name": &"Concejal5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eon2b")
+}],
+"loop": true,
+"name": &"Concejal6",
+"speed": 5.0
+}]
+
+[node name="Concejales" type="CharacterBody2D"]
+
+[node name="Colisiones" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_tesgu")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pnp7f")
+animation = &"Concejal1"

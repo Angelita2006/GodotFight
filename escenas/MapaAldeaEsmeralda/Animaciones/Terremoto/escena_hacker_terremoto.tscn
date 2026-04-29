@@ -1,0 +1,203 @@
+[gd_scene load_steps=21 format=3 uid="uid://ckh74beqeu26l"]
+
+[ext_resource type="Texture2D" uid="uid://bxee82kf8qklc" path="res://assets/juego/animaciones/terremoto/6.png" id="1_brjf5"]
+[ext_resource type="Script" uid="uid://cvkjvyyeilofh" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Terremoto/escena_hacker_terremoto_script.gd" id="1_v3m3k"]
+[ext_resource type="Texture2D" uid="uid://dix4v3vkcd5vr" path="res://assets/juego/animaciones/terremoto/Hacker.png" id="3_gfl82"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="3_v3m3k"]
+[ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="6_v512s"]
+
+[sub_resource type="Animation" id="Animation_qx6fr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_uei1j"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333346, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ecjcf"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uei1j"]
+_data = {
+&"RESET": SubResource("Animation_qx6fr"),
+&"fade_in": SubResource("Animation_uei1j"),
+&"fade_out": SubResource("Animation_ecjcf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3m3k"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(24, 372, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v512s"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(24, 744, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugrvs"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(387, 372, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5aan"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(387, 744, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4s3i"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(750, 372, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0p0r"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(750, 744, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os883"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(1113, 372, 363, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqwam"]
+atlas = ExtResource("1_brjf5")
+region = Rect2(1113, 744, 363, 372)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pda02"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3m3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v512s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugrvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5aan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4s3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0p0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os883")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqwam")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3m3k"]
+texture = ExtResource("3_gfl82")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adhmb"]
+texture = ExtResource("3_v3m3k")
+expand_margin_left = 39.0
+expand_margin_right = 13.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(455, 139, 30, 28)
+modulate_color = Color(0.39257768, 0.6382356, 0.41250604, 1)
+
+[node name="Escena Hacker Terremoto" type="Node2D"]
+script = ExtResource("1_v3m3k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+&"": SubResource("AnimationLibrary_uei1j")
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.748922, 16.161886)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(548, 301)
+scale = Vector2(2.415398, 1.7884576)
+sprite_frames = SubResource("SpriteFrames_pda02")
+autoplay = "default"
+frame = 3
+frame_progress = 0.9201827
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(585, 311)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Hacker1" type="Panel" parent="Camera2D"]
+offset_left = -349.0
+offset_top = -279.0
+offset_right = -329.43262
+offset_bottom = -237.54742
+scale = Vector2(14.053995, 12.327336)
+theme_override_styles/panel = SubResource("StyleBoxTexture_v3m3k")
+
+[node name="Bocadillo" type="Panel" parent="."]
+offset_left = 699.0
+offset_top = 170.0
+offset_right = 739.0
+offset_bottom = 209.99998
+scale = Vector2(4.3197184, 3.946392)
+theme_override_styles/panel = SubResource("StyleBoxTexture_adhmb")
+
+[node name="Dialogo1" type="RichTextLabel" parent="Bocadillo"]
+layout_mode = 0
+offset_left = -12.963812
+offset_top = 6.588297
+offset_right = 205.56195
+offset_bottom = 76.20935
+scale = Vector2(0.26377964, 0.40727973)
+bbcode_enabled = true
+text = "[b][color=#F5F5F8][shake]Demasiado orden aquí. Demasiada paz. Esta aldea necesita un poco de caos.[/shake][/color][/b]"
+scroll_active = false
+
+[node name="Dialogo2" type="RichTextLabel" parent="Bocadillo"]
+visible = false
+layout_mode = 0
+offset_left = -14.352783
+offset_top = 5.8281074
+offset_right = 210.31622
+offset_bottom = 101.01965
+scale = Vector2(0.260103, 0.33740276)
+bbcode_enabled = true
+text = "[b][color=#F5F5F8][shake]Soy el error que no puedes depurar. El glitch que no se borra. Prepárate para ver tu código colapsar.[/shake][/color][/b]"
+scroll_active = false
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_v512s")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
+
+[node name="Avanzar" type="Label" parent="."]
+offset_left = 662.0
+offset_top = 311.0
+offset_right = 868.0
+offset_bottom = 334.0
+text = "Pulsa Enter para avanzar..."

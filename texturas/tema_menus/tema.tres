@@ -1,0 +1,89 @@
+[gd_resource type="Theme" load_steps=22 format=3 uid="uid://c5oao02nxar0q"]
+
+[ext_resource type="StyleBox" uid="uid://df84t64lrf5yh" path="res://texturas/tema_menus/button_disabled.tres" id="1_1n43b"]
+[ext_resource type="StyleBox" uid="uid://baosamlryd78x" path="res://texturas/tema_menus/button_hover.tres" id="2_fdain"]
+[ext_resource type="StyleBox" uid="uid://bstmppkcpw7ti" path="res://texturas/tema_menus/button_normal.tres" id="3_738sl"]
+[ext_resource type="StyleBox" uid="uid://d1xa74pfp5c8m" path="res://texturas/tema_menus/button_pressed.tres" id="4_r6akp"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="6_1n43b"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_fdain"]
+[ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="6_mse2c"]
+[ext_resource type="Texture2D" uid="uid://dnjfj3lxaxvdu" path="res://assets/ui/basic_ui_sprites_grabber.png" id="7_jlsf0"]
+[ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="8_5i8mk"]
+[ext_resource type="Texture2D" uid="uid://bns62klf8bga1" path="res://assets/ui/basic_ui_sprites_grabberH.png" id="8_ha402"]
+[ext_resource type="StyleBox" uid="uid://cwslgls371qfe" path="res://texturas/tema_menus/slider_area_texture.tres" id="9_d76il"]
+[ext_resource type="Texture2D" uid="uid://bliamr48c8l3b" path="res://assets/ui/4.png" id="9_rilx3"]
+[ext_resource type="StyleBox" uid="uid://buvp46gs6exb5" path="res://texturas/tema_menus/slider_areaU_texture.tres" id="10_ia14c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mse2c"]
+texture = ExtResource("6_1n43b")
+region_rect = Rect2(11, 107, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1n43b"]
+texture = ExtResource("6_1n43b")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_le6ij"]
+texture = ExtResource("6_1n43b")
+region_rect = Rect2(107, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6diyq"]
+texture = ExtResource("6_1n43b")
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+region_rect = Rect2(402, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6akp"]
+texture = ExtResource("6_1n43b")
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+region_rect = Rect2(402, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d76il"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdain"]
+texture = ExtResource("6_1n43b")
+region_rect = Rect2(402, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_738sl"]
+texture = ExtResource("6_1n43b")
+region_rect = Rect2(402, 73, 28, 14)
+
+[resource]
+Boton2/base_type = &"Button"
+Boton2/styles/hover = SubResource("StyleBoxTexture_mse2c")
+Boton2/styles/normal = SubResource("StyleBoxTexture_1n43b")
+Boton2/styles/pressed = SubResource("StyleBoxTexture_le6ij")
+Button/styles/disabled = ExtResource("1_1n43b")
+Button/styles/hover = ExtResource("2_fdain")
+Button/styles/normal = ExtResource("3_738sl")
+Button/styles/pressed = ExtResource("4_r6akp")
+HScrollBar/styles/grabber = ExtResource("6_mse2c")
+HSlider/icons/grabber = ExtResource("7_jlsf0")
+HSlider/icons/grabber_disabled = ExtResource("7_jlsf0")
+HSlider/icons/grabber_highlight = ExtResource("8_ha402")
+HSlider/styles/grabber_area = ExtResource("9_d76il")
+HSlider/styles/grabber_area_highlight = ExtResource("10_ia14c")
+HSlider/styles/slider = ExtResource("10_ia14c")
+Label/colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("6_fdain")
+LineEdit/colors/caret_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+LineEdit/colors/clear_button_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+LineEdit/colors/clear_button_color_pressed = Color(0.9529412, 0.8980392, 0.7607843, 1)
+LineEdit/colors/font_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+LineEdit/colors/font_selected_color = Color(0.9529412, 0.8980392, 0.7607843, 1)
+LineEdit/constants/caret_width = 1
+LineEdit/font_sizes/font_size = 12
+LineEdit/fonts/font = ExtResource("6_fdain")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_6diyq")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_r6akp")
+OptionButton/colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+OptionButton/constants/arrow_margin = 10
+OptionButton/fonts/font = ExtResource("8_5i8mk")
+OptionButton/icons/arrow = ExtResource("9_rilx3")
+OptionButton/styles/normal = ExtResource("3_738sl")
+Panel/styles/panel = ExtResource("6_mse2c")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_d76il")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_fdain")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_738sl")
+ScrollContainer/styles/panel = ExtResource("6_mse2c")

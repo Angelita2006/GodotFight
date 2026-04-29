@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6i6gqk0lw3o8"]
+
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="1_lirfa"]
+
+[node name="Mensaje Guardado" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 38.0
+offset_right = 1127.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("1_lirfa")
+theme_override_font_sizes/font_size = 53
+text = "Se ha guardado la partida correctamente"

@@ -1,0 +1,175 @@
+[gd_scene load_steps=20 format=3 uid="uid://bd74lpm0aqcpi"]
+
+[ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_76vqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdiia"]
+size = Vector2(34.97534, 41.97178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r22kk"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(750, 0, 125, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1050l"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 0, 125, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei6fe"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(1000, 0, 125, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lgcu"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(750, 564, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1wsc"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 564, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebo8y"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(1000, 564, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2um4u"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(750, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4bdg"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joxhq"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(1000, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r5nh"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(1000, 188, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojoih"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 188, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f6ij"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(750, 188, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhuxt"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 0, 125, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6368"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 561, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi7bk"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 374, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nccpd"]
+atlas = ExtResource("1_76vqd")
+region = Rect2(875, 187, 125, 187)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ins0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r22kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1050l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei6fe")
+}],
+"loop": true,
+"name": &"correr_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lgcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1wsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebo8y")
+}],
+"loop": true,
+"name": &"correr_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2um4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4bdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joxhq")
+}],
+"loop": true,
+"name": &"correr_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r5nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojoih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f6ij")
+}],
+"loop": true,
+"name": &"correr_izquierda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhuxt")
+}],
+"loop": true,
+"name": &"quieto_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6368")
+}],
+"loop": true,
+"name": &"quieto_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi7bk")
+}],
+"loop": true,
+"name": &"quieto_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nccpd")
+}],
+"loop": true,
+"name": &"quieto_izquierda",
+"speed": 5.0
+}]
+
+[node name="Presidente" type="CharacterBody2D"]
+
+[node name="Colisiones" type="CollisionShape2D" parent="."]
+position = Vector2(587.99994, 347)
+scale = Vector2(2.2587342, 2.4778552)
+shape = SubResource("RectangleShape2D_gdiia")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+position = Vector2(585.5, 312)
+sprite_frames = SubResource("SpriteFrames_ins0p")
+animation = &"quieto_abajo"
+autoplay = "quieto_abajo"
+frame_progress = 0.85773885

@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvci7uv44x8ga"]
+
+[ext_resource type="AudioStream" uid="uid://cgp13kmoio4lq" path="res://assets/ui/audio/pantalla de carga2.mp3" id="1_0s0lf"]
+[ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_y25kk"]
+[ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="2_na1s8"]
+[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="2_yiavi"]
+[ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="3_0s0lf"]
+[ext_resource type="Script" uid="uid://gduym51y8gvo" path="res://escenas/Personajes/Jugador/jugador_cargando.gd" id="3_na1s8"]
+[ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="5_c6qmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0s0lf"]
+
+[node name="MenuCarga" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_0s0lf")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[node name="Fondo" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.999998
+offset_top = -12.999998
+offset_right = 16.000002
+offset_bottom = 27.000002
+scale = Vector2(29.681105, 16.881987)
+theme = ExtResource("1_y25kk")
+theme_override_styles/panel = ExtResource("3_0s0lf")
+script = ExtResource("2_yiavi")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 411.99997
+offset_right = 1033.6809
+offset_bottom = 574.7837
+scale = Vector2(1.006871, 1.0940838)
+theme = ExtResource("1_y25kk")
+
+[node name="PersonajePrincipal" parent="." instance=ExtResource("2_na1s8")]
+position = Vector2(261.99997, 316)
+scale = Vector2(0.79484296, 0.8037538)
+script = ExtResource("3_na1s8")
+
+[node name="Colisiones" parent="PersonajePrincipal" index="0"]
+visible = false
+position = Vector2(8.829193, -8.709137)
+scale = Vector2(1.597443, 14.149987)
+
+[node name="TituloCargando" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 9.000002
+offset_top = 9.000003
+offset_right = 1986.4528
+offset_bottom = 356.88824
+scale = Vector2(0.5840847, 0.6122655)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("5_c6qmy")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0s0lf")
+text = "CARGANDO..."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_yiavi")
+
+[editable path="PersonajePrincipal"]

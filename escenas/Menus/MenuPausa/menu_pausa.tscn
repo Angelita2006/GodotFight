@@ -1,0 +1,381 @@
+[gd_scene load_steps=19 format=3 uid="uid://d08qd44odixr2"]
+
+[ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_gvrb5"]
+[ext_resource type="Script" uid="uid://cpmrouvx04l5o" path="res://escenas/Menus/MenuPausa/menu_pausa_script.gd" id="2_npmvj"]
+[ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="3_c05uw"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="4_f5nv7"]
+[ext_resource type="Texture2D" uid="uid://dcllp85s2l5cy" path="res://assets/ui/2.png" id="5_1xj00"]
+[ext_resource type="Texture2D" uid="uid://du5hd6wvxkqgp" path="res://assets/ui/3.png" id="6_cmpdd"]
+[ext_resource type="Texture2D" uid="uid://dnjfj3lxaxvdu" path="res://assets/ui/basic_ui_sprites_grabber.png" id="7_0irrf"]
+[ext_resource type="Texture2D" uid="uid://moxgainbwij7" path="res://assets/ui/controles/titulo godotfight (7).png" id="8_75too"]
+[ext_resource type="FontFile" uid="uid://31cepyt2ycy0" path="res://assets/ui/fuentes/Silver.ttf" id="9_7xcs1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xj00"]
+texture = ExtResource("4_f5nv7")
+region_rect = Rect2(153, 9, 30, 30)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvrb5"]
+
+[sub_resource type="SystemFont" id="SystemFont_8la0q"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_nflbw"]
+default_font = SubResource("SystemFont_8la0q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejoup"]
+texture = ExtResource("4_f5nv7")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tmgi"]
+texture = ExtResource("4_f5nv7")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(402, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3q32q"]
+texture = ExtResource("4_f5nv7")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(466, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l88o2"]
+texture = ExtResource("4_f5nv7")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(466, 105, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g61d0"]
+texture = ExtResource("8_75too")
+
+[node name="Menu Pausa" type="Control" node_paths=PackedStringArray("pausa", "titulo_pausa", "opciones", "titulo_opciones", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "volver")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gvrb5")
+script = ExtResource("2_npmvj")
+pausa = NodePath("Pausa")
+titulo_pausa = NodePath("TituloPausa")
+opciones = NodePath("Opciones")
+titulo_opciones = NodePath("TituloOpciones")
+idiomat = NodePath("IdiomaT")
+idioma = NodePath("CambiarIdioma")
+volument = NodePath("VolumenT")
+volumen = NodePath("Volumen")
+controlest = NodePath("ControlesT")
+controles = NodePath("Controles")
+creditost = NodePath("CreditosT")
+creditos = NodePath("Creditos")
+volver = NodePath("Volver")
+
+[node name="Fondo" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 222.99998
+offset_top = 9.999999
+offset_right = 263.0
+offset_bottom = 50.0
+scale = Vector2(18.486187, 17.241385)
+theme_override_styles/panel = SubResource("StyleBoxTexture_1xj00")
+
+[node name="TituloPausa" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 160.0
+offset_top = 186.0
+offset_right = 1651.0
+offset_bottom = 323.0
+scale = Vector2(0.5840847, 0.6122655)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+theme_override_fonts/font = ExtResource("3_c05uw")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvrb5")
+text = "Pausa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pausa" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 506.0
+offset_top = 228.0
+offset_right = 687.0
+offset_bottom = 723.8169
+scale = Vector2(0.9324255, 0.67834985)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Continuar" type="Button" parent="Pausa"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Continuar"
+
+[node name="Opciones" type="Button" parent="Pausa"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Opciones"
+
+[node name="Guardar" type="Button" parent="Pausa"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Guardar"
+
+[node name="Volver" type="Button" parent="Pausa"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Volver al menú"
+
+[node name="TituloOpciones" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 432.00003
+offset_top = 198.0
+offset_right = 1095.0
+offset_bottom = 298.00003
+scale = Vector2(0.5085606, 0.5400299)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+theme_override_fonts/font = ExtResource("3_c05uw")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvrb5")
+text = "Opciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Opciones" type="VBoxContainer" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 518.0
+offset_top = 233.0
+offset_right = 699.0
+offset_bottom = 766.0
+scale = Vector2(0.7502809, 0.5979103)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Idioma" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Idioma"
+
+[node name="Audio" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Audio"
+
+[node name="Controles" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Controles"
+
+[node name="Créditos" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Créditos"
+
+[node name="Volver" type="Button" parent="Opciones"]
+layout_mode = 2
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Volver"
+
+[node name="IdiomaT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 504.0
+offset_top = 209.00002
+offset_right = 644.0
+offset_bottom = 249.00002
+scale = Vector2(1.6062418, 1.911061)
+theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+text = "Idioma"
+
+[node name="CambiarIdioma" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 471.0
+offset_top = 335.00003
+offset_right = 891.0
+offset_bottom = 440.0001
+scale = Vector2(0.5528817, 0.577735)
+theme = ExtResource("1_gvrb5")
+
+[node name="Idioma2" type="OptionButton" parent="CambiarIdioma"]
+layout_mode = 2
+theme = ExtResource("1_gvrb5")
+language = "es"
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "español"
+popup/item_0/icon = ExtResource("5_1xj00")
+popup/item_0/id = 0
+popup/item_1/text = "english"
+popup/item_1/icon = ExtResource("6_cmpdd")
+popup/item_1/id = 1
+
+[node name="VolumenT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 489.99997
+offset_top = 216.0
+offset_right = 645.0
+offset_bottom = 256.0
+scale = Vector2(1.3788445, 1.8309561)
+theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+text = "Volumen"
+
+[node name="Volumen" type="HSlider" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 422.0
+offset_top = -166.0
+offset_right = 613.0
+offset_bottom = 282.0
+scale = Vector2(1.7622775, 2.2491632)
+tooltip_text = "Volumen
+"
+theme = ExtResource("1_gvrb5")
+theme_override_icons/grabber = ExtResource("7_0irrf")
+theme_override_icons/grabber_highlight = ExtResource("7_0irrf")
+theme_override_styles/slider = SubResource("StyleBoxTexture_6tmgi")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_3q32q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_l88o2")
+max_value = 1.5
+step = 0.005
+value = 0.5
+
+[node name="ControlesT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 453.99997
+offset_top = 183.0
+offset_right = 619.0
+offset_bottom = 223.0
+scale = Vector2(1.6658795, 2.0476491)
+theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+text = "Controles"
+
+[node name="Controles" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 472.99997
+offset_top = 255.0
+offset_right = 504.188
+offset_bottom = 286.73944
+scale = Vector2(7.1493716, 8.506762)
+theme_override_styles/panel = SubResource("StyleBoxTexture_g61d0")
+
+[node name="CreditosT" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 457.0
+offset_top = 177.0
+offset_right = 597.0
+offset_bottom = 217.0
+scale = Vector2(1.861617, 2.3153253)
+theme = ExtResource("1_gvrb5")
+theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+text = "Créditos"
+
+[node name="Creditos" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 413.00003
+offset_top = 306.0
+offset_right = 801.32214
+offset_bottom = 544.83813
+scale = Vector2(0.9521004, 0.9294997)
+theme_override_colors/default_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+theme_override_fonts/normal_font = ExtResource("9_7xcs1")
+theme_override_fonts/bold_font = ExtResource("3_c05uw")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[b]Desarrollo y programación[/b]
+Diseño, programación y desarrollo del juego realizados con el motor Godot Engine.
+
+[b]Diseño y animación[/b]
+Creación de personajes, animaciones y elementos visuales del juego.
+
+[b]Interfaz de usuario (UI)[/b]
+Diseño de menús y experiencia de navegación.
+
+[b]Agradecimientos[/b]
+Las autoras expresan su agradecimiento por el esfuerzo, la dedicación y el aprendizaje adquiridos durante la realización de este proyecto.
+
+[b]Autores[/b]
+María Chico Sánchez
+María de los Ángeles García Valera"
+horizontal_alignment = 1
+
+[node name="Volver" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 516.0
+offset_top = 482.0
+offset_right = 660.0
+offset_bottom = 517.0
+theme = SubResource("Theme_nflbw")
+theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
+text = "Volver"
+
+[connection signal="pressed" from="Pausa/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Pausa/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Pausa/Guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="Pausa/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="Opciones/Idioma" to="." method="_on_idioma_pressed"]
+[connection signal="pressed" from="Opciones/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Opciones/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="Opciones/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="Opciones/Volver" to="." method="_on_volver_opciones_pressed"]
+[connection signal="value_changed" from="Volumen" to="." method="_on_volumen_value_changed"]
+[connection signal="pressed" from="Volver" to="." method="_on_volverAopciones_pressed"]
