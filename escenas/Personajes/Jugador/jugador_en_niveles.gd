@@ -13,31 +13,36 @@ func _physics_process(delta: float) -> void:
 	
 	animacion_personaje()
 	move_and_slide()
-	print(str(current_state))      
-
+	print(str(current_state))
+	
 func player_gravity(delta) -> void:
 	if not is_on_floor():
-		var  gravity = get_gravity() * 2
+		var gravity = get_gravity() * 2
 		velocity += gravity * delta
-		current_state = State.Callendo
+		
+		if velocity.y > 0:
+			current_state = State.Callendo
 
 func player_jump() -> void:
 	if Input.is_action_just_pressed("saltar") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		current_state = State.Saltando
+		$Personaje
 
 func player_run() -> void:
 	var direction := Input.get_axis("move_left", "move_right")
+	
 	if direction:
 		velocity.x = direction * SPEED
-		current_state = State.Corriendo
+		if is_on_floor():
+			current_state = State.Corriendo
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		current_state = State.Quieto
+		if is_on_floor():
+			current_state = State.Quieto
 	
 	if direction != 0:
-		current_state = State.Corriendo
-		$AnimatedSprite2D.flip_h = false if direction > 0 else true
+		$AnimatedSprite2D.flip_h = direction < 0
 
 func animacion_personaje() -> void:
 	if current_state == State.Quieto:

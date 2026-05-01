@@ -94,5 +94,6 @@ func _physics_process(_delta):
 					animacion_chica.play("quieto_arriba_chica")
 				"abajo":
 					animacion_chica.play("quieto_abajo_chica")
-	
+	Global.jugador_posX = global_position.x
+	Global.jugador_posY = global_position.y
 	move_and_slide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bupva1h0ydvv5"]
+[gd_scene load_steps=41 format=4 uid="uid://bupva1h0ydvv5"]
 
 [ext_resource type="Script" uid="uid://bc5y7xw45in11" path="res://escenas/MapaAldeaEsmeralda/Parque/parque_script.gd" id="1_gbog7"]
 [ext_resource type="PackedScene" uid="uid://c67f7f5mxcyxg" path="res://escenas/Personajes/Animales/Patito/patito.tscn" id="1_ilrxl"]
@@ -12,12 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dbrjp7x4nqk8m" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Grass_Biom_things.png" id="9_wpbck"]
 [ext_resource type="Texture2D" uid="uid://bsvfxq2quswmq" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Plants.png" id="10_xdvki"]
 [ext_resource type="Texture2D" uid="uid://c6hthd5qyhiu1" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Simple Milk and grass item.png" id="11_n6sin"]
-[ext_resource type="PackedScene" uid="uid://dyiu7jwcxxcn0" path="res://escenas/Personajes/NPCs/Jardinera/Jardinera.tscn" id="13_wsk7k"]
+[ext_resource type="PackedScene" uid="uid://1ev265bwqnh" path="res://escenas/Personajes/NPCs/Jardinera/Jardinera.tscn" id="13_wsk7k"]
 [ext_resource type="Script" uid="uid://cy5f6pgnow8fo" path="res://escenas/Personajes/NPCs/Jardinera/jardinera.gd" id="14_5hvaa"]
 [ext_resource type="Texture2D" uid="uid://cw011quiget80" path="res://assets/juego/animaciones/glitches/13.png" id="14_fe67v"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="15_7ar72"]
 [ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="15_ebx4k"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="15_nnxxk"]
 [ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="16_5hvaa"]
+[ext_resource type="PackedScene" uid="uid://dyiu7jwcxxcn0" path="res://escenas/Personajes/NPCs/Jardinera/NpcsParque.tscn" id="17_gp8xb"]
 [ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="17_nnxxk"]
 [ext_resource type="Texture2D" uid="uid://cww787gci1jsb" path="res://assets/juego/animaciones/glitches/14.png" id="18_7ar72"]
 
@@ -2857,6 +2859,10 @@ sources/1 = SubResource("TileSetAtlasSource_qpw6g")
 sources/2 = SubResource("TileSetAtlasSource_48gkn")
 sources/3 = SubResource("TileSetAtlasSource_r6g2a")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4qwp"]
+texture = ExtResource("15_7ar72")
+region_rect = Rect2(455, 139, 30, 28)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ar72"]
 size = Vector2(17.489563, 11.3063965)
 
@@ -2887,7 +2893,7 @@ texture = ExtResource("18_7ar72")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hvaa"]
 size = Vector2(202.98828, 78.76984)
 
-[node name="Parque" type="Node2D"]
+[node name="Parque" type="StaticBody2D"]
 position = Vector2(392, 216.00002)
 scale = Vector2(1.9926059, 2.216831)
 script = ExtResource("1_gbog7")
@@ -2944,28 +2950,38 @@ position = Vector2(140, -40)
 scale = Vector2(0.5693477, 0.5296966)
 
 [node name="Jardinera" parent="." instance=ExtResource("13_wsk7k")]
-position = Vector2(212.285, 98.79)
-rotation = 3.1415927
-scale = Vector2(0.14893617, -0.1234567)
+position = Vector2(212.78665, 96.98529)
 script = ExtResource("14_5hvaa")
 
+[node name="Fondo_dialogo" type="Panel" parent="Jardinera"]
+offset_left = -30.111298
+offset_top = -16.362411
+offset_right = 293.44656
+offset_bottom = 519.41736
+rotation = -1.5707964
+scale = Vector2(0.1, 0.105)
+theme_override_styles/panel = SubResource("StyleBoxTexture_w4qwp")
+
 [node name="Dialogo" type="RichTextLabel" parent="Jardinera"]
-offset_left = 124.675255
-offset_top = -190.0008
-offset_right = 319.96896
-offset_bottom = -111.53253
-scale = Vector2(-1.2389264, 1.1141809)
+offset_left = -22.081604
+offset_top = -43.87915
+offset_right = 150.80634
+offset_bottom = 44.084244
+scale = Vector2(0.209, 0.2)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
 theme_override_fonts/normal_font = ExtResource("15_nnxxk")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "Bienvenido al parque jugador"
+text = "Bienvenido al parque"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 language = "es_ES"
 
 [node name="Abajo" type="Area2D" parent="Jardinera"]
+position = Vector2(2.3841858e-05, 5.8642244)
+rotation = -3.1415925
+scale = Vector2(0.21374309, -0.15370578)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jardinera/Abajo"]
 position = Vector2(-1.6848145, 78.55847)
@@ -2973,6 +2989,9 @@ scale = Vector2(5.5872416, 3.5548468)
 shape = SubResource("RectangleShape2D_7ar72")
 
 [node name="Arriba" type="Area2D" parent="Jardinera"]
+position = Vector2(2.3841858e-05, -3.6087565)
+rotation = -3.1415925
+scale = Vector2(0.23268981, -0.13079411)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Jardinera/Arriba"]
 position = Vector2(-1.6848145, -91.346436)
@@ -2980,6 +2999,9 @@ scale = Vector2(5.2269244, -2.8242965)
 shape = SubResource("RectangleShape2D_gp8xb")
 
 [node name="Izquierda" type="Area2D" parent="Jardinera"]
+position = Vector2(2.3841858e-05, 2.7065642)
+rotation = -3.1415925
+scale = Vector2(0.2426763, -0.21773526)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Jardinera/Izquierda"]
 position = Vector2(45.959717, -9.134277)
@@ -2987,31 +3009,34 @@ scale = Vector2(2.6016493, 9.718048)
 shape = SubResource("RectangleShape2D_s2dif")
 
 [node name="Derecha" type="Area2D" parent="Jardinera"]
+position = Vector2(-1.0036869, 2.2554698)
+rotation = -3.1415925
+scale = Vector2(0.25014135, -0.22366485)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Jardinera/Derecha"]
 position = Vector2(-43.805176, -9.134033)
 scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_hp075")
 
-[node name="Jardinera2" parent="." instance=ExtResource("13_wsk7k")]
+[node name="Jardinera2" parent="." instance=ExtResource("17_gp8xb")]
 position = Vector2(-39.646576, 98.78965)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(0.14893617, -0.1234567)
 
 [node name="Animacion" parent="Jardinera2" index="1"]
 animation = &"Jardinera3"
 
-[node name="Jardinera3" parent="." instance=ExtResource("13_wsk7k")]
+[node name="Jardinera3" parent="." instance=ExtResource("17_gp8xb")]
 position = Vector2(164.1067, -93.82762)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(0.14893617, -0.1234567)
 
 [node name="Animacion" parent="Jardinera3" index="1"]
 animation = &"Jardinera2"
 
-[node name="Jardinera4" parent="." instance=ExtResource("13_wsk7k")]
+[node name="Jardinera4" parent="." instance=ExtResource("17_gp8xb")]
 position = Vector2(-51.6911, -81.19699)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(0.14893617, -0.1234567)
 
 [node name="Animacion" parent="Jardinera4" index="1"]
@@ -3058,17 +3083,18 @@ rotation = -1.3089969
 scale = Vector2(4.725742, 7.4405146)
 theme_override_styles/panel = SubResource("StyleBoxTexture_beb2e")
 
-[node name="AreaGlitch" type="Area2D" parent="."]
-
-[node name="ColisionGlitch" type="CollisionShape2D" parent="AreaGlitch"]
+[node name="ColisionGlitch" type="CollisionShape2D" parent="."]
 position = Vector2(147.721, 25.306557)
 rotation = -0.78539807
-scale = Vector2(0.9999997, 0.9999998)
+scale = Vector2(0.9999996, 0.99999976)
 shape = SubResource("RectangleShape2D_5hvaa")
 
 [connection signal="body_entered" from="Jardinera/Abajo" to="Jardinera" method="_on_abajo_body_entered"]
-[connection signal="body_entered" from="AreaGlitch" to="." method="_on_area_glitch_body_entered"]
+[connection signal="body_entered" from="Jardinera/Arriba" to="Jardinera" method="_on_arriba_body_entered"]
+[connection signal="body_entered" from="Jardinera/Izquierda" to="Jardinera" method="_on_izquierda_body_entered"]
+[connection signal="body_entered" from="Jardinera/Derecha" to="Jardinera" method="_on_derecha_body_entered"]
 
+[editable path="Jardinera"]
 [editable path="Jardinera2"]
 [editable path="Jardinera3"]
 [editable path="Jardinera4"]

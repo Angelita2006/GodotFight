@@ -2,18 +2,19 @@ extends Node2D
 
 var interactuando: bool = false
 
-func _ready() -> void:
-	$"Personaje Codigo/Nivel_Tutorial_Mision".hide()
-	$"Personaje Codigo/Mensaje_Final_Nivel".hide()
-	$Plataformas2.hide()
-	$"Palabra faltante".show()
-	$Plataformas/Codigo_Incompleto.show()
-	$Plataformas/Codigo_Completo.hide()
-	
-	$"Personaje Codigo/Primer_Mensaje".show()
-	await get_tree().create_timer(4).timeout
-	$"Personaje Codigo/Primer_Mensaje".hide()
+var palabra_tocada = false
 
+func _ready() -> void:
+	$"Personaje_Codigo/Nivel_Tutorial_Mision".hide()
+	$"Personaje_Codigo/Mensaje_Final_Nivel".hide()
+	$Plataforma2.hide()
+	$Palabra_faltante.show()
+	$Plataformas1/Codigo_Incompleto.show()
+	$Plataformas1/Codigo_Completo.hide()
+	
+	$Personaje_Codigo/Primer_Mensaje.show()
+	await get_tree().create_timer(4).timeout
+	$Personaje_Codigo/Primer_Mensaje.hide()
 
 func _input(_event: InputEvent) -> void:
 	if interactuando and Input.is_action_just_pressed("interactuar"):
@@ -24,31 +25,30 @@ func _input(_event: InputEvent) -> void:
 
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	interactuando = true
-
-
-func _on_palabra_faltante_body_exited(_body: Node2D) -> void:
-	interactuando = false
-
+	palabra_tocada = true
+	$Plataformas1/Codigo_Incompleto.hide()
+	$Plataformas1/Codigo_Completo.show()
+	$Plataforma2.show() 
+	$Palabra_faltante.hide()
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
-	$"Personaje Codigo/Primer_Mensaje".hide()
-	$"Personaje Codigo/Mensaje_Final_Nivel".hide()
-	$"Personaje Codigo/Nivel_Tutorial_Mision".show()
+	$Personaje_Codigo/Primer_Mensaje.hide()
+	$Personaje_Codigo/Mensaje_Final_Nivel.hide()
+	$Personaje_Codigo/Nivel_Tutorial_Mision.show()
 	await get_tree().create_timer(4).timeout
-	$"Personaje Codigo/Nivel_Tutorial_Mision".hide()
-
+	$Personaje_Codigo/Nivel_Tutorial_Mision.hide()
 
 func _on_activar_ultimo_mensaje_body_entered(_body: Node2D) -> void:
-	$"Personaje Codigo/Primer_Mensaje".hide()
-	$"Personaje Codigo/Nivel_Tutorial_Mision".hide()
-	$"Personaje Codigo/Mensaje_Final_Nivel".show()
+	$Personaje_Codigo/Primer_Mensaje.hide()
+	$Personaje_Codigo/Nivel_Tutorial_Mision.hide()
+	$Personaje_Codigo/Mensaje_Final_Nivel.show()
 	await get_tree().create_timer(4).timeout
-	$"Personaje Codigo/Mensaje_Final_Nivel".hide()
-
+	$Personaje_Codigo/Mensaje_Final_Nivel.hide()
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://escenas/Niveles/tutorial.tscn")
 
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
+	$Personaje_Codigo/Camera2D.enabled = false
 	Cargador.cargar_escena("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn", true)

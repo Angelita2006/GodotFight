@@ -10,12 +10,10 @@ var esperando3 = false
 
 var velocidad = 30.0
 
-
 func _ready() -> void:
 	$Patito/Animacion.play("quieto_agua_izquierda")
 	$Patito2/Animacion.play("quieto_agua_derecha")
 	$Patito3/Animacion.play("quieto_derecha")
-
 
 func _process(delta: float) -> void:
 	# --- PATITO 1 (de -6 a 40) ---
@@ -31,7 +29,6 @@ func _process(delta: float) -> void:
 			if $Patito.position.x <= -6:
 				esperar_y_cambiar_direccion(1)
 
-
 	# --- PATITO 2 (de 70 a 90) ---
 	if not esperando2:
 		$Patito2.position.x += direccion2 * velocidad * delta
@@ -45,7 +42,6 @@ func _process(delta: float) -> void:
 			if $Patito2.position.x <= 70:
 				esperar_y_cambiar_direccion(2)
 
-
 	# --- PATITO 3 (de 140 a 190) ---
 	if not esperando3:
 		$Patito3.position.x += direccion3 * velocidad * delta
@@ -58,8 +54,6 @@ func _process(delta: float) -> void:
 			$Patito3/Animacion.play("caminar_izquierda")
 			if $Patito3.position.x <= 140:
 				esperar_y_cambiar_direccion(3)
-
-
 
 func esperar_y_cambiar_direccion(id):
 	match id:
@@ -84,19 +78,18 @@ func esperar_y_cambiar_direccion(id):
 			direccion3 *= -1
 			esperando3 = false
 
-
-func _on_area_glitch_body_entered(body: Node2D) -> void:
-	if Global.llave_verde_obtenida:
-		$Glitch1.hide()
-		$Glitch2.hide()
-		$Glitch3.hide()
-		$Glitch4.hide()
-		$Glitch5.hide()		
-		$AreaGlitch/ColisionGlitch.disabled = true
-	else:
-		$Glitch1.show()
-		$Glitch2.show()
-		$Glitch3.show()
-		$Glitch4.show()
-		$Glitch5.show()	
-		$AreaGlitch/ColisionGlitch.disabled = false
+#func _on_area_glitch_body_entered(body: Node2D) -> void:
+	#if Global.llave_verde_obtenida:
+		#$Glitch1.hide()
+		#$Glitch2.hide()
+		#$Glitch3.hide()
+		#$Glitch4.hide()
+		#$Glitch5.hide()		
+		#$ColisionGlitch.disabled = true
+	#else:
+		#$Glitch1.show()
+		#$Glitch2.show()
+		#$Glitch3.show()
+		#$Glitch4.show()
+		#$Glitch5.show()	
+		#$ColisionGlitch.disabled = false

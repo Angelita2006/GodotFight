@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://doycks2kfysg1"]
+[gd_scene load_steps=42 format=4 uid="uid://doycks2kfysg1"]
 
 [ext_resource type="Script" uid="uid://mtkkdn20v43w" path="res://escenas/MapaAldeaEsmeralda/Biblioteca/biblioteca_script.gd" id="1_3u7r4"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="1_plkup"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="11_ru25d"]
 [ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="12_sp0vh"]
 [ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="13_2r4u6"]
+[ext_resource type="PackedScene" uid="uid://dlgowptyld050" path="res://escenas/Personajes/NPCs/Bibliotecaria/Bibliotecaria.tscn" id="14_b8lrd"]
+[ext_resource type="Script" uid="uid://dqkw68ntx45wg" path="res://escenas/Personajes/NPCs/Bibliotecaria/bibliotecaria.gd" id="15_2r4u6"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="15_sp0vh"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="16_2r4u6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3nr3"]
 texture = ExtResource("1_plkup")
@@ -953,6 +957,22 @@ texture = ExtResource("12_sp0vh")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6g7p"]
 texture = ExtResource("13_2r4u6")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjw5k"]
+texture = ExtResource("15_sp0vh")
+region_rect = Rect2(455, 139, 30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifjwv"]
+size = Vector2(18.115326, 11.3063965)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akdwr"]
+size = Vector2(19.36407, 11.36322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi0nr"]
+size = Vector2(19.066284, 13.159554)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8id15"]
+size = Vector2(47.17456, 127.88519)
+
 [node name="Biblioteca" type="StaticBody2D"]
 position = Vector2(489, 364)
 script = ExtResource("1_3u7r4")
@@ -1034,6 +1054,82 @@ offset_right = 121.0
 offset_bottom = 66.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_y6g7p")
 
+[node name="Bibliotecaria" parent="." instance=ExtResource("14_b8lrd")]
+position = Vector2(64, 29)
+script = ExtResource("15_2r4u6")
+
+[node name="Colisiones" parent="Bibliotecaria" index="0"]
+scale = Vector2(0.15, 0.15)
+
+[node name="Animacion" parent="Bibliotecaria" index="1"]
+scale = Vector2(0.15, 0.15)
+
+[node name="Fondo_dialogo" type="Panel" parent="Bibliotecaria"]
+offset_left = -28.0
+offset_top = -13.0
+offset_right = 295.55786
+offset_bottom = 522.7798
+rotation = -1.5707964
+scale = Vector2(0.095, 0.1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bjw5k")
+
+[node name="Dialogo" type="RichTextLabel" parent="Bibliotecaria"]
+offset_left = -19.0
+offset_top = -39.0
+offset_right = 142.1377
+offset_bottom = 51.0
+scale = Vector2(0.211, 0.2)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("16_2r4u6")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Bienvenido a la biblioteca"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+language = "es_ES"
+
+[node name="Abajo" type="Area2D" parent="Bibliotecaria"]
+position = Vector2(40, 29)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bibliotecaria/Abajo"]
+position = Vector2(201.85791, -70.226074)
+scale = Vector2(5.5872416, 3.5548468)
+shape = SubResource("RectangleShape2D_ifjwv")
+
+[node name="Arriba" type="Area2D" parent="Bibliotecaria"]
+position = Vector2(40, 37)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bibliotecaria/Arriba"]
+position = Vector2(201.85791, -240.1311)
+scale = Vector2(5.2269244, -2.8242965)
+shape = SubResource("RectangleShape2D_akdwr")
+
+[node name="Izquierda" type="Area2D" parent="Bibliotecaria"]
+position = Vector2(42, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bibliotecaria/Izquierda"]
+position = Vector2(251.25056, -157.91888)
+scale = Vector2(2.6016493, 9.718048)
+shape = SubResource("RectangleShape2D_oi0nr")
+
+[node name="Derecha" type="Area2D" parent="Bibliotecaria"]
+position = Vector2(39, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bibliotecaria/Derecha"]
+position = Vector2(161.48567, -157.91862)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_8id15")
+
 [connection signal="animation_finished" from="Puerta/Animacion" to="." method="_on_animacion_animation_finished" flags=18]
 
 [editable path="Puerta"]
+[editable path="Bibliotecaria"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://e8cyhqcwav5e"]
+[gd_scene load_steps=15 format=4 uid="uid://e8cyhqcwav5e"]
 
 [ext_resource type="Script" uid="uid://d22bncug1uqjo" path="res://escenas/MapaAldeaEsmeralda/Biblioteca/biblioteca_planta1_script.gd" id="1_ah0l0"]
 [ext_resource type="Texture2D" uid="uid://cy5vhc5wvcmpc" path="res://assets/juego/mapa/aldeaesmeralda/pack2/Interior.png" id="2_jwrkp"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="3_u1muq"]
 [ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="4_eldc3"]
+[ext_resource type="PackedScene" uid="uid://d1p5lhxiijpka" path="res://escenas/Personajes/NPCs/Bibliotecaria/Bibliotecaria.tscn" id="5_3htrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbkjt"]
 texture = ExtResource("2_jwrkp")
@@ -1121,6 +1122,10 @@ position = Vector2(526.632, 412.88663)
 scale = Vector2(0.36141187, 0.5342173)
 zoom = Vector2(2, 2)
 limit_enabled = false
+
+[node name="Bibliotecaria" parent="." instance=ExtResource("5_3htrn")]
+position = Vector2(555.7047, 457.21762)
+scale = Vector2(0.16947493, 0.17260441)
 
 [connection signal="body_entered" from="Salida" to="." method="_on_salida_body_entered"]
 [connection signal="body_entered" from="Subida" to="." method="_on_subida_body_entered"]

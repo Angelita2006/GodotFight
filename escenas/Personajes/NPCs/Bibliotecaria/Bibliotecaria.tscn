@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlgowptyld050"]
+
+[ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_o8jes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbqyv"]
+size = Vector2(102, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kovpl"]
+atlas = ExtResource("1_o8jes")
+region = Rect2(500, 0, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiu63"]
+atlas = ExtResource("1_o8jes")
+region = Rect2(500, 564, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqs6u"]
+atlas = ExtResource("1_o8jes")
+region = Rect2(500, 376, 125, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2ve8"]
+atlas = ExtResource("1_o8jes")
+region = Rect2(500, 188, 125, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgri5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kovpl")
+}],
+"loop": true,
+"name": &"Bibliotecaria_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiu63")
+}],
+"loop": true,
+"name": &"Bibliotecaria_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqs6u")
+}],
+"loop": true,
+"name": &"Bibliotecaria_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2ve8")
+}],
+"loop": true,
+"name": &"Bibliotecaria_izquierda",
+"speed": 5.0
+}]
+
+[node name="Bibliotecaria" type="RigidBody2D"]
+position = Vector2(521.99994, 305.99997)
+gravity_scale = 0.0
+
+[node name="Colisiones" type="CollisionShape2D" parent="."]
+position = Vector2(6.1035156e-05, 2.2000427)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_jbqyv")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_vgri5")
+animation = &"Bibliotecaria_abajo"
