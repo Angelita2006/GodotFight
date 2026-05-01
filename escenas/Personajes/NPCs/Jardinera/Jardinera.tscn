@@ -1,59 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://1ev265bwqnh"]
+[gd_scene load_steps=8 format=3 uid="uid://1ev265bwqnh"]
 
-[ext_resource type="Texture2D" uid="uid://bk4q6nwlgbvx7" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes1.png" id="1_yur0g"]
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="2_f5b3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbk5f"]
 size = Vector2(108.29411, 176)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6vjru"]
-atlas = ExtResource("1_yur0g")
-region = Rect2(877, 761, 124, 183)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qwqam"]
-atlas = ExtResource("2_f5b3e")
-region = Rect2(507, 752, 124, 188)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbgcq"]
-atlas = ExtResource("2_f5b3e")
-region = Rect2(1251, 752, 124, 188)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yepcg"]
 atlas = ExtResource("2_f5b3e")
 region = Rect2(1251, 0, 124, 188)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8tdq"]
+atlas = ExtResource("2_f5b3e")
+region = Rect2(1250, 561, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yur0g"]
+atlas = ExtResource("2_f5b3e")
+region = Rect2(1250, 374, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5b3e"]
+atlas = ExtResource("2_f5b3e")
+region = Rect2(1250, 187, 125, 187)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_68afb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6vjru")
-}],
-"loop": true,
-"name": &"Jardinera1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qwqam")
-}],
-"loop": true,
-"name": &"Jardinera2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gbgcq")
-}],
-"loop": true,
-"name": &"Jardinera3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_yepcg")
 }],
 "loop": true,
-"name": &"Jardinera4",
+"name": &"Jardinera_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8tdq")
+}],
+"loop": true,
+"name": &"Jardinera_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yur0g")
+}],
+"loop": true,
+"name": &"Jardinera_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5b3e")
+}],
+"loop": true,
+"name": &"Jardinera_izquierda",
 "speed": 5.0
 }]
 
@@ -69,4 +68,4 @@ shape = SubResource("RectangleShape2D_cbk5f")
 position = Vector2(-0.100000024, 0)
 scale = Vector2(0.18, 0.159)
 sprite_frames = SubResource("SpriteFrames_68afb")
-animation = &"Jardinera4"
+animation = &"Jardinera_arriba"

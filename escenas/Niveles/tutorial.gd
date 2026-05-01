@@ -11,10 +11,7 @@ func _ready() -> void:
 	$Palabra_faltante.show()
 	$Plataformas1/Codigo_Incompleto.show()
 	$Plataformas1/Codigo_Completo.hide()
-	
 	$Personaje_Codigo/Primer_Mensaje.show()
-	await get_tree().create_timer(4).timeout
-	$Personaje_Codigo/Primer_Mensaje.hide()
 
 func _input(_event: InputEvent) -> void:
 	if interactuando and Input.is_action_just_pressed("interactuar"):
@@ -35,15 +32,11 @@ func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Primer_Mensaje.hide()
 	$Personaje_Codigo/Mensaje_Final_Nivel.hide()
 	$Personaje_Codigo/Nivel_Tutorial_Mision.show()
-	await get_tree().create_timer(4).timeout
-	$Personaje_Codigo/Nivel_Tutorial_Mision.hide()
 
 func _on_activar_ultimo_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Primer_Mensaje.hide()
 	$Personaje_Codigo/Nivel_Tutorial_Mision.hide()
 	$Personaje_Codigo/Mensaje_Final_Nivel.show()
-	await get_tree().create_timer(4).timeout
-	$Personaje_Codigo/Mensaje_Final_Nivel.hide()
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://escenas/Niveles/tutorial.tscn")

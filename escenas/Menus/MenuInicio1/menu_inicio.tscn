@@ -149,9 +149,9 @@ func on_opciones_pressed(contenedor: VBoxContainer) -> void:
 func _on_mapa_aldea_esmeralda_pressed() -> void:
 	Database.abrir_db()
 	if !Database.hay_partida_guardada():
-		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Terremoto/escena_hacker_terremoto.tscn\", false)
+		#Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker.tscn\", false)
+		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Entrenamiento/escena_alcalde_tutorial.tscn\", false)
 		Cargador.entrar_escena_cargada()
-		#get_tree().change_scene_to_file(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Terremoto/escena_hacker_terremoto.tscn\")
 	else:
 		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn\", true)
 

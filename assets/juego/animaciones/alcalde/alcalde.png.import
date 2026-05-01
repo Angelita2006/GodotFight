@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxee82kf8qklc"
-path="res://.godot/imported/6.png-98c4408ddf6676749aa1d1d24790640a.ctex"
+uid="uid://bubstdkqpen4b"
+path="res://.godot/imported/alcalde.png-9c5f99a578736ee779389ffce17640be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/juego/animaciones/terremoto/6.png"
-dest_files=["res://.godot/imported/6.png-98c4408ddf6676749aa1d1d24790640a.ctex"]
+source_file="res://assets/juego/animaciones/alcalde/alcalde.png"
+dest_files=["res://.godot/imported/alcalde.png-9c5f99a578736ee779389ffce17640be.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bupva1h0ydvv5"]
+[gd_scene load_steps=40 format=4 uid="uid://bupva1h0ydvv5"]
 
 [ext_resource type="Script" uid="uid://bc5y7xw45in11" path="res://escenas/MapaAldeaEsmeralda/Parque/parque_script.gd" id="1_gbog7"]
 [ext_resource type="PackedScene" uid="uid://c67f7f5mxcyxg" path="res://escenas/Personajes/Animales/Patito/patito.tscn" id="1_ilrxl"]
@@ -2890,12 +2890,8 @@ texture = ExtResource("17_nnxxk")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beb2e"]
 texture = ExtResource("18_7ar72")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hvaa"]
-size = Vector2(202.98828, 78.76984)
-
-[node name="Parque" type="StaticBody2D"]
+[node name="Parque" type="Node2D"]
 position = Vector2(392, 216.00002)
-scale = Vector2(1.9926059, 2.216831)
 script = ExtResource("1_gbog7")
 
 [node name="Agua" type="TileMapLayer" parent="."]
@@ -2905,8 +2901,8 @@ tile_set = ExtResource("2_n1tgu")
 [node name="Agua" type="StaticBody2D" parent="Agua"]
 disable_mode = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Agua/Agua"]
-polygon = PackedVector2Array(0, -0.4511032, -17.06308, -0.4511032, -17.06308, 64.95758, 96.85808, 64.506485, 96.85808, 37.440826, 100.37108, 33.83207, 102.378494, 32.92988, 160.59373, 32.478783, 161.59743, 20.299232, 165.11043, 17.592667, 169.12526, 17.141579, 177.65681, 17.141579, 177.15495, -0.4511032, 176.15123, -1.3532944, 166.11412, -1.3532944, 162.60115, -3.6087646, 161.59743, -5.864235, 161.09557, -16.690498, 133.99538, -17.141594, 131.98796, -18.945976, 129.98055, -20.299255, 128.97682, -21.652542, 129.47868, -32.929897, 47.174408, -32.929897, 46.672546, -5.864235, 45.166992, -4.05986, 43.661423, -2.2554855, 41.65399, -1.3532944, 30.613174, -0.9021988)
+[node name="ColisionAgua" type="CollisionPolygon2D" parent="Agua/Agua"]
+polygon = PackedVector2Array(-16.561234, -9.92408, -16.561234, -5.864235, -24.590912, -1.8043823, -27.10019, 66.31087, -19.07051, 65.85977, -18.066803, 73.077286, 98.36366, 73.52838, 99.367355, 67.21306, 105.38963, 65.408676, 106.89519, 42.85396, 111.41188, 41.50067, 161.09557, 42.402863, 160.5937, 35.18535, 166.61598, 34.73427, 172.63823, 26.614563, 178.6605, 21.652527, 185.18462, 18.04377, 186.6902, -1.8043823, 178.6605, -2.255478, 178.15865, -8.119705, 175.1475, -9.92408, 170.12898, -13.9839325, 169.12526, -24.810196, 140.01765, -25.261292, 138.51207, -30.674423, 133.49352, -32.929893, 129.47868, -41.04959, 46.672546, -42.402874, 44.66513, -34.283176, 38.642853, -34.283176, 37.639145, -11.277367, 35.63173, -9.472984, 30.613174, -9.472984)
 
 [node name="Arena" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAGAAQAAQAGAAIAAAAHAAMAAQABAAEAAAAKAAIAAQAGAAIAAAALAAEAAQAGAAIAAAAMAAEAAQABAAEAAAAIAAMAAQABAAEAAAAJAAMAAQABAAEAAAAHAAQAAQABAAEAAAAKAAMAAQABAAEAAAALAAIAAQABAAEAAAAMAAAAAQABAAEAAAAMAP//AQABAAEAAAAMAP7/AQABAAEAAAALAP7/AQABAAEAAAAKAP7/AQAGAAEAAAAGAAUAAQABAAEAAAAFAAUAAQABAAEAAAAEAAUAAQABAAEAAAADAAUAAQABAAEAAAACAAUAAQABAAEAAAABAAUAAQABAAEAAAAAAAUAAQABAAEAAAD//wUAAQABAAEAAAD+/wUAAQABAAEAAAD+/wQAAQAFAAIAAAD9/wQAAQABAAEAAAD9/wMAAQABAAEAAAD9/wEAAQABAAEAAAD9/wIAAQABAAEAAAAKAP3/AQABAAEAAAAJAP3/AQABAAEAAAD9/wAAAQABAAEAAAD9////AQABAAEAAAD+//7/AQABAAEAAAD9//7/AQABAAEAAAD///7/AQABAAEAAAAAAP7/AQABAAEAAAABAP7/AAACAAQAAAABAP3/AQABAAEAAAABAPz/AQABAAEAAAACAPz/AQABAAEAAAADAPz/AQABAAEAAAAEAPz/AQABAAEAAAAFAPz/AQABAAEAAAAGAPz/AQABAAEAAAAHAPz/AQABAAEAAAAIAPz/AQABAAEAAAAIAP3/AQAGAAEAAAACAP7/AQAJAAUAAAACAP3/AQAFAAEAAAADAP3/AQABAAIAAAAEAP3/AQAGAAYAAAAFAP3/AQABAAIAAAAGAP3/AQAGAAYAAAAHAP3/AQABAAIAAAAIAP7/AQAAAAIAAAAJAP7/AQAFAAYAAAAKAP//AQAAAAIAAAALAP//AQAGAAEAAAALAAAAAQAIAAYAAAAKAAEAAQAAAAAAAAAJAAIAAQABAAAAAAAIAAIAAQAGAAUAAAAHAAIAAQAFAAUAAAAGAAMAAQAIAAYAAAAGAAIAAQAAAAAAAAACAP//AQACAAIAAAABAP//AQABAAIAAAAAAP//AQAGAAYAAAD/////AQABAAIAAAD+////AQAFAAEAAAD+/wAAAQACAAEAAAD+/wIAAQAJAAYAAAD+/wMAAQACAAEAAAD//wQAAQABAAAAAAAAAAQAAQABAAAAAAABAAQAAQAHAAUAAAACAAQAAQABAAAAAAADAAQAAQABAAAAAAAEAAQAAQAGAAUAAAAFAAQAAQABAAAAAAALAP3/AQABAAEAAAD+/wEAAQAJAAUAAAD9/wUAAAACAAQAAAALAAMAAAACAAQAAAAHAAUAAAACAAQAAAAMAAIAAAACAAQAAAAMAAMAAAACAAQAAAAMAP3/AAACAAQAAAAJAPz/AAACAAQAAAA=")
@@ -2952,6 +2948,9 @@ scale = Vector2(0.5693477, 0.5296966)
 [node name="Jardinera" parent="." instance=ExtResource("13_wsk7k")]
 position = Vector2(212.78665, 96.98529)
 script = ExtResource("14_5hvaa")
+
+[node name="Animacion" parent="Jardinera" index="1"]
+animation = &"Jardinera_izquierda"
 
 [node name="Fondo_dialogo" type="Panel" parent="Jardinera"]
 offset_left = -30.111298
@@ -3083,16 +3082,19 @@ rotation = -1.3089969
 scale = Vector2(4.725742, 7.4405146)
 theme_override_styles/panel = SubResource("StyleBoxTexture_beb2e")
 
-[node name="ColisionGlitch" type="CollisionShape2D" parent="."]
-position = Vector2(147.721, 25.306557)
-rotation = -0.78539807
-scale = Vector2(0.9999996, 0.99999976)
-shape = SubResource("RectangleShape2D_5hvaa")
+[node name="AreaGlitch" type="Area2D" parent="."]
+
+[node name="ColisionGlitch" type="CollisionPolygon2D" parent="AreaGlitch"]
+polygon = PackedVector2Array(183, 121.999985, 175, 133.99998, 124, 137.99998, -90, 137.99998, -107, 128.99998, -106, -125.000015, -101, -140.00002, -64.77034, -140.32837, -63, -147.00002, -50, -142.00002, 152, -145.00002, 163, -153.00002, 168.1325, -142.77904, 230, -143.00002, 243, -128.00002, 251, -102.000015, 254, -43.000015, 251, 3.9999847, 241, -8.000015, 185, 2.9999847, 139, 68.999985, 135, 89.999985)
 
 [connection signal="body_entered" from="Jardinera/Abajo" to="Jardinera" method="_on_abajo_body_entered"]
+[connection signal="body_exited" from="Jardinera/Abajo" to="Jardinera" method="_on_jardinera_body_exited"]
 [connection signal="body_entered" from="Jardinera/Arriba" to="Jardinera" method="_on_arriba_body_entered"]
+[connection signal="body_exited" from="Jardinera/Arriba" to="Jardinera" method="_on_jardinera_body_exited"]
 [connection signal="body_entered" from="Jardinera/Izquierda" to="Jardinera" method="_on_izquierda_body_entered"]
+[connection signal="body_exited" from="Jardinera/Izquierda" to="Jardinera" method="_on_jardinera_body_exited"]
 [connection signal="body_entered" from="Jardinera/Derecha" to="Jardinera" method="_on_derecha_body_entered"]
+[connection signal="body_exited" from="Jardinera/Derecha" to="Jardinera" method="_on_jardinera_body_exited"]
 
 [editable path="Jardinera"]
 [editable path="Jardinera2"]

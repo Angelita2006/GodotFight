@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dix4v3vkcd5vr"
-path="res://.godot/imported/Hacker.png-591359124521f85029fa860e0efa7905.ctex"
+uid="uid://chemouo0emlo3"
+path="res://.godot/imported/hacker (2).png-70f5e310cb3ebb1d1aa5a4df42adb366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/juego/animaciones/terremoto/Hacker.png"
-dest_files=["res://.godot/imported/Hacker.png-591359124521f85029fa860e0efa7905.ctex"]
+source_file="res://assets/juego/animaciones/hacker/hacker (2).png"
+dest_files=["res://.godot/imported/hacker (2).png-70f5e310cb3ebb1d1aa5a4df42adb366.ctex"]
 
 [params]
 

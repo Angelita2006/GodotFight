@@ -35,6 +35,8 @@ func _on_derecha_body_entered(body: CharacterBody2D) -> void:
 	cambiar_dialogo()
 
 func cambiar_dialogo():
+	$Dialogo.show()
+	$Fondo_dialogo.show()
 	if Global.llave_verde_obtenida:
 		position.x = 173.642
 		position.y = 44.207
@@ -48,3 +50,8 @@ func cambiar_dialogo():
 			#Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn")
 		#elif Input.is_action_pressed("rechazar"):
 			#$Dialogo.text = "Vale, nos vemos luego "+str(Global.jugador_nombre)
+
+
+func _on_bibliotecaria_body_exited(body: CharacterBody2D) -> void:
+	$Dialogo.hide()
+	$Fondo_dialogo.hide()

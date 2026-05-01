@@ -40,6 +40,8 @@ func _on_izquierda_body_entered(body: CharacterBody2D) -> void:
 	cambiar_dialogo()
 
 func cambiar_dialogo():
+	$Dialogo.show()
+	$Fondo_dialogo.show()
 	if Global.llave_verde_obtenida:
 		position.x = 173.642
 		position.y = 44.207
@@ -49,7 +51,11 @@ func cambiar_dialogo():
 		position.y = 98.79
 		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el parque está horrible, tienes que arreglarlo\n(Sí) Pulsa E (No) Pulsa Q"
 		dialogo_actual = 2
-		#if Input.is_action_pressed("aceptar"):
-			#Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn")
-		#elif Input.is_action_pressed("rechazar"):
-			#$Dialogo.text = "Vale, nos vemos luego jugador "+str(Global.jugador_nombre)
+		if Input.is_action_pressed("aceptar"):
+			Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn")
+		elif Input.is_action_pressed("rechazar"):
+			$Dialogo.text = "Vale, nos vemos luego jugador "+str(Global.jugador_nombre)
+
+func _on_jardinera_body_exited(body: Node2D) -> void:
+	$Dialogo.hide()
+	$Fondo_dialogo.hide()

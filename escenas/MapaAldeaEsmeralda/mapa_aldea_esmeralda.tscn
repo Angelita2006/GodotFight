@@ -919,7 +919,6 @@ scale = Vector2(0.15895179, 0.1741194)
 
 [node name="Parque" parent="." instance=ExtResource("12_tn8s2")]
 position = Vector2(-124.500786, 147.08415)
-scale = Vector2(0.8714409, 1.0602)
 
 [node name="ArbolesFlores" type="TileMapLayer" parent="."]
 scale = Vector2(0.9999999, 1)

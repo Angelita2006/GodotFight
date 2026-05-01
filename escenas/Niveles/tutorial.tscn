@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://qo27srvc8flm"]
+[gd_scene load_steps=17 format=4 uid="uid://qo27srvc8flm"]
 
 [ext_resource type="Script" uid="uid://d1plti53iqu5" path="res://escenas/Niveles/tutorial.gd" id="1_22ext"]
 [ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="1_nrhkc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyyhxcw2k1yj4" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles doble plataforma.png" id="4_exnjc"]
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="5_jljmv"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_6y7yw"]
+[ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_5jfln"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
 size = Vector2(776, 105)
@@ -5447,6 +5448,10 @@ sources/1 = SubResource("TileSetAtlasSource_kj6ru")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22ext"]
 size = Vector2(781, 83)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exnjc"]
+texture = ExtResource("8_5jfln")
+region_rect = Rect2(24, 24, 912, 912)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_nrhkc"]
 radius = 74.94665
 
@@ -5599,11 +5604,18 @@ collision_mask = 18
 [node name="Camera2D" type="Camera2D" parent="Personaje_Codigo"]
 zoom = Vector2(0.35, 0.35)
 
+[node name="Fondo_Mensajes" type="Panel" parent="Personaje_Codigo"]
+offset_left = -1606.0
+offset_top = -900.0
+offset_right = -381.0
+offset_bottom = -587.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
+
 [node name="Primer_Mensaje" type="Label" parent="Personaje_Codigo"]
-offset_left = -1629.0
-offset_top = -864.0
-offset_right = -302.0
-offset_bottom = -678.0
+offset_left = -1516.0
+offset_top = -845.0
+offset_right = -498.0
+offset_bottom = -636.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 theme_override_fonts/font = ExtResource("6_6y7yw")
 theme_override_font_sizes/font_size = 59
@@ -5611,28 +5623,28 @@ text = "Utiliza A y D o las flechas para moverte.
 
 Presiona Espacio para saltar.  _"
 
-[node name="Nivel_Tutorial_Mision" type="Label" parent="Personaje_Codigo"]
+[node name="Nivel_Tutorial_Mision" type="RichTextLabel" parent="Personaje_Codigo"]
 visible = false
-offset_left = -1629.0
-offset_top = -864.0
-offset_right = -155.0
-offset_bottom = -678.0
-theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_6y7yw")
-theme_override_font_sizes/font_size = 59
+offset_left = -1519.0
+offset_top = -844.0
+offset_right = -329.18457
+offset_bottom = -559.7744
+scale = Vector2(0.9219916, 0.8144987)
+theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/normal_font = ExtResource("6_6y7yw")
+theme_override_font_sizes/normal_font_size = 67
 text = "El código de la siguiente plataforma está incompleto.
+Acércate al fragmento faltante para colocarlo.  _"
 
-Acercate al fragmento faltante y presiona E para colocarlo.  _"
-
-[node name="Mensaje_Final_Nivel" type="Label" parent="Personaje_Codigo"]
+[node name="Mensaje_Final_Nivel" type="RichTextLabel" parent="Personaje_Codigo"]
 visible = false
-offset_left = -1629.0
-offset_top = -864.0
-offset_right = 938.0
-offset_bottom = -804.0
-theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_6y7yw")
-theme_override_font_sizes/font_size = 59
+offset_left = -1538.0
+offset_top = -857.0
+offset_right = -437.0
+offset_bottom = -616.0
+theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/normal_font = ExtResource("6_6y7yw")
+theme_override_font_sizes/normal_font_size = 63
 text = "Para arreglar tu juego deberás arreglar el código de todos los elementos que se 
 encuentren corruptos.  _"
 
