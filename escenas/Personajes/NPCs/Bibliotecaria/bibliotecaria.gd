@@ -37,13 +37,10 @@ func _on_derecha_body_entered(body: CharacterBody2D) -> void:
 func cambiar_dialogo():
 	$Dialogo.show()
 	$Fondo_dialogo.show()
-	if Global.llave_verde_obtenida:
-		position.x = 173.642
-		position.y = 44.207
+	if Global.llave_purpura_obtenida:
+		this.hide()
 		$Dialogo.text = "Gracias por ayudar a preservar el conocimento que otorga nuestra biblioteca, vuelve cuando quieras "+str(Global.jugador_nombre)
 	else:
-		position.x = 212.285
-		position.y = 98.79
 		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", las estanterías han quedado en ruinas, hay que recuperar los libros\n(Sí) Pulsa E (No) Pulsa Q"
 		dialogo_actual = 2
 		#if Input.is_action_pressed("aceptar"):

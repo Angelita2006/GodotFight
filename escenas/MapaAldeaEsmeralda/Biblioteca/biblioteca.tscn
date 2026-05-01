@@ -962,13 +962,13 @@ texture = ExtResource("15_sp0vh")
 region_rect = Rect2(455, 139, 30, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifjwv"]
-size = Vector2(18.115326, 11.3063965)
+size = Vector2(12.528557, 11.3063965)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akdwr"]
-size = Vector2(19.36407, 11.36322)
+size = Vector2(13.392185, 13.261322)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi0nr"]
-size = Vector2(19.066284, 13.159554)
+size = Vector2(19.066284, 13.020771)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8id15"]
 size = Vector2(47.17456, 127.88519)
@@ -1058,12 +1058,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_y6g7p")
 position = Vector2(64, 29)
 script = ExtResource("15_2r4u6")
 
-[node name="Colisiones" parent="Bibliotecaria" index="0"]
-scale = Vector2(0.15, 0.15)
-
-[node name="Animacion" parent="Bibliotecaria" index="1"]
-scale = Vector2(0.15, 0.15)
-
 [node name="Fondo_dialogo" type="Panel" parent="Bibliotecaria"]
 offset_left = -28.0
 offset_top = -13.0
@@ -1095,7 +1089,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bibliotecaria/Abajo"]
-position = Vector2(201.85791, -70.226074)
+position = Vector2(200, -70.226074)
 scale = Vector2(5.5872416, 3.5548468)
 shape = SubResource("RectangleShape2D_ifjwv")
 
@@ -1105,7 +1099,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Bibliotecaria/Arriba"]
-position = Vector2(201.85791, -240.1311)
+position = Vector2(200, -242.8114)
 scale = Vector2(5.2269244, -2.8242965)
 shape = SubResource("RectangleShape2D_akdwr")
 
@@ -1115,8 +1109,8 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bibliotecaria/Izquierda"]
-position = Vector2(251.25056, -157.91888)
-scale = Vector2(2.6016493, 9.718048)
+position = Vector2(251.25049, -157.2445)
+scale = Vector2(2.6016495, 9.718048)
 shape = SubResource("RectangleShape2D_oi0nr")
 
 [node name="Derecha" type="Area2D" parent="Bibliotecaria"]

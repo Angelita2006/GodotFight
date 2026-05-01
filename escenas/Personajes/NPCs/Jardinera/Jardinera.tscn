@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="2_f5b3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbk5f"]
-size = Vector2(108.29411, 176)
+size = Vector2(94.11764, 164.47058)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yepcg"]
 atlas = ExtResource("2_f5b3e")
@@ -60,12 +60,12 @@ animations = [{
 gravity_scale = 0.0
 
 [node name="Colisiones" type="CollisionShape2D" parent="."]
-position = Vector2(-0.20500033, 1)
+position = Vector2(-2.3841858e-07, 0.019999385)
 scale = Vector2(0.17, 0.17)
 shape = SubResource("RectangleShape2D_cbk5f")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.100000024, 0)
-scale = Vector2(0.18, 0.159)
+scale = Vector2(0.15, 0.148)
 sprite_frames = SubResource("SpriteFrames_68afb")
-animation = &"Jardinera_arriba"
+animation = &"Jardinera_abajo"

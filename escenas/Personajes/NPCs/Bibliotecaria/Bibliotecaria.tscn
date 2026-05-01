@@ -57,15 +57,14 @@ animations = [{
 }]
 
 [node name="Bibliotecaria" type="RigidBody2D"]
-position = Vector2(521.99994, 305.99997)
 gravity_scale = 0.0
 
 [node name="Colisiones" type="CollisionShape2D" parent="."]
 position = Vector2(6.1035156e-05, 2.2000427)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 shape = SubResource("RectangleShape2D_jbqyv")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_vgri5")
 animation = &"Bibliotecaria_abajo"
