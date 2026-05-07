@@ -5571,7 +5571,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas1/Activar_Primer_Mensaje"]
-position = Vector2(0, 32.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_22ext")
 
 [node name="Plataforma2" type="TileMapLayer" parent="."]
