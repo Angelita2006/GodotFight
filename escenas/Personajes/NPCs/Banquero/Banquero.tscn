@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsflaw2cp42l7"]
+
+[ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_1bpf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5amg6"]
+size = Vector2(95, 159.99998)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfj6w"]
+atlas = ExtResource("1_1bpf8")
+region = Rect2(125, 748, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hjhn"]
+atlas = ExtResource("1_1bpf8")
+region = Rect2(126, 1311, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d14m"]
+atlas = ExtResource("1_1bpf8")
+region = Rect2(126, 1124, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pem0n"]
+atlas = ExtResource("1_1bpf8")
+region = Rect2(126, 937, 125, 187)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pmp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfj6w")
+}],
+"loop": true,
+"name": &"Banquero_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hjhn")
+}],
+"loop": true,
+"name": &"Banquero_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d14m")
+}],
+"loop": true,
+"name": &"Banquero_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pem0n")
+}],
+"loop": true,
+"name": &"Baquero_izquierda",
+"speed": 5.0
+}]
+
+[node name="Banquero" type="RigidBody2D"]
+
+[node name="Colisiones" type="CollisionShape2D" parent="."]
+position = Vector2(0.5000004, 1.0000007)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_5amg6")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.18, 0.18)
+sprite_frames = SubResource("SpriteFrames_4pmp3")
+animation = &"Banquero_abajo"

@@ -1018,7 +1018,7 @@ scale = Vector2(0.29987332, 0.33580548)
 text = "BIBLIOTECA"
 label_settings = SubResource("LabelSettings_gkdae")
 
-[node name="Glitch" type="Panel" parent="."]
+[node name="Glitch5" type="Panel" parent="."]
 offset_left = -8.0
 offset_top = -135.0
 offset_right = 82.374725
@@ -1026,28 +1026,28 @@ offset_bottom = -20.715607
 rotation = -0.7853982
 theme_override_styles/panel = SubResource("StyleBoxTexture_wuvbp")
 
-[node name="Panel4" type="Panel" parent="."]
+[node name="Glitch1" type="Panel" parent="."]
 offset_left = -52.0
 offset_top = -148.0
 offset_right = 168.0
 offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cyfxf")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Glitch2" type="Panel" parent="."]
 offset_left = -40.0
 offset_top = -64.0
 offset_right = 171.0
 offset_bottom = 124.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rkc64")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Glitch3" type="Panel" parent="."]
 offset_left = -40.0
 offset_top = -103.0
 offset_right = 165.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_sbfo3")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Glitch4" type="Panel" parent="."]
 offset_left = 3.0
 offset_top = -64.0
 offset_right = 121.0

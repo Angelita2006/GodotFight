@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://fsnk2udrxaqi"]
+
+[ext_resource type="Texture2D" uid="uid://dsjg471vyt857" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes3.png" id="1_6gu4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqvnq"]
+size = Vector2(102, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb5gd"]
+atlas = ExtResource("1_6gu4v")
+region = Rect2(1250, 0, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d63ol"]
+atlas = ExtResource("1_6gu4v")
+region = Rect2(1250, 561, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra41y"]
+atlas = ExtResource("1_6gu4v")
+region = Rect2(1250, 372, 125, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggahs"]
+atlas = ExtResource("1_6gu4v")
+region = Rect2(1250, 186, 125, 186)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24xvs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb5gd")
+}],
+"loop": true,
+"name": &"Vendedor_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d63ol")
+}],
+"loop": true,
+"name": &"Vendedor_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra41y")
+}],
+"loop": true,
+"name": &"Vendedor_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggahs")
+}],
+"loop": true,
+"name": &"Vendedor_izquierda",
+"speed": 5.0
+}]
+
+[node name="VendedorPrincipal" type="RigidBody2D"]
+
+[node name="Colisiones" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_oqvnq")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_24xvs")
+animation = &"Vendedor_abajo"

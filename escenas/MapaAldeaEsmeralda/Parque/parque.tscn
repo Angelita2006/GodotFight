@@ -2975,7 +2975,7 @@ vertical_alignment = 1
 language = "es_ES"
 
 [node name="Abajo" type="Area2D" parent="Jardinera"]
-position = Vector2(2.3841858e-05, 5.8642244)
+position = Vector2(0.21340275, 6.0147066)
 rotation = -3.1415925
 scale = Vector2(0.21374309, -0.15370578)
 
@@ -3082,7 +3082,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_beb2e")
 [node name="AreaGlitch" type="Area2D" parent="."]
 
 [node name="ColisionGlitch" type="CollisionPolygon2D" parent="AreaGlitch"]
-polygon = PackedVector2Array(183, 121.999985, 175, 133.99998, 124, 137.99998, -90, 137.99998, -107, 128.99998, -106, -125.000015, -101, -140.00002, -64.77034, -140.32837, -63, -147.00002, -50, -142.00002, 152, -145.00002, 163, -153.00002, 168.1325, -142.77904, 230, -143.00002, 243, -128.00002, 251, -102.000015, 254, -43.000015, 251, 3.9999847, 241, -8.000015, 185, 2.9999847, 139, 68.999985, 135, 89.999985)
+polygon = PackedVector2Array(183, 121.999985, 175, 133.99998, 124, 137.99998, -90, 137.99998, -107, 128.99998, -106, -125.000015, -101, -140.00002, -64.77034, -140.32837, -63, -147.00002, -50, -142.00002, 152, -145.00002, 163, -153.00002, 168.1325, -142.77904, 230, -143.00002, 243, -128.00002, 251, -102.000015, 254, -43.000015, 251, 3.9999847, 248, 103.999985, 232, 77.999985, 152, 59.999985, 142, 91.999985)
 
 [connection signal="body_entered" from="Jardinera/Abajo" to="Jardinera" method="_on_abajo_body_entered"]
 [connection signal="body_exited" from="Jardinera/Abajo" to="Jardinera" method="_on_jardinera_body_exited"]

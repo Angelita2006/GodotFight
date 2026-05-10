@@ -5,9 +5,9 @@ var dialogo_actual = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if (Global.jugador_aspecto == "chico"):
-		$Dialogo.text = "Bienvenido al parque, "+str(Global.jugador_nombre)
+		$Dialogo.text = "Bienvenido al mercado, "+str(Global.jugador_nombre)
 	elif (Global.jugador_aspecto == "chica"):
-		$Dialogo.text = "Bienvenida al parque, "+str(Global.jugador_nombre)
+		$Dialogo.text = "Bienvenida al mercado, "+str(Global.jugador_nombre)
 	dialogo_actual = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,13 +18,14 @@ func cambiar_dialogo():
 	$Dialogo.show()
 	$Fondo_dialogo.show()
 	if Global.llave_verde_obtenida:
-		position.x = 173.642
-		position.y = 44.207
+		position.x = 1540
+		position.y = 1690
 		$Dialogo.text = "Gracias por habernos ayudado, te estaremos agradecidos siempre "+str(Global.jugador_nombre)
+		dialogo_actual = 3
 	else:
-		position.x = 212.285
-		position.y = 98.79
-		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el parque está horrible, tienes que arreglarlo\n(Sí) Pulsa E"
+		position.x = 1130
+		position.y = 1635
+		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el mercado está destrozado, tienes que ayudarnos\n(Sí) Pulsa E"
 		dialogo_actual = 2
 		if Input.is_action_pressed("aceptar"):
 			Database.abrir_db()
@@ -35,21 +36,21 @@ func cambiar_dialogo():
 			Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn")
 
 func _on_abajo_body_entered(body: CharacterBody2D) -> void:
-	$Animacion.play("Jardinera_abajo")
+	$Animacion.play("Vendedor_abajo")
 	cambiar_dialogo()
 
 func _on_arriba_body_entered(body: CharacterBody2D) -> void:
-	$Animacion.play("Jardinera_arriba")
-	cambiar_dialogo()
-
-func _on_derecha_body_entered(body: CharacterBody2D) -> void:
-	$Animacion.play("Jardinera_derecha")
+	$Animacion.play("Vendedor_arriba")
 	cambiar_dialogo()
 
 func _on_izquierda_body_entered(body: CharacterBody2D) -> void:
-	$Animacion.play("Jardinera_izquierda")
+	$Animacion.play("Vendedor_izquierda")
 	cambiar_dialogo()
 
-func _on_jardinera_body_exited(body: Node2D) -> void:
+func _on_derecha_body_entered(body: CharacterBody2D) -> void:
+	$Animacion.play("Vendedor_derecha")
+	cambiar_dialogo()
+
+func _on_vendedor_body_exited(body: CharacterBody2D) -> void:
 	$Dialogo.hide()
 	$Fondo_dialogo.hide()
