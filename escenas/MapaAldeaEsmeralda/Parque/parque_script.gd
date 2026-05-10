@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		$Glitch2.hide()
 		$Glitch3.hide()
 		$Glitch4.hide()
-		$Glitch5.hide()		
+		$Glitch5.hide()
 		$AreaGlitch/ColisionGlitch.disabled = true
 	# --- PATITO 1 (de -6 a 40) ---
 	if not esperando1:

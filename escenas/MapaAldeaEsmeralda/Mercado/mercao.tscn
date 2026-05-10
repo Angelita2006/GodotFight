@@ -1,15 +1,20 @@
-[gd_scene load_steps=21 format=4 uid="uid://bbpulpiwwxtk"]
+[gd_scene load_steps=31 format=4 uid="uid://bbpulpiwwxtk"]
 
 [ext_resource type="TileSet" uid="uid://b6mfaiggcwfco" path="res://texturas/tile_sets/tile_set_vallas.tres" id="1_074ut"]
+[ext_resource type="Script" uid="uid://doflynsjajd8" path="res://escenas/MapaAldeaEsmeralda/Mercado/mercao.gd" id="1_xekwt"]
 [ext_resource type="TileSet" uid="uid://q7vi2tmcykx5" path="res://texturas/tile_sets/tile_set_mercado.tres" id="2_074ut"]
 [ext_resource type="Texture2D" uid="uid://bsvfxq2quswmq" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Plants.png" id="2_xchfo"]
 [ext_resource type="Texture2D" uid="uid://dx3sf7g3wydxb" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Simple_Milk_and_grass_item.png" id="3_074ut"]
 [ext_resource type="Texture2D" uid="uid://dbrjp7x4nqk8m" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Grass_Biom_things.png" id="4_dmd4h"]
 [ext_resource type="Texture2D" uid="uid://bjohiu7kp3hte" path="res://assets/juego/mapa/aldeaesmeralda/pack4/mercado.png" id="5_1tes5"]
 [ext_resource type="PackedScene" uid="uid://daqol354dn7pr" path="res://escenas/Personajes/NPCs/Vendedor/Vendedor.tscn" id="6_xchfo"]
+[ext_resource type="PackedScene" uid="uid://fsnk2udrxaqi" path="res://escenas/Personajes/NPCs/Vendedor/VendedorPrincipal.tscn" id="7_uox7j"]
 [ext_resource type="Texture2D" uid="uid://cw011quiget80" path="res://assets/juego/animaciones/glitches/13.png" id="8_jtewh"]
+[ext_resource type="Script" uid="uid://cley7nlvcj87s" path="res://escenas/Personajes/NPCs/Vendedor/vendedor_principal.gd" id="8_xekwt"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="9_nylf0"]
 [ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="9_wne4k"]
 [ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="10_r1d47"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="10_vgyg1"]
 [ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="11_2hil2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kblmm"]
@@ -4185,6 +4190,22 @@ sources/1 = SubResource("TileSetAtlasSource_pm5m1")
 sources/2 = SubResource("TileSetAtlasSource_tk8gj")
 sources/3 = SubResource("TileSetAtlasSource_euxfc")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjd1o"]
+texture = ExtResource("9_nylf0")
+region_rect = Rect2(455, 139, 30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0oe4"]
+size = Vector2(74.95888, 15.39415)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqfyw"]
+size = Vector2(90.87576, 63.55104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4n4y"]
+size = Vector2(96.09291, 89.70883)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wvp"]
+size = Vector2(349.998, 871.7931)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uox7j"]
 texture = ExtResource("8_jtewh")
 
@@ -4199,6 +4220,7 @@ texture = ExtResource("11_2hil2")
 
 [node name="Mercado" type="StaticBody2D"]
 scale = Vector2(0.2, 0.2)
+script = ExtResource("1_xekwt")
 
 [node name="Valla1" type="TileMapLayer" parent="."]
 position = Vector2(-8784.999, -6504.9995)
@@ -4226,9 +4248,75 @@ scale = Vector2(7.999998, 7.999998)
 tile_map_data = PackedByteArray("AABNADkAAAACAAIAAABPADkAAAACAAMAAABQADkAAAACAAMAAABRADkAAAACAAMAAABOADkAAAACAAMAAABSADkAAAACAAMAAABTADkAAAACAAMAAABUADkAAAACAAMAAABVADkAAAACAAMAAABWADkAAAACAAMAAABXADkAAAACAAMAAABYADkAAAACAAMAAABZADkAAAACAAMAAABMADkAAAABAAIAAABMADgAAAAAAAAAAABaADkAAAACAAMAAABbADkAAAACAAMAAABcADkAAAACAAMAAABdADkAAAACAAMAAABeADkAAAACAAMAAABfADkAAAACAAMAAABgADkAAAACAAMAAABhADkAAAADAAIAAABhADgAAAAAAAAAAAA=")
 tile_set = ExtResource("1_074ut")
 
-[node name="VendedorPrincipal" parent="." instance=ExtResource("6_xchfo")]
-position = Vector2(1545, 1660)
+[node name="VendedorPrincipal" parent="." instance=ExtResource("7_uox7j")]
+position = Vector2(1130, 1635)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("8_xekwt")
+
+[node name="Fondo_dialogo" type="Panel" parent="VendedorPrincipal"]
+offset_left = -102.76101
+offset_top = -99.99997
+offset_right = 1640.7351
+offset_bottom = 1858.2998
+rotation = -1.5707964
+scale = Vector2(0.095, 0.1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bjd1o")
+
+[node name="Dialogo" type="RichTextLabel" parent="VendedorPrincipal"]
+offset_left = -75.0
+offset_top = -240.0001
+offset_right = 76.04761
+offset_bottom = -119.5388
+scale = Vector2(0.82755375, 0.74712896)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("10_vgyg1")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Bienvenido al mercado"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+language = "es_ES"
+
+[node name="Abajo" type="Area2D" parent="VendedorPrincipal"]
+position = Vector2(40, 29)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VendedorPrincipal/Abajo"]
+position = Vector2(212.5, 325.64063)
+scale = Vector2(6.6854625, 8.328194)
+shape = SubResource("RectangleShape2D_y0oe4")
+
+[node name="Arriba" type="Area2D" parent="VendedorPrincipal"]
+position = Vector2(40, 37)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VendedorPrincipal/Arriba"]
+position = Vector2(212.50293, -664.10254)
+scale = Vector2(5.2269244, -2.8242965)
+shape = SubResource("RectangleShape2D_qqfyw")
+
+[node name="Izquierda" type="Area2D" parent="VendedorPrincipal"]
+position = Vector2(42, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VendedorPrincipal/Izquierda"]
+position = Vector2(534.9995, -169.23047)
+scale = Vector2(2.6016495, 9.718048)
+shape = SubResource("RectangleShape2D_w4n4y")
+
+[node name="Derecha" type="Area2D" parent="VendedorPrincipal"]
+position = Vector2(39, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="VendedorPrincipal/Derecha"]
+position = Vector2(-54.99951, -169.22949)
+scale = Vector2(1, 0.9999998)
+shape = SubResource("RectangleShape2D_o7wvp")
 
 [node name="Vendedor2" parent="." instance=ExtResource("6_xchfo")]
 position = Vector2(2925, 2320)
@@ -4280,7 +4368,7 @@ position = Vector2(525, 1185)
 scale = Vector2(0.99999934, 0.99999934)
 polygon = PackedVector2Array(1340.0004, 900.0001, 1380.0004, 860.0001, 1550.0011, 875.00073, 1565.0011, 970.00073, 1630.0011, 940.00073, 1680.0011, 975.00073, 1720.0011, 945.00073, 1770.0011, 965.00073, 1835.0011, 950.00073, 1885.0013, 980.00073, 1885.0013, 1130.0007, 1345.0009, 1135.0007)
 
-[node name="Panel4" type="Panel" parent="."]
+[node name="Glitch1" type="Panel" parent="."]
 offset_left = 1484.9999
 offset_top = 1030.0001
 offset_right = 1659.3479
@@ -4288,7 +4376,7 @@ offset_bottom = 1196.597
 scale = Vector2(13.937638, 11.97501)
 theme_override_styles/panel = SubResource("StyleBoxTexture_uox7j")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Glitch2" type="Panel" parent="."]
 offset_left = 2874.9998
 offset_top = 390.00003
 offset_right = 2938.1382
@@ -4296,7 +4384,7 @@ offset_bottom = 618.8098
 scale = Vector2(13.937638, 11.97501)
 theme_override_styles/panel = SubResource("StyleBoxTexture_xekwt")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Glitch3" type="Panel" parent="."]
 offset_left = 805.0
 offset_top = 235.0
 offset_right = 1032.4417
@@ -4304,7 +4392,7 @@ offset_bottom = 375.2921
 scale = Vector2(13.937638, 11.97501)
 theme_override_styles/panel = SubResource("StyleBoxTexture_nylf0")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Glitch4" type="Panel" parent="."]
 offset_left = 960.0
 offset_top = 1565.0
 offset_right = 1086.6355
@@ -4312,6 +4400,21 @@ offset_bottom = 1695.0
 scale = Vector2(13.937638, 11.97501)
 theme_override_styles/panel = SubResource("StyleBoxTexture_vgyg1")
 
+[node name="ColisionGlitch" type="CollisionPolygon2D" parent="."]
+position = Vector2(824.7824, 872.068)
+scale = Vector2(4.8308516, 4.6290803)
+polygon = PackedVector2Array(591.0382, 370.03723, 35.23552, 367.87695, 111.826584, 251.22313, 106.651505, 137.80965, 37.305557, 0.6333771, 585.86316, -0.44674683)
+
+[connection signal="body_entered" from="VendedorPrincipal/Abajo" to="VendedorPrincipal" method="_on_abajo_body_entered"]
+[connection signal="body_exited" from="VendedorPrincipal/Abajo" to="VendedorPrincipal" method="_on_vendedor_body_exited"]
+[connection signal="body_entered" from="VendedorPrincipal/Arriba" to="VendedorPrincipal" method="_on_arriba_body_entered"]
+[connection signal="body_exited" from="VendedorPrincipal/Arriba" to="VendedorPrincipal" method="_on_vendedor_body_exited"]
+[connection signal="body_entered" from="VendedorPrincipal/Izquierda" to="VendedorPrincipal" method="_on_izquierda_body_entered"]
+[connection signal="body_exited" from="VendedorPrincipal/Izquierda" to="VendedorPrincipal" method="_on_vendedor_body_exited"]
+[connection signal="body_entered" from="VendedorPrincipal/Derecha" to="VendedorPrincipal" method="_on_derecha_body_entered"]
+[connection signal="body_exited" from="VendedorPrincipal/Derecha" to="VendedorPrincipal" method="_on_vendedor_body_exited"]
+
+[editable path="VendedorPrincipal"]
 [editable path="Vendedor2"]
 [editable path="Vendedor3"]
 [editable path="Vendedor4"]

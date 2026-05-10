@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://lrwx35gor3rv"]
+[gd_scene load_steps=46 format=4 uid="uid://lrwx35gor3rv"]
 
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="1_4vf1d"]
 [ext_resource type="Script" uid="uid://bgw0tufw7u1ja" path="res://escenas/MapaAldeaEsmeralda/Ayuntamiento/ayuntamiento_script.gd" id="1_insl8"]
@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="12_lw6qd"]
 [ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="13_vbw7x"]
 [ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="14_ptvxw"]
+[ext_resource type="PackedScene" uid="uid://bd74lpm0aqcpi" path="res://escenas/Personajes/NPCs/Presidente/Presidente.tscn" id="15_ptvxw"]
+[ext_resource type="Script" uid="uid://c0id0be1qih2q" path="res://escenas/Personajes/NPCs/Presidente/presidente.gd" id="16_7vxxu"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="17_a6v5w"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="18_tfahb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cg6br"]
 texture = ExtResource("1_4vf1d")
@@ -1057,6 +1061,22 @@ texture = ExtResource("13_vbw7x")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_851fg"]
 texture = ExtResource("14_ptvxw")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8kwe"]
+texture = ExtResource("17_a6v5w")
+region_rect = Rect2(455, 139, 30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x3x7"]
+size = Vector2(70.833725, 27.859419)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mrc"]
+size = Vector2(66.667114, 71.22504)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkue"]
+size = Vector2(118.04593, 93.34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68a0s"]
+size = Vector2(300.00192, 871.79395)
+
 [node name="Ayuntamiento" type="StaticBody2D"]
 position = Vector2(478, 417)
 script = ExtResource("1_insl8")
@@ -1120,7 +1140,7 @@ position = Vector2(-27.000002, -7)
 scale = Vector2(99843.83, -8986.849)
 polygon = PackedVector2Array(-0.00036632176, 0.007574199, -0.00037096953, -0.0036793016, -0.00032449188, -0.004317388, 6.1272876e-05, -0.004491411, 0.0007677338, -0.004201371, 0.00081126695, -0.0033382114, 0.0008212826, -0.001891653, 0.0008613452, -0.0017803793, 0.0009615016, -0.0017803793, 0.0009915485, -0.0020029268, 0.0009915485, -0.0027818428, 0.0010605432, -0.0042593814, 0.0024641692, -0.004317388, 0.0025106468, -0.0037373118, 0.0025106468, 0.005311897, 0.0024827602, 0.005891975, 0.0023851572, 0.0062400214, 0.0024738633, 0.0072327913, 0.0025039103, 0.01824889, 0.0018528936, 0.020808185, 0.0014021897, 0.025481682, 0.0007611888, 0.03204683, -2.0031264e-05, 0.02392385, -0.00029045358, 0.024035124, -0.00029045358, 0.020585638, -0.00056087587, 0.017803796, -0.0005208133, 0.0064538755)
 
-[node name="Glitch" type="Panel" parent="."]
+[node name="Glitch1" type="Panel" parent="."]
 offset_left = -59.0
 offset_top = -259.01328
 offset_right = 31.374725
@@ -1129,7 +1149,7 @@ rotation = -0.7853982
 scale = Vector2(1.736757, 1.8075502)
 theme_override_styles/panel = SubResource("StyleBoxTexture_7vxxu")
 
-[node name="Panel4" type="Panel" parent="."]
+[node name="Glitch2" type="Panel" parent="."]
 offset_left = -103.0
 offset_top = -272.01328
 offset_right = 117.0
@@ -1137,7 +1157,7 @@ offset_bottom = -51.013275
 scale = Vector2(1.7367568, 1.8075502)
 theme_override_styles/panel = SubResource("StyleBoxTexture_a6v5w")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Glitch3" type="Panel" parent="."]
 offset_left = -91.0
 offset_top = -188.01326
 offset_right = 120.0
@@ -1145,7 +1165,7 @@ offset_bottom = -0.013259888
 scale = Vector2(1.7367568, 1.8075502)
 theme_override_styles/panel = SubResource("StyleBoxTexture_tfahb")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Glitch4" type="Panel" parent="."]
 offset_left = -91.0
 offset_top = -227.01326
 offset_right = 114.0
@@ -1153,7 +1173,7 @@ offset_bottom = -50.01326
 scale = Vector2(1.7367568, 1.8075502)
 theme_override_styles/panel = SubResource("StyleBoxTexture_br4ce")
 
-[node name="Panel3" type="Panel" parent="."]
+[node name="Glitch5" type="Panel" parent="."]
 offset_left = -48.0
 offset_top = -188.01326
 offset_right = 70.0
@@ -1161,6 +1181,76 @@ offset_bottom = -58.01326
 scale = Vector2(1.7367568, 1.8075502)
 theme_override_styles/panel = SubResource("StyleBoxTexture_851fg")
 
+[node name="Presidente" parent="." instance=ExtResource("15_ptvxw")]
+position = Vector2(-521, -285)
+script = ExtResource("16_7vxxu")
+
+[node name="Fondo_dialogo" type="Panel" parent="Presidente"]
+offset_left = 558.0
+offset_top = 292.12216
+offset_right = 1480.4434
+offset_bottom = 1272.5167
+rotation = -1.5707964
+scale = Vector2(0.05, 0.053)
+theme_override_styles/panel = SubResource("StyleBoxTexture_m8kwe")
+
+[node name="Dialogo" type="RichTextLabel" parent="Presidente"]
+offset_left = 565.0
+offset_top = 254.0
+offset_right = 705.74756
+offset_bottom = 354.83264
+scale = Vector2(0.24867205, 0.23801798)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("18_tfahb")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Bienvenido al ayuntamiento"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+language = "es_ES"
+
+[node name="Abajo" type="Area2D" parent="Presidente"]
+position = Vector2(40, 29)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Presidente/Abajo"]
+position = Vector2(-2727.5002, 1543.2771)
+scale = Vector2(1.2, 1.4949999)
+shape = SubResource("RectangleShape2D_2x3x7")
+
+[node name="Arriba" type="Area2D" parent="Presidente"]
+position = Vector2(40, 37)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Presidente/Arriba"]
+position = Vector2(-2724.9995, 1305.1274)
+scale = Vector2(1.2, -0.648)
+shape = SubResource("RectangleShape2D_o3mrc")
+
+[node name="Izquierda" type="Area2D" parent="Presidente"]
+position = Vector2(42, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Presidente/Izquierda"]
+position = Vector2(-2669.5112, 1430.7688)
+scale = Vector2(0.5, 1.868)
+shape = SubResource("RectangleShape2D_ejkue")
+
+[node name="Derecha" type="Area2D" parent="Presidente"]
+position = Vector2(39, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Presidente/Derecha"]
+position = Vector2(-2779.9995, 1430.7688)
+scale = Vector2(0.20000002, 0.20000002)
+shape = SubResource("RectangleShape2D_68a0s")
+
 [connection signal="animation_finished" from="Puerta/Animacion" to="." method="_on_animacion_animation_finished" flags=18]
 
 [editable path="Puerta"]
+[editable path="Presidente"]

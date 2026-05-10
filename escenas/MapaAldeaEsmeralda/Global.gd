@@ -12,6 +12,7 @@ var llave_purpura_obtenida: bool = false
 var llave_verde_obtenida: bool = false
 var llave_dorada_obtenida: bool = false
 var llave_plateada_obtenida: bool = false
+var llave_final_obtenida: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
