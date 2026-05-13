@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d0yk1xy8cyn7h"]
+[gd_resource type="TileSet" format=3 uid="uid://d0yk1xy8cyn7h"]
 
 [ext_resource type="Texture2D" uid="uid://bm3vrm0ikopm4" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Tilled Dirt.png" id="1_nbjaa"]
 [ext_resource type="Texture2D" uid="uid://d178agyvp1xo7" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Tilled_Dirt.png" id="2_bcvg8"]

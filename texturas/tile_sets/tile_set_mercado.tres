@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://q7vi2tmcykx5"]
+[gd_resource type="TileSet" format=3 uid="uid://q7vi2tmcykx5"]
 
 [ext_resource type="Texture2D" uid="uid://bsvfxq2quswmq" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Plants.png" id="1_bofxq"]
 [ext_resource type="Texture2D" uid="uid://dx3sf7g3wydxb" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Simple_Milk_and_grass_item.png" id="2_387wi"]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://cdiu4gdwwophl"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cdiu4gdwwophl"]
 
 [ext_resource type="Texture2D" uid="uid://cndvwmevc3k21" path="res://assets/juego/personajeprincipalantiguo/personaje_principal.png" id="1_4fo8t"]
 [ext_resource type="Texture2D" uid="uid://bk4q6nwlgbvx7" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes1.png" id="2_y7fg2"]

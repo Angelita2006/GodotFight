@@ -903,15 +903,12 @@ tile_set = SubResource("TileSet_eqrgh")
 
 [node name="Biblioteca" parent="." instance=ExtResource("9_6hxei")]
 position = Vector2(455.84933, 119.11745)
-scale = Vector2(0.9994258, 0.99920505)
 
 [node name="Ayuntamiento" parent="." instance=ExtResource("11_nka8f")]
-position = Vector2(1121.4874, -90.114944)
-scale = Vector2(0.8411999, 0.88905275)
+position = Vector2(1114.6251, -90.11494)
 
 [node name="Banco" parent="." instance=ExtResource("7_3jiqw")]
-position = Vector2(1052.8647, 565.54895)
-scale = Vector2(1.2256093, 1.0859132)
+position = Vector2(1012.6717, 567.62054)
 
 [node name="Mercao" parent="." instance=ExtResource("16_cbok3")]
 position = Vector2(179.39879, 397.74866)
