@@ -8,13 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://b3a5ueda1upn" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic Furniture.png" id="6_0cu85"]
 [ext_resource type="Texture2D" uid="uid://imh0ttmmxc7f" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Tilled_Dirt_Wide.png" id="7_x6hsh"]
 [ext_resource type="Texture2D" uid="uid://cy5d1rqx26fq6" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Grass.png" id="8_i0xx3"]
-[ext_resource type="Texture2D" uid="uid://m3hh3m1pgofq" path="res://assets/juego/animaciones/glitches/7 (2).png" id="9_8k20h"]
-[ext_resource type="Texture2D" uid="uid://cw011quiget80" path="res://assets/juego/animaciones/glitches/13.png" id="10_g2otn"]
-[ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="11_sgsss"]
-[ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="12_m0ceo"]
-[ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="13_uabp3"]
+[ext_resource type="Texture2D" uid="uid://dj8pgcf0i0ah5" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion1.png" id="9_hntxu"]
+[ext_resource type="Texture2D" uid="uid://dookeyuuql5bg" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion2.png" id="10_bxta7"]
+[ext_resource type="Texture2D" uid="uid://2x44hiwuyncr" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion3.png" id="11_qu0ml"]
+[ext_resource type="Texture2D" uid="uid://bw7o2dh38f5ec" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion4.png" id="12_ksxar"]
+[ext_resource type="Texture2D" uid="uid://bgrr2fuiweexm" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion5.png" id="13_v5lo8"]
 [ext_resource type="PackedScene" uid="uid://dsflaw2cp42l7" path="res://escenas/Personajes/NPCs/Banquero/Banquero.tscn" id="14_m0ceo"]
+[ext_resource type="Texture2D" uid="uid://dfg5keit3jf0s" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion6.png" id="14_xrx0e"]
 [ext_resource type="Script" uid="uid://crt4safe0yu6" path="res://escenas/Personajes/NPCs/Banquero/banquero.gd" id="15_2iwwf"]
+[ext_resource type="Texture2D" uid="uid://cqd4msfgv2ffk" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion7.png" id="15_bq0rp"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="15_uabp3"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="16_2iwwf"]
 
@@ -942,20 +944,34 @@ sources/7 = SubResource("TileSetAtlasSource_v84g0")
 [sub_resource type="LabelSettings" id="LabelSettings_gkdae"]
 font_color = Color(0.50980395, 0.3137255, 0.24705882, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2iwwf"]
-texture = ExtResource("9_8k20h")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hntxu"]
-texture = ExtResource("10_g2otn")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxta7"]
-texture = ExtResource("11_sgsss")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qu0ml"]
-texture = ExtResource("12_m0ceo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksxar"]
-texture = ExtResource("13_uabp3")
+[sub_resource type="SpriteFrames" id="SpriteFrames_05uds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hntxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bxta7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qu0ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ksxar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v5lo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xrx0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bq0rp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v5lo8"]
 texture = ExtResource("15_uabp3")
@@ -1020,45 +1036,11 @@ label_settings = SubResource("LabelSettings_gkdae")
 [node name="Colisiones" type="CollisionPolygon2D" parent="." unique_id=13634061]
 polygon = PackedVector2Array(-20, 30, -20, -17, -20, -21, -19, -33, -33, -31, -37, -34, -36, -63, -36, -99, -19, -105, 5, -112, 70, -176, 74, -179, 77, -178, 124, -131, 125, -133, 140, -133, 141, -132, 142, -117, 141, -111, 158, -97, 158, -34, 154, -30, 147, -38, 147, 23, 148, 27, 147, 29)
 
-[node name="Glitch1" type="Panel" parent="." unique_id=1284359898]
-offset_top = -232.0
-offset_right = 90.374725
-offset_bottom = -117.71561
-rotation = -0.7853982
-scale = Vector2(1.6077693, 2.0816224)
-theme_override_styles/panel = SubResource("StyleBoxTexture_2iwwf")
-
-[node name="Glitch2" type="Panel" parent="." unique_id=1444564342]
-offset_left = -40.0
-offset_top = -242.0
-offset_right = 180.0
-offset_bottom = -21.0
-scale = Vector2(1.3494563, 1.4378616)
-theme_override_styles/panel = SubResource("StyleBoxTexture_hntxu")
-
-[node name="Glitch3" type="Panel" parent="." unique_id=154426952]
-offset_left = -71.0
-offset_top = -160.0
-offset_right = 140.0
-offset_bottom = 28.0
-scale = Vector2(1.6412077, 2.0573573)
-theme_override_styles/panel = SubResource("StyleBoxTexture_bxta7")
-
-[node name="Glitch4" type="Panel" parent="." unique_id=579505673]
-offset_left = -82.0
-offset_top = -207.0
-offset_right = 123.0
-offset_bottom = -30.0
-scale = Vector2(1.7397838, 2.1556394)
-theme_override_styles/panel = SubResource("StyleBoxTexture_qu0ml")
-
-[node name="Glitch5" type="Panel" parent="." unique_id=1697521082]
-offset_left = 30.0
-offset_top = -99.0
-offset_right = 148.0
-offset_bottom = 31.0
-scale = Vector2(1.0197186, 1.0823603)
-theme_override_styles/panel = SubResource("StyleBoxTexture_ksxar")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=548215853]
+position = Vector2(92, -119.00002)
+scale = Vector2(3.2200003, 3.3800004)
+sprite_frames = SubResource("SpriteFrames_05uds")
+autoplay = "default"
 
 [node name="Banquero" parent="." unique_id=1157304587 instance=ExtResource("14_m0ceo")]
 position = Vector2(94, 35)

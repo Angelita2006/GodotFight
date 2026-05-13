@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://c725xxgdnccq1"]
 
-[ext_resource type="Script" uid="uid://d1plti53iqu5" path="res://escenas/Niveles/tutorial.gd" id="1_o1cft"]
-[ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="2_sot0e"]
-[ext_resource type="Texture2D" uid="uid://damei0cyoco10" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataforma inicio y salida.png" id="3_4dfn6"]
-[ext_resource type="Texture2D" uid="uid://d0dldaqh3q2tm" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataformas.png" id="4_tmryu"]
-[ext_resource type="Texture2D" uid="uid://cyyhxcw2k1yj4" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles doble plataforma.png" id="5_4dgro"]
-[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_xtj2p"]
-[ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_tug10"]
-[ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_n1lgo"]
+[ext_resource type="Script" uid="uid://d1plti53iqu5" path="res://escenas/Niveles/tutorial.gd" id="1_v6b54"]
+[ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="2_1aaxb"]
+[ext_resource type="Texture2D" uid="uid://damei0cyoco10" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataforma inicio y salida.png" id="3_7oetq"]
+[ext_resource type="Texture2D" uid="uid://d0dldaqh3q2tm" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataformas.png" id="4_xmy4q"]
+[ext_resource type="Texture2D" uid="uid://cyyhxcw2k1yj4" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles doble plataforma.png" id="5_yi7je"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_3s7lb"]
+[ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_lkl11"]
+[ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_52mnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
 size = Vector2(776, 105)
@@ -16,7 +16,7 @@ size = Vector2(776, 105)
 size = Vector2(145, 295)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fvmt"]
-texture = ExtResource("4_tmryu")
+texture = ExtResource("4_xmy4q")
 2:8/0 = 0
 3:8/0 = 0
 4:8/0 = 0
@@ -1215,7 +1215,7 @@ texture = ExtResource("4_tmryu")
 22:65/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kj6ru"]
-texture = ExtResource("5_4dgro")
+texture = ExtResource("5_yi7je")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -5449,24 +5449,24 @@ sources/1 = SubResource("TileSetAtlasSource_kj6ru")
 size = Vector2(781, 83)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exnjc"]
-texture = ExtResource("8_n1lgo")
+texture = ExtResource("8_52mnl")
 region_rect = Rect2(24, 24, 912, 912)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nrhkc"]
 radius = 74.94665
 
 [node name="Biblioteca" type="Node2D" unique_id=1952319260]
-script = ExtResource("1_o1cft")
+script = ExtResource("1_v6b54")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=959051776]
 offset_right = 5760.0
 offset_bottom = 3240.0002
-texture = ExtResource("2_sot0e")
+texture = ExtResource("2_1aaxb")
 
 [node name="Fondo2" type="TextureRect" parent="." unique_id=151249248]
 offset_left = -5760.0
 offset_bottom = 3240.0
-texture = ExtResource("2_sot0e")
+texture = ExtResource("2_1aaxb")
 
 [node name="Limite Abajo" type="ColorRect" parent="." unique_id=738129617]
 offset_left = -5760.0
@@ -5487,7 +5487,7 @@ collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Inicio" unique_id=1769458943]
 position = Vector2(124, 290)
-texture = ExtResource("3_4dfn6")
+texture = ExtResource("3_7oetq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio" unique_id=1354218947]
 position = Vector2(128, 320.5)
@@ -5507,7 +5507,7 @@ collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Final" unique_id=60605389]
 position = Vector2(109, 307)
-texture = ExtResource("3_4dfn6")
+texture = ExtResource("3_7oetq")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Final" unique_id=1858072132]
@@ -5534,7 +5534,7 @@ offset_top = 2022.0
 offset_right = 2611.0
 offset_bottom = 2082.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_xtj2p")
+theme_override_fonts/font = ExtResource("6_3s7lb")
 theme_override_font_sizes/font_size = 59
 text = "print(Nivel_Tutorial_mision);"
 
@@ -5544,7 +5544,7 @@ offset_top = 1872.0
 offset_right = 3943.0
 offset_bottom = 2185.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_xtj2p")
+theme_override_fonts/font = ExtResource("6_3s7lb")
 theme_override_font_sizes/font_size = 59
 text = "for i in cantperdidos: 
       var libro = $LibroEstanteria.	      ();
@@ -5558,7 +5558,7 @@ offset_top = 1872.0
 offset_right = 3705.0
 offset_bottom = 2121.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_xtj2p")
+theme_override_fonts/font = ExtResource("6_3s7lb")
 theme_override_font_sizes/font_size = 59
 text = "$PuertaFinal.position = (109 , 307);
 $Plataforma3.position = (1854 , 2020);
@@ -5585,7 +5585,7 @@ offset_top = 2020.0
 offset_right = 2613.9995
 offset_bottom = 2080.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_xtj2p")
+theme_override_fonts/font = ExtResource("6_3s7lb")
 theme_override_font_sizes/font_size = 59
 text = "print(Mensaje_Final_Nivel);"
 
@@ -5597,7 +5597,7 @@ collision_mask = 4
 [node name="ColisionPlataforma2" type="CollisionShape2D" parent="Plataforma2/Activar_Ultimo_Mensaje" unique_id=1804171869]
 shape = SubResource("RectangleShape2D_22ext")
 
-[node name="Personaje_Codigo" parent="." unique_id=976534255 instance=ExtResource("7_tug10")]
+[node name="Personaje_Codigo" parent="." unique_id=976534255 instance=ExtResource("7_lkl11")]
 position = Vector2(-2740, 1364)
 collision_mask = 18
 
@@ -5617,7 +5617,7 @@ offset_top = -845.0
 offset_right = -451.0
 offset_bottom = -611.0
 theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/normal_font = ExtResource("6_xtj2p")
+theme_override_fonts/normal_font = ExtResource("6_3s7lb")
 theme_override_font_sizes/normal_font_size = 44
 text = "El diccionario de libros ha quedado vacío, tienes que encontrarlos y añadirlos.
 
@@ -5631,7 +5631,7 @@ offset_right = -329.18457
 offset_bottom = -559.7744
 scale = Vector2(0.9219916, 0.8144987)
 theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/normal_font = ExtResource("6_xtj2p")
+theme_override_fonts/normal_font = ExtResource("6_3s7lb")
 theme_override_font_sizes/normal_font_size = 67
 text = "El código de la siguiente plataforma está incompleto.
 Acércate al fragmento faltante para colocarlo.  _"
@@ -5643,7 +5643,7 @@ offset_top = -857.0
 offset_right = -437.0
 offset_bottom = -616.0
 theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/normal_font = ExtResource("6_xtj2p")
+theme_override_fonts/normal_font = ExtResource("6_3s7lb")
 theme_override_font_sizes/normal_font_size = 63
 text = "Para arreglar tu juego deberás arreglar el código de todos los elementos que se 
 encuentren corruptos.  _"
@@ -5659,7 +5659,7 @@ offset_top = -265.0
 offset_right = 72.0
 offset_bottom = -205.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_xtj2p")
+theme_override_fonts/font = ExtResource("6_3s7lb")
 theme_override_font_sizes/font_size = 59
 text = "show"
 metadata/_edit_use_anchors_ = true
