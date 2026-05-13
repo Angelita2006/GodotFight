@@ -8,14 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://dbrjp7x4nqk8m" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Grass_Biom_things.png" id="4_dmd4h"]
 [ext_resource type="Texture2D" uid="uid://bjohiu7kp3hte" path="res://assets/juego/mapa/aldeaesmeralda/pack4/mercado.png" id="5_1tes5"]
 [ext_resource type="PackedScene" uid="uid://daqol354dn7pr" path="res://escenas/Personajes/NPCs/Vendedor/Vendedor.tscn" id="6_xchfo"]
-[ext_resource type="PackedScene" uid="uid://fsnk2udrxaqi" path="res://escenas/Personajes/NPCs/Vendedor/VendedorPrincipal.tscn" id="7_uox7j"]
-[ext_resource type="Texture2D" uid="uid://cw011quiget80" path="res://assets/juego/animaciones/glitches/13.png" id="8_jtewh"]
-[ext_resource type="Script" uid="uid://cley7nlvcj87s" path="res://escenas/Personajes/NPCs/Vendedor/vendedor_principal.gd" id="8_xekwt"]
-[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="9_nylf0"]
-[ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="9_wne4k"]
-[ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="10_r1d47"]
-[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="10_vgyg1"]
-[ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="11_2hil2"]
+[ext_resource type="Texture2D" uid="uid://dj8pgcf0i0ah5" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion1.png" id="8_2hil2"]
+[ext_resource type="Texture2D" uid="uid://dookeyuuql5bg" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion2.png" id="9_uox7j"]
+[ext_resource type="Texture2D" uid="uid://2x44hiwuyncr" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion3.png" id="10_xekwt"]
+[ext_resource type="Texture2D" uid="uid://bw7o2dh38f5ec" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion4.png" id="11_nylf0"]
+[ext_resource type="Texture2D" uid="uid://bgrr2fuiweexm" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion5.png" id="12_vgyg1"]
+[ext_resource type="Texture2D" uid="uid://dfg5keit3jf0s" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion6.png" id="13_bjd1o"]
+[ext_resource type="Texture2D" uid="uid://cqd4msfgv2ffk" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion7.png" id="14_y0oe4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kblmm"]
 texture = ExtResource("2_xchfo")
@@ -4190,33 +4189,34 @@ sources/1 = SubResource("TileSetAtlasSource_pm5m1")
 sources/2 = SubResource("TileSetAtlasSource_tk8gj")
 sources/3 = SubResource("TileSetAtlasSource_euxfc")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjd1o"]
-texture = ExtResource("9_nylf0")
-region_rect = Rect2(455, 139, 30, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0oe4"]
-size = Vector2(74.95888, 15.39415)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqfyw"]
-size = Vector2(90.87576, 63.55104)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4n4y"]
-size = Vector2(96.09291, 89.70883)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wvp"]
-size = Vector2(349.998, 871.7931)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uox7j"]
-texture = ExtResource("8_jtewh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xekwt"]
-texture = ExtResource("9_wne4k")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nylf0"]
-texture = ExtResource("10_r1d47")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgyg1"]
-texture = ExtResource("11_2hil2")
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqfyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2hil2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uox7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xekwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nylf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vgyg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bjd1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y0oe4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
 
 [node name="Mercado" type="StaticBody2D"]
 scale = Vector2(0.2, 0.2)
@@ -4368,37 +4368,12 @@ position = Vector2(525, 1185)
 scale = Vector2(0.99999934, 0.99999934)
 polygon = PackedVector2Array(1340.0004, 900.0001, 1380.0004, 860.0001, 1550.0011, 875.00073, 1565.0011, 970.00073, 1630.0011, 940.00073, 1680.0011, 975.00073, 1720.0011, 945.00073, 1770.0011, 965.00073, 1835.0011, 950.00073, 1885.0013, 980.00073, 1885.0013, 1130.0007, 1345.0009, 1135.0007)
 
-[node name="Glitch1" type="Panel" parent="."]
-offset_left = 1484.9999
-offset_top = 1030.0001
-offset_right = 1659.3479
-offset_bottom = 1196.597
-scale = Vector2(13.937638, 11.97501)
-theme_override_styles/panel = SubResource("StyleBoxTexture_uox7j")
-
-[node name="Glitch2" type="Panel" parent="."]
-offset_left = 2874.9998
-offset_top = 390.00003
-offset_right = 2938.1382
-offset_bottom = 618.8098
-scale = Vector2(13.937638, 11.97501)
-theme_override_styles/panel = SubResource("StyleBoxTexture_xekwt")
-
-[node name="Glitch3" type="Panel" parent="."]
-offset_left = 805.0
-offset_top = 235.0
-offset_right = 1032.4417
-offset_bottom = 375.2921
-scale = Vector2(13.937638, 11.97501)
-theme_override_styles/panel = SubResource("StyleBoxTexture_nylf0")
-
-[node name="Glitch4" type="Panel" parent="."]
-offset_left = 960.0
-offset_top = 1565.0
-offset_right = 1086.6355
-offset_bottom = 1695.0
-scale = Vector2(13.937638, 11.97501)
-theme_override_styles/panel = SubResource("StyleBoxTexture_vgyg1")
+[node name="Glitch" type="AnimatedSprite2D" parent="."]
+position = Vector2(2347.5, 1702.5)
+scale = Vector2(29.650002, 20.149998)
+sprite_frames = SubResource("SpriteFrames_qqfyw")
+autoplay = "default"
+frame_progress = 0.34609467
 
 [node name="ColisionGlitch" type="CollisionPolygon2D" parent="."]
 position = Vector2(824.7824, 872.068)

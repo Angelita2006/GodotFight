@@ -17,11 +17,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Global.llave_verde_obtenida:
-		$Glitch1.hide()
-		$Glitch2.hide()
-		$Glitch3.hide()
-		$Glitch4.hide()
-		$Glitch5.hide()
+		$Glitch.hide()
 		$AreaGlitch/ColisionGlitch.disabled = true
 	# --- PATITO 1 (de -6 a 40) ---
 	if not esperando1:
@@ -85,18 +81,10 @@ func esperar_y_cambiar_direccion(id):
 			direccion3 *= -1
 			esperando3 = false
 
-func _on_area_glitch_body_entered(body: Node2D) -> void:
+func _on_area_glitch_body_entered(_body: Node2D) -> void:
 	if Global.llave_verde_obtenida:
-		$Glitch1.hide()
-		$Glitch2.hide()
-		$Glitch3.hide()
-		$Glitch4.hide()
-		$Glitch5.hide()		
+		$Glitch.hide()
 		$AreaGlitch/ColisionGlitch.disabled = true
 	else:
-		$Glitch1.show()
-		$Glitch2.show()
-		$Glitch3.show()
-		$Glitch4.show()
-		$Glitch5.show()	
+		$Glitch.show()
 		$AreaGlitch/ColisionGlitch.disabled = false

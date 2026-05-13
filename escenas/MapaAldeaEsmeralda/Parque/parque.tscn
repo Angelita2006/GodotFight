@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bupva1h0ydvv5"]
+[gd_scene load_steps=38 format=4 uid="uid://bupva1h0ydvv5"]
 
 [ext_resource type="Script" uid="uid://bc5y7xw45in11" path="res://escenas/MapaAldeaEsmeralda/Parque/parque_script.gd" id="1_gbog7"]
 [ext_resource type="PackedScene" uid="uid://c67f7f5mxcyxg" path="res://escenas/Personajes/Animales/Patito/patito.tscn" id="1_ilrxl"]
@@ -14,14 +14,16 @@
 [ext_resource type="Texture2D" uid="uid://c6hthd5qyhiu1" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Simple Milk and grass item.png" id="11_n6sin"]
 [ext_resource type="PackedScene" uid="uid://1ev265bwqnh" path="res://escenas/Personajes/NPCs/Jardinera/Jardinera.tscn" id="13_wsk7k"]
 [ext_resource type="Script" uid="uid://cy5f6pgnow8fo" path="res://escenas/Personajes/NPCs/Jardinera/jardinera.gd" id="14_5hvaa"]
-[ext_resource type="Texture2D" uid="uid://cw011quiget80" path="res://assets/juego/animaciones/glitches/13.png" id="14_fe67v"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="15_7ar72"]
-[ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="15_ebx4k"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="15_nnxxk"]
-[ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="16_5hvaa"]
 [ext_resource type="PackedScene" uid="uid://dyiu7jwcxxcn0" path="res://escenas/Personajes/NPCs/Jardinera/NpcsParque.tscn" id="17_gp8xb"]
-[ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="17_nnxxk"]
-[ext_resource type="Texture2D" uid="uid://cww787gci1jsb" path="res://assets/juego/animaciones/glitches/14.png" id="18_7ar72"]
+[ext_resource type="Texture2D" uid="uid://dj8pgcf0i0ah5" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion1.png" id="18_s2dif"]
+[ext_resource type="Texture2D" uid="uid://dookeyuuql5bg" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion2.png" id="19_hp075"]
+[ext_resource type="Texture2D" uid="uid://2x44hiwuyncr" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion3.png" id="20_w1ccp"]
+[ext_resource type="Texture2D" uid="uid://bw7o2dh38f5ec" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion4.png" id="21_beb2e"]
+[ext_resource type="Texture2D" uid="uid://bgrr2fuiweexm" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion5.png" id="22_w4qwp"]
+[ext_resource type="Texture2D" uid="uid://dfg5keit3jf0s" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion6.png" id="23_vqfif"]
+[ext_resource type="Texture2D" uid="uid://cqd4msfgv2ffk" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion7.png" id="24_aaa5s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaijt"]
 texture = ExtResource("7_ha6qp")
@@ -2875,20 +2877,34 @@ size = Vector2(16.871948, 12.391315)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp075"]
 size = Vector2(47.17456, 116.24541)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2dif"]
-texture = ExtResource("15_ebx4k")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gp8xb"]
-texture = ExtResource("14_fe67v")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hp075"]
-texture = ExtResource("16_5hvaa")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w1ccp"]
-texture = ExtResource("17_nnxxk")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beb2e"]
-texture = ExtResource("18_7ar72")
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8joq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_s2dif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hp075")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w1ccp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_beb2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w4qwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vqfif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_aaa5s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
 
 [node name="Parque" type="Node2D"]
 position = Vector2(392, 216.00002)
@@ -3038,51 +3054,17 @@ scale = Vector2(0.14893617, -0.1234567)
 [node name="Animacion" parent="Jardinera4" index="1"]
 animation = &"Jardinera1"
 
-[node name="Glitch1" type="Panel" parent="."]
-offset_left = -280.5371
-offset_top = 174.5735
-offset_right = -69.53711
-offset_bottom = 362.57352
-rotation = -1.5707964
-scale = Vector2(1.7163131, 2.4629748)
-theme_override_styles/panel = SubResource("StyleBoxTexture_s2dif")
-
-[node name="Glitch2" type="Panel" parent="."]
-offset_left = -78.28944
-offset_top = -173.67136
-offset_right = 141.71057
-offset_bottom = 47.328644
-scale = Vector2(1.1987906, 1.6824511)
-theme_override_styles/panel = SubResource("StyleBoxTexture_gp8xb")
-
-[node name="Glitch3" type="Panel" parent="."]
-offset_left = -135.50096
-offset_top = 30.223314
-offset_right = 221.31819
-offset_bottom = 234.74005
-theme_override_styles/panel = SubResource("StyleBoxTexture_hp075")
-
-[node name="Glitch4" type="Panel" parent="."]
-offset_left = -117.434166
-offset_top = -251.25958
-offset_right = 309.20688
-offset_bottom = -25.712418
-scale = Vector2(0.9938924, 1.3991134)
-theme_override_styles/panel = SubResource("StyleBoxTexture_w1ccp")
-
-[node name="Glitch5" type="Panel" parent="."]
-offset_left = 49.181828
-offset_top = -17.141602
-offset_right = 89.18182
-offset_bottom = 22.858398
-rotation = -1.3089969
-scale = Vector2(4.725742, 7.4405146)
-theme_override_styles/panel = SubResource("StyleBoxTexture_beb2e")
-
 [node name="AreaGlitch" type="Area2D" parent="."]
 
 [node name="ColisionGlitch" type="CollisionPolygon2D" parent="AreaGlitch"]
 polygon = PackedVector2Array(183, 121.999985, 175, 133.99998, 124, 137.99998, -90, 137.99998, -107, 128.99998, -106, -125.000015, -101, -140.00002, -64.77034, -140.32837, -63, -147.00002, -50, -142.00002, 152, -145.00002, 163, -153.00002, 168.1325, -142.77904, 230, -143.00002, 243, -128.00002, 251, -102.000015, 254, -43.000015, 251, 3.9999847, 248, 103.999985, 232, 77.999985, 152, 59.999985, 142, 91.999985)
+
+[node name="Glitch" type="AnimatedSprite2D" parent="."]
+position = Vector2(61.999992, -16.00002)
+scale = Vector2(2.765, 2.2)
+sprite_frames = SubResource("SpriteFrames_o8joq")
+autoplay = "default"
+frame_progress = 0.95947564
 
 [connection signal="body_entered" from="Jardinera/Abajo" to="Jardinera" method="_on_abajo_body_entered"]
 [connection signal="body_exited" from="Jardinera/Abajo" to="Jardinera" method="_on_jardinera_body_exited"]

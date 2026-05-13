@@ -28,7 +28,7 @@ func cambiar_dialogo():
 		Database.cerrar_db()
 		Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn")
 
-func _on_abajo_body_entered(body: CharacterBody2D) -> void:
+func _on_abajo_body_entered(_body: CharacterBody2D) -> void:
 	$Animacion.play("Bibliotecaria_abajo")
 	cambiar_dialogo()
 
@@ -40,10 +40,10 @@ func _on_arriba_body_entered(body: CharacterBody2D) -> void:
 	$Animacion.play("Bibliotecaria_arriba")
 	cambiar_dialogo()
 
-func _on_izquierda_body_entered(body: CharacterBody2D) -> void:
+func _on_izquierda_body_entered(_body: CharacterBody2D) -> void:
 	$Animacion.play("Bibliotecaria_izquierda")
 	cambiar_dialogo()
 
-func _on_derecha_body_entered(body: CharacterBody2D) -> void:
+func _on_derecha_body_entered(_body: CharacterBody2D) -> void:
 	$Animacion.play("Bibliotecaria_derecha")
 	cambiar_dialogo()

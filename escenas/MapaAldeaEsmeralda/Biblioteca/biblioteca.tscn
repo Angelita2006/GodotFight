@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://doycks2kfysg1"]
+[gd_scene load_steps=40 format=4 uid="uid://doycks2kfysg1"]
 
 [ext_resource type="Script" uid="uid://mtkkdn20v43w" path="res://escenas/MapaAldeaEsmeralda/Biblioteca/biblioteca_script.gd" id="1_3u7r4"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="1_plkup"]
@@ -8,15 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://b3a5ueda1upn" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic Furniture.png" id="6_nmqy0"]
 [ext_resource type="Texture2D" uid="uid://imh0ttmmxc7f" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Tilled_Dirt_Wide.png" id="7_ekql4"]
 [ext_resource type="Texture2D" uid="uid://cy5d1rqx26fq6" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Grass.png" id="8_wi6v8"]
-[ext_resource type="Texture2D" uid="uid://m3hh3m1pgofq" path="res://assets/juego/animaciones/glitches/7 (2).png" id="9_ru25d"]
-[ext_resource type="Texture2D" uid="uid://cw011quiget80" path="res://assets/juego/animaciones/glitches/13.png" id="10_b8lrd"]
-[ext_resource type="Texture2D" uid="uid://b34d855u6xmkh" path="res://assets/juego/animaciones/glitches/16.png" id="11_ru25d"]
-[ext_resource type="Texture2D" uid="uid://kws6mji6a2ox" path="res://assets/juego/animaciones/glitches/16 (2).png" id="12_sp0vh"]
-[ext_resource type="Texture2D" uid="uid://dosn6koqhodas" path="res://assets/juego/animaciones/glitches/8 (2).png" id="13_2r4u6"]
+[ext_resource type="Texture2D" uid="uid://dj8pgcf0i0ah5" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion1.png" id="13_cyfxf"]
 [ext_resource type="PackedScene" uid="uid://dlgowptyld050" path="res://escenas/Personajes/NPCs/Bibliotecaria/Bibliotecaria.tscn" id="14_b8lrd"]
+[ext_resource type="Texture2D" uid="uid://dookeyuuql5bg" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion2.png" id="14_rkc64"]
 [ext_resource type="Script" uid="uid://dqkw68ntx45wg" path="res://escenas/Personajes/NPCs/Bibliotecaria/bibliotecaria.gd" id="15_2r4u6"]
+[ext_resource type="Texture2D" uid="uid://2x44hiwuyncr" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion3.png" id="15_sbfo3"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="15_sp0vh"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="16_2r4u6"]
+[ext_resource type="Texture2D" uid="uid://bw7o2dh38f5ec" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion4.png" id="16_y6g7p"]
+[ext_resource type="Texture2D" uid="uid://bgrr2fuiweexm" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion5.png" id="17_bjw5k"]
+[ext_resource type="Texture2D" uid="uid://dfg5keit3jf0s" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion6.png" id="18_ifjwv"]
+[ext_resource type="Texture2D" uid="uid://cqd4msfgv2ffk" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion7.png" id="19_akdwr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3nr3"]
 texture = ExtResource("1_plkup")
@@ -942,20 +944,34 @@ sources/7 = SubResource("TileSetAtlasSource_v84g0")
 [sub_resource type="LabelSettings" id="LabelSettings_gkdae"]
 font_color = Color(0.50980395, 0.3137255, 0.24705882, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wuvbp"]
-texture = ExtResource("9_ru25d")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cyfxf"]
-texture = ExtResource("10_b8lrd")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkc64"]
-texture = ExtResource("11_ru25d")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sbfo3"]
-texture = ExtResource("12_sp0vh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6g7p"]
-texture = ExtResource("13_2r4u6")
+[sub_resource type="SpriteFrames" id="SpriteFrames_oi0nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cyfxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rkc64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sbfo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y6g7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bjw5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ifjwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_akdwr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjw5k"]
 texture = ExtResource("15_sp0vh")
@@ -1018,41 +1034,12 @@ scale = Vector2(0.29987332, 0.33580548)
 text = "BIBLIOTECA"
 label_settings = SubResource("LabelSettings_gkdae")
 
-[node name="Glitch5" type="Panel" parent="."]
-offset_left = -8.0
-offset_top = -135.0
-offset_right = 82.374725
-offset_bottom = -20.715607
-rotation = -0.7853982
-theme_override_styles/panel = SubResource("StyleBoxTexture_wuvbp")
-
-[node name="Glitch1" type="Panel" parent="."]
-offset_left = -52.0
-offset_top = -148.0
-offset_right = 168.0
-offset_bottom = 73.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_cyfxf")
-
-[node name="Glitch2" type="Panel" parent="."]
-offset_left = -40.0
-offset_top = -64.0
-offset_right = 171.0
-offset_bottom = 124.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_rkc64")
-
-[node name="Glitch3" type="Panel" parent="."]
-offset_left = -40.0
-offset_top = -103.0
-offset_right = 165.0
-offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_sbfo3")
-
-[node name="Glitch4" type="Panel" parent="."]
-offset_left = 3.0
-offset_top = -64.0
-offset_right = 121.0
-offset_bottom = 66.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_y6g7p")
+[node name="Glitch" type="AnimatedSprite2D" parent="."]
+position = Vector2(64.5, -65.5)
+scale = Vector2(2.29, 1.99)
+sprite_frames = SubResource("SpriteFrames_oi0nr")
+autoplay = "default"
+frame_progress = 0.44995996
 
 [node name="Bibliotecaria" parent="." instance=ExtResource("14_b8lrd")]
 position = Vector2(64, 29)
