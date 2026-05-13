@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cvgx1gtrd43sy"]
+[gd_scene format=4 uid="uid://cvgx1gtrd43sy"]
 
 [ext_resource type="Script" uid="uid://d3vsvbbk00iyr" path="res://escenas/MapaAldeaEsmeralda/Banco/banco_script.gd" id="1_hf6gw"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="2_5raeb"]
@@ -973,42 +973,42 @@ size = Vector2(118.04593, 82.35898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4od"]
 size = Vector2(349.998, 769.23193)
 
-[node name="Banco" type="StaticBody2D"]
+[node name="Banco" type="StaticBody2D" unique_id=1785301562]
 position = Vector2(489, 364)
 script = ExtResource("1_hf6gw")
 
-[node name="Suelo" type="TileMapLayer" parent="."]
+[node name="Suelo" type="TileMapLayer" parent="." unique_id=1917210875]
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAADAAEAAAAGAAcAAAAEAAEAAAAHAAcAAAADAAAAAAAGAAYAAAAEAAAAAAAHAAYAAAA=")
 tile_set = SubResource("TileSet_1vtd7")
 
-[node name="Estructura" type="TileMapLayer" parent="."]
+[node name="Estructura" type="TileMapLayer" parent="." unique_id=183419998]
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAAAAAEAAQABAAoAAAABAAEAAQABAAoAAAACAAEAAQABAAoAAAACAAAAAQADAAYAAAABAAAAAQACAAYAAAAAAAAAAQABAAYAAAD//wEAAQACAAoAAAAFAAEAAQABAAoAAAAGAAEAAQACAAoAAAD//wAAAQACAAkAAAAGAAAAAQACAAkAAAAFAAAAAQABAAkAAAACAP//AQADAAYAAAABAP//AQACAAYAAAADAP//AQACAAYAAAAEAP//AQACAAYAAAAFAP//AQADAAYAAAAGAP//AQABAAYAAAAAAP//AQABAAYAAAD/////AQABAAYAAAD+/wAAAQAJAAMAAAD+/wEAAQAJAAQAAAD+////AQAAAAMAAAD+//7/AQAAAAIAAAD///7/AQABAAIAAAAAAP7/AQABAAIAAAABAP7/AQABAAIAAAACAP7/AQABAAIAAAADAP7/AQABAAIAAAAEAP7/AQABAAIAAAAFAP7/AQABAAIAAAAGAP7/AQABAAIAAAAHAP7/AQABAAIAAAAHAP//AQADAAYAAAAHAAEAAQADAAcAAAAHAAAAAQADAAYAAAD///3/AQADAAYAAAAAAP3/AQABAAYAAAABAP3/AQACAAYAAAACAP3/AQABAAYAAAADAP3/AQABAAMAAAAEAP3/AQACAAYAAAAFAP3/AQADAAYAAAAGAP3/AQABAAYAAAD+//3/AQAAAAMAAAAHAP3/AQABAAkAAAD///z/AQABAAMAAAAAAPz/AQACAAYAAAABAPz/AQABAAYAAAADAPz/AQADAAYAAAACAPz/AQADAAYAAAAEAPz/AQACAAYAAAAFAPz/AQADAAYAAAD+//z/AQAAAAMAAAD+//v/AQAAAAMAAAD///v/AQADAAYAAAAAAPv/AQACAAYAAAABAPv/AQADAAYAAAADAPv/AQABAAMAAAACAPv/AQACAAYAAAAEAPv/AQADAAYAAAAFAPv/AQABAAMAAAAGAPv/AQABAAMAAAAHAPv/AQABAAkAAAAHAPz/AQABAAkAAAAGAPz/AQADAAYAAAADAPr/AQACAAYAAAACAPr/AQACAAYAAAAIAP//AQADAAYAAAAIAAAAAQADAAYAAAAIAAEAAQADAAcAAAAJAAEAAQACAAQAAAAJAAAAAQACAAMAAAAJAP//AQACAAMAAAAIAP7/AQABAAIAAAAIAPv/AQACAAkAAAAIAPz/AQACAAkAAAAIAP3/AQACAAkAAAAJAPv/AQACAAMAAAAJAP3/AQACAAMAAAAJAPz/AQACAAMAAAAEAPr/AQADAAYAAAAFAPr/AQACAAYAAAAGAPr/AQABAAYAAAAJAP7/AQACAAIAAAADAPn/AQABAAMAAAAEAPn/AQABAAMAAAAFAPn/AQABAAMAAAAEAPj/AQABAAMAAAA=")
 tile_set = SubResource("TileSet_qao5a")
 
-[node name="Ventanas" type="TileMapLayer" parent="."]
+[node name="Ventanas" type="TileMapLayer" parent="." unique_id=875010512]
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAABAPz/AAADAA0AAAACAPz/AAAEAA0AAAABAP3/AAADAA4AAAACAP3/AAAEAA4AAAADAPz/AQAIAAAAAAAEAPz/AQAJAAAAAAAEAP3/AQAJAAEAAAADAP3/AQAIAAEAAAAAAP//AQAQAAAAAAD/////AQAPAAAAAAD//wAAAQAPAAEAAAAAAAAAAQAQAAEAAAAFAP//AQAPAAAAAAAGAP//AQAQAAAAAAAFAAAAAQAPAAEAAAAGAAAAAQAQAAEAAAACAAAAAQAQAAEAAAACAP//AQAQAAAAAAABAP//AQAPAAAAAAABAAAAAQAPAAEAAAAHAP//AQAIAAAAAAAIAP//AQAJAAAAAAAHAAAAAQAIAAEAAAAIAAAAAQAJAAEAAAAFAPz/AQAIAAAAAAAGAPz/AQAJAAAAAAAFAP3/AQAIAAEAAAAGAP3/AQAJAAEAAAA=")
 tile_set = SubResource("TileSet_v4106")
 
-[node name="Tejado" type="TileMapLayer" parent="."]
+[node name="Tejado" type="TileMapLayer" parent="." unique_id=76643618]
 position = Vector2(183, -17)
 scale = Vector2(-1.5, 1.5)
 tile_map_data = PackedByteArray("AAADAPr/AgAEAAkAAAAGAP3/AgAFAAoAAAAHAP3/AgAGAAoAAAAHAPz/AgAGAAkAAAAHAPv/AgAGAAkAAAAGAPv/AgAFAAgAAAAGAPz/AgAFAAkAAAAHAPr/AgAGAAgAAAAGAPr/AgAFAAgAAAAFAPr/AgAFAAgAAAAFAPn/AgAFAAgAAAAEAPn/AgAFAAgAAAAEAPj/AgAFAAgAAAADAPj/AgAEAAcAAAADAPn/AgAEAAcAAAAEAPr/AgAFAAgAAAAEAPv/AgAFAAoAAAAFAPv/AgAFAAkAAAAFAPz/AgAFAAoAAAACAPj/AgADAAgAAAACAPn/AgADAAgAAAABAPr/AgADAAgAAAACAPr/AgADAAkAAAD///j/AgACAAYAAAAAAPj/AgADAAYAAAD///n/AgACAAcAAAD+//n/AgABAAcAAAAAAPn/AgADAAcAAAD///r/AgACAAgAAAD+//r/AgABAAgAAAD9//v/AgAAAAkAAAD+//v/AgABAAkAAAD9//z/AgAAAAoAAAD+//z/AgABAAoAAAD+//3/AgABAAoAAAD+//7/AgABAAsAAAD9//3/AgAAAAoAAAD9//7/AgAAAAsAAAD9////AgAAAAwAAAD+////AgABAAwAAAD///7/AgACAAsAAAD///3/AgACAAoAAAAAAP3/AgADAAoAAAAAAPz/AgADAAkAAAABAPv/AgADAAkAAAACAPv/AgADAAoAAAABAPz/AgADAAoAAAADAPv/AgAEAAoAAAAEAPz/AgAFAAsAAAAFAP3/AgAFAAsAAAD///v/AgACAAkAAAD///z/AgABAAoAAAAAAPv/AgADAAgAAAAAAPr/AgADAAgAAAABAPn/AgADAAgAAAABAPf/AgADAAYAAAACAPb/AgADAAYAAAADAPf/AgAEAAcAAAADAPb/AgAEAAYAAAABAPj/AgADAAgAAAACAPf/AgADAAgAAAAEAPb/AgAFAAYAAAAEAPf/AgAFAAcAAAAFAPf/AgAGAAcAAAAFAPj/AgAFAAcAAAAGAPj/AgAGAAcAAAAGAPn/AgAFAAcAAAAHAPn/AgAGAAcAAAAHAP7/AgAGAAsAAAAGAP7/AgAFAAsAAAAKAPz/AgAJAAkAAAAKAPv/AgAJAAkAAAAKAP//AgAJAAwAAAAKAP3/AgAJAAoAAAAKAP7/AgAJAAsAAAAJAP//AgAIAAwAAAAJAP7/AgAIAAsAAAAJAP3/AgAIAAoAAAAJAPz/AgAIAAkAAAAJAPr/AgAIAAgAAAAJAPv/AgAIAAkAAAAIAPr/AgAHAAgAAAAIAPv/AgAHAAkAAAAIAPz/AgAHAAoAAAAIAP3/AgAHAAoAAAAIAP7/AgAHAAsAAAA=")
 tile_set = SubResource("TileSet_qao5a")
 
-[node name="Puerta" parent="." instance=ExtResource("5_y6epn")]
+[node name="Puerta" parent="." unique_id=1097155111 instance=ExtResource("5_y6epn")]
 position = Vector2(93, 24)
 scale = Vector2(1.629, 1.5)
 
-[node name="Cartel" type="TileMapLayer" parent="."]
+[node name="Cartel" type="TileMapLayer" parent="." unique_id=1077128280]
 position = Vector2(82, 93.00001)
 scale = Vector2(0.369, 1.501)
 tile_map_data = PackedByteArray("AAAAAPr/BAAAAAMAAAABAPr/BAABAAMAAAACAPr/BAABAAMAAAADAPr/BAACAAMAAAA=")
 tile_set = SubResource("TileSet_xji7y")
 
-[node name="TextoCartel" type="Label" parent="."]
+[node name="TextoCartel" type="Label" parent="." unique_id=1087216081]
 offset_left = 86.0
 offset_top = -43.0
 offset_right = 213.0
@@ -1017,10 +1017,10 @@ scale = Vector2(0.29987332, 0.33580548)
 text = "BANCO"
 label_settings = SubResource("LabelSettings_gkdae")
 
-[node name="Colisiones" type="CollisionPolygon2D" parent="."]
+[node name="Colisiones" type="CollisionPolygon2D" parent="." unique_id=13634061]
 polygon = PackedVector2Array(-20, 30, -20, -17, -20, -21, -19, -33, -33, -31, -37, -34, -36, -63, -36, -99, -19, -105, 5, -112, 70, -176, 74, -179, 77, -178, 124, -131, 125, -133, 140, -133, 141, -132, 142, -117, 141, -111, 158, -97, 158, -34, 154, -30, 147, -38, 147, 23, 148, 27, 147, 29)
 
-[node name="Glitch1" type="Panel" parent="."]
+[node name="Glitch1" type="Panel" parent="." unique_id=1284359898]
 offset_top = -232.0
 offset_right = 90.374725
 offset_bottom = -117.71561
@@ -1028,7 +1028,7 @@ rotation = -0.7853982
 scale = Vector2(1.6077693, 2.0816224)
 theme_override_styles/panel = SubResource("StyleBoxTexture_2iwwf")
 
-[node name="Glitch2" type="Panel" parent="."]
+[node name="Glitch2" type="Panel" parent="." unique_id=1444564342]
 offset_left = -40.0
 offset_top = -242.0
 offset_right = 180.0
@@ -1036,7 +1036,7 @@ offset_bottom = -21.0
 scale = Vector2(1.3494563, 1.4378616)
 theme_override_styles/panel = SubResource("StyleBoxTexture_hntxu")
 
-[node name="Glitch3" type="Panel" parent="."]
+[node name="Glitch3" type="Panel" parent="." unique_id=154426952]
 offset_left = -71.0
 offset_top = -160.0
 offset_right = 140.0
@@ -1044,7 +1044,7 @@ offset_bottom = 28.0
 scale = Vector2(1.6412077, 2.0573573)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bxta7")
 
-[node name="Glitch4" type="Panel" parent="."]
+[node name="Glitch4" type="Panel" parent="." unique_id=579505673]
 offset_left = -82.0
 offset_top = -207.0
 offset_right = 123.0
@@ -1052,7 +1052,7 @@ offset_bottom = -30.0
 scale = Vector2(1.7397838, 2.1556394)
 theme_override_styles/panel = SubResource("StyleBoxTexture_qu0ml")
 
-[node name="Glitch5" type="Panel" parent="."]
+[node name="Glitch5" type="Panel" parent="." unique_id=1697521082]
 offset_left = 30.0
 offset_top = -99.0
 offset_right = 148.0
@@ -1060,8 +1060,8 @@ offset_bottom = 31.0
 scale = Vector2(1.0197186, 1.0823603)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ksxar")
 
-[node name="Banquero" parent="." instance=ExtResource("14_m0ceo")]
-position = Vector2(103, 33)
+[node name="Banquero" parent="." unique_id=1157304587 instance=ExtResource("14_m0ceo")]
+position = Vector2(94, 35)
 script = ExtResource("15_2iwwf")
 
 [node name="Colisiones" parent="Banquero" index="0"]
@@ -1070,7 +1070,7 @@ position = Vector2(-2.2499993, 0.8299873)
 [node name="Animacion" parent="Banquero" index="1"]
 position = Vector2(-2.7500002, -0.17001344)
 
-[node name="Fondo_dialogo" type="Panel" parent="Banquero"]
+[node name="Fondo_dialogo" type="Panel" parent="Banquero" unique_id=1585588962]
 offset_left = -28.999992
 offset_top = -19.0
 offset_right = 893.44336
@@ -1079,7 +1079,7 @@ rotation = -1.5707964
 scale = Vector2(0.05, 0.053)
 theme_override_styles/panel = SubResource("StyleBoxTexture_v5lo8")
 
-[node name="Dialogo" type="RichTextLabel" parent="Banquero"]
+[node name="Dialogo" type="RichTextLabel" parent="Banquero" unique_id=1145712865]
 offset_left = -24.0
 offset_top = -60.0
 offset_right = 127.04761
@@ -1095,42 +1095,42 @@ horizontal_alignment = 1
 vertical_alignment = 1
 language = "es_ES"
 
-[node name="Abajo" type="Area2D" parent="Banquero"]
+[node name="Abajo" type="Area2D" parent="Banquero" unique_id=826744670]
 position = Vector2(40, 29)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Banquero/Abajo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Banquero/Abajo" unique_id=619960878]
 position = Vector2(210, -56.410244)
 scale = Vector2(1.2, 1.4949999)
 shape = SubResource("RectangleShape2D_xrx0e")
 
-[node name="Arriba" type="Area2D" parent="Banquero"]
+[node name="Arriba" type="Area2D" parent="Banquero" unique_id=1097341074]
 position = Vector2(40, 37)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Banquero/Arriba"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Banquero/Arriba" unique_id=1071688011]
 position = Vector2(210, -276.92303)
 scale = Vector2(1.2, -0.648)
 shape = SubResource("RectangleShape2D_bq0rp")
 
-[node name="Izquierda" type="Area2D" parent="Banquero"]
+[node name="Izquierda" type="Area2D" parent="Banquero" unique_id=1445567461]
 position = Vector2(42, 33)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Banquero/Izquierda"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Banquero/Izquierda" unique_id=1752918057]
 position = Vector2(269.99994, -164.10255)
 scale = Vector2(0.5, 1.868)
 shape = SubResource("RectangleShape2D_05uds")
 
-[node name="Derecha" type="Area2D" parent="Banquero"]
+[node name="Derecha" type="Area2D" parent="Banquero" unique_id=1539801559]
 position = Vector2(39, 33)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Banquero/Derecha"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Banquero/Derecha" unique_id=1167701569]
 position = Vector2(160, -164.10254)
 scale = Vector2(0.20000002, 0.20000002)
 shape = SubResource("RectangleShape2D_wk4od")

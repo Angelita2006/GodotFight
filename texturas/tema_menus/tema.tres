@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://c5oao02nxar0q"]
+[gd_resource type="Theme" format=3 uid="uid://c5oao02nxar0q"]
 
 [ext_resource type="StyleBox" uid="uid://df84t64lrf5yh" path="res://texturas/tema_menus/button_disabled.tres" id="1_1n43b"]
 [ext_resource type="StyleBox" uid="uid://baosamlryd78x" path="res://texturas/tema_menus/button_hover.tres" id="2_fdain"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://b6mfaiggcwfco"]
+[gd_resource type="TileSet" format=3 uid="uid://b6mfaiggcwfco"]
 
 [ext_resource type="Texture2D" uid="uid://coewtmwuht5mx" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Fences.png" id="1_esb3m"]
 [ext_resource type="Texture2D" uid="uid://bp5oftds3by6q" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Doors.png" id="2_2bnlp"]
