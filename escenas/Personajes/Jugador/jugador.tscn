@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8unpr85iow3c"]
+[gd_scene format=3 uid="uid://b8unpr85iow3c"]
 
 [ext_resource type="Script" uid="uid://vlr6clfuqbm2" path="res://escenas/Personajes/Jugador/jugador_script.gd" id="1_2x0lx"]
 [ext_resource type="SpriteFrames" uid="uid://cdiu4gdwwophl" path="res://escenas/Personajes/Jugador/jugador_skinantigua.tres" id="2_6fvno"]
@@ -11,7 +11,7 @@ size = Vector2(34.97534, 41.97178)
 [sub_resource type="CircleShape2D" id="CircleShape2D_0aaiv"]
 radius = 182.70195
 
-[node name="PersonajePrincipal" type="CharacterBody2D" node_paths=PackedStringArray("animacion_chico", "animacion_chica")]
+[node name="PersonajePrincipal" type="CharacterBody2D" unique_id=1731677257 node_paths=PackedStringArray("animacion_chico", "animacion_chica")]
 position = Vector2(550, 322)
 collision_layer = 72
 collision_mask = 100
@@ -19,34 +19,34 @@ script = ExtResource("1_2x0lx")
 animacion_chico = NodePath("AnimacionChico")
 animacion_chica = NodePath("AnimacionChica")
 
-[node name="Colisiones" type="CollisionShape2D" parent="."]
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=565766791]
 position = Vector2(2.5, 35)
 scale = Vector2(2.2587342, 2.4778552)
 shape = SubResource("RectangleShape2D_vmt1e")
 
-[node name="AnimacionAntigua" type="AnimatedSprite2D" parent="."]
+[node name="AnimacionAntigua" type="AnimatedSprite2D" parent="." unique_id=476995953]
 visible = false
 position = Vector2(0, 1)
 sprite_frames = ExtResource("2_6fvno")
 animation = &"correr_arriba"
 
-[node name="AnimacionChico" type="AnimatedSprite2D" parent="."]
+[node name="AnimacionChico" type="AnimatedSprite2D" parent="." unique_id=304709248]
 sprite_frames = ExtResource("3_llj8d")
 animation = &"quieto_abajo_chico"
 autoplay = "quieto_abajo_chico"
 
-[node name="AnimacionChica" type="AnimatedSprite2D" parent="."]
+[node name="AnimacionChica" type="AnimatedSprite2D" parent="." unique_id=1947578027]
 sprite_frames = ExtResource("4_0aaiv")
 animation = &"correr_abajo_chica"
 autoplay = "quieto_abajo_chica"
 
-[node name="Chat_area" type="Area2D" parent="."]
+[node name="Chat_area" type="Area2D" parent="." unique_id=405339090]
 
-[node name="Deteccion" type="CollisionShape2D" parent="Chat_area"]
+[node name="Deteccion" type="CollisionShape2D" parent="Chat_area" unique_id=1352312489]
 position = Vector2(-1, 21)
 shape = SubResource("CircleShape2D_0aaiv")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2140051389]
 
 [connection signal="body_entered" from="Chat_area" to="." method="_on_chat_area_body_entered"]
 [connection signal="body_exited" from="Chat_area" to="." method="_on_chat_area_body_exited"]

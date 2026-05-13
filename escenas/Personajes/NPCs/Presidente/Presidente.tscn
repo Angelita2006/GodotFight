@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bd74lpm0aqcpi"]
+[gd_scene format=3 uid="uid://bd74lpm0aqcpi"]
 
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_76vqd"]
 
@@ -160,16 +160,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Presidente" type="RigidBody2D"]
+[node name="Presidente" type="RigidBody2D" unique_id=1947315371]
 
-[node name="Colisiones" type="CollisionShape2D" parent="."]
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=155340292]
 position = Vector2(585.2512, 312.20206)
 scale = Vector2(0.2, 0.219)
 shape = SubResource("RectangleShape2D_gdiia")
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=1297807978]
 position = Vector2(585.5, 312)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_ins0p")
 animation = &"quieto_abajo"
 autoplay = "quieto_abajo"
