@@ -1185,6 +1185,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_851fg")
 position = Vector2(-521, -285)
 script = ExtResource("16_7vxxu")
 
+[node name="Animacion" parent="Presidente" index="1"]
+scale = Vector2(0.18, 0.18)
+
 [node name="Fondo_dialogo" type="Panel" parent="Presidente" unique_id=275640145]
 offset_left = 558.0
 offset_top = 292.12216

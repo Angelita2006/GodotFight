@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var animacion_chico: AnimatedSprite2D
 @export var animacion_chica: AnimatedSprite2D
-var _velocidad: float = 100
+var _velocidad: float = 80
 var ultima_direccion := "abajo"
 var chateando := false
 
@@ -12,7 +12,7 @@ func _physics_process(_delta):
 		animacion_chico.show()		
 		
 		if Input.is_action_pressed("correr"):
-			_velocidad = 200
+			_velocidad = 170
 			animacion_chico.speed_scale = 1.8
 		else:
 			_velocidad = 80
@@ -57,7 +57,7 @@ func _physics_process(_delta):
 		animacion_chica.show()
 		
 		if Input.is_action_pressed("correr"):
-			_velocidad = 200
+			_velocidad = 170
 			animacion_chica.speed_scale = 1.8
 		else:
 			_velocidad = 80
@@ -98,10 +98,8 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 
-
 func _on_chat_area_body_entered(_body: Node2D) -> void:
 	chateando = true
-
 
 func _on_chat_area_body_exited(_body: Node2D) -> void:
 	chateando = false
