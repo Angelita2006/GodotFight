@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ci7ww6j2548gj"]
+[gd_resource type="TileSet" format=3 uid="uid://ci7ww6j2548gj"]
 
 [ext_resource type="Texture2D" uid="uid://djxaord468rfg" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Hills.png" id="1_lo01s"]
 

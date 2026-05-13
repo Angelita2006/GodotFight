@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 func cambiar_dialogo():
 	$Dialogo.show()
 	$Fondo_dialogo.show()
-	$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el banco han quedado desolado, hay que recuperar los billetes perdidos\n(Sí) Pulsa E"
+	$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", ¿quieres volver al estado corrupto?\n(Sí) Pulsa E"
 	dialogo_actual = 2
 	if Input.is_action_pressed("aceptar"):
 		Database.abrir_db()

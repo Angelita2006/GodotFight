@@ -43,6 +43,6 @@ func _on_derecha_body_entered(body: CharacterBody2D) -> void:
 	$Animacion.play("quieto_derecha")
 	cambiar_dialogo()
 
-func _on_vendedor_body_exited(body: CharacterBody2D) -> void:
+func _on_presidente_body_exited(body: CharacterBody2D) -> void:
 	$Dialogo.hide()
 	$Fondo_dialogo.hide()

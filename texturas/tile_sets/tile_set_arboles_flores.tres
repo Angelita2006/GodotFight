@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cnard0pghfk3k"]
+[gd_resource type="TileSet" format=3 uid="uid://cnard0pghfk3k"]
 
 [ext_resource type="Texture2D" uid="uid://dw174c8o8ixhb" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic Grass Biom things 1.png" id="1_biqdh"]
 [ext_resource type="Texture2D" uid="uid://brelmftuhq6ea" path="res://assets/juego/mapa/aldeaesmeralda/pack2/exterior.png" id="2_7ty4s"]

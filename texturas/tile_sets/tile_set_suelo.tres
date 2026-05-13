@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://caqybb3hu8ter"]
+[gd_resource type="TileSet" format=3 uid="uid://caqybb3hu8ter"]
 
 [ext_resource type="Texture2D" uid="uid://cy5d1rqx26fq6" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Grass.png" id="1_s3h0n"]
 
