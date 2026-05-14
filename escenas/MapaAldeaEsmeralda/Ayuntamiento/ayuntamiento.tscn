@@ -1163,7 +1163,7 @@ sprite_frames = SubResource("SpriteFrames_ejkue")
 autoplay = "default"
 
 [node name="Presidente" parent="." unique_id=1279258347 instance=ExtResource("15_ptvxw")]
-position = Vector2(-521, -285)
+position = Vector2(-520, -283)
 script = ExtResource("16_7vxxu")
 
 [node name="Fondo_dialogo" type="Panel" parent="Presidente" unique_id=275640145]

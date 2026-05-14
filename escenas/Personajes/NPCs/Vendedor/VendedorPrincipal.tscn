@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://fsnk2udrxaqi"]
+[gd_scene format=3 uid="uid://fsnk2udrxaqi"]
 
 [ext_resource type="Texture2D" uid="uid://dsjg471vyt857" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes3.png" id="1_6gu4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqvnq"]
-size = Vector2(102, 176)
+size = Vector2(120, 328.76685)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fb5gd"]
 atlas = ExtResource("1_6gu4v")
@@ -56,12 +56,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="VendedorPrincipal" type="RigidBody2D"]
+[node name="VendedorPrincipal" type="RigidBody2D" unique_id=1010796597]
+gravity_scale = 0.0
 
-[node name="Colisiones" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=488911184]
 shape = SubResource("RectangleShape2D_oqvnq")
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=40949499]
 sprite_frames = SubResource("SpriteFrames_24xvs")
 animation = &"Vendedor_abajo"

@@ -12,7 +12,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not $Dialogo.hidden:
+		if Input.is_action_pressed("aceptar"):
+			entrar_nivel()
 
 func cambiar_dialogo():
 	$Dialogo.show()
@@ -27,12 +29,7 @@ func cambiar_dialogo():
 		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el parque está horrible, tienes que arreglarlo\n(Sí) Pulsa E"
 		dialogo_actual = 2
 		if Input.is_action_pressed("aceptar"):
-			Database.abrir_db()
-			Database.crear_tabla_si_no_existe()
-			Database.db.query("DELETE FROM partida")
-			Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
-			Database.cerrar_db()
-			Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn")
+			entrar_nivel()
 
 func _on_abajo_body_entered(body: CharacterBody2D) -> void:
 	$Animacion.play("Jardinera_abajo")
@@ -53,3 +50,11 @@ func _on_izquierda_body_entered(body: CharacterBody2D) -> void:
 func _on_jardinera_body_exited(body: Node2D) -> void:
 	$Dialogo.hide()
 	$Fondo_dialogo.hide()
+	
+func entrar_nivel():
+	Database.abrir_db()
+	Database.crear_tabla_si_no_existe()
+	Database.db.query("DELETE FROM partida")
+	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
+	Database.cerrar_db()
+	Cargador.cargar_escena("res://escenas/Niveles/nivel_parque.tscn")

@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsflaw2cp42l7"]
+[gd_scene format=3 uid="uid://dsflaw2cp42l7"]
 
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_1bpf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5amg6"]
-size = Vector2(95, 159.99998)
+size = Vector2(84.99999, 144.99998)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfj6w"]
 atlas = ExtResource("1_1bpf8")
@@ -56,14 +56,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Banquero" type="RigidBody2D"]
+[node name="Banquero" type="RigidBody2D" unique_id=1339544799]
+gravity_scale = 0.0
 
-[node name="Colisiones" type="CollisionShape2D" parent="."]
-position = Vector2(0.5000004, 1.0000007)
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=1894120154]
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_5amg6")
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.18, 0.18)
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=914265282]
+scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_4pmp3")
 animation = &"Banquero_abajo"

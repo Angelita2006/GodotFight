@@ -161,6 +161,7 @@ animations = [{
 }]
 
 [node name="Presidente" type="RigidBody2D" unique_id=1947315371]
+gravity_scale = 0.0
 
 [node name="Colisiones" type="CollisionShape2D" parent="." unique_id=155340292]
 position = Vector2(585.2512, 312.20206)
