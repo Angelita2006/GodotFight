@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_fkygw"]
 [ext_resource type="Texture2D" uid="uid://br8gfgk10epuw" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/pato-coleccionable.png" id="7_u7ehd"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_sn7pj"]
-[ext_resource type="Script" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
+[ext_resource type="Script" uid="uid://d3xfnptcjv6t0" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
 [ext_resource type="Texture2D" uid="uid://dlikxooqcusye" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Obstaculos.png" id="10_ytp65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
@@ -127,6 +127,7 @@ shape = SubResource("RectangleShape2D_c2s0r")
 
 [node name="Puerta de salida" type="Area2D" parent="Inicio" unique_id=722421656]
 position = Vector2(-174, 97)
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio/Puerta de salida" unique_id=610009605]
 position = Vector2(-15.5, 23.5)
