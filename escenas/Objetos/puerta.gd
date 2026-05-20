@@ -9,12 +9,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_area_2d_body_entered(_body: CharacterBody2D) -> void:
-	$Animacion.play("abrir")
-	$Audio.play()
-	$Colision.disabled = false
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$Animacion.play("abrir")
+		$Audio.play()
+		$Colision.disabled = false
 
-func _on_area_2d_body_exited(_body: CharacterBody2D) -> void:
-	$Animacion.play("cerrar")
-	$Audio.play()
-	$Colision.disabled = true
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$Animacion.play("cerrar")
+		$Audio.play()
+		$Colision.disabled = true

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djcokeoutexl1" path="res://escenas/Niveles/nivel_parque.gd" id="1_6ie05"]
 [ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="2_f3jcd"]
 [ext_resource type="Texture2D" uid="uid://damei0cyoco10" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataforma inicio y salida.png" id="3_43ps3"]
-[ext_resource type="TileSet" uid="uid://vi15v38nrysx" path="res://escenas/Niveles/niveles.tres" id="4_f3jcd"]
+[ext_resource type="TileSet" uid="uid://d3ciuql4c57ow" path="res://escenas/Niveles/niveles.tres" id="4_f3jcd"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_6bfat"]
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_r8dqe"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_t0j2o"]

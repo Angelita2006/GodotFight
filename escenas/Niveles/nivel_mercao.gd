@@ -32,9 +32,8 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	Cargador.cargar_escena("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn", true)
 
 
-func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
+func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
-
 
 func _on_aceptar_pressed() -> void:
 	$Personaje_Codigo/Camera2D.enabled = false

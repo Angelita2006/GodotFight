@@ -22,9 +22,8 @@ func _process(_delta: float) -> void:
 	$Personaje_Codigo/Estado_Mision.text = str(patos)
 
 
-func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
+func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
-
 
 func _on_aceptar_pressed() -> void:
 	$Personaje_Codigo/Camera2D.enabled = false

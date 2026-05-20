@@ -1,8 +1,8 @@
 extends Node
 var jugador_aspecto: String = "chico"
 var jugador_nombre: String = "Mike"
-var jugador_posX: int = 0
-var jugador_posY: int = 0
+var jugador_posX: float = 0
+var jugador_posY: float = 0
 var volviendo_de_biblioteca: bool = false
 var volviendo_de_ayuntamiento: bool = false
 var volviendo_de_banco: bool = false

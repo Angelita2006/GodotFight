@@ -27,7 +27,6 @@ func player_jump() -> void:
 	if Input.is_action_just_pressed("saltar") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		current_state = State.Saltando
-		$Personaje
 
 func player_run() -> void:
 	var direction := Input.get_axis("move_left", "move_right")

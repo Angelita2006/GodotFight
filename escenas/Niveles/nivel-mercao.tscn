@@ -1,14 +1,14 @@
-[gd_scene format=4 uid="uid://snx5h0gvqb3a"]
+[gd_scene format=4 uid="uid://ut7fnsn5cbc3"]
 
 [ext_resource type="Script" uid="uid://lqj513tv3287" path="res://escenas/Niveles/nivel_mercao.gd" id="1_a1hmr"]
 [ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="2_eh2fi"]
 [ext_resource type="Texture2D" uid="uid://damei0cyoco10" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataforma inicio y salida.png" id="3_au042"]
-[ext_resource type="TileSet" uid="uid://vi15v38nrysx" path="res://escenas/Niveles/niveles.tres" id="4_u7ehd"]
+[ext_resource type="TileSet" uid="uid://d3ciuql4c57ow" path="res://escenas/Niveles/niveles.tres" id="4_u7ehd"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_x0u27"]
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_fkygw"]
 [ext_resource type="Texture2D" uid="uid://br8gfgk10epuw" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/pato-coleccionable.png" id="7_u7ehd"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_sn7pj"]
-[ext_resource type="Script" uid="uid://d3xfnptcjv6t0" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
+[ext_resource type="Script" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
 [ext_resource type="Texture2D" uid="uid://dlikxooqcusye" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Obstaculos.png" id="10_ytp65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
@@ -114,7 +114,7 @@ offset_right = 11503.0
 color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 
 [node name="Inicio" type="StaticBody2D" parent="." unique_id=807782574]
-position = Vector2(-3106, 1448)
+position = Vector2(-3054, 1545)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Inicio" unique_id=387274930]
@@ -337,7 +337,7 @@ scale = Vector2(4.5, 4.5)
 texture = ExtResource("7_u7ehd")
 
 [node name="Personaje_Codigo" parent="." unique_id=69625383 instance=ExtResource("7_fkygw")]
-position = Vector2(-2985, 1305)
+position = Vector2(-2942, 1351)
 collision_mask = 18
 
 [node name="Camera2D" type="Camera2D" parent="Personaje_Codigo" unique_id=188384704]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b71uvctsc6mtj"]
+[gd_scene format=3 uid="uid://b71uvctsc6mtj"]
 
 [ext_resource type="Script" uid="uid://e8rdk16hlg3u" path="res://escenas/Personajes/Jugador/jugador_en_niveles.gd" id="1_mlke3"]
 [ext_resource type="Texture2D" uid="uid://b1hhryplddqyq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personaje en el código(para niveles).png" id="1_vdvhe"]
@@ -99,17 +99,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0oia"]
 size = Vector2(96, 210.5)
 
-[node name="Personaje Codigo" type="CharacterBody2D"]
+[node name="Personaje Codigo" type="CharacterBody2D" unique_id=1532871413]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_mlke3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=715096488]
 sprite_frames = SubResource("SpriteFrames_6hmfl")
 animation = &"quieto"
 autoplay = "quieto"
 frame_progress = 0.031340938
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1180287956]
 position = Vector2(0, -4.25)
 shape = SubResource("RectangleShape2D_t0oia")
