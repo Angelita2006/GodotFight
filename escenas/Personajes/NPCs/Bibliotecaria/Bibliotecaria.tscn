@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_o8jes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbqyv"]
-size = Vector2(102, 168)
+size = Vector2(97.66707, 162.66638)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kovpl"]
 atlas = ExtResource("1_o8jes")
@@ -60,11 +60,11 @@ animations = [{
 gravity_scale = 0.0
 
 [node name="Colisiones" type="CollisionShape2D" parent="." unique_id=1071886836]
-position = Vector2(6.1035156e-05, 2.2000427)
+position = Vector2(0.32503062, 1.8000208)
 scale = Vector2(0.15, 0.15)
 shape = SubResource("RectangleShape2D_jbqyv")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=232325489]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.13994326, 0.15147433)
 sprite_frames = SubResource("SpriteFrames_o8jes")
 animation = &"Bibliotecaria_abajo"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://1ev265bwqnh"]
+[gd_scene format=3 uid="uid://1ev265bwqnh"]
 
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="2_f5b3e"]
 
@@ -56,15 +56,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Jardinera" type="RigidBody2D"]
+[node name="Jardinera" type="RigidBody2D" unique_id=117624627]
 gravity_scale = 0.0
 
-[node name="Colisiones" type="CollisionShape2D" parent="."]
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=373090049]
 position = Vector2(-2.3841858e-07, 0.019999385)
 scale = Vector2(0.17, 0.17)
 shape = SubResource("RectangleShape2D_cbk5f")
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=1399836095]
 position = Vector2(-0.100000024, 0)
 scale = Vector2(0.15, 0.148)
 sprite_frames = SubResource("SpriteFrames_68afb")

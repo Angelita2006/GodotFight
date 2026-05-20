@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://doycks2kfysg1"]
+[gd_scene format=4 uid="uid://doycks2kfysg1"]
 
 [ext_resource type="Script" uid="uid://mtkkdn20v43w" path="res://escenas/MapaAldeaEsmeralda/Biblioteca/biblioteca_script.gd" id="1_3u7r4"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="1_plkup"]
@@ -984,48 +984,47 @@ size = Vector2(12.528557, 11.3063965)
 size = Vector2(13.392185, 13.261322)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi0nr"]
-size = Vector2(19.066284, 13.020771)
+size = Vector2(19.066284, 12.664782)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8id15"]
-size = Vector2(47.17456, 127.88519)
+size = Vector2(47.17456, 123.07695)
 
-[node name="Biblioteca" type="StaticBody2D"]
-position = Vector2(489, 364)
+[node name="Biblioteca" type="StaticBody2D" unique_id=819958117]
 script = ExtResource("1_3u7r4")
 
-[node name="Suelo" type="TileMapLayer" parent="."]
+[node name="Suelo" type="TileMapLayer" parent="." unique_id=67426863]
 tile_map_data = PackedByteArray("AAADAAEAAAAGAAcAAAAEAAEAAAAHAAcAAAADAAAAAAAGAAYAAAAEAAAAAAAHAAYAAAA=")
 tile_set = SubResource("TileSet_1vtd7")
 
-[node name="Estructura" type="TileMapLayer" parent="."]
+[node name="Estructura" type="TileMapLayer" parent="." unique_id=1087622277]
 tile_map_data = PackedByteArray("AAAAAAEAAQABAAoAAAABAAEAAQABAAoAAAACAAEAAQABAAoAAAACAAAAAQADAAYAAAABAAAAAQACAAYAAAAAAAAAAQABAAYAAAD//wEAAQACAAoAAAAFAAEAAQABAAoAAAAGAAEAAQACAAoAAAD//wAAAQACAAkAAAAGAAAAAQACAAkAAAAFAAAAAQABAAkAAAACAP//AQADAAYAAAABAP//AQACAAYAAAADAP//AQACAAYAAAAEAP//AQACAAYAAAAFAP//AQADAAYAAAAGAP//AQABAAYAAAAAAP//AQABAAYAAAD/////AQABAAYAAAD+/wAAAQAJAAMAAAD+/wEAAQAJAAQAAAD+////AQAAAAMAAAD+//7/AQAAAAIAAAD///7/AQABAAIAAAAAAP7/AQABAAIAAAABAP7/AQABAAIAAAACAP7/AQABAAIAAAADAP7/AQABAAIAAAAEAP7/AQABAAIAAAAFAP7/AQABAAIAAAAGAP7/AQABAAIAAAAHAP7/AQABAAIAAAAHAP//AQADAAYAAAAHAAEAAQADAAcAAAAHAAAAAQADAAYAAAD///3/AQADAAYAAAAAAP3/AQABAAYAAAABAP3/AQACAAYAAAACAP3/AQABAAYAAAADAP3/AQABAAMAAAAEAP3/AQACAAYAAAAFAP3/AQADAAYAAAAGAP3/AQABAAYAAAD+//3/AQAAAAMAAAAHAP3/AQACAAMAAAD///z/AQABAAMAAAAAAPz/AQACAAYAAAABAPz/AQABAAYAAAADAPz/AQADAAYAAAACAPz/AQADAAYAAAAEAPz/AQACAAYAAAAFAPz/AQADAAYAAAD+//z/AQAAAAMAAAD+//v/AQAAAAMAAAD///v/AQADAAYAAAAAAPv/AQACAAYAAAABAPv/AQADAAYAAAADAPv/AQABAAMAAAACAPv/AQACAAYAAAAEAPv/AQADAAYAAAAFAPv/AQABAAMAAAAGAPv/AQABAAMAAAAHAPv/AQACAAMAAAAHAPz/AQACAAMAAAAGAPz/AQADAAYAAAADAPr/AQACAAYAAAACAPr/AQACAAYAAAAIAP//AQADAAYAAAAIAAAAAQADAAYAAAAIAAEAAQADAAcAAAAJAAEAAQACAAQAAAAJAAAAAQACAAMAAAAJAP//AQACAAMAAAAIAP7/AQABAAIAAAA=")
 tile_set = SubResource("TileSet_qao5a")
 
-[node name="Ventanas" type="TileMapLayer" parent="."]
+[node name="Ventanas" type="TileMapLayer" parent="." unique_id=438747076]
 tile_map_data = PackedByteArray("AAABAPz/AAADAA0AAAACAPz/AAAEAA0AAAABAP3/AAADAA4AAAACAP3/AAAEAA4AAAADAPz/AQAIAAAAAAAEAPz/AQAJAAAAAAAEAP3/AQAJAAEAAAADAP3/AQAIAAEAAAAAAP//AQAQAAAAAAD/////AQAPAAAAAAD//wAAAQAPAAEAAAAAAAAAAQAQAAEAAAAFAP//AQAPAAAAAAAGAP//AQAQAAAAAAAFAAAAAQAPAAEAAAAGAAAAAQAQAAEAAAACAAAAAQAQAAEAAAACAP//AQAQAAAAAAABAP//AQAPAAAAAAABAAAAAQAPAAEAAAAHAP//AQAIAAAAAAAIAP//AQAJAAAAAAAHAAAAAQAIAAEAAAAIAAAAAQAJAAEAAAA=")
 tile_set = SubResource("TileSet_v4106")
 
-[node name="Tejado" type="TileMapLayer" parent="."]
+[node name="Tejado" type="TileMapLayer" parent="." unique_id=1237075682]
 position = Vector2(3, 4)
 tile_map_data = PackedByteArray("AAADAPr/AgAEAAkAAAAGAP3/AgAFAAoAAAAHAP3/AgAGAAoAAAAHAPz/AgAGAAkAAAAHAPv/AgAGAAkAAAAGAPv/AgAFAAgAAAAGAPz/AgAFAAkAAAAHAPr/AgAGAAgAAAAGAPr/AgAFAAgAAAAFAPr/AgAFAAgAAAAFAPn/AgAFAAgAAAAEAPn/AgAFAAgAAAAEAPj/AgAFAAgAAAADAPj/AgAEAAcAAAADAPn/AgAEAAcAAAAEAPr/AgAFAAgAAAAEAPv/AgAFAAoAAAAFAPv/AgAFAAkAAAAFAPz/AgAFAAoAAAACAPj/AgADAAgAAAACAPn/AgADAAgAAAABAPr/AgADAAgAAAACAPr/AgADAAkAAAD///j/AgACAAYAAAAAAPj/AgADAAYAAAD///n/AgACAAcAAAD+//n/AgABAAcAAAAAAPn/AgADAAcAAAD///r/AgACAAgAAAD+//r/AgABAAgAAAD9//v/AgAAAAkAAAD+//v/AgABAAkAAAD9//z/AgAAAAoAAAD+//z/AgABAAoAAAD+//3/AgABAAoAAAD+//7/AgABAAsAAAD9//3/AgAAAAoAAAD9//7/AgAAAAsAAAD9////AgAAAAwAAAD+////AgABAAwAAAD///7/AgACAAsAAAD///3/AgACAAoAAAAAAP3/AgADAAoAAAAAAPz/AgADAAkAAAABAPv/AgADAAkAAAACAPv/AgADAAoAAAABAPz/AgADAAoAAAADAPv/AgAEAAoAAAAEAPz/AgAFAAsAAAAFAP3/AgAFAAsAAAD///v/AgACAAkAAAD///z/AgABAAoAAAAAAPv/AgADAAgAAAAAAPr/AgADAAgAAAABAPn/AgADAAgAAAABAPf/AgADAAYAAAACAPb/AgADAAYAAAADAPf/AgAEAAcAAAADAPb/AgAEAAYAAAABAPj/AgADAAgAAAACAPf/AgADAAgAAAAEAPb/AgAFAAYAAAAEAPf/AgAFAAcAAAAFAPf/AgAGAAcAAAAFAPj/AgAFAAcAAAAGAPj/AgAGAAcAAAAGAPn/AgAFAAcAAAAHAPn/AgAGAAcAAAAHAP7/AgAGAAsAAAAGAP7/AgAFAAsAAAAKAPz/AgAJAAkAAAAKAPv/AgAJAAkAAAAKAP//AgAJAAwAAAAKAP3/AgAJAAoAAAAKAP7/AgAJAAsAAAAJAP//AgAIAAwAAAAJAP7/AgAIAAsAAAAJAP3/AgAIAAoAAAAJAPz/AgAIAAkAAAAJAPr/AgAIAAgAAAAJAPv/AgAIAAkAAAAIAPr/AgAHAAgAAAAIAPv/AgAHAAkAAAAIAPz/AgAHAAoAAAAIAP3/AgAHAAoAAAAIAP7/AgAHAAsAAAA=")
 tile_set = SubResource("TileSet_qao5a")
 
-[node name="Colisiones" type="CollisionPolygon2D" parent="."]
+[node name="Colisiones" type="CollisionPolygon2D" parent="." unique_id=910674897]
 position = Vector2(-27.000002, -7)
 scale = Vector2(99843.83, -8986.849)
 polygon = PackedVector2Array(-2.0031264e-05, -0.00022254745, 8.012516e-05, 0.0008901897, 7.010953e-05, -0.0041171275, 0.00081126695, -0.0041171275, 0.00081126695, -0.0033382114, 0.0008212826, -0.001891653, 0.0008613452, -0.0017803793, 0.0009615016, -0.0017803793, 0.0009915485, -0.0020029268, 0.0009915485, -0.0027818428, 0.0009915485, -0.0040058536, 0.0017427215, -0.0040058536, 0.0017427215, 0.00044509483, 0.0018729249, 0.00011127372, 0.0019029719, 0.00055636856, 0.0019029719, 0.0075666127, 0.0014622837, 0.009235718, 0.0007912357, 0.016579784, 0.00030046926, 0.011349918, 0.00014021901, 0.011349918, 0.00012018773, 0.010904823, 0.00013020336, 0.009124445, -3.0046882e-05, 0.0073440657)
 
-[node name="Puerta" parent="." instance=ExtResource("4_wk6to")]
+[node name="Puerta" parent="." unique_id=1988056292 instance=ExtResource("4_wk6to")]
 position = Vector2(64, 16)
 scale = Vector2(1.0863205, 1)
 
-[node name="Cartel" type="TileMapLayer" parent="."]
+[node name="Cartel" type="TileMapLayer" parent="." unique_id=1829039493]
 position = Vector2(52, 81.00001)
 scale = Vector2(0.36869162, 1.0057484)
 tile_map_data = PackedByteArray("AAD///r/BAAAAAMAAAAAAPr/BAABAAMAAAABAPr/BAABAAMAAAACAPr/BAABAAMAAAADAPr/BAABAAMAAAAEAPr/BAACAAMAAAA=")
 tile_set = SubResource("TileSet_xji7y")
 
-[node name="TextoCartel" type="Label" parent="."]
+[node name="TextoCartel" type="Label" parent="." unique_id=1083657992]
 offset_left = 50.0
 offset_top = -11.0
 offset_right = 177.0
@@ -1034,18 +1033,18 @@ scale = Vector2(0.29987332, 0.33580548)
 text = "BIBLIOTECA"
 label_settings = SubResource("LabelSettings_gkdae")
 
-[node name="Glitch" type="AnimatedSprite2D" parent="."]
+[node name="Glitch" type="AnimatedSprite2D" parent="." unique_id=1870178832]
 position = Vector2(64.5, -65.5)
 scale = Vector2(2.29, 1.99)
 sprite_frames = SubResource("SpriteFrames_oi0nr")
 autoplay = "default"
 frame_progress = 0.44995996
 
-[node name="Bibliotecaria" parent="." instance=ExtResource("14_b8lrd")]
+[node name="Bibliotecaria" parent="." unique_id=909719289 instance=ExtResource("14_b8lrd")]
 position = Vector2(64, 29)
 script = ExtResource("15_2r4u6")
 
-[node name="Fondo_dialogo" type="Panel" parent="Bibliotecaria"]
+[node name="Fondo_dialogo" type="Panel" parent="Bibliotecaria" unique_id=954618296]
 offset_left = -28.0
 offset_top = -13.0
 offset_right = 295.55786
@@ -1054,10 +1053,10 @@ rotation = -1.5707964
 scale = Vector2(0.095, 0.1)
 theme_override_styles/panel = SubResource("StyleBoxTexture_bjw5k")
 
-[node name="Dialogo" type="RichTextLabel" parent="Bibliotecaria"]
-offset_left = -19.0
+[node name="Dialogo" type="RichTextLabel" parent="Bibliotecaria" unique_id=1062952113]
+offset_left = -21.0
 offset_top = -39.0
-offset_right = 142.1377
+offset_right = 149.61612
 offset_bottom = 51.0
 scale = Vector2(0.211, 0.2)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
@@ -1070,43 +1069,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 language = "es_ES"
 
-[node name="Abajo" type="Area2D" parent="Bibliotecaria"]
+[node name="Abajo" type="Area2D" parent="Bibliotecaria" unique_id=978009531]
 position = Vector2(40, 29)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bibliotecaria/Abajo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bibliotecaria/Abajo" unique_id=1834720294]
 position = Vector2(200, -70.226074)
 scale = Vector2(5.5872416, 3.5548468)
 shape = SubResource("RectangleShape2D_ifjwv")
 
-[node name="Arriba" type="Area2D" parent="Bibliotecaria"]
+[node name="Arriba" type="Area2D" parent="Bibliotecaria" unique_id=56379824]
 position = Vector2(40, 37)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bibliotecaria/Arriba"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bibliotecaria/Arriba" unique_id=760711560]
 position = Vector2(200, -242.8114)
 scale = Vector2(5.2269244, -2.8242965)
 shape = SubResource("RectangleShape2D_akdwr")
 
-[node name="Izquierda" type="Area2D" parent="Bibliotecaria"]
+[node name="Izquierda" type="Area2D" parent="Bibliotecaria" unique_id=373456160]
 position = Vector2(42, 33)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bibliotecaria/Izquierda"]
-position = Vector2(251.25049, -157.2445)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bibliotecaria/Izquierda" unique_id=1689362176]
+position = Vector2(251.25052, -158.97433)
 scale = Vector2(2.6016495, 9.718048)
 shape = SubResource("RectangleShape2D_oi0nr")
 
-[node name="Derecha" type="Area2D" parent="Bibliotecaria"]
+[node name="Derecha" type="Area2D" parent="Bibliotecaria" unique_id=1369616563]
 position = Vector2(39, 33)
 rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bibliotecaria/Derecha"]
-position = Vector2(161.48567, -157.91862)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bibliotecaria/Derecha" unique_id=8512587]
+position = Vector2(161.48569, -158.97433)
 scale = Vector2(1, 0.99999976)
 shape = SubResource("RectangleShape2D_8id15")
 

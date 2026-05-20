@@ -10,15 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://daqol354dn7pr" path="res://escenas/Personajes/NPCs/Vendedor/Vendedor.tscn" id="6_xchfo"]
 [ext_resource type="PackedScene" uid="uid://fsnk2udrxaqi" path="res://escenas/Personajes/NPCs/Vendedor/VendedorPrincipal.tscn" id="7_uox7j"]
 [ext_resource type="Script" uid="uid://cley7nlvcj87s" path="res://escenas/Personajes/NPCs/Vendedor/vendedor_principal.gd" id="8_xekwt"]
-[ext_resource type="PackedScene" uid="uid://bg6i4uve3yyy8" path="res://escenas/Personajes/NPCs/Vendedor/Dueño.tscn" id="8_y0oe4"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="9_nylf0"]
-[ext_resource type="Script" uid="uid://cba2fp3nk5uvv" path="res://escenas/Personajes/NPCs/Vendedor/dueño.gd" id="9_qqfyw"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="10_vgyg1"]
 [ext_resource type="Texture2D" uid="uid://dj8pgcf0i0ah5" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion1.png" id="13_bjd1o"]
 [ext_resource type="Texture2D" uid="uid://dookeyuuql5bg" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion2.png" id="14_y0oe4"]
 [ext_resource type="Texture2D" uid="uid://2x44hiwuyncr" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion3.png" id="15_qqfyw"]
-[ext_resource type="PackedScene" uid="uid://duhr43jonc8rq" path="res://escenas/Personajes/NPCs/Vendedor/Vendedor1.tscn" id="15_w4n4y"]
-[ext_resource type="Script" uid="uid://h112tcxkrefx" path="res://escenas/Personajes/NPCs/Vendedor/vendedor_1.gd" id="16_o7wvp"]
 [ext_resource type="Texture2D" uid="uid://bw7o2dh38f5ec" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion4.png" id="16_w4n4y"]
 [ext_resource type="Texture2D" uid="uid://bgrr2fuiweexm" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion5.png" id="17_o7wvp"]
 [ext_resource type="Texture2D" uid="uid://dfg5keit3jf0s" path="res://assets/juego/animaciones/glitches/personalizados/corrupcion6.png" id="18_n1bpv"]
@@ -4197,22 +4193,6 @@ sources/1 = SubResource("TileSetAtlasSource_pm5m1")
 sources/2 = SubResource("TileSetAtlasSource_tk8gj")
 sources/3 = SubResource("TileSetAtlasSource_euxfc")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjd1o"]
-texture = ExtResource("9_nylf0")
-region_rect = Rect2(455, 139, 30, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0oe4"]
-size = Vector2(300, 187.65323)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqfyw"]
-size = Vector2(325.0008, 234.56442)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4n4y"]
-size = Vector2(175, 1079.0018)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wvp"]
-size = Vector2(200.00006, 1079.0017)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_hsxpc"]
 animations = [{
 "frames": [{
@@ -4242,8 +4222,23 @@ animations = [{
 "speed": 16.0
 }]
 
-[node name="Mercado" type="StaticBody2D" unique_id=827719084]
-position = Vector2(427, 159)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjd1o"]
+texture = ExtResource("9_nylf0")
+region_rect = Rect2(455, 139, 30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0oe4"]
+size = Vector2(375, 187.65247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqfyw"]
+size = Vector2(374.9997, 187.6519)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4n4y"]
+size = Vector2(137.5, 1313.5671)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7wvp"]
+size = Vector2(125.000015, 1313.5674)
+
+[node name="Mercado" type="Node2D" unique_id=2106883812]
 script = ExtResource("1_xekwt")
 
 [node name="Valla1" type="TileMapLayer" parent="." unique_id=1688294026]
@@ -4275,247 +4270,6 @@ position = Vector2(-1478, -920.00006)
 scale = Vector2(1, 1.2)
 tile_map_data = PackedByteArray("AABNADkAAAACAAIAAABPADkAAAACAAMAAABQADkAAAACAAMAAABRADkAAAACAAMAAABOADkAAAACAAMAAABSADkAAAACAAMAAABTADkAAAACAAMAAABUADkAAAACAAMAAABVADkAAAACAAMAAABWADkAAAACAAMAAABXADkAAAACAAMAAABYADkAAAACAAMAAABZADkAAAACAAMAAABMADkAAAABAAIAAABMADgAAAAAAAAAAABaADkAAAACAAMAAABbADkAAAACAAMAAABcADkAAAACAAMAAABdADkAAAACAAMAAABeADkAAAACAAMAAABfADkAAAACAAMAAABgADkAAAACAAMAAABhADkAAAADAAIAAABhADgAAAAAAAAAAAA=")
 tile_set = ExtResource("1_074ut")
-
-[node name="Vendedor1" parent="." unique_id=1503338188 instance=ExtResource("15_w4n4y")]
-position = Vector2(-302, -33)
-script = ExtResource("16_o7wvp")
-
-[node name="Fondo_dialogo" type="Panel" parent="Vendedor1" unique_id=1086312455]
-offset_left = -26.0
-offset_top = -15.0
-offset_right = 1717.4961
-offset_bottom = 1943.2998
-rotation = -1.5707964
-scale = Vector2(0.021109004, 0.025906231)
-theme_override_styles/panel = SubResource("StyleBoxTexture_bjd1o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Dialogo" type="RichTextLabel" parent="Vendedor1" unique_id=104989249]
-offset_left = -17.0
-offset_top = -47.0
-offset_right = 134.0476
-offset_bottom = 73.4613
-scale = Vector2(0.20340414, 0.18539034)
-theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
-theme_override_fonts/normal_font = ExtResource("10_vgyg1")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "Bienvenido al mercado"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-language = "es_ES"
-metadata/_edit_use_anchors_ = true
-
-[node name="Abajo" type="Area2D" parent="Vendedor1" unique_id=2100856557]
-position = Vector2(40, 29)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vendedor1/Abajo" unique_id=1199783863]
-position = Vector2(200, 89.04114)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_y0oe4")
-
-[node name="Arriba" type="Area2D" parent="Vendedor1" unique_id=716815729]
-position = Vector2(40, 37)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Vendedor1/Arriba" unique_id=236365653]
-position = Vector2(202.49994, 325.34296)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_qqfyw")
-
-[node name="Izquierda" type="Area2D" parent="Vendedor1" unique_id=664979506]
-position = Vector2(42, 33)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Vendedor1/Izquierda" unique_id=249150215]
-position = Vector2(257.5, 208.90411)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_w4n4y")
-
-[node name="Derecha" type="Area2D" parent="Vendedor1" unique_id=563778698]
-position = Vector2(39, 33)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Vendedor1/Derecha" unique_id=501698448]
-position = Vector2(155, 208.90411)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_o7wvp")
-
-[node name="Dueño" parent="." unique_id=747917639 instance=ExtResource("8_y0oe4")]
-visible = false
-position = Vector2(-299, 49)
-script = ExtResource("9_qqfyw")
-
-[node name="Colisiones" parent="Dueño" index="0" unique_id=1391998869]
-position = Vector2(-0.5250017, 4.8579965)
-
-[node name="Animacion" parent="Dueño" index="1" unique_id=862918016]
-position = Vector2(-0.62500155, 4.8379974)
-
-[node name="Fondo_dialogo" type="Panel" parent="Dueño" unique_id=530684934]
-offset_left = -28.0
-offset_top = -12.196541
-offset_right = 1715.4961
-offset_bottom = 1946.1033
-rotation = -1.5707964
-scale = Vector2(0.021109004, 0.025906231)
-theme_override_styles/panel = SubResource("StyleBoxTexture_bjd1o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Dialogo" type="RichTextLabel" parent="Dueño" unique_id=1730630782]
-offset_left = -19.0
-offset_top = -45.0
-offset_right = 132.0476
-offset_bottom = 75.4613
-scale = Vector2(0.20340414, 0.18539034)
-theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
-theme_override_fonts/normal_font = ExtResource("10_vgyg1")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "Bienvenido al mercado"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-language = "es_ES"
-metadata/_edit_use_anchors_ = true
-
-[node name="Abajo" type="Area2D" parent="Dueño" unique_id=765746363]
-position = Vector2(40, 29)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dueño/Abajo" unique_id=666056280]
-position = Vector2(200, 61.64392)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_y0oe4")
-
-[node name="Arriba" type="Area2D" parent="Dueño" unique_id=186900368]
-position = Vector2(40, 37)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Dueño/Arriba" unique_id=1596589662]
-position = Vector2(202.49994, 325.34296)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_qqfyw")
-
-[node name="Izquierda" type="Area2D" parent="Dueño" unique_id=1795887994]
-position = Vector2(42, 33)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dueño/Izquierda" unique_id=21452327]
-position = Vector2(260, 195.20557)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_w4n4y")
-
-[node name="Derecha" type="Area2D" parent="Dueño" unique_id=720651273]
-position = Vector2(39, 33)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Dueño/Derecha" unique_id=703395395]
-position = Vector2(155, 195.20544)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_o7wvp")
-
-[node name="VendedorPrincipal" parent="." unique_id=1937173755 instance=ExtResource("7_uox7j")]
-visible = false
-position = Vector2(-302, 0)
-script = ExtResource("8_xekwt")
-
-[node name="Colisiones" parent="VendedorPrincipal" index="0" unique_id=488911184]
-position = Vector2(-0.5, 4.4999847)
-scale = Vector2(0.2, 0.146)
-
-[node name="Animacion" parent="VendedorPrincipal" index="1" unique_id=40949499]
-position = Vector2(-0.99999714, 4.9999948)
-scale = Vector2(0.148743, 0.14834747)
-
-[node name="Fondo_dialogo" type="Panel" parent="VendedorPrincipal" unique_id=316920394]
-offset_left = -28.0
-offset_top = -12.196541
-offset_right = 1715.4961
-offset_bottom = 1946.1033
-rotation = -1.5707964
-scale = Vector2(0.021109004, 0.025906231)
-theme_override_styles/panel = SubResource("StyleBoxTexture_bjd1o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Dialogo" type="RichTextLabel" parent="VendedorPrincipal" unique_id=330259907]
-offset_left = -20.0
-offset_top = -46.676605
-offset_right = 131.0476
-offset_bottom = 73.7847
-scale = Vector2(0.21164893, 0.2022048)
-theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
-theme_override_fonts/normal_font = ExtResource("10_vgyg1")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "Bienvenido al mercado"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-language = "es_ES"
-metadata/_edit_use_anchors_ = true
-
-[node name="Abajo" type="Area2D" parent="VendedorPrincipal" unique_id=829186357]
-position = Vector2(40, 29)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VendedorPrincipal/Abajo" unique_id=132088046]
-position = Vector2(200, 61.64392)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_y0oe4")
-
-[node name="Arriba" type="Area2D" parent="VendedorPrincipal" unique_id=818280467]
-position = Vector2(40, 37)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="VendedorPrincipal/Arriba" unique_id=937499371]
-position = Vector2(202.49994, 325.34296)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_qqfyw")
-
-[node name="Izquierda" type="Area2D" parent="VendedorPrincipal" unique_id=1503594021]
-position = Vector2(42, 33)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="VendedorPrincipal/Izquierda" unique_id=1676256854]
-position = Vector2(260, 195.20557)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_w4n4y")
-
-[node name="Derecha" type="Area2D" parent="VendedorPrincipal" unique_id=381098176]
-position = Vector2(39, 33)
-rotation = -3.1415925
-scale = Vector2(0.2, 0.146)
-collision_mask = 9
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="VendedorPrincipal/Derecha" unique_id=73638953]
-position = Vector2(155, 195.20544)
-scale = Vector2(0.20000002, 0.146)
-shape = SubResource("RectangleShape2D_o7wvp")
 
 [node name="Vendedor2" parent="." unique_id=402558683 instance=ExtResource("6_xchfo")]
 position = Vector2(35, 146)
@@ -4556,32 +4310,34 @@ position = Vector2(-4.6666613, -2.9891236)
 scale = Vector2(0.094666764, 0.0793939)
 animation = &"Vendedor1"
 
-[node name="Colisiones" type="CollisionPolygon2D" parent="." unique_id=367844379]
+[node name="Colisiones" type="StaticBody2D" parent="." unique_id=1682253504]
+
+[node name="Colisiones1" type="CollisionPolygon2D" parent="Colisiones" unique_id=367844379]
 position = Vector2(-374.00003, -74)
 scale = Vector2(0.12268226, 0.09925631)
 polygon = PackedVector2Array(995.4567, 870.9823, 1105.3845, 783.1522, 1251.9548, 746.5563, 1319.1329, 885.6207, 1404.6322, 892.9398, 1422.9535, 819.74805, 1510, 787.67126, 1593.9523, 849.0248, 1648.916, 870.9823, 1661.1302, 739.23706, 1783.2722, 680.6837, 1905.4141, 658.7261, 2015, 657.5342, 2080, 684.9315, 2105, 986.3014, 2190, 979.452, 2192.6565, 755.61957, 2388.284, 765.6944, 2543.1555, 765.6944, 2698.027, 745.5446, 2738.7827, 916.8183, 2616.5156, 957.118, 2592.0623, 1098.167, 2567.609, 1158.6165, 2469.7952, 1158.6165, 2323.0747, 1148.5417, 2200.8076, 1148.5417, 2160.052, 916.8183, 2110, 993.15076, 2105, 1171.2328, 995.4567, 1185.707)
 
-[node name="Colisiones2" type="CollisionPolygon2D" parent="." unique_id=353511645]
+[node name="Colisiones2" type="CollisionPolygon2D" parent="Colisiones" unique_id=353511645]
 position = Vector2(-346, -11)
 scale = Vector2(0.15965974, 0.14185025)
 polygon = PackedVector2Array(1220, 993.15063, 1265, 945.2053, 1385, 938.3562, 1440, 972.6028, 1542.3923, 942.6283, 1625, 945.2053, 1735.0004, 930.0001, 1829.2524, 982.9546, 1829.2524, 1129.1377, 1783.5212, 1154.3416, 1675.429, 1149.3008, 1633.855, 1149.3008, 1542.3923, 1154.3416, 1413.5132, 1149.3008, 1276.3193, 1159.3823, 1225, 1123.2876)
 
-[node name="Colisiones3" type="CollisionPolygon2D" parent="." unique_id=1568390801]
+[node name="Colisiones3" type="CollisionPolygon2D" parent="Colisiones" unique_id=1568390801]
 position = Vector2(-428.99997, 15)
 scale = Vector2(0.12532382, 0.10267909)
 polygon = PackedVector2Array(1520, 958.9042, 1590, 917.8082, 2090, 945.20544, 2100, 1363.0135, 1530, 1363.0135)
 
-[node name="Colisiones4" type="CollisionPolygon2D" parent="." unique_id=1694311279]
+[node name="Colisiones4" type="CollisionPolygon2D" parent="Colisiones" unique_id=1694311279]
 position = Vector2(-211, -122.000015)
 scale = Vector2(0.15610927, 0.14564745)
 polygon = PackedVector2Array(1313.1826, 981.823, 1319.5884, 844.5051, 1415.675, 851.371, 1511.7615, 823.9075, 1761.5864, 823.9075, 1770.0005, 1145.0004, 1330.068, 1138.8774)
 
-[node name="Colisiones5" type="CollisionPolygon2D" parent="." unique_id=723707582]
+[node name="Colisiones5" type="CollisionPolygon2D" parent="Colisiones" unique_id=723707582]
 position = Vector2(-376, -211)
 scale = Vector2(0.24629255, 0.12567468)
 polygon = PackedVector2Array(560.7074, 1204.9148, 572.34033, 835.66675, 723.5684, 821.0912, 798.0192, 757.9303, 893.4093, 762.7888, 995.7791, 830.8082, 1109.7819, 855.1009, 1226.1112, 864.81793, 1288.9291, 869.67645, 1380.0004, 860.0001, 1435.0015, 850.00073, 1470.0015, 865.00073, 1570.446, 728.7792, 1609.998, 733.6377, 1682.1222, 723.92065, 1789.1451, 796.7986, 1796.1249, 855.1009, 1805.4313, 1170.9052, 1498.3218, 1166.0466, 1454.1167, 1064.0176, 1195.8656, 1068.8761, 1128.3945, 1078.5931, 1126.068, 1209.7734, 1044.6375, 1190.3394, 995.7791, 1209.7734)
 
-[node name="Colisiones6" type="CollisionPolygon2D" parent="." unique_id=502380751]
+[node name="Colisiones6" type="CollisionPolygon2D" parent="Colisiones" unique_id=502380751]
 position = Vector2(-180, 45)
 scale = Vector2(0.13023272, 0.09543142)
 polygon = PackedVector2Array(1340.0004, 900.0001, 1380.0004, 860.0001, 1540, 828.7672, 1630, 828.7672, 1665, 952.0548, 1770, 869.86316, 1855, 849.3152, 1930, 979.452, 1925, 1075.3424, 1935, 1219.1781, 1790, 1226.0275, 1755, 1184.9315, 1575, 1184.9315, 1490, 1232.8768, 1360, 1212.3287)
@@ -4592,22 +4348,88 @@ scale = Vector2(4.27, 3.5299997)
 sprite_frames = SubResource("SpriteFrames_hsxpc")
 autoplay = "default"
 
-[connection signal="body_entered" from="Vendedor1/Abajo" to="Vendedor1" method="_on_abajo_body_entered"]
-[connection signal="body_exited" from="Vendedor1/Abajo" to="Vendedor1" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Vendedor1/Arriba" to="Vendedor1" method="_on_arriba_body_entered"]
-[connection signal="body_exited" from="Vendedor1/Arriba" to="Vendedor1" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Vendedor1/Izquierda" to="Vendedor1" method="_on_izquierda_body_entered"]
-[connection signal="body_exited" from="Vendedor1/Izquierda" to="Vendedor1" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Vendedor1/Derecha" to="Vendedor1" method="_on_derecha_body_entered"]
-[connection signal="body_exited" from="Vendedor1/Derecha" to="Vendedor1" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Dueño/Abajo" to="Dueño" method="_on_abajo_body_entered"]
-[connection signal="body_exited" from="Dueño/Abajo" to="Dueño" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Dueño/Arriba" to="Dueño" method="_on_arriba_body_entered"]
-[connection signal="body_exited" from="Dueño/Arriba" to="Dueño" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Dueño/Izquierda" to="Dueño" method="_on_izquierda_body_entered"]
-[connection signal="body_exited" from="Dueño/Izquierda" to="Dueño" method="_on_dueño_body_exited"]
-[connection signal="body_entered" from="Dueño/Derecha" to="Dueño" method="_on_derecha_body_entered"]
-[connection signal="body_exited" from="Dueño/Derecha" to="Dueño" method="_on_dueño_body_exited"]
+[node name="VendedorPrincipal" parent="." unique_id=1937173755 instance=ExtResource("7_uox7j")]
+position = Vector2(-303, -4)
+script = ExtResource("8_xekwt")
+
+[node name="Colisiones" parent="VendedorPrincipal" index="0" unique_id=488911184]
+position = Vector2(-0.5, 5)
+scale = Vector2(0.2, 0.146)
+
+[node name="Animacion" parent="VendedorPrincipal" index="1" unique_id=40949499]
+position = Vector2(-0.99999714, 4.9999948)
+scale = Vector2(0.148743, 0.14834747)
+
+[node name="Fondo_dialogo" type="Panel" parent="VendedorPrincipal" unique_id=316920394]
+offset_left = -28.0
+offset_top = -12.196541
+offset_right = 1715.4961
+offset_bottom = 1946.1033
+rotation = -1.5707964
+scale = Vector2(0.021109004, 0.025906231)
+theme_override_styles/panel = SubResource("StyleBoxTexture_bjd1o")
+metadata/_edit_use_anchors_ = true
+
+[node name="Dialogo" type="RichTextLabel" parent="VendedorPrincipal" unique_id=330259907]
+offset_left = -22.000021
+offset_top = -43.0
+offset_right = 167.3557
+offset_bottom = 77.4613
+scale = Vector2(0.18483734, 0.16711731)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("10_vgyg1")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Bienvenido al mercado"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+language = "es_ES"
+
+[node name="Abajo" type="Area2D" parent="VendedorPrincipal" unique_id=829186357]
+position = Vector2(40, 29)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.146)
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VendedorPrincipal/Abajo" unique_id=132088046]
+position = Vector2(202.5, 61.6438)
+scale = Vector2(0.20000002, 0.146)
+shape = SubResource("RectangleShape2D_y0oe4")
+
+[node name="Arriba" type="Area2D" parent="VendedorPrincipal" unique_id=818280467]
+position = Vector2(40, 37)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.146)
+collision_mask = 9
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VendedorPrincipal/Arriba" unique_id=937499371]
+position = Vector2(202.5, 321.91785)
+scale = Vector2(0.20000002, 0.146)
+shape = SubResource("RectangleShape2D_qqfyw")
+
+[node name="Izquierda" type="Area2D" parent="VendedorPrincipal" unique_id=1503594021]
+position = Vector2(42, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.146)
+collision_mask = 9
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VendedorPrincipal/Izquierda" unique_id=1676256854]
+position = Vector2(258.75, 191.7808)
+scale = Vector2(0.20000002, 0.146)
+shape = SubResource("RectangleShape2D_w4n4y")
+
+[node name="Derecha" type="Area2D" parent="VendedorPrincipal" unique_id=381098176]
+position = Vector2(39, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, 0.146)
+collision_mask = 9
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="VendedorPrincipal/Derecha" unique_id=73638953]
+position = Vector2(152.5, 191.78079)
+scale = Vector2(0.20000002, 0.146)
+shape = SubResource("RectangleShape2D_o7wvp")
+
 [connection signal="body_entered" from="VendedorPrincipal/Abajo" to="VendedorPrincipal" method="_on_abajo_body_entered"]
 [connection signal="body_exited" from="VendedorPrincipal/Abajo" to="VendedorPrincipal" method="_on_vendedor_body_exited"]
 [connection signal="body_entered" from="VendedorPrincipal/Arriba" to="VendedorPrincipal" method="_on_arriba_body_entered"]
@@ -4617,9 +4439,7 @@ autoplay = "default"
 [connection signal="body_entered" from="VendedorPrincipal/Derecha" to="VendedorPrincipal" method="_on_derecha_body_entered"]
 [connection signal="body_exited" from="VendedorPrincipal/Derecha" to="VendedorPrincipal" method="_on_vendedor_body_exited"]
 
-[editable path="Vendedor1"]
-[editable path="Dueño"]
-[editable path="VendedorPrincipal"]
 [editable path="Vendedor2"]
 [editable path="Vendedor3"]
 [editable path="Vendedor4"]
+[editable path="VendedorPrincipal"]

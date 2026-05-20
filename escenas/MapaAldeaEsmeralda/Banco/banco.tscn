@@ -978,16 +978,16 @@ texture = ExtResource("15_uabp3")
 region_rect = Rect2(455, 139, 30, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrx0e"]
-size = Vector2(62.5, 20.581444)
+size = Vector2(66.66693, 17.151318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq0rp"]
-size = Vector2(75.00006, 63.55104)
+size = Vector2(66.66676, 55.51722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05uds"]
-size = Vector2(149.02332, 76.86821)
+size = Vector2(99.999985, 76.86812)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4od"]
-size = Vector2(349.998, 743.5906)
+size = Vector2(324.999, 717.94763)
 
 [node name="Banco" type="StaticBody2D" unique_id=1785301562]
 position = Vector2(489, 364)
@@ -1063,9 +1063,9 @@ scale = Vector2(0.05, 0.053)
 theme_override_styles/panel = SubResource("StyleBoxTexture_v5lo8")
 
 [node name="Dialogo" type="RichTextLabel" parent="Banquero" unique_id=1145712865]
-offset_left = -24.0
+offset_left = -23.00003
 offset_top = -60.0
-offset_right = 127.04761
+offset_right = 124.02634
 offset_bottom = 60.461304
 scale = Vector2(0.24867205, 0.23801798)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
@@ -1084,7 +1084,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Banquero/Abajo" unique_id=619960878]
-position = Vector2(212.5, -61.538574)
+position = Vector2(210, -64.10254)
 scale = Vector2(1.2, 1.4949999)
 shape = SubResource("RectangleShape2D_xrx0e")
 
@@ -1094,7 +1094,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Banquero/Arriba" unique_id=1071688011]
-position = Vector2(210, -276.92303)
+position = Vector2(210, -274.3202)
 scale = Vector2(1.2, -0.648)
 shape = SubResource("RectangleShape2D_bq0rp")
 
@@ -1104,7 +1104,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Banquero/Izquierda" unique_id=1752918057]
-position = Vector2(277.74414, -169.23071)
+position = Vector2(285, -164.10254)
 scale = Vector2(0.5, 1.868)
 shape = SubResource("RectangleShape2D_05uds")
 
@@ -1114,7 +1114,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Banquero/Derecha" unique_id=1167701569]
-position = Vector2(160, -166.66699)
+position = Vector2(162.5, -164.10254)
 scale = Vector2(0.20000002, 0.20000002)
 shape = SubResource("RectangleShape2D_wk4od")
 

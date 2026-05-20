@@ -11,14 +11,16 @@ var esperando3 = false
 var velocidad = 30.0
 
 func _ready() -> void:
+	if Global.llave_verde_obtenida:
+		$Glitch.hide()
+		$AreaGlitch/ColisionGlitch.disabled = true
+	
 	$Patito/Animacion.play("quieto_agua_izquierda")
 	$Patito2/Animacion.play("quieto_agua_derecha")
 	$Patito3/Animacion.play("quieto_derecha")
 
 func _process(delta: float) -> void:
-	if Global.llave_verde_obtenida:
-		$Glitch.hide()
-		$AreaGlitch/ColisionGlitch.disabled = true
+	
 	# --- PATITO 1 (de -6 a 40) ---
 	if not esperando1:
 		$Patito.position.x += direccion1 * velocidad * delta

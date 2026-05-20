@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://8qgtemdc46pg" path="res://escenas/Personajes/Jugador/jugador_skin_chica.tres" id="4_0aaiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmt1e"]
-size = Vector2(34.97534, 41.97178)
+size = Vector2(44.859337, 63.36125)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0aaiv"]
 radius = 182.70195
@@ -18,11 +18,6 @@ collision_mask = 100
 script = ExtResource("1_2x0lx")
 animacion_chico = NodePath("AnimacionChico")
 animacion_chica = NodePath("AnimacionChica")
-
-[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=565766791]
-position = Vector2(2.5, 35)
-scale = Vector2(2.2587342, 2.4778552)
-shape = SubResource("RectangleShape2D_vmt1e")
 
 [node name="AnimacionAntigua" type="AnimatedSprite2D" parent="." unique_id=476995953]
 visible = false
@@ -37,10 +32,16 @@ autoplay = "quieto_abajo_chico"
 
 [node name="AnimacionChica" type="AnimatedSprite2D" parent="." unique_id=1947578027]
 sprite_frames = ExtResource("4_0aaiv")
-animation = &"correr_abajo_chica"
+animation = &"quieto_abajo_chica"
 autoplay = "quieto_abajo_chica"
 
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=565766791]
+position = Vector2(2, 12.5)
+scale = Vector2(2.2737732, 2.4798393)
+shape = SubResource("RectangleShape2D_vmt1e")
+
 [node name="Chat_area" type="Area2D" parent="." unique_id=405339090]
+visible = false
 collision_layer = 9
 
 [node name="Deteccion" type="CollisionShape2D" parent="Chat_area" unique_id=1352312489]

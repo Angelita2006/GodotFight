@@ -3,10 +3,6 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
 	if Global.llave_dorada_obtenida:
 		$Glitch1.hide()
 		$Glitch2.hide()
@@ -14,6 +10,10 @@ func _process(_delta: float) -> void:
 		$Glitch4.hide()
 		$Glitch5.hide()
 		$Banquero.hide()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
 
 func _on_animacion_animation_finished(source: AnimatedSprite2D) -> void:
 	if source.animation == "abrir" and source.animation_finished:

@@ -1094,7 +1094,6 @@ size = Vector2(118.04593, 93.34)
 size = Vector2(300.00192, 871.79395)
 
 [node name="Ayuntamiento" type="StaticBody2D" unique_id=1816981424]
-position = Vector2(478, 417)
 script = ExtResource("1_insl8")
 
 [node name="Suelo" type="TileMapLayer" parent="." unique_id=1120895500]
@@ -1177,9 +1176,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_m8kwe")
 
 [node name="Dialogo" type="RichTextLabel" parent="Presidente" unique_id=943063225]
 offset_left = 565.0
-offset_top = 254.0
+offset_top = 252.0
 offset_right = 705.74756
-offset_bottom = 354.83264
+offset_bottom = 365.4368
 scale = Vector2(0.24867205, 0.23801798)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
 theme_override_fonts/normal_font = ExtResource("18_tfahb")
