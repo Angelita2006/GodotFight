@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dsjg471vyt857" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes3.png" id="1_6gu4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqvnq"]
-size = Vector2(120, 328.76685)
+size = Vector2(90, 253.42468)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fb5gd"]
 atlas = ExtResource("1_6gu4v")
