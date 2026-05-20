@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlgowptyld050"]
+[gd_scene format=3 uid="uid://dlgowptyld050"]
 
 [ext_resource type="Texture2D" uid="uid://bot8babi3omcq" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes2.png" id="1_o8jes"]
 
@@ -21,7 +21,7 @@ region = Rect2(500, 376, 125, 188)
 atlas = ExtResource("1_o8jes")
 region = Rect2(500, 188, 125, 188)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vgri5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8jes"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -56,15 +56,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bibliotecaria" type="RigidBody2D"]
+[node name="Bibliotecaria" type="RigidBody2D" unique_id=199411491]
 gravity_scale = 0.0
 
-[node name="Colisiones" type="CollisionShape2D" parent="."]
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=1071886836]
 position = Vector2(6.1035156e-05, 2.2000427)
 scale = Vector2(0.15, 0.15)
 shape = SubResource("RectangleShape2D_jbqyv")
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=232325489]
 scale = Vector2(0.15, 0.15)
-sprite_frames = SubResource("SpriteFrames_vgri5")
+sprite_frames = SubResource("SpriteFrames_o8jes")
 animation = &"Bibliotecaria_abajo"

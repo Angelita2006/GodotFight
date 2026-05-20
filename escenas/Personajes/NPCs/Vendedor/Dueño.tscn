@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bg6i4uve3yyy8"]
+
+[ext_resource type="Texture2D" uid="uid://dsjg471vyt857" path="res://assets/juego/mapa/aldeaesmeralda/personajes/personajes3.png" id="1_1h3bq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x67a"]
+size = Vector2(94.11764, 164.47058)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8vx7"]
+atlas = ExtResource("1_1h3bq")
+region = Rect2(1250, 0, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjlbs"]
+atlas = ExtResource("1_1h3bq")
+region = Rect2(1250, 561, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t0yf"]
+atlas = ExtResource("1_1h3bq")
+region = Rect2(1250, 374, 125, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6i0r"]
+atlas = ExtResource("1_1h3bq")
+region = Rect2(1250, 187, 125, 187)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkp03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8vx7")
+}],
+"loop": true,
+"name": &"Dueño_abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjlbs")
+}],
+"loop": true,
+"name": &"Dueño_arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t0yf")
+}],
+"loop": true,
+"name": &"Dueño_derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6i0r")
+}],
+"loop": true,
+"name": &"Dueño_izquierda",
+"speed": 5.0
+}]
+
+[node name="Dueño" type="RigidBody2D" unique_id=747917639]
+gravity_scale = 0.0
+
+[node name="Colisiones" type="CollisionShape2D" parent="." unique_id=1391998869]
+position = Vector2(-2.3841858e-07, 0.019999385)
+scale = Vector2(0.17, 0.17)
+shape = SubResource("RectangleShape2D_2x67a")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=862918016]
+position = Vector2(-0.100000024, 0)
+scale = Vector2(0.15, 0.148)
+sprite_frames = SubResource("SpriteFrames_kkp03")
+animation = &"Dueño_abajo"
