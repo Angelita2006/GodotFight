@@ -934,7 +934,7 @@ tile_map_data = PackedByteArray("AAAoAPj/AAABAAAAABAnAPj/AAACAAAAABAmAPj/AAABAAA
 tile_set = SubResource("TileSet_loxkv")
 
 [node name="PersonajePrincipal" parent="." unique_id=2062053866 instance=ExtResource("8_8neol")]
-position = Vector2(97.00006, 293)
+position = Vector2(1348, 28)
 scale = Vector2(0.17217067, 0.17236048)
 collision_layer = 1
 collision_mask = 1

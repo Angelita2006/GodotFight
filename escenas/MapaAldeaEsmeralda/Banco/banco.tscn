@@ -1065,9 +1065,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_v5lo8")
 [node name="Dialogo" type="RichTextLabel" parent="Banquero" unique_id=1145712865]
 offset_left = -23.00003
 offset_top = -60.0
-offset_right = 124.02634
-offset_bottom = 60.461304
-scale = Vector2(0.24867205, 0.23801798)
+offset_right = 100.70932
+offset_bottom = 64.12073
+scale = Vector2(0.2929793, 0.2255867)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
 theme_override_fonts/normal_font = ExtResource("16_2iwwf")
 theme_override_font_sizes/normal_font_size = 16

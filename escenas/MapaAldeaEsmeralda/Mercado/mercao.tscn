@@ -4350,6 +4350,7 @@ autoplay = "default"
 
 [node name="VendedorPrincipal" parent="." unique_id=1937173755 instance=ExtResource("7_uox7j")]
 position = Vector2(-303, -4)
+scale = Vector2(1, 0.9963879)
 script = ExtResource("8_xekwt")
 
 [node name="Colisiones" parent="VendedorPrincipal" index="0" unique_id=488911184]
@@ -4373,9 +4374,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Dialogo" type="RichTextLabel" parent="VendedorPrincipal" unique_id=330259907]
 offset_left = -22.000021
 offset_top = -43.0
-offset_right = 167.3557
-offset_bottom = 77.4613
-scale = Vector2(0.18483734, 0.16711731)
+offset_right = 144.43639
+offset_bottom = 75.52803
+scale = Vector2(0.21029067, 0.17650042)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
 theme_override_fonts/normal_font = ExtResource("10_vgyg1")
 theme_override_font_sizes/normal_font_size = 20

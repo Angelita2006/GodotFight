@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxk4vmar1xlqj"]
+[gd_scene format=3 uid="uid://bxk4vmar1xlqj"]
 
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_2sjtm"]
 [ext_resource type="Script" uid="uid://bxlcdd87dnudb" path="res://escenas/Menus/MenuAspecto/editordepersonaje_script.gd" id="1_6p3b6"]
-[ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="2_6p3b6"]
-[ext_resource type="Script" uid="uid://cfho4vst6dwpr" path="res://escenas/Personajes/Jugador/personaje_editor.gd" id="3_2sjtm"]
 [ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="3_jenc8"]
 [ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="4_475in"]
 [ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="5_we3q0"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="6_475in"]
+[ext_resource type="SpriteFrames" uid="uid://b7cdx0eaiy8xo" path="res://escenas/Personajes/Jugador/jugador_skin_chico.tres" id="7_x30dt"]
+[ext_resource type="SpriteFrames" uid="uid://8qgtemdc46pg" path="res://escenas/Personajes/Jugador/jugador_skin_chica.tres" id="8_4xyqr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj7md"]
 
@@ -19,7 +19,7 @@ expand_margin_right = 20.0
 expand_margin_bottom = 20.0
 region_rect = Rect2(163, 178, 90, 27)
 
-[node name="Editor De Personaje" type="Control"]
+[node name="Editor De Personaje" type="Control" unique_id=1293523169]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6p3b6")
 
-[node name="Fondo" type="Panel" parent="."]
+[node name="Fondo" type="Panel" parent="." unique_id=1259867996]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.999998
@@ -40,7 +40,7 @@ theme = ExtResource("1_2sjtm")
 theme_override_styles/panel = ExtResource("3_jenc8")
 script = ExtResource("5_we3q0")
 
-[node name="TituloEditor" type="Label" parent="."]
+[node name="TituloEditor" type="Label" parent="." unique_id=1558045707]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.000002
@@ -59,7 +59,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_we3q0")
 
-[node name="Guardar" type="Button" parent="."]
+[node name="Guardar" type="Button" parent="." unique_id=2128921133]
 layout_mode = 0
 offset_left = 717.99994
 offset_top = 508.0
@@ -74,7 +74,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_hj7md")
 text = "Guardar"
 
-[node name="Volver" type="Button" parent="."]
+[node name="Volver" type="Button" parent="." unique_id=1733203955]
 layout_mode = 0
 offset_left = 924.99994
 offset_top = 508.00003
@@ -89,7 +89,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_hj7md")
 text = "Volver"
 
-[node name="ChicoBoton" type="Button" parent="."]
+[node name="ChicoBoton" type="Button" parent="." unique_id=2071262562]
 layout_mode = 0
 offset_left = 79.00001
 offset_top = 202.00002
@@ -101,7 +101,7 @@ theme = ExtResource("1_2sjtm")
 theme_type_variation = &"Boton2"
 toggle_mode = true
 
-[node name="Chico" type="Label" parent="."]
+[node name="Chico" type="Label" parent="." unique_id=1145532898]
 layout_mode = 0
 offset_left = 139.00002
 offset_top = 476.0
@@ -112,7 +112,7 @@ theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("4_475in")
 text = "Chico"
 
-[node name="ChicaBoton" type="Button" parent="."]
+[node name="ChicaBoton" type="Button" parent="." unique_id=568167682]
 layout_mode = 0
 offset_left = 381.00003
 offset_top = 202.00002
@@ -124,7 +124,7 @@ theme = ExtResource("1_2sjtm")
 theme_type_variation = &"Boton2"
 toggle_mode = true
 
-[node name="Chica" type="Label" parent="."]
+[node name="Chica" type="Label" parent="." unique_id=1811855567]
 layout_mode = 0
 offset_left = 445.0
 offset_top = 480.00006
@@ -135,20 +135,7 @@ theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("4_475in")
 text = "Chica"
 
-[node name="PersonajePrincipal" parent="." instance=ExtResource("2_6p3b6")]
-position = Vector2(213.99998, 338)
-scale = Vector2(1.3959534, 1.3354394)
-script = ExtResource("3_2sjtm")
-
-[node name="Colisiones" parent="PersonajePrincipal" index="0"]
-visible = false
-position = Vector2(8.829193, -8.709137)
-scale = Vector2(1.597443, 14.149987)
-
-[node name="AnimacionChica" parent="PersonajePrincipal" index="3"]
-position = Vector2(218.61389, -4.1428833)
-
-[node name="Nombre" type="Label" parent="."]
+[node name="Nombre" type="Label" parent="." unique_id=1391089787]
 layout_mode = 0
 offset_left = 731.99994
 offset_top = 267.0
@@ -159,7 +146,7 @@ theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("4_475in")
 text = "Nombre"
 
-[node name="NombreEditor" type="LineEdit" parent="."]
+[node name="NombreEditor" type="LineEdit" parent="." unique_id=1439210879]
 layout_mode = 0
 offset_left = 691.99994
 offset_top = 319.0
@@ -168,8 +155,18 @@ offset_bottom = 350.0
 scale = Vector2(4.9930696, 3.6618097)
 theme = ExtResource("1_2sjtm")
 
+[node name="AnimacionChico" type="AnimatedSprite2D" parent="." unique_id=1277959885]
+position = Vector2(218, 348)
+sprite_frames = ExtResource("7_x30dt")
+animation = &"quieto_abajo_chico"
+autoplay = "quieto_abajo_chico"
+
+[node name="AnimacionChica" type="AnimatedSprite2D" parent="." unique_id=8885064]
+position = Vector2(521, 350)
+sprite_frames = ExtResource("8_4xyqr")
+animation = &"quieto_abajo_chica"
+autoplay = "quieto_abajo_chica"
+
 [connection signal="pressed" from="Guardar" to="." method="_on_guardar_pressed"]
 [connection signal="pressed" from="ChicoBoton" to="." method="_on_chico_boton_pressed"]
 [connection signal="pressed" from="ChicaBoton" to="." method="_on_chica_boton_pressed"]
-
-[editable path="PersonajePrincipal"]

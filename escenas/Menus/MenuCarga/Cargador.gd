@@ -63,25 +63,10 @@ func entrar_escena_cargada():
 	if not escena_cargada:
 		push_error("Escena no válida")
 		return
-
-	# 1. Congelar por completo el procesamiento de la escena vieja
-	var escena_vieja = get_tree().current_scene
-	if escena_vieja:
-		escena_vieja.process_mode = Node.PROCESS_MODE_DISABLED
-		# Forzamos a que elimine sus conexiones del árbol inmediatamente
-		get_tree().root.remove_child(escena_vieja)
-		escena_vieja.queue_free()
-
-	# 2. LIMPIEZA ABSOLUTA DE FÍSICAS (Esto evita que las señales viajen entre escenas)
-	PhysicsServer2D.set_active(false) # Apaga el motor de físicas un instante
-	get_tree().clear() # Limpia cualquier residuo en el árbol de nodos
-	PhysicsServer2D.set_active(true)  # Reactiva el motor de físicas limpio
-
-	# 3. Instanciar la nueva escena de forma limpia en el hilo principal
-	var nueva_escena_instancia = escena_cargada.instantiate()
-	get_tree().root.add_child(nueva_escena_instancia)
-	get_tree().current_scene = nueva_escena_instancia
-
+	
+	# Cambiar de forma diferida para limpiar colisiones pendientes
+	get_tree().call_deferred("change_scene_to_packed", escena_cargada)
+	
 	# 4. Quitar menú de carga
 	if instancia_escena:
 		instancia_escena.queue_free()

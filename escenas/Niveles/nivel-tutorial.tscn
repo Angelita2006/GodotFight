@@ -1,9 +1,9 @@
-[gd_scene format=4 uid="uid://qo27srvc8flm"]
+[gd_scene format=4 uid="uid://re7e6jr62tda"]
 
-[ext_resource type="Script" uid="uid://d1plti53iqu5" path="res://escenas/Niveles/nivel_tutorial.gd" id="1_vvuas"]
+[ext_resource type="Script" path="res://escenas/Niveles/nivel_tutorial.gd" id="1_vvuas"]
 [ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="2_7uago"]
 [ext_resource type="Texture2D" uid="uid://damei0cyoco10" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataforma inicio y salida.png" id="3_pinyf"]
-[ext_resource type="TileSet" uid="uid://vi15v38nrysx" path="res://escenas/Niveles/niveles.tres" id="4_8at6c"]
+[ext_resource type="TileSet" uid="uid://d3ciuql4c57ow" path="res://escenas/Niveles/niveles.tres" id="4_8at6c"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_xpkg2"]
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_jifyo"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_xha85"]
@@ -24,7 +24,7 @@ region_rect = Rect2(24, 24, 912, 912)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nrhkc"]
 radius = 74.94665
 
-[node name="Tutorial" type="Node2D" unique_id=87294653]
+[node name="Nivel Tutorial" type="Node2D" unique_id=87294653]
 script = ExtResource("1_vvuas")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1058637905]

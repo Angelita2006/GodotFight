@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 func cambiar_dialogo():
 	$Dialogo.show()
 	$Fondo_dialogo.show()
-	$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", ¿quieres volver al estado corrupto?\n(Sí) Pulsa E"
+	$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", ¿quieres ayudarnos a sacar a los corruptos?\n(Sí) Pulsa E"
 	dialogo_actual = 2
 
 func _on_abajo_body_entered(body: Node2D) -> void:

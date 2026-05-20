@@ -3,10 +3,6 @@ extends Node2D
 @export var menu_pausa: Control
 
 func cargar_posicion():
-
-	Database.abrir_db()
-	
-	Database.crear_tabla_si_no_existe()
 	
 	# Si no hay partida guardada
 	if !Database.hay_partida_guardada():
@@ -59,6 +55,15 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pausar"):
+		var posicion_anterior_menu = menu_pausa.global_position
+		var posicion_anterior_fondo = $"PersonajePrincipal/Camera2D/Fondo Pausa".global_position
+	
+		menu_pausa.top_level = true
+		$"PersonajePrincipal/Camera2D/Fondo Pausa".top_level = true
+		
+		menu_pausa.global_position = posicion_anterior_menu
+		$"PersonajePrincipal/Camera2D/Fondo Pausa".global_position = posicion_anterior_fondo
+		
 		menu_pausa.show()
 		$"PersonajePrincipal/Camera2D/Fondo Pausa".show()
 

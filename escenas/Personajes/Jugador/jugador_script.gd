@@ -12,8 +12,8 @@ func _physics_process(_delta):
 		animacion_chico.show()		
 		
 		if Input.is_action_pressed("correr"):
-			_velocidad = 100
-			animacion_chico.speed_scale = 1.6
+			_velocidad = 90
+			animacion_chico.speed_scale = 1.3
 		else:
 			_velocidad = 80
 			animacion_chico.speed_scale = 1
@@ -57,8 +57,8 @@ func _physics_process(_delta):
 		animacion_chica.show()
 		
 		if Input.is_action_pressed("correr"):
-			_velocidad = 100
-			animacion_chica.speed_scale = 1.8
+			_velocidad = 90
+			animacion_chica.speed_scale = 1.3
 		else:
 			_velocidad = 80
 			animacion_chica.speed_scale = 1

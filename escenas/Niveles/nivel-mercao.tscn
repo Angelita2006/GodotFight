@@ -15,7 +15,7 @@
 size = Vector2(776, 105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecmox"]
-size = Vector2(145, 295)
+size = Vector2(145, 273)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22ext"]
 size = Vector2(781, 83)
@@ -81,7 +81,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_au042"]
 size = Vector2(163, 282)
 
-[node name="Tutorial" type="Node2D" unique_id=87294653]
+[node name="Nivel Mercado" type="Node2D" unique_id=87294653]
 script = ExtResource("1_a1hmr")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1058637905]
@@ -129,7 +129,7 @@ shape = SubResource("RectangleShape2D_c2s0r")
 position = Vector2(-174, 97)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio/Puerta de salida" unique_id=610009605]
-position = Vector2(-15.5, 34.5)
+position = Vector2(-15.5, 23.5)
 shape = SubResource("RectangleShape2D_ecmox")
 
 [node name="Final" type="StaticBody2D" parent="." unique_id=485269612]
