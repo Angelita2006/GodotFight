@@ -94,3 +94,15 @@ func _on_palabra_faltante_3_body_entered(_body: Node2D) -> void:
 		
 		$Plataformas3.show()
 		$Plataformas3.collision_enabled = true
+		
+		
+
+
+func _on_activar_aviso_body_entered(_body: Node2D) -> void:
+	$Personaje_Codigo/Aviso.show()
+	$Personaje_Codigo/Nivel_Mision.hide()
+	$Personaje_Codigo/Pista_Mision.hide()
+
+
+func _on_pincho_body_entered(_body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://escenas/Niveles/nivel-mercao.tscn")
