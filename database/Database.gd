@@ -83,7 +83,7 @@ func obtener_todo():
 	return db.query_result
 
 func obtener_datos_ultima_partida():
-	var sql = "SELECT pos_x, pos_y FROM partida ORDER BY idPartida DESC LIMIT 1;"
+	var sql = "SELECT * FROM partida ORDER BY idPartida DESC LIMIT 1;"
 	db.query(sql)
 	return db.query_result
 

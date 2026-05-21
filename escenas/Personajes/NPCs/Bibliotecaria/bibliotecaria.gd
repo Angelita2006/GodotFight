@@ -47,7 +47,7 @@ func _on_derecha_body_entered(body: Node2D) -> void:
 
 func entrar_nivel():
 	Database.abrir_db()
-	Database.crear_tabla_si_no_existe()
+	Database.crear_tablas_si_no_existen()
 	Database.db.query("DELETE FROM partida")
 	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
 	Database.cerrar_db()

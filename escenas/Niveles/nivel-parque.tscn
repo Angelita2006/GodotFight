@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_t0j2o"]
 [ext_resource type="Texture2D" uid="uid://br8gfgk10epuw" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/pato-coleccionable.png" id="9_f3jcd"]
 [ext_resource type="Texture2D" uid="uid://ecty42ka26qn" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/arbol.png" id="9_pnfhu"]
+[ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="10_03m3b"]
+[ext_resource type="AudioStream" uid="uid://bfw088jxlcalw" path="res://assets/ui/audio/gameon.wav" id="11_6bfat"]
+[ext_resource type="Texture2D" uid="uid://dgmwimft4hlty" path="res://assets/juego/mapa/aldeaesmeralda/llaves/llaves.png" id="12_r8dqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
 size = Vector2(776, 105)
@@ -48,6 +51,15 @@ region_rect = Rect2(24, 24, 912, 912)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_34gxf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jivr5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0j2o"]
+texture = ExtResource("8_t0j2o")
+region_rect = Rect2(24, 24, 912, 912)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_34gxf"]
+texture = ExtResource("12_r8dqe")
+region_rect = Rect2(799, 1124, 202, 152)
+modulate_color = Color(0.1809, 0.67, 0.27056837, 1)
 
 [node name="Nivel Parque" type="Node2D" unique_id=2113045929]
 script = ExtResource("1_6ie05")
@@ -491,6 +503,63 @@ collision_mask = 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Muerte" unique_id=285756820]
 position = Vector2(5750, -4130)
 polygon = PackedVector2Array(43, -25, 3940, 250, 4047, 2776, -4748, 2788, -4677, 142, 43, 47, -64, -370, -6166, -370, -6155, 3455, 6205, 3455, 6145, -156, -5, -394)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1023825828]
+stream = ExtResource("10_03m3b")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1137546531]
+stream = ExtResource("11_6bfat")
+
+[node name="Final2" type="Control" parent="." unique_id=553615664]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 578.0
+offset_top = 304.0
+offset_right = 618.0
+offset_bottom = 344.0
+scale = Vector2(0.40020618, 0.5175278)
+
+[node name="Fondo" type="Panel" parent="Final2" unique_id=408314890]
+layout_mode = 0
+offset_left = -1228.0
+offset_top = -570.0
+offset_right = 1281.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_t0j2o")
+
+[node name="Mensaje" type="Label" parent="Final2" unique_id=1776924926]
+layout_mode = 0
+offset_left = -759.60846
+offset_top = -365.19775
+offset_right = 915.4472
+offset_bottom = -56.197754
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_6bfat")
+theme_override_font_sizes/font_size = 100
+text = "Misión del parque completada
+
+¡Has conseguido la llave verde!"
+horizontal_alignment = 1
+
+[node name="Fondo_llave" type="Panel" parent="Final2" unique_id=1745186753]
+layout_mode = 0
+offset_left = -364.812
+offset_top = 40.57753
+offset_right = 129.18799
+offset_bottom = 174.57753
+scale = Vector2(1.5675164, 2.9378872)
+theme_override_styles/panel = SubResource("StyleBoxTexture_t0j2o")
+
+[node name="Llave Verde" type="Panel" parent="Final2" unique_id=574820981]
+layout_mode = 0
+offset_left = -197.39825
+offset_top = 94.68091
+offset_right = -157.39825
+offset_bottom = 134.68091
+scale = Vector2(11.50247, 6.42378)
+theme_override_styles/panel = SubResource("StyleBoxTexture_34gxf")
 
 [connection signal="body_entered" from="Inicio/Puerta de salida" to="." method="_on_puerta_de_salida_body_entered"]
 [connection signal="body_entered" from="Final/Puerta de meta" to="." method="_on_puerta_de_meta_body_entered"]

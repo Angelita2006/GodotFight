@@ -21,7 +21,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$Personaje_Codigo/Estado_Mision.text = str(patos)
 
-
 func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
 
@@ -37,15 +36,19 @@ func _on_cancelar_pressed() -> void:
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-parque
-	get_tree().change_scene_to_file("uid://b8i0qhu37u1ep")
+	get_tree().reload_current_scene()
 
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	# GUARDAR QUE EL NIVEL HA SIDO COMPLETADO Y SI EL COLECCIONABLE SECRETO HA SIDO RECOGIDO
 	if patos == 3:
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.play()
+		$Final2.show()
 		$Personaje_Codigo/Camera2D.enabled = false
+		await $AudioStreamPlayer2.finished
 		# ir al mapa
-		Cargador.cargar_escena("uid://c61j2kork7ar5", true)
+		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:

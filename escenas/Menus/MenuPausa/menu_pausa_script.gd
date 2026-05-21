@@ -39,7 +39,7 @@ func _on_opciones_pressed() -> void:
 
 func _on_guardar_pressed() -> void:
 	Database.abrir_db()
-	#Database.crear_tablas_si_no_existen()
+	Database.crear_tablas_si_no_existen()
 	Database.db.query("DELETE FROM partida")
 	var pos = personajeprincipal.global_position
 	var llave_verde_conseguida = 1 if (Global.llave_verde_obtenida == true) else 0

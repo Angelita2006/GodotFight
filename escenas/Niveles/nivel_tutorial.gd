@@ -40,10 +40,14 @@ func _on_activar_ultimo_mensaje_body_entered(_body: Node2D) -> void:
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-tutorial
-	get_tree().change_scene_to_file("uid://re7e6jr62tda")
+	get_tree().reload_current_scene()
 
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer2.play()
+	$Final2.show()
 	$Personaje_Codigo/Camera2D.enabled = false
+	await $AudioStreamPlayer2.finished
 	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
+	Cargador.cargar_escena("uid://c61j2kork7ar5", false)

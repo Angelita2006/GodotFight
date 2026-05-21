@@ -27,11 +27,13 @@ func _on_muerte_body_entered(_body: Node2D) -> void:
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	## GUARDAR QUE EL NIVEL HA SIDO COMPLETADO Y SI EL COLECCIONABLE SECRETO HA SIDO RECOGIDO
-	#Database.
-	
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer2.play()
+	$Final2.show()
 	$Personaje_Codigo/Camera2D.enabled = false
+	await $AudioStreamPlayer2.finished
 	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
+	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
@@ -96,4 +98,4 @@ func _on_activar_aviso_body_entered(_body: Node2D) -> void:
 
 func _on_pincho_body_entered(_body: Node2D) -> void:
 	# volver al nivel-mercao
-	get_tree().change_scene_to_file("uid://ut7fnsn5cbc3")
+	get_tree().reload_current_scene()

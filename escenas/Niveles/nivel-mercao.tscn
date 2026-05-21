@@ -8,8 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_fkygw"]
 [ext_resource type="Texture2D" uid="uid://br8gfgk10epuw" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/pato-coleccionable.png" id="7_u7ehd"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_sn7pj"]
-[ext_resource type="Script" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
+[ext_resource type="Script" uid="uid://d3xfnptcjv6t0" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
 [ext_resource type="Texture2D" uid="uid://dlikxooqcusye" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Obstaculos.png" id="10_ytp65"]
+[ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="11_x0u27"]
+[ext_resource type="Texture2D" uid="uid://dgmwimft4hlty" path="res://assets/juego/mapa/aldeaesmeralda/llaves/llaves.png" id="11_ytp65"]
+[ext_resource type="AudioStream" uid="uid://bfw088jxlcalw" path="res://assets/ui/audio/gameon.wav" id="12_fkygw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
 size = Vector2(776, 105)
@@ -80,6 +83,15 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_au042"]
 size = Vector2(163, 282)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgs4a"]
+texture = ExtResource("8_sn7pj")
+region_rect = Rect2(24, 24, 912, 912)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0u27"]
+texture = ExtResource("11_ytp65")
+region_rect = Rect2(499, 824, 202, 165)
+modulate_color = Color(0.9127254, 0.9127254, 0.9127254, 1)
 
 [node name="Nivel Mercado" type="Node2D" unique_id=87294653]
 script = ExtResource("1_a1hmr")
@@ -569,6 +581,63 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Activador_Pincho" unique_id=1876723047]
 position = Vector2(128, 14)
 shape = SubResource("RectangleShape2D_au042")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1739843689]
+stream = ExtResource("11_x0u27")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1886246863]
+stream = ExtResource("12_fkygw")
+
+[node name="Final2" type="Control" parent="." unique_id=143126413]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 578.0
+offset_top = 304.0
+offset_right = 618.0
+offset_bottom = 344.0
+scale = Vector2(0.40020618, 0.5175278)
+
+[node name="Fondo" type="Panel" parent="Final2" unique_id=2064105712]
+layout_mode = 0
+offset_left = -1228.0
+offset_top = -570.0
+offset_right = 1281.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tgs4a")
+
+[node name="Mensaje" type="Label" parent="Final2" unique_id=282204031]
+layout_mode = 0
+offset_left = -759.60846
+offset_top = -365.19775
+offset_right = 915.4472
+offset_bottom = -56.197754
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_x0u27")
+theme_override_font_sizes/font_size = 100
+text = "Misión del mercado completada
+
+¡Has conseguido la llave plateada!"
+horizontal_alignment = 1
+
+[node name="Fondo_llave" type="Panel" parent="Final2" unique_id=831485354]
+layout_mode = 0
+offset_left = -364.812
+offset_top = 40.57753
+offset_right = 129.18799
+offset_bottom = 174.57753
+scale = Vector2(1.5675164, 2.9378872)
+theme_override_styles/panel = SubResource("StyleBoxTexture_tgs4a")
+
+[node name="Llave Plateada" type="Panel" parent="Final2" unique_id=808586477]
+layout_mode = 0
+offset_left = -197.39825
+offset_top = 94.68091
+offset_right = -157.39825
+offset_bottom = 134.68091
+scale = Vector2(11.50247, 6.42378)
+theme_override_styles/panel = SubResource("StyleBoxTexture_x0u27")
 
 [connection signal="body_entered" from="Inicio/Puerta de salida" to="." method="_on_puerta_de_salida_body_entered"]
 [connection signal="body_entered" from="Final/Puerta de meta" to="." method="_on_puerta_de_meta_body_entered"]
