@@ -5,7 +5,7 @@ var _velocidad: float = 100
 var ultima_direccion := "abajo"
 
 func _physics_process(_delta):
-	if Global.jugador_aspecto == "chico" and $"Camera2D/Menu Pausa".visible == false:
+	if Global.jugador_aspecto == "chico" and $Camera2D.visible == true:
 		
 		animacion_chica.hide()
 		animacion_chico.show()		

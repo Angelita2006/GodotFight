@@ -13,5 +13,6 @@ func _process(_delta: float) -> void:
 
 func _on_salida_body_entered(_body: CharacterBody2D) -> void:
 	Global.volviendo_de_banco = true
-	get_tree().change_scene_to_file("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn")
+	# ir al mapa
+	get_tree().change_scene_to_file("uid://c61j2kork7ar5")
 	

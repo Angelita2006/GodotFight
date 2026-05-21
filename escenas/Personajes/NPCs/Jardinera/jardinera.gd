@@ -58,4 +58,5 @@ func entrar_nivel():
 	Database.db.query("DELETE FROM partida")
 	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
 	Database.cerrar_db()
-	Cargador.cargar_escena("res://escenas/Niveles/nivel-parque.tscn", false)
+	# ir al nivel-parque
+	Cargador.cargar_escena("uid://b8i0qhu37u1ep", false)

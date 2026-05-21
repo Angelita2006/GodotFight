@@ -17,10 +17,11 @@ extends Control
 
 @export var personajeprincipal: CharacterBody2D
 
-var mensaje_guardado: Node
+@export var mensaje_guardado: Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mensaje_guardado = get_parent().get_child(2)
+	pass
+	#mensaje_guardado = get_parent().get_child(2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -38,18 +39,25 @@ func _on_opciones_pressed() -> void:
 
 func _on_guardar_pressed() -> void:
 	Database.abrir_db()
-	Database.crear_tabla_si_no_existe()
+	#Database.crear_tablas_si_no_existen()
 	Database.db.query("DELETE FROM partida")
 	var pos = personajeprincipal.global_position
-	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(pos.x)+","+str(pos.y)+")")
+	var llave_verde_conseguida = 1 if (Global.llave_verde_obtenida == true) else 0
+	var llave_purpura_conseguida = 1 if (Global.llave_purpura_obtenida == true) else 0
+	var llave_plateada_conseguida = 1 if (Global.llave_plateada_obtenida == true) else 0
+	var llave_dorada_conseguida = 1 if (Global.llave_dorada_obtenida == true) else 0
+	var llave_final_conseguida = 1 if (Global.llave_final_obtenida == true) else 0
+	var ruta_escena = get_tree().current_scene.scene_file_path
+	var uid_escena = ResourceLoader.get_resource_uid(ruta_escena)
+	Database.db.query("INSERT INTO partida (llave_verde_conseguida, llave_purpura_conseguida, llave_plateada_conseguida, llave_dorada_conseguida, llave_final_conseguida, escena_actual, pos_x, pos_y) VALUES ("+str(llave_verde_conseguida)+","+str(llave_purpura_conseguida)+","+str(llave_plateada_conseguida)+","+str(llave_dorada_conseguida)+","+str(llave_final_conseguida)+","+str(uid_escena)+","+str(pos.x)+","+str(pos.y)+")")
 	Database.cerrar_db()
 	mensaje_guardado.show()
 	await get_tree().create_timer(2).timeout
 	mensaje_guardado.hide()
 
 func _on_volver_pressed() -> void:
-	#$AnimationPlayer.play("fade_out")
-	get_tree().change_scene_to_file("res://escenas/Menus/MenuInicio1/menu_inicio.tscn")
+	# ir al menú de inicio
+	get_tree().change_scene_to_file("uid://b5iedpw7s5iny")
 
 func _on_volver_opciones_pressed() -> void:
 	opciones.hide()
@@ -59,6 +67,7 @@ func _on_volver_opciones_pressed() -> void:
 
 func _on_volverAopciones_pressed() -> void:
 	opciones.show()
+	titulo_opciones.show()
 	idioma.hide()
 	idiomat.hide()
 	volumen.hide()
@@ -71,6 +80,7 @@ func _on_volverAopciones_pressed() -> void:
 
 func _on_idioma_pressed() -> void:
 	opciones.hide()
+	titulo_opciones.hide()
 	volver.show()
 	idioma.show()
 	idiomat.show()
@@ -82,6 +92,7 @@ func _on_idioma_pressed() -> void:
 	controlest.hide()
 
 func _on_audio_pressed() -> void:
+	titulo_opciones.hide()
 	opciones.hide()
 	volver.show()
 	idioma.hide()
@@ -94,6 +105,7 @@ func _on_audio_pressed() -> void:
 	controlest.hide()
 
 func _on_controles_pressed() -> void:
+	titulo_opciones.hide()
 	opciones.hide()
 	volver.show()
 	idioma.hide()
@@ -106,6 +118,7 @@ func _on_controles_pressed() -> void:
 	controlest.show()
 
 func _on_créditos_pressed() -> void:
+	titulo_opciones.hide()
 	opciones.hide()
 	volver.show()
 	idioma.hide()

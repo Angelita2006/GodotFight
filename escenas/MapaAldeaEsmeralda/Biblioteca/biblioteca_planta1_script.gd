@@ -14,8 +14,10 @@ func _process(_delta: float) -> void:
 
 func _on_salida_body_entered(_body: CharacterBody2D) -> void:
 	Global.volviendo_de_biblioteca = true
-	get_tree().change_scene_to_file("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn")
+	# ir al mapa
+	get_tree().change_scene_to_file("uid://c61j2kork7ar5")
 	
 func _on_subida_body_entered(_body: CharacterBody2D) -> void:
 	Global.volviendo_de_biblioteca = true
-	get_tree().change_scene_to_file("res://escenas/MapaAldeaEsmeralda/biblioteca/biblioteca_planta2.tscn")
+	# ir a la planta 2 de la biblioteca
+	get_tree().change_scene_to_file("uid://cnfc63q14dvii")

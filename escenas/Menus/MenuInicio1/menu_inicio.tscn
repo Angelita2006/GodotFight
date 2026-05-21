@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5iedpw7s5iny"]
 
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_4v0q5"]
+[ext_resource type="Script" uid="uid://d1n61wwmh5opu" path="res://escenas/Menus/MenuInicio1/menu_inicio_script.gd" id="2_efmvd"]
 [ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="2_k48sw"]
 [ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="3_8mefa"]
 [ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="4_iukku"]
@@ -15,190 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bxk4vmar1xlqj" path="res://escenas/Menus/MenuAspecto/editordepersonaje.tscn" id="12_muuqm"]
 [ext_resource type="Texture2D" uid="uid://moxgainbwij7" path="res://assets/ui/controles/titulo godotfight (7).png" id="12_r3qu7"]
 [ext_resource type="FontFile" uid="uid://31cepyt2ycy0" path="res://assets/ui/fuentes/Silver.ttf" id="13_efmvd"]
-
-[sub_resource type="GDScript" id="GDScript_2ee37"]
-script/source = "extends Control
-
-# Export de los contenedores
-@export var inicio : VBoxContainer
-@export var modohistoria : VBoxContainer
-@export var modopractica : VBoxContainer
-@export var ranking : VBoxContainer
-@export var opciones : VBoxContainer
-@export var editor : Control
-
-# Export de los labels
-@export var titulo_modohistoria : Label
-@export var titulo_modopractica : Label
-@export var titulo_ranking : Label
-@export var titulo_opciones : Label
-@export var titulojuego : Label
-
-# Export de los botones del menú principal
-@export var boton_modo_historia : Button
-@export var boton_modo_practica : Button
-@export var boton_editar_personaje : Button
-@export var boton_ranking : Button
-@export var boton_opciones : Button
-@export var boton_salir : Button
-
-# Export de los botones \"Volver\" de cada submenú
-@export var volver_historia : Button
-@export var volver_practica : Button
-@export var volver_ranking : Button
-@export var volver_opciones : Button
-@export var volver_editor: Button
-
-@export var idiomat: Label
-@export var idioma: VBoxContainer
-@export var volument: Label
-@export var volumen: HSlider
-@export var controlest: Label
-@export var controles: Panel
-@export var creditost: Label
-@export var creditos: RichTextLabel
-
-var partida_nueva :bool = true
-
-func _ready() -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"SFX\"), linear_to_db(volumen.value))
-	await get_tree().process_frame
-	# Conexiones de los botones del menú principal
-	boton_modo_historia.pressed.connect(on_modohistoria_pressed.bind(modohistoria))
-	boton_modo_practica.pressed.connect(on_modopractica_pressed.bind(modopractica))
-	boton_editar_personaje.pressed.connect(on_editarpersonaje_pressed.bind())
-	boton_ranking.pressed.connect(on_ranking_pressed.bind(ranking))
-	boton_opciones.pressed.connect(on_opciones_pressed.bind(opciones))
-	boton_salir.pressed.connect(_on_salir_pressed)
-
-	# Conexiones de los botones \"Volver\" en cada submenú
-	volver_historia.pressed.connect(_on_volver_pressed.bind(modohistoria))
-	volver_practica.pressed.connect(_on_volver_pressed.bind(modopractica))
-	volver_ranking.pressed.connect(_on_volver_pressed.bind(ranking))
-	volver_opciones.pressed.connect(_on_volver_pressed.bind(opciones))
-	volver_editor.pressed.connect(_on_volver_pressed.bind(opciones))
-
-func _process(_delta: float) -> void:
-	pass
-
-func _on_salir_pressed() -> void:
-	get_tree().quit()
-
-# Oculta el contenedor actual y muestra el menú inicio
-func _on_volver_pressed(contenedor: VBoxContainer) -> void:
-	contenedor.hide()
-	inicio.show()
-	titulo_modohistoria.hide()
-	titulo_modopractica.hide()
-	titulo_ranking.hide()
-	titulo_opciones.hide()
-	titulojuego.show()
-	idioma.hide()
-	idiomat.hide()
-	volumen.hide()
-	volument.hide()
-	controles.hide()
-	controlest.hide()
-	creditos.hide()
-	creditost.hide()
-	editor.hide()
-
-# Oculta el menú inicio y muestra el contenedor seleccionado
-func on_modohistoria_pressed(contenedor: VBoxContainer) -> void:
-	inicio.hide()
-	contenedor.show()
-	titulojuego.hide()
-	titulo_modohistoria.show()
-	titulo_modopractica.hide()
-	titulo_ranking.hide()
-	titulo_opciones.hide()
-
-func on_modopractica_pressed(contenedor: VBoxContainer) -> void:
-	inicio.hide()
-	contenedor.show()
-	titulojuego.hide()
-	titulo_modopractica.show()
-	titulo_modohistoria.hide()
-	titulo_ranking.hide()
-	titulo_opciones.hide()
-
-func on_editarpersonaje_pressed() -> void:
-	editor.show()
-
-func on_ranking_pressed(contenedor: VBoxContainer) -> void:
-	inicio.hide()
-	contenedor.show()
-	titulojuego.hide()
-	titulo_ranking.show()
-	titulo_modohistoria.hide()
-	titulo_modopractica.hide()
-	titulo_opciones.hide()
-
-func on_opciones_pressed(contenedor: VBoxContainer) -> void:
-	inicio.hide()
-	contenedor.show()
-	titulojuego.hide()
-	titulo_opciones.show()
-	titulo_modohistoria.hide()
-	titulo_modopractica.hide()
-	titulo_ranking.hide()
-	idioma.show()
-	idiomat.show()
-
-
-func _on_mapa_aldea_esmeralda_pressed() -> void:
-	Database.abrir_db()
-	if !Database.hay_partida_guardada():
-		#Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker.tscn\", false)
-		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/Animaciones/Entrenamiento/escena_alcalde_tutorial.tscn\", false)
-		Cargador.entrar_escena_cargada()
-	else:
-		Cargador.cargar_escena(\"res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn\", true)
-
-
-func _on_volumen_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"SFX\"), linear_to_db(volumen.value))
-
-func _on_audio_pressed() -> void:
-	volumen.show()
-	volument.show()
-	idioma.hide()
-	idiomat.hide()
-	controles.hide()
-	controlest.hide()
-	creditos.hide()
-	creditost.hide()
-
-func _on_idioma_pressed() -> void:
-	idioma.show()
-	idiomat.show()
-	volumen.hide()
-	volument.hide()
-	controles.hide()
-	controlest.hide()
-	creditos.hide()
-	creditost.hide()
-
-func _on_controles_pressed() -> void:
-	controles.show()
-	controlest.show()
-	idioma.hide()
-	idiomat.hide()
-	volumen.hide()
-	volument.hide()
-	creditos.hide()
-	creditost.hide()
-
-func _on_créditos_pressed() -> void:
-	creditos.show()
-	creditost.show()
-	controles.hide()
-	controlest.hide()
-	idioma.hide()
-	idiomat.hide()
-	volumen.hide()
-	volument.hide()
-"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7003"]
 texture = ExtResource("5_k48sw")
@@ -304,7 +121,7 @@ scale = Vector2(1, 0.9999999)
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme = ExtResource("1_4v0q5")
-script = SubResource("GDScript_2ee37")
+script = ExtResource("2_efmvd")
 inicio = NodePath("Inicio")
 modohistoria = NodePath("MODO HISTORIA")
 modopractica = NodePath("MODO PRACTICA")

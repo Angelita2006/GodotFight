@@ -10,4 +10,5 @@ func _process(delta: float) -> void:
 
 func _on_bajada_body_entered(body: CharacterBody2D) -> void:
 	Global.volviendo_de_biblioteca = true
-	get_tree().change_scene_to_file("res://escenas/MapaAldeaEsmeralda/biblioteca/biblioteca_planta1.tscn")
+	# ir a la planta 1 de la biblioteca
+	get_tree().change_scene_to_file("uid://e8cyhqcwav5e")

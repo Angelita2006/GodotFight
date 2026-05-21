@@ -50,4 +50,5 @@ func entrar_nivel():
 	Database.db.query("DELETE FROM partida")
 	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
 	Database.cerrar_db()
-	Cargador.cargar_escena("res://escenas/Niveles/nivel-tutorial.tscn", false)
+	# ir al nivel-tutorial
+	Cargador.cargar_escena("uid://re7e6jr62tda", false)

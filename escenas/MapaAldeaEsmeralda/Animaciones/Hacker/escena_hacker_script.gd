@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 
 		elif dialogo_actual == 2:
 			$AnimationPlayer.play("fade_out")
-			Cargador.cargar_escena("res://escenas/Niveles/nivel-tutorial.tscn", false)
+			# ir al nivel-tutorial
+			Cargador.cargar_escena("uid://re7e6jr62tda", false)
 			await $AnimationPlayer.animation_finished
 			Cargador.entrar_escena_cargada()

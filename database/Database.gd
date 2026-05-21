@@ -11,32 +11,54 @@ func cerrar_db():
 	db.close_db()
 	return true
 
-func crear_tabla_si_no_existe():
+func crear_tablas_si_no_existen():
 	var sql = """
-        CREATE TABLE IF NOT EXISTS tiempos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            jugador TEXT NOT NULL,
+		CREATE TABLE IF NOT EXISTS tiempos (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			jugador TEXT NOT NULL,
 			nivel INTEGER NOT NULL,
-            duracion INTEGER NOT NULL
-        );
+			duracion INTEGER NOT NULL
+		);
 	"""
 	db.query(sql)
 	
 	sql = """
-        CREATE TABLE IF NOT EXISTS partida (
+		CREATE TABLE IF NOT EXISTS partida (
 			idPartida INTEGER PRIMARY KEY AUTOINCREMENT,
+			llave_verde_conseguida BOOLEAN NOT NULL CHECK (llave_verde_conseguida IN (0, 1)),
+			llave_purpura_conseguida BOOLEAN NOT NULL CHECK (llave_purpura_conseguida IN (0, 1)),
+			llave_plateada_conseguida BOOLEAN NOT NULL CHECK (llave_plateada_conseguida IN (0, 1)),
+			llave_dorada_conseguida BOOLEAN NOT NULL CHECK (llave_dorada_conseguida IN (0, 1)),
+			llave_final_conseguida BOOLEAN NOT NULL CHECK (llave_final_conseguida IN (0, 1)),
+			escena_actual TEXT NOT NULL,
 			pos_x REAL NOT NULL,
-			pos_y REAL NOT NULL);
+			pos_y REAL NOT NULL
+		);
 	"""
 	db.query(sql)
 	
 	sql = """
-        CREATE TABLE IF NOT EXISTS ajustes (
+		CREATE TABLE IF NOT EXISTS ajustes (
 			idAjustes INTEGER PRIMARY KEY AUTOINCREMENT,
-			pos_x REAL NOT NULL,
-			pos_y REAL NOT NULL);
+			volumen REAL NOT NULL,
+			idioma TEXT NOT NULL,
+			jugador_aspecto TEXT NOT NULL,
+			jugador_nombre TEXT NOT NULL
+		);
 	"""
 	db.query(sql)
+
+func insertar_datos_ejemplo():
+	var ejemplos_tiempos = [
+		{"jugador":"Ana", "nivel":1, "duracion":300},
+		{"jugador":"Ana", "nivel":2, "duracion":240},
+	]
+	for fila in ejemplos_tiempos:
+		var sql = "INSERT INTO tiempos (jugador, nivel, duracion) VALUES ('%s', %d, %d);" % [fila["jugador"], fila["nivel"], fila["duracion"]]
+		db.query(sql)
+	
+	var ejemplo_partida = {"llave_verde_conseguida":1, "llave_purpura_conseguida":0, "llave_plateada_conseguida":0, "llave_dorada_conseguida":0, "llave_final_conseguida":0, "escena_actual":"uid://c61j2kork7ar5", "pos_x":1348.0, "pos_y":28.0}
+	
 
 func reiniciar_datos():
 	abrir_db()
@@ -45,15 +67,6 @@ func reiniciar_datos():
 	sql = "delete from partida;"
 	db.query(sql)
 	cerrar_db()
-
-func insertar_datos_ejemplo():
-	var ejemplos = [
-		{"jugador":"Ana", "nivel":1, "duracion":300},
-		{"jugador":"Ana", "nivel":2, "duracion":240},
-	]
-	for fila in ejemplos:
-		var sql = "INSERT INTO tiempos (jugador, nivel, duracion) VALUES ('%s', %d, %d);" % [fila["jugador"], fila["nivel"], fila["duracion"]]
-		db.query(sql)
 
 func obtener_record_de_tiempo():
 	var query = """
@@ -83,3 +96,6 @@ func hay_partida_guardada():
 		return resultado[0]["total"] > 0
 
 	return false
+
+func marcar_llave_verde_conseguida():
+	pass

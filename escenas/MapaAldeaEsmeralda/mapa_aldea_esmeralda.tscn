@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://du6u8ur1j2m5o" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Free_Chicken_House.png" id="15_dlu4d"]
 [ext_resource type="PackedScene" uid="uid://bbpulpiwwxtk" path="res://escenas/MapaAldeaEsmeralda/Mercado/mercao.tscn" id="16_cbok3"]
 [ext_resource type="AudioStream" uid="uid://cdgd58u2vjlwt" path="res://assets/ui/audio/musica_fondo_mapa_esmeralda_inicio.mp3" id="19_frjmn"]
-[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="20_580wy"]
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="20_h8k1y"]
 
 [sub_resource type="Animation" id="Animation_qx6fr"]
@@ -809,12 +808,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_580wy")
 sources/1 = SubResource("TileSetAtlasSource_h8k1y")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn8s2"]
-bg_color = Color(0, 0, 0, 0.44705883)
-
 [node name="Mapa-Aldea-ModoHistoria" type="Node2D" unique_id=2113508675 node_paths=PackedStringArray("menu_pausa")]
 script = ExtResource("1_ueucj")
-menu_pausa = NodePath("PersonajePrincipal/Camera2D/Menu Pausa")
+menu_pausa = NodePath("Menu Pausa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=548989109]
 libraries/ = SubResource("AnimationLibrary_uei1j")
@@ -956,33 +952,6 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 editor_draw_limits = true
 
-[node name="Fondo Pausa" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1505669730]
-visible = false
-offset_left = -2429.7622
-offset_top = -1371.4365
-offset_right = 2429.7612
-offset_bottom = 1343.1587
-theme_override_styles/panel = SubResource("StyleBoxFlat_tn8s2")
-
-[node name="Menu Pausa" parent="PersonajePrincipal/Camera2D" unique_id=404389821 node_paths=PackedStringArray("personajeprincipal") instance=ExtResource("10_0pl3i")]
-visible = false
-offset_left = -225.35086
-offset_top = -456.72363
-offset_right = -225.35086
-offset_bottom = -456.72363
-scale = Vector2(1.2857767, 1.2597189)
-personajeprincipal = NodePath("../..")
-
-[node name="Mensaje guardado" type="Label" parent="PersonajePrincipal/Camera2D" unique_id=1600182492]
-visible = false
-offset_left = -920.7191
-offset_top = -546.8664
-offset_right = -64.71912
-offset_bottom = -485.8664
-theme_override_fonts/font = ExtResource("20_580wy")
-theme_override_font_sizes/font_size = 60
-text = "Progreso guardado correctamente"
-
 [node name="Misiones" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1751054324]
 offset_left = 321.9297
 offset_top = -600.9521
@@ -1014,6 +983,15 @@ autoplay = true
 bus = &"SFX"
 parameters/looping = true
 
-[connection signal="hidden" from="PersonajePrincipal/Camera2D/Menu Pausa" to="." method="_on_menu_pausa_hidden"]
+[node name="Menu Pausa" parent="." unique_id=404389821 node_paths=PackedStringArray("personajeprincipal") instance=ExtResource("10_0pl3i")]
+visible = false
+offset_left = -160.0
+offset_top = -23.0
+offset_right = -160.0
+offset_bottom = -23.0
+scale = Vector2(1.2857767, 1.2597189)
+personajeprincipal = NodePath("../PersonajePrincipal")
+
+[connection signal="hidden" from="Menu Pausa" to="." method="_on_menu_pausa_hidden"]
 
 [editable path="PersonajePrincipal"]

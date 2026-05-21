@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 
 		elif dialogo_actual == 4:
 			$AnimationPlayer.play("fade_out")
-			#Cargador.cargar_escena("res://escenas/Niveles/tutorial.tscn", false)
-			Cargador.cargar_escena("res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker.tscn", false)
+			# ir a la escena_hacker
+			Cargador.cargar_escena("uid://ckh74beqeu26l", false)
 			await $AnimationPlayer.animation_finished
 			Cargador.entrar_escena_cargada()

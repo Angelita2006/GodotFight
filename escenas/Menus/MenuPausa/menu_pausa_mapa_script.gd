@@ -37,8 +37,8 @@ func _on_guardar_pressed() -> void:
 	mensaje_guardado.hide()
 
 func _on_volver_pressed() -> void:
-	#$AnimationPlayer.play("fade_out")
-	get_tree().change_scene_to_file("res://escenas/Menus/MenuInicio1/menu_inicio.tscn")
+	# ir al menú de inicio
+	get_tree().change_scene_to_file("uid://b5iedpw7s5iny")
 
 func _on_volver_opciones_pressed() -> void:
 	opciones.hide()

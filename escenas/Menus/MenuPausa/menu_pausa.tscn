@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d08qd44odixr2"]
+[gd_scene format=3 uid="uid://d08qd44odixr2"]
 
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_gvrb5"]
 [ext_resource type="Script" uid="uid://cpmrouvx04l5o" path="res://escenas/Menus/MenuPausa/menu_pausa_script.gd" id="2_npmvj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dnjfj3lxaxvdu" path="res://assets/ui/basic_ui_sprites_grabber.png" id="7_0irrf"]
 [ext_resource type="Texture2D" uid="uid://moxgainbwij7" path="res://assets/ui/controles/titulo godotfight (7).png" id="8_75too"]
 [ext_resource type="FontFile" uid="uid://31cepyt2ycy0" path="res://assets/ui/fuentes/Silver.ttf" id="9_7xcs1"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="10_cmpdd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xj00"]
 texture = ExtResource("4_f5nv7")
@@ -57,7 +58,7 @@ region_rect = Rect2(466, 105, 28, 14)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g61d0"]
 texture = ExtResource("8_75too")
 
-[node name="Menu Pausa" type="Control" node_paths=PackedStringArray("pausa", "titulo_pausa", "opciones", "titulo_opciones", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "volver")]
+[node name="Menu Pausa" type="Control" unique_id=256830463 node_paths=PackedStringArray("pausa", "titulo_pausa", "opciones", "titulo_opciones", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "volver", "mensaje_guardado")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,24 +80,25 @@ controles = NodePath("Controles")
 creditost = NodePath("CreditosT")
 creditos = NodePath("Creditos")
 volver = NodePath("Volver")
+mensaje_guardado = NodePath("Mensaje guardado")
 
-[node name="Fondo" type="Panel" parent="."]
+[node name="Fondo" type="Panel" parent="." unique_id=1303711974]
 texture_filter = 1
 layout_mode = 0
-offset_left = 222.99998
-offset_top = 9.999999
-offset_right = 263.0
-offset_bottom = 50.0
+offset_left = -97.0
+offset_top = -54.0
+offset_right = -24.297058
+offset_bottom = -10.152008
 scale = Vector2(18.486187, 17.241385)
 theme_override_styles/panel = SubResource("StyleBoxTexture_1xj00")
 
-[node name="TituloPausa" type="Label" parent="."]
+[node name="TituloPausa" type="Label" parent="." unique_id=1352416876]
 texture_filter = 1
 layout_mode = 0
-offset_left = 108.0
-offset_top = 184.0
-offset_right = 1599.0
-offset_bottom = 321.0
+offset_left = 83.0
+offset_top = 153.0
+offset_right = 1574.0
+offset_bottom = 290.0
 scale = Vector2(0.6697928, 0.6677321)
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -108,20 +110,20 @@ text = "Pausa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pausa" type="VBoxContainer" parent="."]
+[node name="Pausa" type="VBoxContainer" parent="." unique_id=1095046526]
 texture_filter = 1
 layout_mode = 0
-offset_left = 503.0
-offset_top = 217.00002
-offset_right = 684.0
-offset_bottom = 712.8169
+offset_left = 478.0
+offset_top = 186.00002
+offset_right = 659.0
+offset_bottom = 681.8169
 scale = Vector2(1.0692488, 0.7398032)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Continuar" type="Button" parent="Pausa"]
+[node name="Continuar" type="Button" parent="Pausa" unique_id=89262359]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -129,7 +131,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Continuar"
 
-[node name="Opciones" type="Button" parent="Pausa"]
+[node name="Opciones" type="Button" parent="Pausa" unique_id=309869541]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -137,7 +139,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Opciones"
 
-[node name="Guardar" type="Button" parent="Pausa"]
+[node name="Guardar" type="Button" parent="Pausa" unique_id=80330756]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -145,7 +147,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Guardar"
 
-[node name="Volver" type="Button" parent="Pausa"]
+[node name="Volver" type="Button" parent="Pausa" unique_id=1031774182]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -153,14 +155,14 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Volver al menú"
 
-[node name="TituloOpciones" type="Label" parent="."]
+[node name="TituloOpciones" type="Label" parent="." unique_id=1626828456]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 432.00003
-offset_top = 198.0
-offset_right = 1095.0
-offset_bottom = 298.00003
+offset_left = 422.00003
+offset_top = 160.00002
+offset_right = 1085.0
+offset_bottom = 260.00006
 scale = Vector2(0.5085606, 0.5400299)
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -172,21 +174,21 @@ text = "Opciones"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Opciones" type="VBoxContainer" parent="."]
+[node name="Opciones" type="VBoxContainer" parent="." unique_id=4711679]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 518.0
-offset_top = 233.0
-offset_right = 699.0
-offset_bottom = 766.0
+offset_left = 521.0
+offset_top = 200.0
+offset_right = 702.0
+offset_bottom = 733.0
 scale = Vector2(0.7502809, 0.5979103)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Idioma" type="Button" parent="Opciones"]
+[node name="Idioma" type="Button" parent="Opciones" unique_id=634859096]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -194,7 +196,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Idioma"
 
-[node name="Audio" type="Button" parent="Opciones"]
+[node name="Audio" type="Button" parent="Opciones" unique_id=1935860614]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -202,7 +204,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Audio"
 
-[node name="Controles" type="Button" parent="Opciones"]
+[node name="Controles" type="Button" parent="Opciones" unique_id=1974165654]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -210,7 +212,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Controles"
 
-[node name="Créditos" type="Button" parent="Opciones"]
+[node name="Créditos" type="Button" parent="Opciones" unique_id=301849356]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -218,7 +220,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Créditos"
 
-[node name="Volver" type="Button" parent="Opciones"]
+[node name="Volver" type="Button" parent="Opciones" unique_id=641320937]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -226,28 +228,28 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Volver"
 
-[node name="IdiomaT" type="Label" parent="."]
+[node name="IdiomaT" type="Label" parent="." unique_id=2013816464]
 visible = false
 layout_mode = 0
-offset_left = 504.0
-offset_top = 209.00002
-offset_right = 644.0
-offset_bottom = 249.00002
+offset_left = 500.00003
+offset_top = 174.0
+offset_right = 640.0
+offset_bottom = 214.0
 scale = Vector2(1.6062418, 1.911061)
 theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
 text = "Idioma"
 
-[node name="CambiarIdioma" type="VBoxContainer" parent="."]
+[node name="CambiarIdioma" type="VBoxContainer" parent="." unique_id=2024109767]
 visible = false
 layout_mode = 0
-offset_left = 471.0
-offset_top = 335.00003
-offset_right = 891.0
-offset_bottom = 440.0001
+offset_left = 469.0
+offset_top = 306.00003
+offset_right = 889.0
+offset_bottom = 411.0001
 scale = Vector2(0.5528817, 0.577735)
 theme = ExtResource("1_gvrb5")
 
-[node name="Idioma2" type="OptionButton" parent="CambiarIdioma"]
+[node name="Idioma2" type="OptionButton" parent="CambiarIdioma" unique_id=1127457881]
 layout_mode = 2
 theme = ExtResource("1_gvrb5")
 language = "es"
@@ -261,24 +263,24 @@ popup/item_1/text = "english"
 popup/item_1/icon = ExtResource("6_cmpdd")
 popup/item_1/id = 1
 
-[node name="VolumenT" type="Label" parent="."]
+[node name="VolumenT" type="Label" parent="." unique_id=223206197]
 visible = false
 layout_mode = 0
-offset_left = 489.99997
-offset_top = 216.0
-offset_right = 645.0
-offset_bottom = 256.0
+offset_left = 486.0
+offset_top = 172.0
+offset_right = 641.0
+offset_bottom = 212.0
 scale = Vector2(1.3788445, 1.8309561)
 theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
 text = "Volumen"
 
-[node name="Volumen" type="HSlider" parent="."]
+[node name="Volumen" type="HSlider" parent="." unique_id=35173734]
 visible = false
 layout_mode = 0
 offset_left = 422.0
-offset_top = -166.0
+offset_top = -167.0
 offset_right = 613.0
-offset_bottom = 282.0
+offset_bottom = 281.0
 scale = Vector2(1.7622775, 2.2491632)
 tooltip_text = "Volumen
 "
@@ -292,47 +294,47 @@ max_value = 1.5
 step = 0.005
 value = 0.5
 
-[node name="ControlesT" type="Label" parent="."]
+[node name="ControlesT" type="Label" parent="." unique_id=1856769093]
 visible = false
 layout_mode = 0
-offset_left = 453.99997
-offset_top = 183.0
+offset_left = 454.0
+offset_top = 136.00002
 offset_right = 619.0
-offset_bottom = 223.0
+offset_bottom = 176.00002
 scale = Vector2(1.6658795, 2.0476491)
 theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
 text = "Controles"
 
-[node name="Controles" type="Panel" parent="."]
+[node name="Controles" type="Panel" parent="." unique_id=1680882683]
 visible = false
 layout_mode = 0
-offset_left = 472.99997
-offset_top = 255.0
-offset_right = 504.188
-offset_bottom = 286.73944
+offset_left = 475.0
+offset_top = 187.0
+offset_right = 506.18802
+offset_bottom = 218.73944
 scale = Vector2(7.1493716, 8.506762)
 theme_override_styles/panel = SubResource("StyleBoxTexture_g61d0")
 
-[node name="CreditosT" type="Label" parent="."]
+[node name="CreditosT" type="Label" parent="." unique_id=709558721]
 visible = false
 layout_mode = 0
-offset_left = 457.0
-offset_top = 177.0
-offset_right = 597.0
-offset_bottom = 217.0
-scale = Vector2(1.861617, 2.3153253)
+offset_left = 468.99997
+offset_top = 129.0
+offset_right = 609.0
+offset_bottom = 169.0
+scale = Vector2(1.7519139, 2.115119)
 theme = ExtResource("1_gvrb5")
 theme_override_colors/font_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
 text = "Créditos"
 
-[node name="Creditos" type="RichTextLabel" parent="."]
+[node name="Creditos" type="RichTextLabel" parent="." unique_id=747076058]
 visible = false
 layout_mode = 0
-offset_left = 413.00003
-offset_top = 306.0
-offset_right = 801.32214
-offset_bottom = 544.83813
-scale = Vector2(0.9521004, 0.9294997)
+offset_left = 234.0
+offset_top = 213.99997
+offset_right = 965.37256
+offset_bottom = 452.83813
+scale = Vector2(0.94753337, 0.90208375)
 theme_override_colors/default_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
 theme_override_fonts/normal_font = ExtResource("9_7xcs1")
 theme_override_fonts/bold_font = ExtResource("3_c05uw")
@@ -355,18 +357,30 @@ María Chico Sánchez
 María de los Ángeles García Valera"
 horizontal_alignment = 1
 
-[node name="Volver" type="Button" parent="."]
+[node name="Volver" type="Button" parent="." unique_id=1161454120]
 visible = false
 layout_mode = 0
-offset_left = 516.0
-offset_top = 482.0
-offset_right = 660.0
-offset_bottom = 517.0
+offset_left = 519.0
+offset_top = 454.0
+offset_right = 663.0
+offset_bottom = 489.0
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Volver"
+
+[node name="Mensaje guardado" type="Label" parent="." unique_id=1183509838]
+visible = false
+layout_mode = 0
+offset_left = 274.0
+offset_top = 35.0
+offset_right = 1130.0
+offset_bottom = 96.0
+scale = Vector2(0.697323, 0.72411907)
+theme_override_fonts/font = ExtResource("10_cmpdd")
+theme_override_font_sizes/font_size = 60
+text = "Progreso guardado correctamente"
 
 [connection signal="pressed" from="Pausa/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Pausa/Opciones" to="." method="_on_opciones_pressed"]

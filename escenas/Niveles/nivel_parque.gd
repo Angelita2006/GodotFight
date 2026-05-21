@@ -27,7 +27,8 @@ func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 
 func _on_aceptar_pressed() -> void:
 	$Personaje_Codigo/Camera2D.enabled = false
-	Cargador.cargar_escena("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn", true)
+	# ir al mapa
+	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
 
 
 func _on_cancelar_pressed() -> void:
@@ -35,14 +36,16 @@ func _on_cancelar_pressed() -> void:
 
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://escenas/Niveles/nivel-parque.tscn")
+	# ir al nivel-parque
+	get_tree().change_scene_to_file("uid://b8i0qhu37u1ep")
 
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	# GUARDAR QUE EL NIVEL HA SIDO COMPLETADO Y SI EL COLECCIONABLE SECRETO HA SIDO RECOGIDO
 	if patos == 3:
 		$Personaje_Codigo/Camera2D.enabled = false
-		Cargador.cargar_escena("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn", true)
+		# ir al mapa
+		Cargador.cargar_escena("uid://c61j2kork7ar5", true)
 
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:

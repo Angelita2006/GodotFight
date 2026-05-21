@@ -2,7 +2,7 @@ extends Node2D
 
 @export var menu_pausa: Control
 
-func cargar_posicion():
+func cargar_datos_partida():
 	
 	# Si no hay partida guardada
 	if !Database.hay_partida_guardada():
@@ -13,7 +13,30 @@ func cargar_posicion():
 	
 	$PersonajePrincipal.global_position.x = fila[0]["pos_x"]
 	$PersonajePrincipal.global_position.y = fila[0]["pos_y"]
-	Database.cerrar_db()
+	if fila[0]["llave_verde_conseguida"] == 0:
+		Global.llave_verde_obtenida = false
+	elif fila[0]["llave_verde_conseguida"] == 1:
+		Global.llave_verde_obtenida = true
+	
+	if fila[0]["llave_purpura_conseguida"] == 0:
+		Global.llave_purpura_obtenida = false
+	elif fila[0]["llave_purpura_conseguida"] == 1:
+		Global.llave_purpura_obtenida = true
+	
+	if fila[0]["llave_plateada_conseguida"] == 0:
+		Global.llave_plateada_obtenida = false
+	elif fila[0]["llave_plateada_conseguida"] == 1:
+		Global.llave_plateada_obtenida = true
+	
+	if fila[0]["llave_dorada_conseguida"] == 0:
+		Global.llave_dorada_obtenida = false
+	elif fila[0]["llave_dorada_conseguida"] == 1:
+		Global.llave_dorada_obtenida = true
+	
+	if fila[0]["llave_final_conseguida"] == 0:
+		Global.llave_final_obtenida = false
+	elif fila[0]["llave_final_conseguida"] == 1:
+		Global.llave_final_obtenida = true
 
 func _ready() -> void:
 	$AnimationPlayer.play("fade_in")
@@ -29,7 +52,7 @@ func _ready() -> void:
 		Global.volviendo_de_ayuntamiento = false
 	
 	else:
-		cargar_posicion()
+		cargar_datos_partida()
 
 	var poly = $Limites/Colisiones.polygon
 
@@ -54,21 +77,13 @@ func _ready() -> void:
 	cam.limit_bottom = max_y
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pausar"):
-		var posicion_anterior_menu = menu_pausa.global_position
-		var posicion_anterior_fondo = $"PersonajePrincipal/Camera2D/Fondo Pausa".global_position
 	
-		menu_pausa.top_level = true
-		$"PersonajePrincipal/Camera2D/Fondo Pausa".top_level = true
-		
-		menu_pausa.global_position = posicion_anterior_menu
-		$"PersonajePrincipal/Camera2D/Fondo Pausa".global_position = posicion_anterior_fondo
-		
+	if Input.is_action_just_pressed("pausar"):
 		menu_pausa.show()
-		$"PersonajePrincipal/Camera2D/Fondo Pausa".show()
-
+		$PersonajePrincipal/Camera2D.enabled = false
+	
 	if Global.volviendo_de_biblioteca:
 		$PersonajePrincipal.hide()
 
 func _on_menu_pausa_hidden() -> void:
-	$"PersonajePrincipal/Camera2D/Fondo Pausa".hide()
+	$PersonajePrincipal/Camera2D.enabled = true

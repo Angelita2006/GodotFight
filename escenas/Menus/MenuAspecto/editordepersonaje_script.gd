@@ -30,7 +30,7 @@ func _on_guardar_pressed() -> void:
 	print(Global.jugador_nombre)
 
 func _on_volver_pressed() -> void:
-	get_tree().change_scene_to_file("res://escenas/Menus/MenuInicio1/menu_inicio.tscn")
+	get_tree().change_scene_to_file("uid://b5iedpw7s5iny")
 
 func _on_chico_boton_pressed() -> void:
 	$ChicaBoton.button_pressed = false

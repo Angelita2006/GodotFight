@@ -39,9 +39,11 @@ func _on_activar_ultimo_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Mensaje_Final_Nivel.show()
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://escenas/Niveles/tutorial.tscn")
+	# ir al nivel-tutorial
+	get_tree().change_scene_to_file("uid://re7e6jr62tda")
 
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Camera2D.enabled = false
-	Cargador.cargar_escena("res://escenas/MapaAldeaEsmeralda/mapa_aldea_esmeralda.tscn", true)
+	# ir al mapa
+	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
