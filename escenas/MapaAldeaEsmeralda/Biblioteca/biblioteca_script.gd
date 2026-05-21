@@ -11,10 +11,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	var fila = Database.obtener_datos_ultima_partida()
-	if fila[0]["llave_purpura_conseguida"] == 0:
-		quitar_glitch = false
-	elif fila[0]["llave_purpura_conseguida"] == 1:
-		quitar_glitch = true
+	if fila: 
+		if fila[0]["llave_purpura_conseguida"] == 0:
+			quitar_glitch = false
+		elif fila[0]["llave_purpura_conseguida"] == 1:
+			quitar_glitch = true
 	if quitar_glitch:
 		$Glitch.hide()
 		$Bibliotecaria.hide()

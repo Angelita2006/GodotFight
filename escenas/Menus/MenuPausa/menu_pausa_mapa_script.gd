@@ -26,12 +26,7 @@ func _on_opciones_pressed() -> void:
 	titulo_opciones.show()
 
 func _on_guardar_pressed() -> void:
-	Database.abrir_db()
-	Database.crear_tabla_si_no_existe()
-	Database.db.query("DELETE FROM partida")
-	var pos = personajeprincipal.global_position
-	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(pos.x)+","+str(pos.y)+")")
-	Database.cerrar_db()
+	Database.guardar_partida()
 	mensaje_guardado.show()
 	await get_tree().create_timer(2).timeout
 	mensaje_guardado.hide()

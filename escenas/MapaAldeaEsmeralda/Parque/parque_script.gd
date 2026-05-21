@@ -14,10 +14,11 @@ var quitar_glitch = false
 
 func _ready() -> void:
 	var fila = Database.obtener_datos_ultima_partida()
-	if fila[0]["llave_verde_conseguida"] == 0:
-		quitar_glitch = false
-	elif fila[0]["llave_verde_conseguida"] == 1:
-		quitar_glitch = true
+	if fila:
+		if fila[0]["llave_verde_conseguida"] == 0:
+			quitar_glitch = false
+		elif fila[0]["llave_verde_conseguida"] == 1:
+			quitar_glitch = true
 	if quitar_glitch:
 		$Glitch.hide()
 	

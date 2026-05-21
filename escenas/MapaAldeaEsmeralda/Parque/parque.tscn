@@ -2980,7 +2980,6 @@ scale = Vector2(0.14893617, -0.1234567)
 animation = &"Jardinera1"
 
 [node name="Glitch" type="AnimatedSprite2D" parent="." unique_id=950283041]
-visible = false
 position = Vector2(58.125008, -11.000008)
 scale = Vector2(2.8425002, 2.3000002)
 sprite_frames = SubResource("SpriteFrames_o8joq")

@@ -56,16 +56,13 @@ func insertar_datos_ejemplo():
 	for fila in ejemplos_tiempos:
 		var sql = "INSERT INTO tiempos (jugador, nivel, duracion) VALUES ('%s', %d, %d);" % [fila["jugador"], fila["nivel"], fila["duracion"]]
 		db.query(sql)
-	
-	var ejemplo_partida = {"llave_verde_conseguida":1, "llave_purpura_conseguida":0, "llave_plateada_conseguida":0, "llave_dorada_conseguida":0, "llave_final_conseguida":0, "escena_actual":"uid://c61j2kork7ar5", "pos_x":1348.0, "pos_y":28.0}
-	
 
 func reiniciar_datos():
 	abrir_db()
 	var sql = "delete from tiempos;"
 	db.query(sql)
-	sql = "delete from partida;"
-	db.query(sql)
+	#sql = "delete from partida;"
+	#db.query(sql)
 	cerrar_db()
 
 func obtener_record_de_tiempo():
@@ -78,7 +75,7 @@ func obtener_record_de_tiempo():
 	return db.query_result
 	
 func obtener_todo():
-	var query = "select * from tiempos;"
+	var query = "SELECT * FROM tiempos;"
 	db.query(query)
 	return db.query_result
 
@@ -86,7 +83,6 @@ func obtener_datos_ultima_partida():
 	var sql = "SELECT * FROM partida ORDER BY idPartida DESC LIMIT 1;"
 	db.query(sql)
 	var resultado = db.query_result
-	print(resultado)
 	return resultado
 
 func hay_partida_guardada():

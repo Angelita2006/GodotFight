@@ -126,7 +126,6 @@ func on_opciones_pressed(contenedor: VBoxContainer) -> void:
 	idioma.show()
 	idiomat.show()
 
-
 func _on_mapa_aldea_esmeralda_pressed() -> void:
 	Database.abrir_db()
 	if !Database.hay_partida_guardada():
@@ -136,7 +135,6 @@ func _on_mapa_aldea_esmeralda_pressed() -> void:
 	else:
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", true)
-
 
 func _on_volumen_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(volumen.value))
