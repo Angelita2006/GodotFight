@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c725xxgdnccq1"]
 
-[ext_resource type="Script" uid="uid://d1plti53iqu5" path="res://escenas/Niveles/nivel_tutorial.gd" id="1_v6b54"]
+[ext_resource type="Script" uid="uid://c6xn52sk14ap4" path="res://escenas/Niveles/nivel_biblioteca.gd" id="1_7oetq"]
 [ext_resource type="Texture2D" uid="uid://w4kf2gn05ll5" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles fondo.png" id="2_1aaxb"]
 [ext_resource type="Texture2D" uid="uid://damei0cyoco10" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataforma inicio y salida.png" id="3_7oetq"]
 [ext_resource type="TileSet" uid="uid://d3ciuql4c57ow" path="res://escenas/Niveles/niveles.tres" id="4_sjoyp"]
@@ -37,7 +37,7 @@ region_rect = Rect2(799, 511, 202, 178)
 modulate_color = Color(0.3034667, 0.19200002, 0.8, 1)
 
 [node name="Nivel Biblioteca" type="Node2D" unique_id=1952319260]
-script = ExtResource("1_v6b54")
+script = ExtResource("1_7oetq")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=959051776]
 offset_right = 5760.0

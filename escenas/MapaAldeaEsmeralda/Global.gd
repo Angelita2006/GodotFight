@@ -7,7 +7,6 @@ var volviendo_de_biblioteca: bool = false
 var volviendo_de_ayuntamiento: bool = false
 var volviendo_de_banco: bool = false
 var puntuacion_total_jugador: int = 0
-#var llaves_obtenidas: int = 0
 var llave_purpura_obtenida: bool = false
 var llave_verde_obtenida: bool = false
 var llave_dorada_obtenida: bool = false

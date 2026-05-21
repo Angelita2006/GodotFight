@@ -11,12 +11,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_bajada_body_entered(body: CharacterBody2D) -> void:
-	Global.volviendo_de_ayuntamiento = true
-	# ir a la planta 1 del ayuntamiento
-	get_tree().change_scene_to_file("uid://cyr5170lqj6c3")
+func _on_bajada_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		Global.volviendo_de_ayuntamiento = true
+		# ir a la planta 1 del ayuntamiento
+		get_tree().change_scene_to_file("uid://cyr5170lqj6c3")
 	
-func _on_subida_body_entered(body: CharacterBody2D) -> void:
-	Global.volviendo_de_ayuntamiento = true
-	# ir a la planta 3 del ayuntamiento
-	get_tree().change_scene_to_file("uid://bh3tp261kottk")
+func _on_subida_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		Global.volviendo_de_ayuntamiento = true
+		# ir a la planta 3 del ayuntamiento
+		get_tree().change_scene_to_file("uid://bh3tp261kottk")

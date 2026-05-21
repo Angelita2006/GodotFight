@@ -8,7 +8,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_bajada_body_entered(body: CharacterBody2D) -> void:
-	Global.volviendo_de_biblioteca = true
-	# ir a la planta 1 de la biblioteca
-	get_tree().change_scene_to_file("uid://e8cyhqcwav5e")
+func _on_bajada_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		Global.volviendo_de_biblioteca = true
+		# ir a la planta 1 de la biblioteca
+		get_tree().change_scene_to_file("uid://e8cyhqcwav5e")

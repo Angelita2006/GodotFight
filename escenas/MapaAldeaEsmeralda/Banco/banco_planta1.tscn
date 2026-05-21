@@ -830,7 +830,7 @@ position = Vector2(519.57153, 526.83344)
 shape = SubResource("RectangleShape2D_lnalw")
 
 [node name="PersonajePrincipal" parent="." unique_id=1043364792 instance=ExtResource("4_j7okl")]
-position = Vector2(517.49493, 505.02554)
+position = Vector2(518.32556, 494.59473)
 scale = Vector2(0.176, 0.195)
 collision_layer = 1
 collision_mask = 1
@@ -848,10 +848,10 @@ polygon = PackedVector2Array(335.58258, 526.7564, 337.24387, 287.7168, 703.5604,
 position = Vector2(523.30945, 373.77106)
 script = ExtResource("6_ffma2")
 
-[node name="Colisiones" parent="Banquero" index="0"]
+[node name="Colisiones" parent="Banquero" index="0" unique_id=1894120154]
 position = Vector2(-2.2499993, 0.8299873)
 
-[node name="Animacion" parent="Banquero" index="1"]
+[node name="Animacion" parent="Banquero" index="1" unique_id=914265282]
 position = Vector2(-2.7500002, -0.17001344)
 
 [node name="Fondo_dialogo" type="Panel" parent="Banquero" unique_id=181704453]

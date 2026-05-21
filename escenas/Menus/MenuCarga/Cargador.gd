@@ -17,8 +17,6 @@ func cargar_escena(path, mostrar_menu_carga := true):
 	mostrar_menu = mostrar_menu_carga
 	ruta_escena = path
 	cargando = true
-	
-	print("Cargando escena:", path)
 
 	# Mostrar menú de carga
 	if mostrar_menu:

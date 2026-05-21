@@ -17,7 +17,6 @@ func _ready() -> void:
 	$Plataformas4.hide()
 	$Plataformas4.collision_enabled = false
 
-
 func _process(_delta: float) -> void:
 	$Personaje_Codigo/Estado_Mision.text = str(patos)
 
@@ -29,27 +28,25 @@ func _on_aceptar_pressed() -> void:
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
 
-
 func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
-
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-parque
 	get_tree().reload_current_scene()
 
-
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	# GUARDAR QUE EL NIVEL HA SIDO COMPLETADO Y SI EL COLECCIONABLE SECRETO HA SIDO RECOGIDO
 	if patos == 3:
+		Global.llave_verde_obtenida = true
 		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer2.play()
 		$Final2.show()
 		$Personaje_Codigo/Camera2D.enabled = false
 		await $AudioStreamPlayer2.finished
+		Database.guardar_partida()
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
-
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Primer_Mensaje.hide()
@@ -58,7 +55,6 @@ func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Fondo_Mision.show()
 	$Personaje_Codigo/Estado_Mision.show()
 	$Personaje_Codigo/Mision.show()
-
 
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$PalabraFaltante.hide()
@@ -69,30 +65,27 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Plataformas4.show()
 	$Plataformas4.collision_enabled = true
 
-
 func _on_pato_1_body_entered(_body: Node2D) -> void:
 	$Pato1.hide()
 	$Pato1/CollisionShape2D.set_deferred("disabled", true)
 	patos += 1
-
 
 func _on_pato_2_body_entered(_body: Node2D) -> void:
 	$Pato2.hide()
 	$Pato2/CollisionShape2D.set_deferred("disabled", true)
 	patos += 1
 
-
 func _on_pato_3_body_entered(_body: Node2D) -> void:
 	$Pato3.hide()
 	$Pato3/CollisionShape2D.set_deferred("disabled", true)
 	patos += 1
 
-
 func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 	$PalabraFaltante2.hide()
+	$Plataformas2/CodigoErroneo.hide()
+	$Plataformas2/CodigoCorrecto.show()
 	$Plataformas3.show()
 	$Plataformas3.collision_enabled = true
-
 
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto.hide()

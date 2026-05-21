@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://8qgtemdc46pg" path="res://escenas/Personajes/Jugador/jugador_skin_chica.tres" id="4_0aaiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmt1e"]
-size = Vector2(41.340973, 62.529404)
+size = Vector2(38.70218, 58.90014)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0aaiv"]
 radius = 182.70195
@@ -36,7 +36,7 @@ animation = &"quieto_abajo_chica"
 autoplay = "quieto_abajo_chica"
 
 [node name="Colisiones" type="CollisionShape2D" parent="." unique_id=565766791]
-position = Vector2(2, 13.531433)
+position = Vector2(3, 18.031433)
 scale = Vector2(2.2737732, 2.4798393)
 shape = SubResource("RectangleShape2D_vmt1e")
 

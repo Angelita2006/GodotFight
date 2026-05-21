@@ -9,7 +9,6 @@ func cargar_datos_partida():
 		return
 
 	var fila = Database.obtener_datos_ultima_partida()
-	print(fila)
 	
 	$PersonajePrincipal.global_position.x = fila[0]["pos_x"]
 	$PersonajePrincipal.global_position.y = fila[0]["pos_y"]
@@ -17,6 +16,7 @@ func cargar_datos_partida():
 		Global.llave_verde_obtenida = false
 	elif fila[0]["llave_verde_conseguida"] == 1:
 		Global.llave_verde_obtenida = true
+	print(Global.llave_verde_obtenida)
 	
 	if fila[0]["llave_purpura_conseguida"] == 0:
 		Global.llave_purpura_obtenida = false

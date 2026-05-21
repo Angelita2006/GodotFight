@@ -43,6 +43,7 @@ func _on_muerte_body_entered(_body: Node2D) -> void:
 	get_tree().reload_current_scene()
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
+	Global.llave_purpura_obtenida = true
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
 	$Final2.show()

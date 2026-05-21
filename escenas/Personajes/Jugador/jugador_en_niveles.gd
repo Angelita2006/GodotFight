@@ -13,7 +13,6 @@ func _physics_process(delta: float) -> void:
 	
 	animacion_personaje()
 	move_and_slide()
-	print(str(current_state))
 	
 func player_gravity(delta) -> void:
 	if not is_on_floor():

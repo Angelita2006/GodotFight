@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://kdodict0yj8v"]
+[gd_resource type="TileSet" format=3 uid="uid://kdodict0yj8v"]
 
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="1_skvnw"]
 [ext_resource type="Texture2D" uid="uid://cy5vhc5wvcmpc" path="res://assets/juego/mapa/aldeaesmeralda/pack2/Interior.png" id="2_k2lga"]

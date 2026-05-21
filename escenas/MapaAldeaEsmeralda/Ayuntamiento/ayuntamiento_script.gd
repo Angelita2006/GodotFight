@@ -1,14 +1,18 @@
 extends StaticBody2D
 
+var quitar_glitch = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.llave_final_obtenida:
-		$Glitch1.hide()
-		$Glitch2.hide()
-		$Glitch3.hide()
-		$Glitch4.hide()
-		$Glitch5.hide()
+	var fila = Database.obtener_datos_ultima_partida()
+	if fila[0]["llave_final_conseguida"] == 0:
+		quitar_glitch = false
+	elif fila[0]["llave_final_conseguida"] == 1:
+		quitar_glitch = true
+	if quitar_glitch:
+		$Glitch.hide()
 		$Presidente.hide()
+		$Presidente/Colisiones.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

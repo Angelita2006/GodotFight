@@ -39,10 +39,11 @@ func _on_activar_ultimo_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Mensaje_Final_Nivel.show()
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
-	# ir al nivel-tutorial
+	# ir al nivel-final
 	get_tree().reload_current_scene()
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
+	Global.llave_final_obtenida = true
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
 	$Final2.show()

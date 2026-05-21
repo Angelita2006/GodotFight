@@ -17,13 +17,9 @@ func cambiar_dialogo():
 	$Dialogo.show()
 	$Fondo_dialogo.show()
 	if Global.llave_verde_obtenida:
-		position.x = 173.642
-		position.y = 44.207
 		$Dialogo.text = "Gracias por habernos ayudado, te estaremos agradecidos siempre "+str(Global.jugador_nombre)
 		dialogo_actual = 3
 	else:
-		position.x = 212.285
-		position.y = 98.79
 		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el parque está horrible, tienes que arreglarlo\n(Sí) Pulsa E"
 		dialogo_actual = 2
 
@@ -53,10 +49,6 @@ func _on_jardinera_body_exited(body: Node2D) -> void:
 		$Fondo_dialogo.hide()
 	
 func entrar_nivel():
-	Database.abrir_db()
-	Database.crear_tablas_si_no_existen()
-	Database.db.query("DELETE FROM partida")
-	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
-	Database.cerrar_db()
+	Database.guardar_partida()
 	# ir al nivel-parque
 	Cargador.cargar_escena("uid://b8i0qhu37u1ep", false)

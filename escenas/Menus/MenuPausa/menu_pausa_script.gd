@@ -38,19 +38,7 @@ func _on_opciones_pressed() -> void:
 	titulo_opciones.show()
 
 func _on_guardar_pressed() -> void:
-	Database.abrir_db()
-	Database.crear_tablas_si_no_existen()
-	Database.db.query("DELETE FROM partida")
-	var pos = personajeprincipal.global_position
-	var llave_verde_conseguida = 1 if (Global.llave_verde_obtenida == true) else 0
-	var llave_purpura_conseguida = 1 if (Global.llave_purpura_obtenida == true) else 0
-	var llave_plateada_conseguida = 1 if (Global.llave_plateada_obtenida == true) else 0
-	var llave_dorada_conseguida = 1 if (Global.llave_dorada_obtenida == true) else 0
-	var llave_final_conseguida = 1 if (Global.llave_final_obtenida == true) else 0
-	var ruta_escena = get_tree().current_scene.scene_file_path
-	var uid_escena = ResourceLoader.get_resource_uid(ruta_escena)
-	Database.db.query("INSERT INTO partida (llave_verde_conseguida, llave_purpura_conseguida, llave_plateada_conseguida, llave_dorada_conseguida, llave_final_conseguida, escena_actual, pos_x, pos_y) VALUES ("+str(llave_verde_conseguida)+","+str(llave_purpura_conseguida)+","+str(llave_plateada_conseguida)+","+str(llave_dorada_conseguida)+","+str(llave_final_conseguida)+","+str(uid_escena)+","+str(pos.x)+","+str(pos.y)+")")
-	Database.cerrar_db()
+	Database.guardar_partida()
 	mensaje_guardado.show()
 	await get_tree().create_timer(2).timeout
 	mensaje_guardado.hide()

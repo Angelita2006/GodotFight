@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://e8cyhqcwav5e"]
+[gd_scene format=4 uid="uid://e8cyhqcwav5e"]
 
 [ext_resource type="Script" uid="uid://d22bncug1uqjo" path="res://escenas/MapaAldeaEsmeralda/Biblioteca/biblioteca_planta1_script.gd" id="1_ah0l0"]
 [ext_resource type="Texture2D" uid="uid://cy5vhc5wvcmpc" path="res://assets/juego/mapa/aldeaesmeralda/pack2/Interior.png" id="2_jwrkp"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="3_u1muq"]
 [ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="4_eldc3"]
-[ext_resource type="PackedScene" uid="uid://d1p5lhxiijpka" path="res://escenas/Personajes/NPCs/Bibliotecaria/Bibliotecaria.tscn" id="5_3htrn"]
+[ext_resource type="PackedScene" uid="uid://dlgowptyld050" path="res://escenas/Personajes/NPCs/Bibliotecaria/Bibliotecaria.tscn" id="5_3htrn"]
+[ext_resource type="Script" uid="uid://dqkw68ntx45wg" path="res://escenas/Personajes/NPCs/Bibliotecaria/bibliotecaria.gd" id="6_cqrmj"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="7_010wo"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="8_0xigm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbkjt"]
 texture = ExtResource("2_jwrkp")
@@ -1063,69 +1066,160 @@ texture = ExtResource("2_jwrkp")
 [sub_resource type="TileSet" id="TileSet_cbkjt"]
 sources/0 = SubResource("TileSetAtlasSource_rudvj")
 
-[node name="Planta1" type="StaticBody2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t540t"]
+texture = ExtResource("7_010wo")
+region_rect = Rect2(455, 139, 30, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtrv7"]
+size = Vector2(12.528557, 11.3063965)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ku3yd"]
+size = Vector2(13.392185, 13.261322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qps3"]
+size = Vector2(19.066284, 12.664782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2048"]
+size = Vector2(47.17456, 123.07695)
+
+[node name="Planta1" type="StaticBody2D" unique_id=1981189125]
 position = Vector2(-129, -105)
 scale = Vector2(1.2038766, 1.1504369)
 script = ExtResource("1_ah0l0")
 
-[node name="Suelo" type="TileMapLayer" parent="."]
+[node name="Suelo" type="TileMapLayer" parent="." unique_id=416943513]
 tile_map_data = PackedByteArray("AAAbAB8AAQACAA4AAAAcAB8AAQACAA4AAAAdAB8AAQACAA4AAAAeAB8AAQAFAAwAAAAfAB8AAQAFAAoAAAAgAB8AAQAFAAoAAAAhAB8AAQAFAAoAAAAiAB8AAQAEAAwAAAAjAB8AAQACAA4AAAAkAB8AAQACAA4AAAAlAB8AAQACAA4AAAAmAB8AAQADAA4AAAAmAB4AAQADAA0AAAAmAB0AAQADAA0AAAAmABwAAQADAA0AAAAmABsAAQADAA0AAAAmABoAAQADAA0AAAAmABkAAQADAA0AAAAmABgAAQADAA0AAAAmABcAAQADAA0AAAAmABYAAQADAA0AAAAmABUAAQADAA0AAAAmABQAAQADAA0AAAAmABMAAQADAAwAAAAlABMAAQACAAwAAAAkABMAAQACAAwAAAAjABMAAQACAAwAAAAiABMAAQACAAwAAAAhABMAAQACAAwAAAAgABMAAQACAAwAAAAfABMAAQACAAwAAAAeABMAAQACAAwAAAAdABMAAQACAAwAAAAcABMAAQACAAwAAAAbABMAAQACAAwAAAAaABMAAQABAAwAAAAaAB8AAQABAA4AAAAaABQAAQABAA0AAAAaABUAAQABAA0AAAAaABYAAQABAA0AAAAaABcAAQABAA0AAAAaABgAAQABAA0AAAAaABkAAQABAA0AAAAaABoAAQABAA0AAAAaABsAAQABAA0AAAAaABwAAQABAA0AAAAaAB0AAQABAA0AAAAaAB4AAQABAA0AAAAbABQAAQAEAAkAAAAcABQAAQAEAAkAAAAdABQAAQAEAAkAAAAeABQAAQAEAAkAAAAfABQAAQAEAAkAAAAgABUAAQAEAAkAAAAhABUAAQAEAAkAAAAiABUAAQAEAAkAAAAjABUAAQAEAAkAAAAlABQAAQAEAAkAAAAkABQAAQAEAAkAAAAjABQAAQAEAAkAAAAiABQAAQAEAAkAAAAhABQAAQAEAAkAAAAgABQAAQAEAAkAAAAfABUAAQAEAAkAAAAeABUAAQAEAAkAAAAdABUAAQAEAAkAAAAcABUAAQAEAAkAAAAbABUAAQAEAAkAAAAbABYAAQAEAAkAAAAcABYAAQAEAAkAAAAdABYAAQAEAAkAAAAeABYAAQAEAAkAAAAfABYAAQAEAAkAAAAgABYAAQAEAAkAAAAiABYAAQAEAAkAAAAjABYAAQAEAAkAAAAkABYAAQAEAAkAAAAkABUAAQAEAAkAAAAlABUAAQAEAAkAAAAlABYAAQAEAAkAAAAbABcAAQAEAAkAAAAbABgAAQAEAAkAAAAbABkAAQAEAAkAAAAbABoAAQAEAAkAAAAbABsAAQAEAAkAAAAbABwAAQAEAAkAAAAbAB0AAQAEAAkAAAAbAB4AAQAEAAkAAAAcABcAAQAEAAkAAAAcABgAAQAEAAkAAAAcABkAAQAEAAkAAAAcABoAAQAEAAkAAAAcABsAAQAEAAkAAAAcABwAAQAEAAkAAAAcAB0AAQAEAAkAAAAcAB4AAQAEAAkAAAAdABcAAQAEAAkAAAAdABgAAQAEAAkAAAAdABkAAQAEAAkAAAAdABoAAQAEAAkAAAAdABsAAQAEAAkAAAAdABwAAQAEAAkAAAAdAB0AAQAEAAkAAAAdAB4AAQAEAAkAAAAeABcAAQAEAAkAAAAeABgAAQAEAAkAAAAeABkAAQAEAAkAAAAeABoAAQAEAAkAAAAeABsAAQAEAAkAAAAeABwAAQAEAAkAAAAeAB0AAQAEAAkAAAAeAB4AAQAEAAkAAAAfABcAAQAEAAkAAAAfABgAAQAEAAkAAAAfABkAAQAEAAkAAAAfABoAAQAEAAkAAAAfABsAAQAEAAkAAAAfABwAAQAEAAkAAAAfAB0AAQAEAAkAAAAfAB4AAQAEAAkAAAAgABcAAQAEAAkAAAAgABgAAQAEAAkAAAAgABkAAQAEAAkAAAAgABoAAQAEAAkAAAAgABsAAQAEAAkAAAAgABwAAQAEAAkAAAAgAB0AAQAEAAkAAAAgAB4AAQAEAAkAAAAhABcAAQAEAAkAAAAhABgAAQAEAAkAAAAhABkAAQAEAAkAAAAhABoAAQAEAAkAAAAhABsAAQAEAAkAAAAhABwAAQAEAAkAAAAhAB0AAQAEAAkAAAAhAB4AAQAEAAkAAAAiABcAAQAEAAkAAAAiABgAAQAEAAkAAAAiABkAAQAEAAkAAAAiABoAAQAEAAkAAAAiABsAAQAEAAkAAAAiABwAAQAEAAkAAAAiAB0AAQAEAAkAAAAiAB4AAQAEAAkAAAAjABcAAQAEAAkAAAAjABgAAQAEAAkAAAAjABkAAQAEAAkAAAAjABoAAQAEAAkAAAAjABsAAQAEAAkAAAAjABwAAQAEAAkAAAAjAB0AAQAEAAkAAAAjAB4AAQAEAAkAAAAkABcAAQAEAAkAAAAkABgAAQAEAAkAAAAkABkAAQAEAAkAAAAkABoAAQAEAAkAAAAkABsAAQAEAAkAAAAkABwAAQAEAAkAAAAkAB0AAQAEAAkAAAAkAB4AAQAEAAkAAAAlABcAAQAEAAkAAAAlABgAAQAEAAkAAAAlABkAAQAEAAkAAAAlABoAAQAEAAkAAAAlABsAAQAEAAkAAAAlABwAAQAEAAkAAAAlAB0AAQAEAAkAAAAlAB4AAQAEAAkAAAAgABIAAQAIAA0AAAAhABIAAQAIAA0AAAAZABQAAQADAA0AAAAZABUAAQADAA0AAAAZABYAAQADAA0AAAAZABgAAQADAA0AAAAZABcAAQADAA0AAAAZABkAAQADAA0AAAAZABoAAQADAA0AAAAZABsAAQADAA0AAAAZABwAAQADAA0AAAAZAB0AAQADAA0AAAAZAB4AAQADAA0AAAAZAB8AAQADAA0AAAAZACAAAQAEAA0AAAAaACAAAQACAAwAAAAbACAAAQACAAwAAAAcACAAAQACAAwAAAAdACAAAQACAAwAAAAeACAAAQAFAA0AAAAfACAAAQAFAAoAAAAhACAAAQAFAAoAAAAiACAAAQAEAA0AAAAjACAAAQACAAwAAAAkACAAAQACAAwAAAAlACAAAQACAAwAAAAmACAAAQACAAwAAAAnACAAAQAFAA0AAAAnAB8AAQABAA0AAAAnAB4AAQABAA0AAAAnAB0AAQABAA0AAAAnABwAAQABAA0AAAAnABsAAQABAA0AAAAnABoAAQABAA0AAAAnABkAAQABAA0AAAAnABgAAQABAA0AAAAnABcAAQABAA0AAAAnABYAAQABAA0AAAAnABUAAQABAA0AAAAnABQAAQABAA0AAAAnABMAAQABAA0AAAAnABIAAQAFAAwAAAAmABIAAQACAA4AAAAlABIAAQACAA4AAAAkABIAAQACAA4AAAAjABIAAQACAA4AAAAiABIAAQACAA4AAAAfABIAAQACAA4AAAAeABIAAQACAA4AAAAdABIAAQACAA4AAAAcABIAAQACAA4AAAAbABIAAQACAA4AAAAaABIAAQACAA4AAAAZABIAAQAEAAwAAAAZABMAAQADAA0AAAAgACAAAQAFAAoAAAAhABYAAQAEAAkAAAA=")
 tile_set = SubResource("TileSet_tahhr")
 
-[node name="Alfombra" type="TileMapLayer" parent="."]
+[node name="Alfombra" type="TileMapLayer" parent="." unique_id=515252708]
 tile_map_data = PackedByteArray("AAAeAB4AAQAIABEAAAAgAB8AAQAKABIAAAAgACAAAQAKABIAAAAfAB8AAQAJABIAAAAfACAAAQAJABIAAAAhAB8AAQALABIAAAAhACAAAQALABIAAAAhAB0AAQALABAAAAAfAB4AAQAJABEAAAAfAB0AAQAJABAAAAAgAB0AAQAKABAAAAAhAB4AAQALABEAAAAgAB4AAQAKABEAAAA=")
 tile_set = SubResource("TileSet_bjc4s")
 
-[node name="Muebles" type="TileMapLayer" parent="."]
+[node name="Muebles" type="TileMapLayer" parent="." unique_id=298365226]
 position = Vector2(4.7683716e-07, -15.646229)
 tile_map_data = PackedByteArray("AAAbABQAAQALAAYAAAAbABUAAQALAAcAAAAbABYAAQALAAgAAAAcABQAAQAMAAYAAAAcABUAAQAMAAcAAAAcABYAAQAMAAgAAAAdABQAAQALAAYAAAAdABUAAQALAAcAAAAdABYAAQALAAgAAAAeABQAAQAMAAYAAAAeABUAAQAMAAcAAAAeABYAAQAMAAgAAAAkABQAAQALAAYAAAAkABUAAQALAAcAAAAkABYAAQALAAgAAAAlABQAAQAMAAYAAAAlABUAAQAMAAcAAAAlABYAAQAMAAgAAAAiABQAAQALAAYAAAAiABUAAQALAAcAAAAiABYAAQALAAgAAAAjABQAAQAMAAYAAAAjABUAAQAMAAcAAAAjABYAAQAMAAgAAAAfABQAAQAKAAMAAAAfABUAAQAKAAQAAAAgABIAAQABAAEAAAAgABQAAQABAAMAAAAgABUAAQABAAQAAAAgABYAAQABAAUAAAAhABIAAQADAAEAAAAhABMAAQADAAIAAAAhABQAAQADAAMAAAAhABUAAQADAAQAAAAhABYAAQADAAUAAAAgABMAAQABAAIAAAAbABkAAQALAAcAAAAbABoAAQALAAgAAAAbABsAAQACAAoAABAbABwAAQACAAsAABAbAB0AAQACAAwAABAbAB4AAQAGAA0AAAAbAB8AAQAGAA4AAAAcABgAAQAMAAYAAAAcABkAAQAMAAcAAAAcABoAAQAMAAgAAAAcABsAAQABAAoAABAcABwAAQABAAsAABAcAB0AAQABAAwAABAcAB4AAQAHAA0AAAAcAB8AAQAHAA4AAAAdABgAAQALAAYAAAAdABkAAQALAAcAAAAdABoAAQALAAgAAAAdAB0AAQAIAAMAAAAdAB4AAQAIAAQAAAAdAB8AAQAIAAQAAAAeABgAAQAMAAYAAAAeABkAAQAMAAcAAAAeABoAAQAMAAgAAAAeAB0AAQAJAAMAAAAeAB4AAQAJAAQAAAAeAB8AAQAJAAQAAAAfABgAAQALAAYAAAAfABkAAQALAAcAAAAfABoAAQALAAgAAAAgABgAAQAMAAYAAAAgABkAAQAMAAcAAAAgABoAAQAMAAgAAAAiABgAAQALAAYAAAAiABkAAQALAAcAAAAiABoAAQALAAgAAAAjABgAAQAMAAYAAAAjABkAAQAMAAcAAAAjABoAAQAMAAgAAAAkABgAAQALAAYAAAAkABkAAQALAAcAAAAkABoAAQALAAgAAAAkABsAAQALAAYAAAAkABwAAQALAAgAAAAkAB0AAQABAAoAAAAkAB4AAQABAAsAAAAkAB8AAQABAAwAAAAlABkAAQAMAAcAAAAlABoAAQAMAAgAAAAlABsAAQAMAAYAAAAlABwAAQAMAAgAAAAlAB0AAQACAAoAAAAlAB4AAQACAAsAAAAlAB8AAQACAAwAAAAbABgAAQALAAYAAAAlABgAAQAMAAYAAAAfACEAAAAIAAwAAAAgACEAAAAIAAwAAAAhACEAAAAIAAwAAAA=")
 tile_set = SubResource("TileSet_bjc4s")
 
-[node name="Sobremesa" type="TileMapLayer" parent="."]
+[node name="Sobremesa" type="TileMapLayer" parent="." unique_id=24166691]
 tile_map_data = PackedByteArray("AAAeABwAAQABABcAAAAeAB0AAQABABgAAAAdAB4AAQAIABgAAAAeAB4AAQAMABcAAAAfABMAAQAMABkAAAAfACAAAAAIAAwAAAAgACAAAAAIAAwAAAAhACAAAAAIAAwAAAA=")
 tile_set = SubResource("TileSet_bjc4s")
 
-[node name="Salida" type="Area2D" parent="."]
+[node name="Salida" type="Area2D" parent="." unique_id=770366735]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Salida"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salida" unique_id=1454143710]
 position = Vector2(519.57153, 526.83344)
 shape = SubResource("RectangleShape2D_lnalw")
 
-[node name="Subida" type="Area2D" parent="."]
+[node name="Subida" type="Area2D" parent="." unique_id=1994342777]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Subida"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Subida" unique_id=15422843]
 position = Vector2(527, 288.80838)
 shape = SubResource("RectangleShape2D_lnalw")
 
-[node name="Paredes" type="CollisionPolygon2D" parent="."]
+[node name="Paredes" type="CollisionPolygon2D" parent="." unique_id=160880594]
 position = Vector2(402, 289)
 polygon = PackedVector2Array(-1, -1, 112, -2, 112, 30, 31.599243, 30.878479, 31.599243, 205.59474, 93.89801, 205.59474, 93.89801, 236.88719, 238.43106, 239.49489, 239.26175, 253.40266, -1.6267395, 252.53343, -2, 238)
 
-[node name="Paredes2" type="CollisionPolygon2D" parent="."]
+[node name="Paredes2" type="CollisionPolygon2D" parent="." unique_id=1283930046]
 position = Vector2(639.00006, 528)
 rotation = 3.1402545
 polygon = PackedVector2Array(-1, -1, 96.58389, 1.3728333, 97.37149, 33.535614, 30.918396, 34.315918, 32.345917, 209.03424, 98.72034, 209.1323, 97.67749, 241.13092, -2.321106, 239.9971)
 
-[node name="PersonajePrincipal" parent="." instance=ExtResource("4_eldc3")]
-position = Vector2(517.49493, 505.02554)
+[node name="PersonajePrincipal" parent="." unique_id=1118911247 instance=ExtResource("4_eldc3")]
+position = Vector2(517.4949, 491.98703)
 scale = Vector2(0.176, 0.195)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Estanterias" type="TileMapLayer" parent="."]
+[node name="Estanterias" type="TileMapLayer" parent="." unique_id=1486383621]
 position = Vector2(0, -7.6293945e-06)
 tile_map_data = PackedByteArray("AAAbABcAAAALAAYAAAAdABcAAAALAAYAAAAeABcAAAAMAAYAAAAfABcAAAALAAYAAAAgABcAAAAMAAYAAAAiABcAAAALAAYAAAAjABcAAAAMAAYAAAAkABcAAAALAAYAAAAlABcAAAAMAAYAAAAcABcAAAAMAAYAAAAkABoAAAALAAYAAAAlABoAAAAMAAYAAAA=")
 tile_set = SubResource("TileSet_cbkjt")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1129978694]
 position = Vector2(526.632, 412.88663)
 scale = Vector2(0.36141187, 0.5342173)
 zoom = Vector2(2, 2)
 limit_enabled = false
 
-[node name="Bibliotecaria" parent="." instance=ExtResource("5_3htrn")]
-position = Vector2(555.7047, 457.21762)
-scale = Vector2(0.16947493, 0.17260441)
+[node name="Bibliotecaria" parent="." unique_id=199411491 instance=ExtResource("5_3htrn")]
+position = Vector2(563.18066, 463.30222)
+script = ExtResource("6_cqrmj")
+
+[node name="Fondo_dialogo" type="Panel" parent="Bibliotecaria" unique_id=1486330101]
+offset_left = -28.0
+offset_top = -13.0
+offset_right = 295.55786
+offset_bottom = 522.7798
+rotation = -1.5707964
+scale = Vector2(0.095, 0.1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_t540t")
+
+[node name="Dialogo" type="RichTextLabel" parent="Bibliotecaria" unique_id=234735118]
+offset_left = -21.0
+offset_top = -39.0
+offset_right = 149.61612
+offset_bottom = 51.0
+scale = Vector2(0.211, 0.2)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("8_0xigm")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Bienvenido a la biblioteca"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+language = "es_ES"
+
+[node name="Abajo" type="Area2D" parent="Bibliotecaria" unique_id=45406829]
+position = Vector2(40, 29)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bibliotecaria/Abajo" unique_id=1565326872]
+position = Vector2(200, -70.226074)
+scale = Vector2(5.5872416, 3.5548468)
+shape = SubResource("RectangleShape2D_wtrv7")
+
+[node name="Arriba" type="Area2D" parent="Bibliotecaria" unique_id=1610416343]
+position = Vector2(40, 37)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bibliotecaria/Arriba" unique_id=884907384]
+position = Vector2(200, -242.8114)
+scale = Vector2(5.2269244, -2.8242965)
+shape = SubResource("RectangleShape2D_ku3yd")
+
+[node name="Izquierda" type="Area2D" parent="Bibliotecaria" unique_id=1481105515]
+position = Vector2(42, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bibliotecaria/Izquierda" unique_id=732857657]
+position = Vector2(251.25052, -158.97433)
+scale = Vector2(2.6016495, 9.718048)
+shape = SubResource("RectangleShape2D_5qps3")
+
+[node name="Derecha" type="Area2D" parent="Bibliotecaria" unique_id=1858540868]
+position = Vector2(39, 33)
+rotation = -3.1415925
+scale = Vector2(0.2, -0.195)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bibliotecaria/Derecha" unique_id=9328844]
+position = Vector2(161.48569, -158.97433)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_x2048")
 
 [connection signal="body_entered" from="Salida" to="." method="_on_salida_body_entered"]
 [connection signal="body_entered" from="Subida" to="." method="_on_subida_body_entered"]
+[connection signal="body_entered" from="Bibliotecaria/Abajo" to="Bibliotecaria" method="_on_abajo_body_entered"]
+[connection signal="body_exited" from="Bibliotecaria/Abajo" to="Bibliotecaria" method="_on_bibliotecaria_body_exited"]
+[connection signal="body_entered" from="Bibliotecaria/Arriba" to="Bibliotecaria" method="_on_arriba_body_entered"]
+[connection signal="body_exited" from="Bibliotecaria/Arriba" to="Bibliotecaria" method="_on_bibliotecaria_body_exited"]
+[connection signal="body_entered" from="Bibliotecaria/Izquierda" to="Bibliotecaria" method="_on_izquierda_body_entered"]
+[connection signal="body_exited" from="Bibliotecaria/Izquierda" to="Bibliotecaria" method="_on_bibliotecaria_body_exited"]
+[connection signal="body_entered" from="Bibliotecaria/Derecha" to="Bibliotecaria" method="_on_derecha_body_entered"]
+[connection signal="body_exited" from="Bibliotecaria/Derecha" to="Bibliotecaria" method="_on_bibliotecaria_body_exited"]
+
+[editable path="Bibliotecaria"]

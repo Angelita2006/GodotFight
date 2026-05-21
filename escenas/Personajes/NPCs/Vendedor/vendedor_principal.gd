@@ -49,10 +49,6 @@ func _on_vendedor_body_exited(body: Node2D) -> void:
 		$Fondo_dialogo.hide()
 
 func entrar_nivel():
-	Database.abrir_db()
-	Database.crear_tablas_si_no_existen()
-	Database.db.query("DELETE FROM partida")
-	Database.db.query("INSERT INTO partida (pos_x,pos_y) VALUES ("+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
-	Database.cerrar_db()
+	Database.guardar_partida()
 	# ir al nivel-mercao
 	Cargador.cargar_escena("uid://ut7fnsn5cbc3", false)

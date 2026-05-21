@@ -25,9 +25,6 @@ func _on_guardar_pressed() -> void:
 			Global.jugador_nombre = $NombreEditor.text
 		else:
 			Global.jugador_nombre = "Lisa"
-	
-	print(Global.jugador_aspecto)
-	print(Global.jugador_nombre)
 
 func _on_volver_pressed() -> void:
 	get_tree().change_scene_to_file("uid://b5iedpw7s5iny")

@@ -85,17 +85,29 @@ func obtener_todo():
 func obtener_datos_ultima_partida():
 	var sql = "SELECT * FROM partida ORDER BY idPartida DESC LIMIT 1;"
 	db.query(sql)
-	return db.query_result
+	var resultado = db.query_result
+	print(resultado)
+	return resultado
 
 func hay_partida_guardada():
 	var sql = "SELECT COUNT(*) as total FROM partida;"
 	db.query(sql)
 	var resultado = db.query_result
-	print(resultado)
 	if resultado.size() > 0:
 		return resultado[0]["total"] > 0
 
 	return false
 
-func marcar_llave_verde_conseguida():
-	pass
+func guardar_partida():
+	#abrir_db()
+	crear_tablas_si_no_existen()
+	db.query("DELETE FROM partida")
+	var llave_verde_conseguida = 1 if (Global.llave_verde_obtenida == true) else 0
+	var llave_purpura_conseguida = 1 if (Global.llave_purpura_obtenida == true) else 0
+	var llave_plateada_conseguida = 1 if (Global.llave_plateada_obtenida == true) else 0
+	var llave_dorada_conseguida = 1 if (Global.llave_dorada_obtenida == true) else 0
+	var llave_final_conseguida = 1 if (Global.llave_final_obtenida == true) else 0
+	var ruta_escena = get_tree().current_scene.scene_file_path
+	var uid_escena = ResourceLoader.get_resource_uid(ruta_escena)
+	db.query("INSERT INTO partida (llave_verde_conseguida, llave_purpura_conseguida, llave_plateada_conseguida, llave_dorada_conseguida, llave_final_conseguida, escena_actual, pos_x, pos_y) VALUES ("+str(llave_verde_conseguida)+","+str(llave_purpura_conseguida)+","+str(llave_plateada_conseguida)+","+str(llave_dorada_conseguida)+","+str(llave_final_conseguida)+","+str(uid_escena)+","+str(Global.jugador_posX)+","+str(Global.jugador_posY)+")")
+	#cerrar_db()

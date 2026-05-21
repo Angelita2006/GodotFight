@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+var quitar_glitch = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Global.llave_purpura_obtenida:
@@ -8,13 +10,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Global.llave_purpura_obtenida:
-		$Glitch1.hide()
-		$Glitch2.hide()
-		$Glitch3.hide()
-		$Glitch4.hide()
-		$Glitch5.hide()
+	var fila = Database.obtener_datos_ultima_partida()
+	if fila[0]["llave_purpura_conseguida"] == 0:
+		quitar_glitch = false
+	elif fila[0]["llave_purpura_conseguida"] == 1:
+		quitar_glitch = true
+	if quitar_glitch:
+		$Glitch.hide()
 		$Bibliotecaria.hide()
+		$Bibliotecaria/Colisiones.disabled = true
 
 func _on_animacion_animation_finished(source: AnimatedSprite2D) -> void:
 	if source.animation == "abrir" and source.animation_finished:
@@ -23,4 +27,4 @@ func _on_animacion_animation_finished(source: AnimatedSprite2D) -> void:
 		if source.animation_finished:
 			source.stop()
 		Global.volviendo_de_biblioteca = false
-		get_tree().change_scene_to_file("res://escenas/MapaAldeaEsmeralda/biblioteca/biblioteca_planta1.tscn")
+		get_tree().change_scene_to_file("uid://e8cyhqcwav5e")
