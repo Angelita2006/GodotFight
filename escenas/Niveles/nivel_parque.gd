@@ -4,6 +4,9 @@ extends Node2D
 
 @onready var secretoEncontrado: bool = false
 
+var tiempo: String = "00:00"
+var tiempo_total: float = 0.0
+
 func _ready() -> void:
 	$Personaje_Codigo/Primer_Mensaje.show()
 	$Personaje_Codigo/Mensaje_mision.hide()
@@ -17,8 +20,14 @@ func _ready() -> void:
 	$Plataformas4.hide()
 	$Plataformas4.collision_enabled = false
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	$Personaje_Codigo/Estado_Mision.text = str(patos)
+	
+	tiempo_total += delta
+	var segundos: int = int(tiempo_total)
+	var milesimas: int = int((tiempo_total - segundos) * 1000)
+	tiempo = "%03d:%03d" % [segundos, milesimas]
+	$Personaje_Codigo/Tiempo.text = tiempo
 
 func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()

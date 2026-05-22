@@ -332,6 +332,13 @@ offset_right = -381.0
 offset_bottom = -587.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
 
+[node name="Fondo_Temporizador" type="Panel" parent="Personaje_Codigo" unique_id=702357391]
+offset_left = -1605.0
+offset_top = -571.0
+offset_right = -1093.0
+offset_bottom = -414.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
+
 [node name="Fondo_Mision" type="Panel" parent="Personaje_Codigo" unique_id=1940133434]
 visible = false
 offset_left = 1061.0
@@ -363,6 +370,18 @@ theme_override_font_sizes/font_size = 59
 text = "Los patos del parque han desaparecido del 
 código. Encuentra a los patitos y arregla el 
 código para que funcione correctamente  _"
+
+[node name="Tiempo" type="Label" parent="Personaje_Codigo" unique_id=742757373]
+offset_left = -1574.0
+offset_top = -559.0
+offset_right = -1123.0
+offset_bottom = -424.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_6bfat")
+theme_override_font_sizes/font_size = 100
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Nivel_Tutorial_Mision" type="RichTextLabel" parent="Personaje_Codigo" unique_id=381095813]
 visible = false
