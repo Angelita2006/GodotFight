@@ -54,6 +54,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.enabled = false
 		await $AudioStreamPlayer2.finished
 		Database.guardar_partida()
+		Database.guardar_tiempo("Parque", tiempo_total)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 

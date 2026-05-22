@@ -164,7 +164,7 @@ func guardar_ajustes():
 	db.query_with_bindings(sql, parametros)
 	
 	# Comprobación limpia
-	db.query("SELECT * FROM ajustes")
+	#db.query("SELECT * FROM ajustes")
 	#print("Ajustes guardados: ", db.query_result)
 	
 	cerrar_db()
@@ -176,3 +176,28 @@ func obtener_datos_ajustes():
 	cerrar_db()
 	print(resultado)
 	return resultado
+
+func guardar_tiempo(nivel: String, duracion: float):
+	# 1. Asegurar tablas
+	crear_tablas_si_no_existen()
+	
+	# 2. Abrir para operar
+	abrir_db()
+	db.query("DELETE FROM ajustes")
+	
+	# Reparado usando query_with_bindings para evitar el fallo de comillas y comas
+	var sql = "INSERT INTO tiempos (jugador, nivel, duracion) VALUES (?, ?, ?);"
+	var parametros = [
+		Global.volumen, 
+		str(Global.jugador_nombre), 
+		str(nivel), 
+		str(duracion)
+	]
+	
+	db.query_with_bindings(sql, parametros)
+	
+	# Comprobación limpia
+	db.query("SELECT * FROM tiempos")
+	print("Tiempos guardados: ", db.query_result)
+	
+	cerrar_db()

@@ -9,33 +9,34 @@ func cargar_datos_partida():
 		return
 
 	var fila = Database.obtener_datos_ultima_partida()
-	if fila[0]["pos_x"] != 0:
-		$PersonajePrincipal.global_position.x = fila[0]["pos_x"]
-		$PersonajePrincipal.global_position.y = fila[0]["pos_y"]
-	if fila[0]["llave_verde_conseguida"] == 0:
-		Global.llave_verde_obtenida = false
-	elif fila[0]["llave_verde_conseguida"] == 1:
-		Global.llave_verde_obtenida = true
-	
-	if fila[0]["llave_purpura_conseguida"] == 0:
-		Global.llave_purpura_obtenida = false
-	elif fila[0]["llave_purpura_conseguida"] == 1:
-		Global.llave_purpura_obtenida = true
-	
-	if fila[0]["llave_plateada_conseguida"] == 0:
-		Global.llave_plateada_obtenida = false
-	elif fila[0]["llave_plateada_conseguida"] == 1:
-		Global.llave_plateada_obtenida = true
-	
-	if fila[0]["llave_dorada_conseguida"] == 0:
-		Global.llave_dorada_obtenida = false
-	elif fila[0]["llave_dorada_conseguida"] == 1:
-		Global.llave_dorada_obtenida = true
-	
-	if fila[0]["llave_final_conseguida"] == 0:
-		Global.llave_final_obtenida = false
-	elif fila[0]["llave_final_conseguida"] == 1:
-		Global.llave_final_obtenida = true
+	if fila:
+		if fila[0]["pos_x"] != 0:
+			$PersonajePrincipal.global_position.x = fila[0]["pos_x"]
+			$PersonajePrincipal.global_position.y = fila[0]["pos_y"]
+		if fila[0]["llave_verde_conseguida"] == 0:
+			Global.llave_verde_obtenida = false
+		elif fila[0]["llave_verde_conseguida"] == 1:
+			Global.llave_verde_obtenida = true
+		
+		if fila[0]["llave_purpura_conseguida"] == 0:
+			Global.llave_purpura_obtenida = false
+		elif fila[0]["llave_purpura_conseguida"] == 1:
+			Global.llave_purpura_obtenida = true
+		
+		if fila[0]["llave_plateada_conseguida"] == 0:
+			Global.llave_plateada_obtenida = false
+		elif fila[0]["llave_plateada_conseguida"] == 1:
+			Global.llave_plateada_obtenida = true
+		
+		if fila[0]["llave_dorada_conseguida"] == 0:
+			Global.llave_dorada_obtenida = false
+		elif fila[0]["llave_dorada_conseguida"] == 1:
+			Global.llave_dorada_obtenida = true
+		
+		if fila[0]["llave_final_conseguida"] == 0:
+			Global.llave_final_obtenida = false
+		elif fila[0]["llave_final_conseguida"] == 1:
+			Global.llave_final_obtenida = true
 
 func _ready() -> void:
 	$AnimationPlayer.play("fade_in")
