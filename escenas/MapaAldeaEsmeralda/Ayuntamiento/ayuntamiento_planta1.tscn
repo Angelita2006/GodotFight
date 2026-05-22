@@ -1097,7 +1097,6 @@ texture = ExtResource("2_4h530")
 sources/0 = SubResource("TileSetAtlasSource_lvxgy")
 
 [node name="Ayuntamiento" type="StaticBody2D" unique_id=929511571]
-position = Vector2(-1, 0)
 script = ExtResource("1_xm87m")
 
 [node name="Suelo" type="TileMapLayer" parent="." unique_id=1428066288]

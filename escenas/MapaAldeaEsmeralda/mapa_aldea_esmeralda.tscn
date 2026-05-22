@@ -990,13 +990,17 @@ parameters/looping = true
 
 [node name="Menu Pausa" parent="." unique_id=404389821 node_paths=PackedStringArray("personajeprincipal") instance=ExtResource("10_0pl3i")]
 visible = false
-offset_left = -160.0
-offset_top = -23.0
-offset_right = -160.0
-offset_bottom = -23.0
-scale = Vector2(1.2857767, 1.2597189)
+offset_left = -244.99998
+offset_top = -142.00002
+offset_right = -244.99998
+offset_bottom = -142.00002
+scale = Vector2(1.4277245, 1.4320374)
 personajeprincipal = NodePath("../PersonajePrincipal")
+
+[node name="Fondo Mensaje" parent="Menu Pausa" index="14" unique_id=2105190707]
+script = null
 
 [connection signal="hidden" from="Menu Pausa" to="." method="_on_menu_pausa_hidden"]
 
 [editable path="PersonajePrincipal"]
+[editable path="Menu Pausa"]

@@ -1,4 +1,4 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c7jt2ypr4twlw"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://c7jt2ypr4twlw"]
 
 [ext_resource type="Texture2D" uid="uid://bgegbhh537wph" path="res://assets/ui/Setting menu.png" id="1_p02cc"]
 

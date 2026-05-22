@@ -8,17 +8,17 @@ func _ready() -> void:
 		Global.volviendo_de_ayuntamiento = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_bajada_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		Global.volviendo_de_ayuntamiento = true
 		# ir a la planta 1 del ayuntamiento
-		get_tree().change_scene_to_file("uid://cyr5170lqj6c3")
+		get_tree().call_deferred("change_scene_to_file", "uid://cyr5170lqj6c3")
 	
 func _on_subida_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		Global.volviendo_de_ayuntamiento = true
 		# ir a la planta 3 del ayuntamiento
-		get_tree().change_scene_to_file("uid://bh3tp261kottk")
+		get_tree().call_deferred("change_scene_to_file", "uid://bh3tp261kottk")

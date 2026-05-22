@@ -52,7 +52,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pem0n")
 }],
 "loop": true,
-"name": &"Baquero_izquierda",
+"name": &"Banquero_izquierda",
 "speed": 5.0
 }]
 
@@ -66,4 +66,4 @@ shape = SubResource("RectangleShape2D_5amg6")
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=914265282]
 scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_4pmp3")
-animation = &"Banquero_abajo"
+animation = &"Banquero_izquierda"

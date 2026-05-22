@@ -3,12 +3,10 @@ extends Panel
 @onready var tabla := $Contenedor
 
 func _ready() -> void:
-	if Database.abrir_db():
-		Database.crear_tablas_si_no_existen()
-		#Database.reiniciar_datos()
-		#Database.insertar_datos_ejemplo()
-		mostrar_ranking()
-		Database.db.close_db()
+	Database.crear_tablas_si_no_existen()
+	#Database.reiniciar_datos()
+	#Database.insertar_datos_ejemplo()
+	mostrar_ranking()
 
 func mostrar_ranking():
 	

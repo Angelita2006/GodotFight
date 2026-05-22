@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dnjfj3lxaxvdu" path="res://assets/ui/basic_ui_sprites_grabber.png" id="7_0irrf"]
 [ext_resource type="Texture2D" uid="uid://moxgainbwij7" path="res://assets/ui/controles/titulo godotfight (7).png" id="8_75too"]
 [ext_resource type="FontFile" uid="uid://31cepyt2ycy0" path="res://assets/ui/fuentes/Silver.ttf" id="9_7xcs1"]
+[ext_resource type="Texture2D" uid="uid://detp5de33uw43" path="res://assets/ui/Inventory_Spritesheet.png" id="10_75too"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="10_cmpdd"]
+[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="11_7xcs1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xj00"]
 texture = ExtResource("4_f5nv7")
@@ -58,7 +60,13 @@ region_rect = Rect2(466, 105, 28, 14)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g61d0"]
 texture = ExtResource("8_75too")
 
-[node name="Menu Pausa" type="Control" unique_id=256830463 node_paths=PackedStringArray("pausa", "titulo_pausa", "opciones", "titulo_opciones", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "volver", "mensaje_guardado")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fb6u"]
+texture = ExtResource("10_75too")
+texture_margin_left = 3.0
+texture_margin_right = 3.0
+region_rect = Rect2(227, 162, 42, 44)
+
+[node name="Menu Pausa" type="Control" unique_id=256830463 node_paths=PackedStringArray("pausa", "titulo_pausa", "opciones", "titulo_opciones", "idiomat", "idioma", "idiomaO", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "volver")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,6 +81,7 @@ opciones = NodePath("Opciones")
 titulo_opciones = NodePath("TituloOpciones")
 idiomat = NodePath("IdiomaT")
 idioma = NodePath("CambiarIdioma")
+idiomaO = NodePath("CambiarIdioma/Idioma2")
 volument = NodePath("VolumenT")
 volumen = NodePath("Volumen")
 controlest = NodePath("ControlesT")
@@ -80,7 +89,6 @@ controles = NodePath("Controles")
 creditost = NodePath("CreditosT")
 creditos = NodePath("Creditos")
 volver = NodePath("Volver")
-mensaje_guardado = NodePath("Mensaje guardado")
 
 [node name="Fondo" type="Panel" parent="." unique_id=1303711974]
 texture_filter = 1
@@ -370,13 +378,24 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Volver"
 
+[node name="Fondo Mensaje" type="Panel" parent="." unique_id=2105190707]
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_top = 233.0
+offset_right = 572.0
+offset_bottom = 306.00003
+scale = Vector2(2.0211668, 1.9989594)
+theme_override_styles/panel = SubResource("StyleBoxTexture_3fb6u")
+script = ExtResource("11_7xcs1")
+
 [node name="Mensaje guardado" type="Label" parent="." unique_id=1183509838]
 visible = false
 layout_mode = 0
 offset_left = 274.0
-offset_top = 35.0
+offset_top = 284.0
 offset_right = 1130.0
-offset_bottom = 96.0
+offset_bottom = 345.0
 scale = Vector2(0.697323, 0.72411907)
 theme_override_fonts/font = ExtResource("10_cmpdd")
 theme_override_font_sizes/font_size = 60

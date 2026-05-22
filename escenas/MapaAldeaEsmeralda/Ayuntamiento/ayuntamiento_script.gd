@@ -27,4 +27,4 @@ func _on_animacion_animation_finished(source: AnimatedSprite2D) -> void:
 			source.stop()
 		Global.volviendo_de_ayuntamiento = false
 		# ir a la planta 1 del ayuntamiento
-		get_tree().change_scene_to_file("uid://cyr5170lqj6c3")
+		get_tree().call_deferred("change_scene_to_file", "uid://cyr5170lqj6c3")

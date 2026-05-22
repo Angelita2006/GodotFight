@@ -15,5 +15,5 @@ func _on_salida_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		Global.volviendo_de_banco = true
 		# ir al mapa
-		get_tree().change_scene_to_file("uid://c61j2kork7ar5")
+		get_tree().call_deferred("change_scene_to_file", "uid://c61j2kork7ar5")
 	

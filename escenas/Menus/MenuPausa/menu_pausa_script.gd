@@ -7,6 +7,7 @@ extends Control
 
 @export var idiomat: Label
 @export var idioma: VBoxContainer
+@export var idiomaO: OptionButton
 @export var volument: Label
 @export var volumen: HSlider
 @export var controlest: Label
@@ -17,13 +18,31 @@ extends Control
 
 @export var personajeprincipal: CharacterBody2D
 
-@export var mensaje_guardado: Label
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	#mensaje_guardado = get_parent().get_child(2)
+@onready var mensaje_guardado: Label = $"Mensaje guardado"
+@onready var fondo_guardado: Panel = $"Fondo Mensaje"
+var config = ConfigFile.new()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func cargar_ajustes():
+	var fila = Database.obtener_datos_ajustes()
+	if fila:
+		Global.volumen = fila[0]["volumen"]
+		Global.idioma = fila[0]["idioma"]
+		Global.jugador_aspecto = fila[0]["jugador_aspecto"]
+		Global.jugador_nombre = fila[0]["jugador_nombre"]
+
+func _ready() -> void:
+	# Obtener los ajustes de volumen e idioma
+	cargar_ajustes()
+	config.load("user://config.cfg")
+	var idiomaConf = config.get_value("config","idioma",Global.idioma)
+	TranslationServer.set_locale(idiomaConf)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(Global.volumen))
+	volumen.value = Global.volumen
+	if Global.idioma == "es":
+		idiomaO.select(0)
+	elif Global.idioma == "en":
+		idiomaO.select(1)
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("continuar"):
 		self.hide()
@@ -39,9 +58,11 @@ func _on_opciones_pressed() -> void:
 
 func _on_guardar_pressed() -> void:
 	Database.guardar_partida()
+	fondo_guardado.show()
 	mensaje_guardado.show()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	mensaje_guardado.hide()
+	fondo_guardado.hide()
 
 func _on_volver_pressed() -> void:
 	# ir al menú de inicio

@@ -50,6 +50,11 @@ func _ready() -> void:
 		$PersonajePrincipal.global_position.y += 25
 		Global.volviendo_de_ayuntamiento = false
 	
+	elif Global.volviendo_de_banco:
+		$PersonajePrincipal.global_position = $Banco/Puerta/Area.global_position
+		$PersonajePrincipal.global_position.y += 35
+		Global.volviendo_de_banco = false
+	
 	else:
 		cargar_datos_partida()
 
