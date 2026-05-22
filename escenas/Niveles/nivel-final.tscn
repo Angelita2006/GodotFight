@@ -266,6 +266,7 @@ autoplay = true
 stream = ExtResource("9_kps7u")
 
 [node name="Final2" type="Control" parent="." unique_id=1262965621]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 578.0

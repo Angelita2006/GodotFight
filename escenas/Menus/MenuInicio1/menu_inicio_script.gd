@@ -68,6 +68,7 @@ func _on_salir_pressed() -> void:
 # Oculta el contenedor actual y muestra el menú inicio
 func _on_volver_pressed(contenedor: VBoxContainer) -> void:
 	contenedor.hide()
+	$"Preview Aldea Esmeralda".hide()
 	inicio.show()
 	titulo_modohistoria.hide()
 	titulo_modopractica.hide()
@@ -87,6 +88,7 @@ func _on_volver_pressed(contenedor: VBoxContainer) -> void:
 # Oculta el menú inicio y muestra el contenedor seleccionado
 func on_modohistoria_pressed(contenedor: VBoxContainer) -> void:
 	inicio.hide()
+	$"Preview Aldea Esmeralda".show()
 	contenedor.show()
 	titulojuego.hide()
 	titulo_modohistoria.show()
@@ -96,6 +98,7 @@ func on_modohistoria_pressed(contenedor: VBoxContainer) -> void:
 
 func on_modopractica_pressed(contenedor: VBoxContainer) -> void:
 	inicio.hide()
+	$"Preview Aldea Esmeralda".hide()
 	contenedor.show()
 	titulojuego.hide()
 	titulo_modopractica.show()
@@ -104,10 +107,12 @@ func on_modopractica_pressed(contenedor: VBoxContainer) -> void:
 	titulo_opciones.hide()
 
 func on_editarpersonaje_pressed() -> void:
+	$"Preview Aldea Esmeralda".hide()
 	editor.show()
 
 func on_ranking_pressed(contenedor: VBoxContainer) -> void:
 	inicio.hide()
+	$"Preview Aldea Esmeralda".hide()
 	contenedor.show()
 	titulojuego.hide()
 	titulo_ranking.show()
@@ -117,6 +122,7 @@ func on_ranking_pressed(contenedor: VBoxContainer) -> void:
 
 func on_opciones_pressed(contenedor: VBoxContainer) -> void:
 	inicio.hide()
+	$"Preview Aldea Esmeralda".hide()
 	contenedor.show()
 	titulojuego.hide()
 	titulo_opciones.show()

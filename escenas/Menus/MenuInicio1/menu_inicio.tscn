@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cwjnpooklxj8g" path="res://assets/ui/imagenes/titulo_juego.png" id="5_k48sw"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="5_rkwmd"]
 [ext_resource type="Script" uid="uid://dvd02i0wi5n2c" path="res://escenas/Menus/MenuInicio1/panel_script.gd" id="7_14j3c"]
+[ext_resource type="Texture2D" uid="uid://bh7ewg88vrxp5" path="res://assets/ui/imagenes/previewAldeaEsmeralda.png" id="8_7hf8v"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="8_naxbc"]
 [ext_resource type="AudioStream" uid="uid://08relafd8gog" path="res://assets/ui/audio/musica_inicio.mp3" id="9_naxbc"]
 [ext_resource type="Texture2D" uid="uid://dcllp85s2l5cy" path="res://assets/ui/2.png" id="9_yk7oh"]
@@ -36,6 +37,10 @@ region_rect = Rect2(163, 178, 90, 27)
 default_font = SubResource("SystemFont_8la0q")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4v0q5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ylgfl"]
+texture = ExtResource("8_7hf8v")
+modulate_color = Color(1, 1, 1, 0)
 
 [sub_resource type="FontVariation" id="FontVariation_hymay"]
 
@@ -258,6 +263,15 @@ text = "MODO HISTORIA"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_iukku")
+
+[node name="Preview Aldea Esmeralda" type="Panel" parent="." unique_id=1796295042]
+visible = false
+layout_mode = 0
+offset_left = 565.0
+offset_top = 136.00002
+offset_right = 902.0
+offset_bottom = 204.00002
+theme_override_styles/panel = SubResource("StyleBoxTexture_ylgfl")
 
 [node name="MODO HISTORIA" type="VBoxContainer" parent="." unique_id=247501305]
 visible = false

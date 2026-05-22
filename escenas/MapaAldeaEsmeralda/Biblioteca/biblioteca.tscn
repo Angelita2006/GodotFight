@@ -1018,17 +1018,20 @@ polygon = PackedVector2Array(-2.0031264e-05, -0.00022254745, 8.012516e-05, 0.000
 position = Vector2(64, 16)
 scale = Vector2(1.0863205, 1)
 
+[node name="Colision" parent="Puerta" index="1"]
+position = Vector2(0, 0.58333206)
+
 [node name="Cartel" type="TileMapLayer" parent="." unique_id=1829039493]
-position = Vector2(52, 81.00001)
+position = Vector2(50.000004, 64)
 scale = Vector2(0.36869162, 1.0057484)
 tile_map_data = PackedByteArray("AAD///r/BAAAAAMAAAAAAPr/BAABAAMAAAABAPr/BAABAAMAAAACAPr/BAABAAMAAAADAPr/BAABAAMAAAAEAPr/BAACAAMAAAA=")
 tile_set = SubResource("TileSet_xji7y")
 
 [node name="TextoCartel" type="Label" parent="." unique_id=1083657992]
-offset_left = 50.0
-offset_top = -11.0
-offset_right = 177.0
-offset_bottom = 12.0
+offset_left = 47.0
+offset_top = -29.0
+offset_right = 174.0
+offset_bottom = -6.0
 scale = Vector2(0.29987332, 0.33580548)
 text = "BIBLIOTECA"
 label_settings = SubResource("LabelSettings_gkdae")

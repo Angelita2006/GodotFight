@@ -50,7 +50,7 @@ func _physics_process(_delta):
 				"abajo":
 					animacion_chico.play("quieto_abajo_chico")
 					
-	elif Global.jugador_aspecto == "chica" and $"Camera2D/Menu Pausa".visible == false:
+	elif Global.jugador_aspecto == "chica" and $Camera2D.visible == true:
 		
 		animacion_chico.hide()
 		animacion_chica.show()

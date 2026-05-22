@@ -1130,6 +1130,12 @@ tile_set = SubResource("TileSet_vl11q")
 position = Vector2(63.999985, 15.9999695)
 scale = Vector2(1.0863205, 0.99999994)
 
+[node name="Colision" parent="Puerta" index="1"]
+position = Vector2(0, 3.0000153)
+
+[node name="Colision2" parent="Puerta/Area" index="0"]
+position = Vector2(0, 1.0000172)
+
 [node name="Decoraciones" type="TileMapLayer" parent="." unique_id=90605366]
 position = Vector2(7.8888807, -0.52130675)
 tile_map_data = PackedByteArray("AAADAP//AAAGAAMAAAAEAAEAAAADAAAAAAACAAEAAAADAAAAAAA=")

@@ -986,6 +986,8 @@ autoplay = true
 bus = &"SFX"
 parameters/looping = true
 
+[node name="AudioInicio" type="AudioStreamPlayer" parent="." unique_id=533489139]
+
 [node name="Menu Pausa" parent="." unique_id=404389821 node_paths=PackedStringArray("personajeprincipal") instance=ExtResource("10_0pl3i")]
 visible = false
 offset_left = -160.0
@@ -994,8 +996,6 @@ offset_right = -160.0
 offset_bottom = -23.0
 scale = Vector2(1.2857767, 1.2597189)
 personajeprincipal = NodePath("../PersonajePrincipal")
-
-[node name="AudioInicio" type="AudioStreamPlayer" parent="." unique_id=533489139]
 
 [connection signal="hidden" from="Menu Pausa" to="." method="_on_menu_pausa_hidden"]
 

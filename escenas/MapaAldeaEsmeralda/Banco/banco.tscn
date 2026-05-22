@@ -1018,6 +1018,14 @@ tile_set = SubResource("TileSet_qao5a")
 position = Vector2(93, 24)
 scale = Vector2(1.629, 1.5)
 
+[node name="Colision" parent="Puerta" index="1"]
+position = Vector2(-0.30688477, 0.833313)
+scale = Vector2(0.9999993, 0.99999964)
+
+[node name="Colision2" parent="Puerta/Area" index="0"]
+position = Vector2(-0.26242065, -1)
+scale = Vector2(0.9999999, 0.99999994)
+
 [node name="Cartel" type="TileMapLayer" parent="." unique_id=1077128280]
 position = Vector2(82, 93.00001)
 scale = Vector2(0.369, 1.501)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c67f7f5mxcyxg"]
+[gd_scene format=3 uid="uid://c67f7f5mxcyxg"]
 
 [ext_resource type="Texture2D" uid="uid://btewppx3ytde2" path="res://escenas/Personajes/Animales/Patito/Patito-sprites.png" id="1_vxp55"]
 [ext_resource type="Texture2D" uid="uid://bsn47y5ivu8w2" path="res://escenas/Personajes/Animales/Patito/Patito-sprites - copia.png" id="1_wl0my"]
@@ -152,12 +152,12 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8m4gm"]
 
-[node name="Patito" type="CharacterBody2D"]
+[node name="Patito" type="CharacterBody2D" unique_id=1940967283]
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=12686236]
 sprite_frames = SubResource("SpriteFrames_mxxjd")
 animation = &"caminar_derecha"
 
-[node name="Colision" type="CollisionShape2D" parent="."]
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=1984549539]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_8m4gm")
