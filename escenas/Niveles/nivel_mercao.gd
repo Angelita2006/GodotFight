@@ -6,6 +6,9 @@ var palabra1: bool = false
 var palabra2: bool = false
 var palabra3: bool = false
 
+var tiempo: String = "00:00"
+var tiempo_total: float = 0.0
+
 func _ready() -> void:
 	$Plataformas1.show()
 	$Plataformas1.collision_enabled = true
@@ -20,6 +23,13 @@ func _ready() -> void:
 	$Plataformas1/Codigo_Incompleto2.hide()
 	$Plataformas1/Codigo_Incompleto3.hide()
 	$Plataformas1/Codigo_Completo.hide()
+
+func _process(delta: float) -> void:
+	tiempo_total += delta
+	var segundos: int = int(tiempo_total)
+	var milesimas: int = int((tiempo_total - segundos) * 1000)
+	tiempo = "%03d:%03d" % [segundos, milesimas]
+	$Personaje_Codigo/Tiempo.text = tiempo
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# volver al nivel-mercao
