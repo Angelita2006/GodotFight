@@ -43,7 +43,7 @@ func crear_tablas_si_no_existen():
 	sql = """
 		CREATE TABLE IF NOT EXISTS ajustes (
 			idAjustes INTEGER PRIMARY KEY AUTOINCREMENT,
-			volumen REAL NOT NULL,
+			volumen REAL NOT NULL DEFAULT 0.7,
 			idioma TEXT NOT NULL,
 			jugador_aspecto TEXT NOT NULL,
 			jugador_nombre TEXT NOT NULL

@@ -12,13 +12,5 @@ var llave_verde_obtenida: bool = false
 var llave_dorada_obtenida: bool = false
 var llave_plateada_obtenida: bool = false
 var llave_final_obtenida: bool = false
-var volumen: float = 0
+var volumen: float = 0.4
 var idioma: String = ""
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
