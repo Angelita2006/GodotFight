@@ -97,9 +97,3 @@ func _physics_process(_delta):
 					animacion_chica.play("quieto_abajo_chica")
 	
 	move_and_slide()
-
-func _on_chat_area_body_entered(_body: Node2D) -> void:
-	chateando = true
-
-func _on_chat_area_body_exited(_body: Node2D) -> void:
-	chateando = false

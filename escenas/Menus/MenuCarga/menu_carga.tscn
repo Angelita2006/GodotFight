@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvci7uv44x8ga"]
+[gd_scene format=3 uid="uid://dvci7uv44x8ga"]
 
 [ext_resource type="AudioStream" uid="uid://cgp13kmoio4lq" path="res://assets/ui/audio/pantalla de carga2.mp3" id="1_0s0lf"]
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_y25kk"]
@@ -10,7 +10,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0s0lf"]
 
-[node name="MenuCarga" type="Control"]
+[node name="MenuCarga" type="Control" unique_id=86893303]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,18 +18,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=723627865]
 stream = ExtResource("1_0s0lf")
 volume_db = -10.0
 autoplay = true
 bus = &"SFX"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=388198257]
 wait_time = 12.0
 one_shot = true
 autostart = true
 
-[node name="Fondo" type="Panel" parent="."]
+[node name="Fondo" type="Panel" parent="." unique_id=57463795]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.999998
@@ -41,7 +41,7 @@ theme = ExtResource("1_y25kk")
 theme_override_styles/panel = ExtResource("3_0s0lf")
 script = ExtResource("2_yiavi")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=436029655]
 layout_mode = 0
 offset_left = 114.0
 offset_top = 411.99997
@@ -50,17 +50,17 @@ offset_bottom = 574.7837
 scale = Vector2(1.006871, 1.0940838)
 theme = ExtResource("1_y25kk")
 
-[node name="PersonajePrincipal" parent="." instance=ExtResource("2_na1s8")]
+[node name="PersonajePrincipal" parent="." unique_id=2046236523 instance=ExtResource("2_na1s8")]
 position = Vector2(261.99997, 316)
 scale = Vector2(0.79484296, 0.8037538)
 script = ExtResource("3_na1s8")
 
-[node name="Colisiones" parent="PersonajePrincipal" index="0"]
+[node name="Colisiones" parent="PersonajePrincipal" index="3" unique_id=565766791]
 visible = false
 position = Vector2(8.829193, -8.709137)
 scale = Vector2(1.597443, 14.149987)
 
-[node name="TituloCargando" type="Label" parent="."]
+[node name="TituloCargando" type="Label" parent="." unique_id=1605699323]
 texture_filter = 1
 layout_mode = 0
 offset_left = 9.000002

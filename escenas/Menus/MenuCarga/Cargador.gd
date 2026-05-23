@@ -8,7 +8,6 @@ var instancia_escena = null
 var cargando = false
 var mostrar_menu = true
 
-
 func cargar_escena(path, mostrar_menu_carga := true):
 
 	if cargando:
