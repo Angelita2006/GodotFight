@@ -457,7 +457,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_f3jcd")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_43ps3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_pnfhu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03m3b")
-text = "Volver"
+text = "Si"
 
 [node name="Fondo_Boton" type="Panel" parent="Personaje_Codigo/Advertencia" unique_id=1228477223]
 layout_mode = 0
@@ -486,7 +486,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_r8dqe")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_t0j2o")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_34gxf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jivr5")
-text = "Continuar"
+text = "No"
 
 [node name="Fondo_Temporizador" type="Panel" parent="Personaje_Codigo" unique_id=543893824]
 offset_left = -1605.0

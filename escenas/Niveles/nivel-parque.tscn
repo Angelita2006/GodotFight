@@ -483,7 +483,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_f3jcd")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_43ps3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_pnfhu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03m3b")
-text = "Volver"
+text = "Si"
 
 [node name="Fondo_Boton" type="Panel" parent="Personaje_Codigo/Advertencia" unique_id=266814687]
 layout_mode = 0
@@ -512,7 +512,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_r8dqe")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_t0j2o")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_34gxf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jivr5")
-text = "Continuar"
+text = "No"
 
 [node name="Muerte" type="Area2D" parent="." unique_id=1503894431]
 position = Vector2(-5750, 4130)
