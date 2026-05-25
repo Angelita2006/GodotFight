@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var patos: int = 0
 
-@onready var secretoEncontrado: bool = false
+@onready var elementosSecretosEncontrados: int = 0
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
@@ -100,4 +100,32 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto.hide()
 	$ElementoSecreto/CollisionShape2D.set_deferred("disabled", true)
-	secretoEncontrado = true
+	elementosSecretosEncontrados = 1
+
+func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
+	$ElementoSecreto2.hide()
+	$ElementoSecreto2/CollisionShape2D.set_deferred("disabled", true)
+	elementosSecretosEncontrados = 2
+	$Plataformas5.hide()
+	$Plataformas7.show()
+	$Plataformas7.collision_enabled = true
+	$ElementoSecreto3.show()
+	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
+
+func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
+	$ElementoSecreto3.hide()
+	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", true)
+	elementosSecretosEncontrados = 3
+	$Plataformas6.hide()
+	$Plataformas8.show()
+	$Plataformas8.collision_enabled = true
+	$ElementoSecreto4.show()
+	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
+
+func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
+	$ElementoSecreto4.hide()
+	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", true)
+	elementosSecretosEncontrados = 4
+	$Plataformas7.hide()
+	$Plataformas9.show()
+	$Plataformas9.collision_enabled = true
