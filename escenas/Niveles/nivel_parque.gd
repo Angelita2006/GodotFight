@@ -71,9 +71,9 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Plataformas1/CodigoErroneo.hide()
 	$Plataformas1/CodigoCorrecto.show()
 	$Plataformas2.show()
-	$Plataformas2.collision_enabled = true
+	$Plataformas2.set_deferred("collision_enabled", true)
 	$Plataformas4.show()
-	$Plataformas4.collision_enabled = true
+	$Plataformas4.set_deferred("collision_enabled", true)
 
 func _on_pato_1_body_entered(_body: Node2D) -> void:
 	$Pato1.hide()
@@ -95,7 +95,7 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 	$Plataformas2/CodigoErroneo.hide()
 	$Plataformas2/CodigoCorrecto.show()
 	$Plataformas3.show()
-	$Plataformas3.collision_enabled = true
+	$Plataformas3.set_deferred("collision_enabled", true)
 
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto.hide()
@@ -108,7 +108,7 @@ func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	elementosSecretosEncontrados = 2
 	$Plataformas5.hide()
 	$Plataformas7.show()
-	$Plataformas7.collision_enabled = true
+	$Plataformas7.set_deferred("collision_enabled", true)
 	$ElementoSecreto3.show()
 	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
 
@@ -118,7 +118,7 @@ func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	elementosSecretosEncontrados = 3
 	$Plataformas6.hide()
 	$Plataformas8.show()
-	$Plataformas8.collision_enabled = true
+	$Plataformas8.set_deferred("collision_enabled", true)
 	$ElementoSecreto4.show()
 	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
 
@@ -128,4 +128,4 @@ func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	elementosSecretosEncontrados = 4
 	$Plataformas7.hide()
 	$Plataformas9.show()
-	$Plataformas9.collision_enabled = true
+	$Plataformas9.set_deferred("collision_enabled", true)

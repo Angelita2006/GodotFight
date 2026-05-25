@@ -1,7 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://q7vi2tmcykx5"]
 
 [ext_resource type="Texture2D" uid="uid://bsvfxq2quswmq" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Plants.png" id="1_bofxq"]
-[ext_resource type="Texture2D" uid="uid://dx3sf7g3wydxb" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Simple_Milk_and_grass_item.png" id="2_387wi"]
 [ext_resource type="Texture2D" uid="uid://dbrjp7x4nqk8m" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Grass_Biom_things.png" id="3_njfos"]
 [ext_resource type="Texture2D" uid="uid://bjohiu7kp3hte" path="res://assets/juego/mapa/aldeaesmeralda/pack4/mercado.png" id="4_2tspp"]
 
@@ -19,13 +18,6 @@ texture = ExtResource("1_bofxq")
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkj1x"]
-texture = ExtResource("2_387wi")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inp8o"]
 texture = ExtResource("3_njfos")
@@ -4174,6 +4166,5 @@ texture = ExtResource("4_2tspp")
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_hhy5t")
-sources/1 = SubResource("TileSetAtlasSource_fkj1x")
 sources/2 = SubResource("TileSetAtlasSource_inp8o")
 sources/3 = SubResource("TileSetAtlasSource_yxvtq")

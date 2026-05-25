@@ -37,7 +37,7 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Palabra_faltante.hide()
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
-	$Personaje_Codigo/Nivel_Tutorial_Mision.show()
+	$Personaje_Codigo/Nivel_Banco_Mision.show()
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-banco

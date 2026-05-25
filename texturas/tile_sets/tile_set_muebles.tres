@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d0pqc5srqtuqv" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Tilled_Dirt_Wide_v2.png" id="3_iphxh"]
 [ext_resource type="Texture2D" uid="uid://bj8ilostpagyg" path="res://assets/juego/mapa/aldeaesmeralda/pack4/muebles.png" id="4_n5jw7"]
 [ext_resource type="Texture2D" uid="uid://blskicccxcw4c" path="res://assets/juego/mapa/aldeaesmeralda/pack4/recepcion.png" id="5_p0o0n"]
-[ext_resource type="Texture2D" uid="uid://d5ekcdkqijk2" path="res://assets/juego/mapa/aldeaesmeralda/pack4/bruja.png" id="6_5tom5"]
+[ext_resource type="Texture2D" uid="uid://bf34orbt6gxmd" path="res://assets/juego/mapa/aldeaesmeralda/pack4/pozo.png" id="6_5tom5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02kpl"]
 texture = ExtResource("1_skvnw")

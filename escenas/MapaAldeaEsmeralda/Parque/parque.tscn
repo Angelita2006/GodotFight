@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bxq5q0n5tu0t3" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Furniture.png" id="8_awv7b"]
 [ext_resource type="Texture2D" uid="uid://dbrjp7x4nqk8m" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Grass_Biom_things.png" id="9_wpbck"]
 [ext_resource type="Texture2D" uid="uid://bsvfxq2quswmq" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Plants.png" id="10_xdvki"]
-[ext_resource type="Texture2D" uid="uid://c6hthd5qyhiu1" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Simple Milk and grass item.png" id="11_n6sin"]
 [ext_resource type="PackedScene" uid="uid://1ev265bwqnh" path="res://escenas/Personajes/NPCs/Jardinera/Jardinera.tscn" id="13_wsk7k"]
 [ext_resource type="Script" uid="uid://cy5f6pgnow8fo" path="res://escenas/Personajes/NPCs/Jardinera/jardinera.gd" id="14_5hvaa"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="15_7ar72"]
@@ -2849,19 +2848,11 @@ texture = ExtResource("10_xdvki")
 4:1/0 = 0
 5:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6g2a"]
-texture = ExtResource("11_n6sin")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_syn78"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kkvux")
 sources/1 = SubResource("TileSetAtlasSource_qpw6g")
 sources/2 = SubResource("TileSetAtlasSource_48gkn")
-sources/3 = SubResource("TileSetAtlasSource_r6g2a")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8joq"]
 animations = [{
