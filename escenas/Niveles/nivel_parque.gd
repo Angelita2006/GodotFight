@@ -51,7 +51,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer2.play()
 		$Final2.show()
-		$Personaje_Codigo/Camera2D.enabled = false
+		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Database.guardar_partida()
 		Database.guardar_tiempo(10, tiempo_total)
