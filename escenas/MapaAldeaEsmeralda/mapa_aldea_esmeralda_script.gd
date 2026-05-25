@@ -87,8 +87,41 @@ func _process(_delta: float) -> void:
 		menu_pausa.show()
 		$PersonajePrincipal/Camera2D.enabled = false
 	
-	if Global.volviendo_de_biblioteca:
-		$PersonajePrincipal.hide()
+	if Global.llave_verde_obtenida:
+		$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision1Completa.show()
+	
+	if Global.llave_purpura_obtenida:
+		$PersonajePrincipal/Camera2D/Mision2NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision2Completa.show()
+	
+	if Global.llave_plateada_obtenida:
+		$PersonajePrincipal/Camera2D/Mision3NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision3Completa.show()
+	
+	if Global.llave_dorada_obtenida:
+		$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision4Completa.show()
+		await get_tree().create_timer(1).timeout
+		$PersonajePrincipal/Camera2D/TextoMision4.hide()
+		$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision4.hide()
+		$PersonajePrincipal/Camera2D/TextoMision3.hide()
+		$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision3.hide()
+		$PersonajePrincipal/Camera2D/TextoMision2.hide()
+		$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision2.hide()
+		$PersonajePrincipal/Camera2D/TextoMision1.hide()
+		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+		$PersonajePrincipal/Camera2D/TextoMision5.show()
+		$PersonajePrincipal/Camera2D/Mision5NoCompleta.show()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal2.show()
+	
+	if Global.llave_final_obtenida:
+		$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision5Completa.show()
 
 func _on_menu_pausa_hidden() -> void:
 	$PersonajePrincipal/Camera2D.enabled = true

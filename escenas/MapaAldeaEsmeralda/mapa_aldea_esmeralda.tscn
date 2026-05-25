@@ -15,8 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://bupva1h0ydvv5" path="res://escenas/MapaAldeaEsmeralda/Parque/parque.tscn" id="12_tn8s2"]
 [ext_resource type="Script" uid="uid://d2kwbhxqcwiwx" path="res://escenas/Personajes/Jugador/jugador_mapa.gd" id="13_nka8f"]
 [ext_resource type="TileSet" uid="uid://cnard0pghfk3k" path="res://texturas/tile_sets/tile_set_arboles_flores.tres" id="13_sbwk1"]
+[ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="14_580wy"]
 [ext_resource type="Texture2D" uid="uid://bsvfxq2quswmq" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Basic_Plants.png" id="14_frjmn"]
 [ext_resource type="Texture2D" uid="uid://du6u8ur1j2m5o" path="res://assets/juego/mapa/aldeaesmeralda/pack3/Free_Chicken_House.png" id="15_dlu4d"]
+[ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="15_h8k1y"]
 [ext_resource type="PackedScene" uid="uid://bbpulpiwwxtk" path="res://escenas/MapaAldeaEsmeralda/Mercado/mercao.tscn" id="16_cbok3"]
 [ext_resource type="AudioStream" uid="uid://cdgd58u2vjlwt" path="res://assets/ui/audio/musica_fondo_mapa_esmeralda_inicio.mp3" id="19_frjmn"]
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="20_h8k1y"]
@@ -808,6 +810,24 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_580wy")
 sources/1 = SubResource("TileSetAtlasSource_h8k1y")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8k1y"]
+texture = ExtResource("14_580wy")
+region_rect = Rect2(504, 131, 35, 41)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvbp6"]
+texture = ExtResource("14_580wy")
+region_rect = Rect2(259, 84, 10, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uybic"]
+texture = ExtResource("14_580wy")
+region_rect = Rect2(242, 67, 12, 11)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loxkv"]
+texture = ExtResource("14_580wy")
+expand_margin_left = 100.0
+expand_margin_right = 100.0
+region_rect = Rect2(201, 9, 30, 30)
+
 [node name="Mapa-Aldea-ModoHistoria" type="Node2D" unique_id=2113508675 node_paths=PackedStringArray("menu_pausa")]
 script = ExtResource("1_ueucj")
 menu_pausa = NodePath("Menu Pausa")
@@ -929,6 +949,21 @@ scale = Vector2(0.99999994, 1)
 tile_map_data = PackedByteArray("AAAoAPj/AAABAAAAABAnAPj/AAACAAAAABAmAPj/AAABAAAAABAlAPj/AAACAAAAABAkAPj/AAADAAAAABAjAPj/AAAEAAAAABAiAPj/AAABAAAAABAhAPj/AAACAAAAABAgAPj/AAADAAAAABAfAPj/AAAEAAAAABAeAPj/AAABAAAAAAAeAPf/AAACAAAAAAAfAPf/AAAEAAAAABAgAPf/AAADAAAAABAhAPf/AAACAAAAABAiAPf/AAAEAAAAAAAjAPf/AAABAAAAAAAkAPf/AAAEAAAAABAlAPf/AAAEAAAAABAmAPf/AAADAAAAABAnAPf/AAACAAAAABAoAPf/AAADAAAAAAAoAPb/AAABAAAAABAnAPb/AAACAAAAABAmAPb/AAADAAAAABAlAPb/AAABAAAAABAkAPb/AAACAAAAABAjAPb/AAADAAAAABAiAPb/AAABAAAAABAhAPb/AAADAAAAAAAgAPb/AAADAAAAABAfAPb/AAAEAAAAABAeAPb/AAABAAAAAAAeAPX/AAABAAAAAAAfAPX/AAAEAAAAABAgAPX/AAADAAAAABAhAPX/AAACAAAAABAiAPX/AAABAAAAABAjAPX/AAAEAAAAAAAkAPX/AAAEAAAAABAlAPX/AAADAAAAABAmAPX/AAACAAAAABAnAPX/AAABAAAAABAoAPX/AAADAAAAAAA5APj/AAACAAEAAAA6APj/AAACAAEAAAA7APj/AAAEAAEAAAA8APj/AAACAAEAAAA8APf/AAACAAEAAAA7APf/AAADAAEAAAA6APf/AAADAAEAAAA5APf/AAADAAEAAAA4APj/AAABAAEAAAA4APf/AAABAAEAAAA4APb/AAABAAEAAAA5APb/AAACAAEAAAA6APb/AAACAAEAAAA7APb/AAAEAAEAAAA8APb/AAAEAAEAAAA8APX/AAACAAEAAAA7APX/AAAEAAEAAAA6APX/AAADAAEAAAA5APX/AAACAAEAAAA4APX/AAABAAEAAAApAPX/AAAEAAAAAAApAPb/AAADAAAAABApAPf/AAABAAAAAAApAPj/AAAEAAAAABAwAPj/AAAAAAAAAAAxAPj/AAAAAAEAAAAwAPf/AAAAAAAAAAAxAPf/AAAAAAEAAAAoAP7/AQAAAAAAAAAoAP//AQAAAAEAAAAoAAAAAQAAAAIAAAApAP7/AQABAAAAAAApAP//AQABAAEAAAApAAAAAQABAAIAAAAqAP7/AQACAAAAAAAqAP//AQACAAEAAAAqAAAAAQACAAIAAAA3AP7/AQAAAAAAAAA3AP//AQAAAAEAAAA3AAAAAQAAAAIAAAA4AP7/AQABAAAAAAA4AP//AQABAAEAAAA4AAAAAQABAAIAAAA5AP7/AQACAAAAAAA5AP//AQACAAEAAAA5AAAAAQACAAIAAAA6AP7/AQAAAAAAAAA6AP//AQAAAAEAAAA6AAAAAQAAAAIAAAA7AP7/AQABAAAAAAA7AP//AQABAAEAAAA7AAAAAQABAAIAAAA8AP7/AQACAAAAAAA8AP//AQACAAEAAAA8AAAAAQACAAIAAAAuAP7/AQAAAAAAAAAuAP//AQAAAAEAAAAuAAAAAQAAAAIAAAAvAP7/AQABAAAAAAAvAP//AQABAAEAAAAvAAAAAQABAAIAAAAwAP7/AQACAAAAAAAwAP//AQACAAEAAAAwAAAAAQACAAIAAAAxAP7/AQAAAAAAAAAxAP//AQAAAAEAAAAxAAAAAQAAAAIAAAAyAP7/AQABAAAAAAAyAP//AQABAAEAAAAyAAAAAQABAAIAAAAzAP7/AQACAAAAAAAzAP//AQACAAEAAAAzAAAAAQACAAIAAAAlAP7/AQAAAAAAAAAlAP//AQAAAAEAAAAlAAAAAQAAAAIAAAAmAP7/AQABAAAAAAAmAP//AQABAAEAAAAmAAAAAQABAAIAAAAnAP7/AQACAAAAAAAnAP//AQACAAEAAAAnAAAAAQACAAIAAAA=")
 tile_set = SubResource("TileSet_loxkv")
 
+[node name="Biblioteca" parent="." unique_id=851812055 instance=ExtResource("9_6hxei")]
+position = Vector2(455.84933, 119.11745)
+
+[node name="Ayuntamiento" parent="." unique_id=2091455035 instance=ExtResource("11_nka8f")]
+position = Vector2(1114.6251, -90.11494)
+
+[node name="Banco" parent="." unique_id=499628341 instance=ExtResource("7_3jiqw")]
+position = Vector2(1012.6717, 567.62054)
+
+[node name="Mercao" parent="." unique_id=638493281 instance=ExtResource("16_cbok3")]
+position = Vector2(665.63806, 660.8429)
+
+[node name="Parque" parent="." unique_id=434311618 instance=ExtResource("12_tn8s2")]
+position = Vector2(-124.500786, 147.08415)
+
 [node name="PersonajePrincipal" parent="." unique_id=2062053866 instance=ExtResource("8_8neol")]
 position = Vector2(1344, 31)
 scale = Vector2(0.17217067, 0.17236048)
@@ -952,30 +987,208 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 editor_draw_limits = true
 
-[node name="Misiones" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1751054324]
-offset_left = 321.9297
-offset_top = -600.9521
-offset_right = 1010.8594
-offset_bottom = -456.72357
+[node name="Mision1" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=870468265]
+offset_left = 400.76544
+offset_top = -545.3687
+offset_right = 1089.6951
+offset_bottom = -401.1402
+scale = Vector2(0.6593429, 1.4994296)
 theme = ExtResource("20_h8k1y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
-[node name="TextoMision" type="Label" parent="PersonajePrincipal/Camera2D/Misiones" unique_id=1331262456]
-layout_mode = 2
+[node name="Mision2" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=2079312255]
+offset_left = 400.76514
+offset_top = -417.7292
+offset_right = 1089.6948
+offset_bottom = -273.50067
+scale = Vector2(0.6593429, 1.4994296)
+theme = ExtResource("20_h8k1y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
-[node name="Biblioteca" parent="." unique_id=851812055 instance=ExtResource("9_6hxei")]
-position = Vector2(455.84933, 119.11745)
+[node name="Mision3" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1554745539]
+offset_left = 394.95694
+offset_top = -295.89154
+offset_right = 1083.8866
+offset_bottom = -151.66302
+scale = Vector2(0.6593429, 1.4994296)
+theme = ExtResource("20_h8k1y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
-[node name="Ayuntamiento" parent="." unique_id=2091455035 instance=ExtResource("11_nka8f")]
-position = Vector2(1114.6251, -90.11494)
+[node name="Mision4" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1629615094]
+offset_left = 394.95654
+offset_top = -168.25203
+offset_right = 1083.8862
+offset_bottom = -24.023514
+scale = Vector2(0.6593429, 1.4994296)
+theme = ExtResource("20_h8k1y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
-[node name="Banco" parent="." unique_id=499628341 instance=ExtResource("7_3jiqw")]
-position = Vector2(1012.6717, 567.62054)
+[node name="TextoMision1" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=1923462020]
+offset_left = 505.31238
+offset_top = -406.12555
+offset_right = 960.57117
+offset_bottom = -315.6667
+scale = Vector2(0.6634161, 0.7696487)
+theme = ExtResource("20_h8k1y")
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 40
+text = "Ve al parque y ayuda a la jardinera"
 
-[node name="Mercao" parent="." unique_id=638493281 instance=ExtResource("16_cbok3")]
-position = Vector2(665.63806, 660.8429)
+[node name="TextoMision2" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=766093000]
+offset_left = 505.31256
+offset_top = -278.4861
+offset_right = 1002.3263
+offset_bottom = -183.95758
+scale = Vector2(0.6661131, 0.7365134)
+theme = ExtResource("20_h8k1y")
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 40
+text = "Ve la biblioteca y ayuda a la bibliotecaria"
 
-[node name="Parque" parent="." unique_id=434311618 instance=ExtResource("12_tn8s2")]
-position = Vector2(-124.500786, 147.08415)
+[node name="TextoMision3" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=467358482]
+offset_left = 499.504
+offset_top = -150.84665
+offset_right = 981.58405
+offset_bottom = -63.819733
+scale = Vector2(0.6955398, 0.7598014)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 40
+text = "Ve al mercadillo y ayuda al vendedor"
+
+[node name="TextoMision4" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=963737754]
+offset_left = 505.31287
+offset_top = -23.207176
+offset_right = 917.6937
+offset_bottom = 75.42332
+scale = Vector2(0.74922943, 0.6750882)
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 40
+text = "Ve al banco y ayuda al banquero"
+
+[node name="TextoMision5" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=1493177204]
+visible = false
+offset_left = 505.313
+offset_top = -406.12558
+offset_right = 960.5718
+offset_bottom = -315.66672
+scale = Vector2(0.6634161, 0.7696487)
+theme = ExtResource("20_h8k1y")
+theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 40
+text = "Ve al ayundtamiento y ayuda al presidente"
+
+[node name="Mision1NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1005702454]
+offset_left = 441.4225
+offset_top = -394.522
+offset_right = 481.4225
+offset_bottom = -354.522
+theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
+
+[node name="Mision2NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1203479619]
+offset_left = 441.42236
+offset_top = -266.8825
+offset_right = 481.42236
+offset_bottom = -226.8825
+theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
+
+[node name="Mision3NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=2048846644]
+offset_left = 435.61417
+offset_top = -139.24303
+offset_right = 475.61417
+offset_bottom = -99.24303
+theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
+
+[node name="Mision4NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1040747510]
+offset_left = 435.61417
+offset_top = -17.405334
+offset_right = 475.61417
+offset_bottom = 22.594666
+theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
+
+[node name="Mision5NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=917992490]
+visible = false
+offset_left = 441.42236
+offset_top = -394.52203
+offset_right = 481.42236
+offset_bottom = -354.52203
+theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
+
+[node name="Mision1Completa" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=529681604]
+visible = false
+offset_left = 441.42236
+offset_top = -394.52203
+offset_right = 481.42236
+offset_bottom = -354.52203
+theme_override_styles/panel = SubResource("StyleBoxTexture_uybic")
+
+[node name="Mision2Completa" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1122066417]
+visible = false
+offset_left = 441.42236
+offset_top = -266.88254
+offset_right = 481.42236
+offset_bottom = -226.88254
+theme_override_styles/panel = SubResource("StyleBoxTexture_uybic")
+
+[node name="Mision3Completa" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1348244768]
+visible = false
+offset_left = 435.61475
+offset_top = -139.24304
+offset_right = 475.61475
+offset_bottom = -99.24304
+theme_override_styles/panel = SubResource("StyleBoxTexture_uybic")
+
+[node name="Mision4Completa" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=572396856]
+visible = false
+offset_left = 435.61475
+offset_top = -17.40535
+offset_right = 475.61475
+offset_bottom = 22.59465
+theme_override_styles/panel = SubResource("StyleBoxTexture_uybic")
+
+[node name="Mision5Completa" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1437469577]
+visible = false
+offset_left = 441.42236
+offset_top = -394.5221
+offset_right = 481.42236
+offset_bottom = -354.5221
+theme_override_styles/panel = SubResource("StyleBoxTexture_uybic")
+
+[node name="MisionPrincipal" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1751054324]
+offset_left = 383.34033
+offset_top = -649.80096
+offset_right = 1072.27
+offset_bottom = -505.57245
+scale = Vector2(0.70226616, 1.3742031)
+theme = ExtResource("20_h8k1y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_loxkv")
+
+[node name="TextoMisionPrincipal" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=1311970820]
+offset_left = 470.46368
+offset_top = -597.5848
+offset_right = 735.14233
+offset_bottom = -516.3596
+scale = Vector2(1.2727717, 1.4252226)
+theme_override_colors/default_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 22
+text = "Completa las siguientes misiones para desbloquear la misión final"
+
+[node name="TextoMisionPrincipal2" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=748876091]
+visible = false
+offset_left = 470.46368
+offset_top = -603.3866
+offset_right = 714.408
+offset_bottom = -522.16144
+scale = Vector2(1.4833021, 1.4888815)
+theme_override_colors/default_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+theme_override_fonts/normal_font = ExtResource("15_h8k1y")
+theme_override_font_sizes/normal_font_size = 22
+text = "Completa la última misión para salvar la Aldea Esmeralda"
 
 [node name="AudioFinal" type="AudioStreamPlayer" parent="." unique_id=867460197]
 stream = ExtResource("19_frjmn")
