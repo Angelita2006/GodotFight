@@ -8,7 +8,7 @@ var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
 
 func _ready() -> void:
-	$"Personaje_Codigo/Nivel_Tutorial_Mision".hide()
+	$"Personaje_Codigo/Nivel_Banco_Mision".hide()
 	$Plataforma2.hide()
 	$Palabra_faltante.show()
 	$Plataformas1/Codigo_Incompleto.show()

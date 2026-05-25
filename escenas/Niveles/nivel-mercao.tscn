@@ -186,7 +186,7 @@ offset_bottom = 2082.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 theme_override_fonts/font = ExtResource("6_x0u27")
 theme_override_font_sizes/font_size = 59
-text = "print(Nivel_Tutorial_mision);"
+text = "print(Nivel_Mercao_mision);"
 
 [node name="Codigo_Incompleto1" type="Label" parent="Plataformas1" unique_id=1860739571]
 offset_left = 3038.0693
@@ -577,7 +577,7 @@ shape = SubResource("RectangleShape2D_a1hmr")
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
 [node name="Pincho" type="Area2D" parent="." unique_id=2111640022]
-position = Vector2(3391, 856)
+position = Vector2(3386, 861)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("9_au042")

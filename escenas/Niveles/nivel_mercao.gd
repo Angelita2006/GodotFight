@@ -10,6 +10,7 @@ var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
 
 func _ready() -> void:
+	$Pincho.hide()
 	$Plataformas1.show()
 	$Plataformas1.collision_enabled = true
 	
@@ -103,6 +104,7 @@ func _on_palabra_faltante_3_body_entered(_body: Node2D) -> void:
 		
 		$Plataformas3.show()
 		$Plataformas3.collision_enabled = true
+		$Pincho.show()
 
 func _on_activar_aviso_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Aviso.show()

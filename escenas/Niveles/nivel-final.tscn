@@ -146,7 +146,7 @@ offset_bottom = 2082.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 theme_override_fonts/font = ExtResource("5_08un3")
 theme_override_font_sizes/font_size = 59
-text = "print(Nivel_Tutorial_mision);"
+text = "print(Nivel_Final_mision);"
 
 [node name="Codigo_Incompleto" type="Label" parent="Plataformas1" unique_id=1860739571]
 offset_left = 2989.0
