@@ -54,7 +54,7 @@ func _on_aceptar_pressed() -> void:
 func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
 
-func _on_puerta_de_meta_body_entered(body: Node2D) -> void:
+func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	Global.llave_dorada_obtenida = true
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
