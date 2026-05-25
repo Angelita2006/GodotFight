@@ -622,54 +622,60 @@ script = ExtResource("4_iukku")
 layout_mode = 2
 script = ExtResource("7_14j3c")
 
-[node name="Contenedor" type="GridContainer" parent="RANKING/Panel" unique_id=1074645397]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -39.22991
-offset_top = -448.80243
-offset_right = 41.77008
-offset_bottom = -419.80243
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Top" type="Label" parent="RANKING/Panel" unique_id=745706193]
+layout_mode = 0
+offset_left = -221.69458
+offset_top = -463.43033
+offset_right = -41.69458
+offset_bottom = -423.43033
 size_flags_horizontal = 4
-size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
-columns = 3
+text = "Posicion"
 
-[node name="Top" type="Label" parent="RANKING/Panel/Contenedor" unique_id=745706193]
-layout_mode = 2
-theme = ExtResource("1_4v0q5")
-theme_type_variation = &"HeaderLarge"
-theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
-theme_override_fonts/font = ExtResource("8_naxbc")
-text = "Posición    "
-
-[node name="NombreJugador" type="Label" parent="RANKING/Panel/Contenedor" unique_id=667911649]
-visible = false
-layout_mode = 2
-theme = ExtResource("1_4v0q5")
-theme_type_variation = &"HeaderLarge"
-theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
-theme_override_fonts/font = ExtResource("8_naxbc")
-text = "Nombre de jugador    "
-
-[node name="Nivel" type="Label" parent="RANKING/Panel/Contenedor" unique_id=1282071694]
-layout_mode = 2
+[node name="Nivel" type="Label" parent="RANKING/Panel" unique_id=1282071694]
+layout_mode = 0
+offset_left = 83.02144
+offset_top = -468.30627
+offset_right = 243.02144
+offset_bottom = -428.30627
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("8_naxbc")
 text = "Nivel       "
+horizontal_alignment = 1
 
-[node name="DuracionPartida" type="Label" parent="RANKING/Panel/Contenedor" unique_id=1604292620]
-layout_mode = 2
+[node name="DuracionPartida" type="Label" parent="RANKING/Panel" unique_id=1604292620]
+layout_mode = 0
+offset_left = 310.18994
+offset_top = -468.30627
+offset_right = 610.18994
+offset_bottom = -428.30627
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
 theme_override_fonts/font = ExtResource("8_naxbc")
 text = "Record de tiempo "
+horizontal_alignment = 1
+
+[node name="Contenedor" type="GridContainer" parent="RANKING/Panel" unique_id=1074645397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.056984
+offset_top = -380.53906
+offset_right = -290.2993
+offset_bottom = -351.53906
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0229053, 1.334803)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 10
+columns = 3
 
 [node name="Volver" type="Button" parent="RANKING" unique_id=2070979893]
 layout_mode = 2
