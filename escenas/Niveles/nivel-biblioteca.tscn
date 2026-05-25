@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_lkl11"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_52mnl"]
 [ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="8_v6b54"]
-[ext_resource type="Texture2D" uid="uid://ecty42ka26qn" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/arbol.png" id="8_xmy4q"]
+[ext_resource type="Texture2D" uid="uid://cb64wset4l6st" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/libro.png" id="8_xmy4q"]
 [ext_resource type="AudioStream" uid="uid://bfw088jxlcalw" path="res://assets/ui/audio/gameon.wav" id="9_1aaxb"]
 [ext_resource type="Texture2D" uid="uid://dgmwimft4hlty" path="res://assets/juego/mapa/aldeaesmeralda/llaves/llaves.png" id="10_7oetq"]
 
