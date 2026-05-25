@@ -21,16 +21,31 @@ func mostrar_ranking():
 		var font = load("res://assets/ui/fuentes/Pixuf.ttf")
 		label1.add_theme_font_override("font", font)
 		label1.add_theme_font_size_override("font_size", 22)
+		label1.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		$Contenedor.add_child(label1)
 		
 		var label2 = Label.new()
 		label2.add_theme_font_override("font", font)
 		label2.add_theme_font_size_override("font_size", 22)
-		label2.text = str(resultado["nivel"])
+		if resultado["nivel"] == 10:
+			label2.text = "Parque"
+		elif resultado["nivel"] == 11:
+			label2.text = "Biblioteca"
+		elif resultado["nivel"] == 12:
+			label2.text = "Mercao"
+		elif resultado["nivel"] == 13:
+			label2.text = "Banco"
+		elif resultado["nivel"] == 14:
+			label2.text = "Ayuntamiento"
+		label2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		$Contenedor.add_child(label2)
 		
 		var label3 = Label.new()
 		label3.add_theme_font_override("font", font)
 		label3.add_theme_font_size_override("font_size", 22)
-		label3.text = str(resultado["duracion"])
+		var minutos: int = int(resultado["duracion"] / 60)
+		var segundos: int = int(resultado["duracion"]) % 60
+		var tiempo_formateado: String = "%02d:%02d" % [minutos, segundos]
+		label3.text = tiempo_formateado
+		label3.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		$Contenedor.add_child(label3)

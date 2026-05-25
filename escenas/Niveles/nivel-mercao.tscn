@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_x0u27"]
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_fkygw"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_sn7pj"]
-[ext_resource type="Script" uid="uid://d3xfnptcjv6t0" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
+[ext_resource type="Script" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="9_au042"]
 [ext_resource type="Texture2D" uid="uid://dlikxooqcusye" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Obstaculos.png" id="10_ytp65"]
 [ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="11_x0u27"]
 [ext_resource type="Texture2D" uid="uid://dgmwimft4hlty" path="res://assets/juego/mapa/aldeaesmeralda/llaves/llaves.png" id="11_ytp65"]
@@ -18,7 +18,7 @@
 size = Vector2(776, 105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecmox"]
-size = Vector2(145, 273)
+size = Vector2(145, 278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22ext"]
 size = Vector2(781, 83)
@@ -27,6 +27,10 @@ size = Vector2(781, 83)
 radius = 88.20431
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exnjc"]
+texture = ExtResource("8_sn7pj")
+region_rect = Rect2(24, 24, 912, 912)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkygw"]
 texture = ExtResource("8_sn7pj")
 region_rect = Rect2(24, 24, 912, 912)
 
@@ -53,10 +57,6 @@ region_rect = Rect2(24, 24, 912, 912)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_34gxf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jivr5"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkygw"]
-texture = ExtResource("8_sn7pj")
-region_rect = Rect2(24, 24, 912, 912)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08r46"]
 size = Vector2(359, 128)
@@ -143,10 +143,11 @@ shape = SubResource("RectangleShape2D_c2s0r")
 
 [node name="Puerta de salida" type="Area2D" parent="Inicio" unique_id=722421656]
 position = Vector2(-174, 97)
+collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio/Puerta de salida" unique_id=610009605]
-position = Vector2(-15.5, 23.5)
+position = Vector2(-15.5, 26)
 shape = SubResource("RectangleShape2D_ecmox")
 
 [node name="Final" type="StaticBody2D" parent="." unique_id=485269612]
@@ -404,6 +405,25 @@ theme_override_fonts/normal_font = ExtResource("6_x0u27")
 theme_override_font_sizes/normal_font_size = 67
 text = "Ten cuidado. Han empezado a aparecer pinchos sospechosos por el mundo.  _"
 
+[node name="Fondo_Temporizador" type="Panel" parent="Personaje_Codigo" unique_id=543893824]
+offset_left = -1605.0
+offset_top = -475.0
+offset_right = -1093.0
+offset_bottom = -318.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fkygw")
+
+[node name="Tiempo" type="Label" parent="Personaje_Codigo" unique_id=1620105784]
+offset_left = -1574.0
+offset_top = -463.0
+offset_right = -1123.0
+offset_bottom = -328.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_x0u27")
+theme_override_font_sizes/font_size = 100
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Advertencia" type="Control" parent="Personaje_Codigo" unique_id=219113466]
 visible = false
 layout_mode = 3
@@ -487,25 +507,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_t0j2o")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_34gxf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jivr5")
 text = "No"
-
-[node name="Fondo_Temporizador" type="Panel" parent="Personaje_Codigo" unique_id=543893824]
-offset_left = -1605.0
-offset_top = -475.0
-offset_right = -1093.0
-offset_bottom = -318.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_fkygw")
-
-[node name="Tiempo" type="Label" parent="Personaje_Codigo" unique_id=1620105784]
-offset_left = -1574.0
-offset_top = -463.0
-offset_right = -1123.0
-offset_bottom = -328.0
-theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/font = ExtResource("6_x0u27")
-theme_override_font_sizes/font_size = 100
-text = "00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Palabra_faltante" type="Area2D" parent="." unique_id=509459739]
 position = Vector2(-558, 1626)

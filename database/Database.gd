@@ -20,7 +20,7 @@ func crear_tablas_si_no_existen():
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
 			jugador TEXT NOT NULL,
 			nivel INTEGER NOT NULL,
-			duracion INTEGER NOT NULL
+			duracion REAL NOT NULL
 		);
 	"""
 	db.query(sql)
@@ -207,13 +207,14 @@ func obtener_datos_ajustes():
 	print(resultado)
 	return resultado
 
-func guardar_tiempo(nivel: String, duracion: float):
+func guardar_tiempo(nivel: int, duracion: float):
 	# 1. Asegurar tablas
 	crear_tablas_si_no_existen()
 	
 	# 2. Abrir para operar
 	abrir_db()
-	
+	#db.query("DELETE FROM tiempos")
+
 	var sql = "INSERT INTO tiempos (jugador, nivel, duracion) VALUES (?, ?, ?);"
 	var parametros = [
 		str(Global.jugador_nombre), 
@@ -231,7 +232,7 @@ func guardar_tiempo(nivel: String, duracion: float):
 
 func obtener_todo():
 	abrir_db()
-	db.query("SELECT * FROM tiempos;")
+	db.query("SELECT * FROM tiempos ORDER BY duracion ASC;")
 	var resultado = db.query_result
 	cerrar_db()
 	return resultado

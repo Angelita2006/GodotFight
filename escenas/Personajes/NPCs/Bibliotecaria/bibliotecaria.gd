@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+var activo = false
 var dialogo_actual = 0
 
 func _ready() -> void:
@@ -10,9 +11,9 @@ func _ready() -> void:
 	dialogo_actual = 1
 
 func _process(_delta: float) -> void:
-	if dialogo_actual == 2 and Input.is_action_just_pressed("aceptar"):
+	if activo and dialogo_actual == 2 and Input.is_action_just_pressed("aceptar"):
 		entrar_nivel()
-
+ 
 func cambiar_dialogo():
 	$Dialogo.show()
 	$Fondo_dialogo.show()
@@ -27,26 +28,31 @@ func _on_abajo_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$Animacion.play("Bibliotecaria_abajo")
 		cambiar_dialogo()
-
-func _on_bibliotecaria_body_exited(body: Node2D) -> void:
-	if body is CharacterBody2D:
-		$Dialogo.hide()
-		$Fondo_dialogo.hide()
+		activo = true
 
 func _on_arriba_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$Animacion.play("Bibliotecaria_arriba")
 		cambiar_dialogo()
+		activo = true
 
 func _on_izquierda_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$Animacion.play("Bibliotecaria_izquierda")
 		cambiar_dialogo()
+		activo = true
 
 func _on_derecha_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$Animacion.play("Bibliotecaria_derecha")
 		cambiar_dialogo()
+		activo = true
+
+func _on_bibliotecaria_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$Dialogo.hide()
+		$Fondo_dialogo.hide()
+		activo = false
 
 func entrar_nivel():
 	Database.guardar_partida()
