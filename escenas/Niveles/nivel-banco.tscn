@@ -202,7 +202,7 @@ offset_right = -381.0
 offset_bottom = -587.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
 
-[node name="Nivel_Banco_Mision" type="RichTextLabel" parent="Personaje_Codigo" unique_id=441121025]
+[node name="Nivel_Tutorial_Mision" type="RichTextLabel" parent="Personaje_Codigo" unique_id=441121025]
 visible = false
 offset_left = -1519.0
 offset_top = -844.0

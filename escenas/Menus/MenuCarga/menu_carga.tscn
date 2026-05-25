@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvci7uv44x8ga"]
 
-[ext_resource type="AudioStream" uid="uid://cgp13kmoio4lq" path="res://assets/ui/audio/pantalla de carga2.mp3" id="1_0s0lf"]
+[ext_resource type="AudioStream" uid="uid://cgp13kmoio4lq" path="res://assets/ui/audio/pantalla_de_carga.mp3" id="1_0s0lf"]
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_y25kk"]
 [ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="2_na1s8"]
 [ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="2_yiavi"]
