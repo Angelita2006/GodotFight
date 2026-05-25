@@ -21,7 +21,7 @@ func cambiar_dialogo():
 		$Dialogo.text = "Gracias por habernos ayudado, te estaremos agradecidos siempre "+str(Global.jugador_nombre)
 		dialogo_actual = 3
 	else:
-		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el mercado está destrozado, tienes que ayudarnos\n(Sí) Pulsa E"
+		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el mercado está destrozado, tienes que arreglarlo\n(Sí) Pulsa E"
 		dialogo_actual = 2
 
 func _on_abajo_body_entered(body: Node2D) -> void:

@@ -23,7 +23,7 @@ func cambiar_dialogo():
 	elif not Global.llave_dorada_obtenida or not Global.llave_plateada_obtenida or not Global.llave_purpura_obtenida or not Global.llave_verde_obtenida:
 		$Dialogo.text = "Todavía no estás preparado, tienes que ayudar a los demás primero"
 	else:
-		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", el mercado está destrozado, tienes que ayudarnos\n(Sí) Pulsa E"
+		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", finalmente tendrás que ayudarnos a reconstruir el ayuntamiento\n(Sí) Pulsa E"
 		dialogo_actual = 2
 
 func _on_abajo_body_entered(body: Node2D) -> void:

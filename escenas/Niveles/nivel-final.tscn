@@ -63,7 +63,7 @@ region_rect = Rect2(24, 24, 912, 912)
 texture = ExtResource("10_f8pcs")
 region_rect = Rect2(513, 782, 193, 228)
 
-[node name="Nivel Tutorial" type="Node2D" unique_id=87294653]
+[node name="Nivel Final" type="Node2D" unique_id=87294653]
 script = ExtResource("1_qebhu")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1058637905]
@@ -108,7 +108,6 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio/Puerta de salida" unique_id=610009605]
-position = Vector2(-15.5, 34.5)
 position = Vector2(-15.5, 26.5)
 shape = SubResource("RectangleShape2D_ecmox")
 

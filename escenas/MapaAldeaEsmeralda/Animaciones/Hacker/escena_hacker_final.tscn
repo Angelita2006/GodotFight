@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ts2chlmk3opn"]
 
-[ext_resource type="Script" uid="uid://cvkjvyyeilofh" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker_script.gd" id="1_k71jb"]
+[ext_resource type="Script" uid="uid://c7qbxr5cph1li" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker_final.gd" id="1_k71jb"]
 [ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="2_k338d"]
 [ext_resource type="Texture2D" uid="uid://chemouo0emlo3" path="res://assets/juego/animaciones/hacker/hacker (2).png" id="3_0hyrv"]
 
@@ -88,11 +88,11 @@ scale = Vector2(1.4899901, 1.4258133)
 theme_override_styles/panel = SubResource("StyleBoxTexture_qx6fr")
 
 [node name="Dialogo1" type="RichTextLabel" parent="." unique_id=670869397]
-offset_left = 302.0
-offset_top = 469.00003
-offset_right = 727.6425
-offset_bottom = 519.3955
-scale = Vector2(1.8873956, 2.210759)
+offset_left = 300.0
+offset_top = 461.00003
+offset_right = 769.93854
+offset_bottom = 511.39554
+scale = Vector2(1.7300134, 2.591188)
 bbcode_enabled = true
 text = "[b][color=#F5F5F8][shake]Por ahora has logrado arreglar el código, pero la próxima vez no será tan fácil.[/shake][/color][/b]"
 scroll_active = false
@@ -100,10 +100,10 @@ scroll_active = false
 [node name="Dialogo2" type="RichTextLabel" parent="." unique_id=1676877932]
 visible = false
 offset_left = 300.0
-offset_top = 458.0
+offset_top = 459.99997
 offset_right = 694.27844
-offset_bottom = 534.4967
-scale = Vector2(2.0553439, 1.751829)
+offset_bottom = 536.4967
+scale = Vector2(3.2131178, 3.4434438)
 bbcode_enabled = true
 text = "[b][color=#F5F5F8][shake]Nos volveremos a ver pronto.[/shake][/color][/b]"
 scroll_active = false

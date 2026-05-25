@@ -54,7 +54,7 @@ func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 func _on_aceptar_pressed() -> void:
 	$Personaje_Codigo/Camera2D.enabled = false
 	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
+	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()

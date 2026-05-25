@@ -335,6 +335,8 @@ func guardar_idioma(idiomaLanguage):
 
 func _on_chico_boton_pressed() -> void:
 	chica_boton.button_pressed = false
+	$"Editor De Personaje/NombreEditor".text = "Mike"
 
 func _on_chica_boton_pressed() -> void:
 	chico_boton.button_pressed = false
+	$"Editor De Personaje/NombreEditor".text = "Lisa"

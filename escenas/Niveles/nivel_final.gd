@@ -58,7 +58,7 @@ func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
 func _on_aceptar_pressed() -> void:
 	$Personaje_Codigo/Camera2D.enabled = false
 	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", true)
+	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
@@ -72,5 +72,5 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	await $AudioStreamPlayer2.finished
 	Database.guardar_partida()
 	Database.guardar_tiempo(14, tiempo_total)
-	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
+	# ir a la escena final del alcalde
+	Cargador.cargar_escena("uid://dnyq6bak8a6c3", false)
