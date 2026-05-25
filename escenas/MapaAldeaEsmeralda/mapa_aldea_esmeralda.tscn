@@ -988,46 +988,46 @@ drag_bottom_margin = 0.0
 editor_draw_limits = true
 
 [node name="Mision1" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=870468265]
-offset_left = 400.76544
-offset_top = -545.3687
-offset_right = 1089.6951
-offset_bottom = -401.1402
+offset_left = 394.95782
+offset_top = -516.3596
+offset_right = 1083.8875
+offset_bottom = -372.1311
 scale = Vector2(0.6593429, 1.4994296)
 theme = ExtResource("20_h8k1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
 [node name="Mision2" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=2079312255]
-offset_left = 400.76514
-offset_top = -417.7292
-offset_right = 1089.6948
-offset_bottom = -273.50067
+offset_left = 394.95752
+offset_top = -388.72034
+offset_right = 1083.8872
+offset_bottom = -244.49182
 scale = Vector2(0.6593429, 1.4994296)
 theme = ExtResource("20_h8k1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
 [node name="Mision3" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1554745539]
-offset_left = 394.95694
-offset_top = -295.89154
-offset_right = 1083.8866
-offset_bottom = -151.66302
+offset_left = 389.14932
+offset_top = -266.88257
+offset_right = 1078.079
+offset_bottom = -122.65405
 scale = Vector2(0.6593429, 1.4994296)
 theme = ExtResource("20_h8k1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
 [node name="Mision4" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1629615094]
-offset_left = 394.95654
-offset_top = -168.25203
-offset_right = 1083.8862
-offset_bottom = -24.023514
+offset_left = 389.14893
+offset_top = -139.24316
+offset_right = 1078.0786
+offset_bottom = 4.9853516
 scale = Vector2(0.6593429, 1.4994296)
 theme = ExtResource("20_h8k1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_h8k1y")
 
 [node name="TextoMision1" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=1923462020]
-offset_left = 505.31238
-offset_top = -406.12555
-offset_right = 960.57117
-offset_bottom = -315.6667
+offset_left = 499.50378
+offset_top = -377.11646
+offset_right = 954.7626
+offset_bottom = -286.6576
 scale = Vector2(0.6634161, 0.7696487)
 theme = ExtResource("20_h8k1y")
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
@@ -1036,10 +1036,10 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Ve al parque y ayuda a la jardinera"
 
 [node name="TextoMision2" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=766093000]
-offset_left = 505.31256
-offset_top = -278.4861
-offset_right = 1002.3263
-offset_bottom = -183.95758
+offset_left = 499.50397
+offset_top = -249.4773
+offset_right = 996.5177
+offset_bottom = -154.94876
 scale = Vector2(0.6661131, 0.7365134)
 theme = ExtResource("20_h8k1y")
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
@@ -1048,10 +1048,10 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Ve la biblioteca y ayuda a la bibliotecaria"
 
 [node name="TextoMision3" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=467358482]
-offset_left = 499.504
-offset_top = -150.84665
-offset_right = 981.58405
-offset_bottom = -63.819733
+offset_left = 493.6964
+offset_top = -121.837524
+offset_right = 975.7765
+offset_bottom = -34.810608
 scale = Vector2(0.6955398, 0.7598014)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
 theme_override_fonts/normal_font = ExtResource("15_h8k1y")
@@ -1059,10 +1059,10 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Ve al mercadillo y ayuda al vendedor"
 
 [node name="TextoMision4" type="RichTextLabel" parent="PersonajePrincipal/Camera2D" unique_id=963737754]
-offset_left = 505.31287
-offset_top = -23.207176
-offset_right = 917.6937
-offset_bottom = 75.42332
+offset_left = 499.50427
+offset_top = 5.80188
+offset_right = 911.88513
+offset_bottom = 104.43237
 scale = Vector2(0.74922943, 0.6750882)
 theme_override_colors/default_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
 theme_override_fonts/normal_font = ExtResource("15_h8k1y")
@@ -1083,31 +1083,31 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Ve al ayundtamiento y ayuda al presidente"
 
 [node name="Mision1NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1005702454]
-offset_left = 441.4225
-offset_top = -394.522
-offset_right = 481.4225
-offset_bottom = -354.522
+offset_left = 435.61377
+offset_top = -365.51318
+offset_right = 475.61377
+offset_bottom = -325.51318
 theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
 
 [node name="Mision2NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1203479619]
-offset_left = 441.42236
-offset_top = -266.8825
-offset_right = 481.42236
-offset_bottom = -226.8825
+offset_left = 435.61377
+offset_top = -237.87354
+offset_right = 475.61377
+offset_bottom = -197.87354
 theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
 
 [node name="Mision3NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=2048846644]
-offset_left = 435.61417
-offset_top = -139.24303
-offset_right = 475.61417
-offset_bottom = -99.24303
+offset_left = 429.80566
+offset_top = -110.23401
+offset_right = 469.80566
+offset_bottom = -70.23401
 theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
 
 [node name="Mision4NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1040747510]
-offset_left = 435.61417
-offset_top = -17.405334
-offset_right = 475.61417
-offset_bottom = 22.594666
+offset_left = 429.80566
+offset_top = 11.603577
+offset_right = 469.80566
+offset_bottom = 51.603577
 theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
 
 [node name="Mision5NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=917992490]
@@ -1160,10 +1160,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_uybic")
 
 [node name="MisionPrincipal" type="PanelContainer" parent="PersonajePrincipal/Camera2D" unique_id=1751054324]
 offset_left = 383.34033
-offset_top = -649.80096
+offset_top = -667.2063
 offset_right = 1072.27
-offset_bottom = -505.57245
-scale = Vector2(0.70226616, 1.3742031)
+offset_bottom = -522.9778
+scale = Vector2(0.7133441, 1.8356897)
 theme = ExtResource("20_h8k1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_loxkv")
 

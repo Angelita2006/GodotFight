@@ -1082,16 +1082,16 @@ texture = ExtResource("17_a6v5w")
 region_rect = Rect2(455, 139, 30, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x3x7"]
-size = Vector2(70.833725, 27.859419)
+size = Vector2(62.499836, 17.568779)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mrc"]
-size = Vector2(66.667114, 71.22504)
+size = Vector2(58.333458, 47.4833)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkue"]
-size = Vector2(118.04593, 93.34)
+size = Vector2(118.04593, 74.122894)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68a0s"]
-size = Vector2(300.00192, 871.79395)
+size = Vector2(300.00403, 692.3076)
 
 [node name="Ayuntamiento" type="StaticBody2D" unique_id=1816981424]
 script = ExtResource("1_insl8")
@@ -1168,8 +1168,15 @@ sprite_frames = SubResource("SpriteFrames_ejkue")
 autoplay = "default"
 
 [node name="Presidente" parent="." unique_id=1279258347 instance=ExtResource("15_ptvxw")]
-position = Vector2(-520, -262)
+position = Vector2(-522, -265)
 script = ExtResource("16_7vxxu")
+
+[node name="Colisiones" parent="Presidente" index="0" unique_id=155340292]
+position = Vector2(585.2512, 311.851)
+
+[node name="Animacion" parent="Presidente" index="1" unique_id=1297807978]
+position = Vector2(585, 312)
+scale = Vector2(0.14999999, 0.14913979)
 
 [node name="Fondo_dialogo" type="Panel" parent="Presidente" unique_id=275640145]
 offset_left = 558.0
@@ -1202,7 +1209,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Presidente/Abajo" unique_id=821189864]
-position = Vector2(-2727.5002, 1543.2771)
+position = Vector2(-2727.5005, 1535.5848)
 scale = Vector2(1.2, 1.4949999)
 shape = SubResource("RectangleShape2D_2x3x7")
 
@@ -1212,7 +1219,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Presidente/Arriba" unique_id=973583796]
-position = Vector2(-2724.9995, 1305.1274)
+position = Vector2(-2725.0002, 1328.2047)
 scale = Vector2(1.2, -0.648)
 shape = SubResource("RectangleShape2D_o3mrc")
 
@@ -1222,7 +1229,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Presidente/Izquierda" unique_id=1830624723]
-position = Vector2(-2669.5112, 1430.7688)
+position = Vector2(-2669.5115, 1428.2047)
 scale = Vector2(0.5, 1.868)
 shape = SubResource("RectangleShape2D_ejkue")
 
@@ -1232,7 +1239,7 @@ rotation = -3.1415925
 scale = Vector2(0.2, -0.195)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Presidente/Derecha" unique_id=1633668177]
-position = Vector2(-2779.9995, 1430.7688)
+position = Vector2(-2779.9998, 1428.2047)
 scale = Vector2(0.20000002, 0.20000002)
 shape = SubResource("RectangleShape2D_68a0s")
 

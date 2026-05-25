@@ -4222,6 +4222,9 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjd1o"]
+size = Vector2(255, 254.34335)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjd1o"]
 texture = ExtResource("9_nylf0")
 region_rect = Rect2(455, 139, 30, 28)
@@ -4357,7 +4360,12 @@ script = ExtResource("8_xekwt")
 position = Vector2(-0.5, 5)
 scale = Vector2(0.2, 0.146)
 
-[node name="Animacion" parent="VendedorPrincipal" index="1" unique_id=40949499]
+[node name="Colisiones2" type="CollisionShape2D" parent="VendedorPrincipal" unique_id=1523172923]
+position = Vector2(-2.5, -30.610565)
+scale = Vector2(0.19999996, 0.146)
+shape = SubResource("RectangleShape2D_bjd1o")
+
+[node name="Animacion" parent="VendedorPrincipal" index="2" unique_id=40949499]
 position = Vector2(-0.99999714, 4.9999948)
 scale = Vector2(0.148743, 0.14834747)
 

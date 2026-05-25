@@ -2892,18 +2892,21 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hvaa"]
+size = Vector2(323.52933, 170.5882)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4qwp"]
 texture = ExtResource("15_7ar72")
 region_rect = Rect2(455, 139, 30, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ar72"]
-size = Vector2(11.723038, 16.471527)
+size = Vector2(13.397724, 10.980907)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp8xb"]
-size = Vector2(11.510725, 18.94957)
+size = Vector2(13.155174, 16.202635)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2dif"]
-size = Vector2(16.871948, 12.391315)
+size = Vector2(16.871948, 12.294504)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp075"]
 size = Vector2(47.17456, 116.24541)
@@ -2980,15 +2983,20 @@ scale = Vector2(0.14893617, -0.1234567)
 animation = &"Jardinera1"
 
 [node name="Glitch" type="AnimatedSprite2D" parent="." unique_id=950283041]
-position = Vector2(58.125008, -11.000008)
-scale = Vector2(2.8425002, 2.3000002)
+position = Vector2(66.50001, -12)
+scale = Vector2(3.65, 2.7)
 sprite_frames = SubResource("SpriteFrames_o8joq")
 autoplay = "default"
 frame_progress = 0.95947564
 
 [node name="Jardinera" parent="." unique_id=1667624789 instance=ExtResource("13_wsk7k")]
-position = Vector2(214, 87)
+position = Vector2(252, 179)
 script = ExtResource("14_5hvaa")
+
+[node name="Colisiones2" type="CollisionShape2D" parent="Jardinera" unique_id=1635043389]
+position = Vector2(-2.5, -33.5)
+scale = Vector2(0.17, 0.17)
+shape = SubResource("RectangleShape2D_5hvaa")
 
 [node name="Fondo_dialogo" type="Panel" parent="Jardinera" unique_id=1956101109]
 offset_left = -30.111298
@@ -3021,7 +3029,7 @@ rotation = -3.1415925
 scale = Vector2(0.21374309, -0.15370578)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jardinera/Abajo" unique_id=173011350]
-position = Vector2(-0.99853516, 62.785156)
+position = Vector2(0.99853516, 64.963745)
 scale = Vector2(5.5872416, 3.554847)
 shape = SubResource("RectangleShape2D_7ar72")
 
@@ -3031,8 +3039,8 @@ rotation = -3.1415925
 scale = Vector2(0.23268981, -0.13079411)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Jardinera/Arriba" unique_id=8286941]
-position = Vector2(-0.91796875, -90.80322)
-scale = Vector2(5.226926, -2.8242965)
+position = Vector2(0.00030517578, -94.68225)
+scale = Vector2(5.226927, -2.8242965)
 shape = SubResource("RectangleShape2D_gp8xb")
 
 [node name="Izquierda" type="Area2D" parent="Jardinera" unique_id=2099850604]
@@ -3041,8 +3049,8 @@ rotation = -3.1415925
 scale = Vector2(0.2426763, -0.21773526)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Jardinera/Izquierda" unique_id=1441789660]
-position = Vector2(43.104736, -12.8671875)
-scale = Vector2(2.6016488, 9.718046)
+position = Vector2(43.104736, -12.39679)
+scale = Vector2(2.6016486, 9.718045)
 shape = SubResource("RectangleShape2D_s2dif")
 
 [node name="Derecha" type="Area2D" parent="Jardinera" unique_id=698453899]
