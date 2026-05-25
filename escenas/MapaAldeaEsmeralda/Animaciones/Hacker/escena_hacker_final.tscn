@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://ckh74beqeu26l"]
+[gd_scene format=3 uid="uid://ts2chlmk3opn"]
 
-[ext_resource type="Script" uid="uid://cvkjvyyeilofh" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker_script.gd" id="1_hlxdi"]
-[ext_resource type="Texture2D" uid="uid://chemouo0emlo3" path="res://assets/juego/animaciones/hacker/hacker (2).png" id="2_ql0as"]
-[ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="4_8y8sm"]
+[ext_resource type="Script" uid="uid://cvkjvyyeilofh" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker_script.gd" id="1_k71jb"]
+[ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="2_k338d"]
+[ext_resource type="Texture2D" uid="uid://chemouo0emlo3" path="res://assets/juego/animaciones/hacker/hacker (2).png" id="3_0hyrv"]
 
 [sub_resource type="Animation" id="Animation_qx6fr"]
 length = 0.001
@@ -57,29 +57,29 @@ _data = {
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qx6fr"]
-texture = ExtResource("2_ql0as")
+texture = ExtResource("3_0hyrv")
 
-[node name="Escena Hacker" type="Node2D" unique_id=724968019]
-script = ExtResource("1_hlxdi")
+[node name="Escena Hacker" type="Node2D" unique_id=1439402940]
+script = ExtResource("1_k71jb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=610589891]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=770883164]
 libraries/ = SubResource("AnimationLibrary_uei1j")
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=577778742]
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=2042888868]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.748922, 16.161886)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=730234445]
-stream = ExtResource("4_8y8sm")
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1076927924]
+stream = ExtResource("2_k338d")
 volume_db = -10.0
 autoplay = true
 bus = &"SFX"
 parameters/looping = true
 
-[node name="Hacker" type="Panel" parent="." unique_id=640007615]
+[node name="Hacker" type="Panel" parent="." unique_id=359858062]
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 770.0
@@ -87,17 +87,17 @@ offset_bottom = 454.0
 scale = Vector2(1.4899901, 1.4258133)
 theme_override_styles/panel = SubResource("StyleBoxTexture_qx6fr")
 
-[node name="Dialogo1" type="RichTextLabel" parent="." unique_id=880035613]
+[node name="Dialogo1" type="RichTextLabel" parent="." unique_id=670869397]
 offset_left = 302.0
 offset_top = 469.00003
 offset_right = 727.6425
 offset_bottom = 519.3955
 scale = Vector2(1.8873956, 2.210759)
 bbcode_enabled = true
-text = "[b][color=#F5F5F8][shake]Demasiado orden aquí. Demasiada paz. Esta aldea necesita un poco de caos.[/shake][/color][/b]"
+text = "[b][color=#F5F5F8][shake]Por ahora has logrado arreglar el código, pero la próxima vez no será tan fácil.[/shake][/color][/b]"
 scroll_active = false
 
-[node name="Dialogo2" type="RichTextLabel" parent="." unique_id=1743911039]
+[node name="Dialogo2" type="RichTextLabel" parent="." unique_id=1676877932]
 visible = false
 offset_left = 300.0
 offset_top = 458.0
@@ -105,10 +105,10 @@ offset_right = 694.27844
 offset_bottom = 534.4967
 scale = Vector2(2.0553439, 1.751829)
 bbcode_enabled = true
-text = "[b][color=#F5F5F8][shake]Soy el error que no puedes depurar. El glitch que no se borra. Prepárate para ver tu código colapsar.[/shake][/color][/b]"
+text = "[b][color=#F5F5F8][shake]Nos volveremos a ver pronto.[/shake][/color][/b]"
 scroll_active = false
 
-[node name="Avanzar" type="Label" parent="." unique_id=915673272]
+[node name="Avanzar" type="Label" parent="." unique_id=528797138]
 offset_left = 725.0
 offset_top = 550.0
 offset_right = 931.0
