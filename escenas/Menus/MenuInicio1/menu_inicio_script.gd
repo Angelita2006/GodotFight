@@ -243,7 +243,6 @@ func _on_mapa_aldea_esmeralda_pressed() -> void:
 	if !Database.hay_partida_guardada():
 		# ir a la animación del alcalde
 		Cargador.cargar_escena("uid://ysdgfhl3llyi", false)
-		Cargador.entrar_escena_cargada()
 	else:
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", true)

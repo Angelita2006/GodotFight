@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b8unpr85iow3c"]
 
 [ext_resource type="Script" uid="uid://vlr6clfuqbm2" path="res://escenas/Personajes/Jugador/jugador_script.gd" id="1_2x0lx"]
-[ext_resource type="SpriteFrames" uid="uid://cdiu4gdwwophl" path="res://escenas/Personajes/Jugador/jugador_skinantigua.tres" id="2_6fvno"]
 [ext_resource type="SpriteFrames" uid="uid://b7cdx0eaiy8xo" path="res://escenas/Personajes/Jugador/jugador_skin_chico.tres" id="3_llj8d"]
 [ext_resource type="SpriteFrames" uid="uid://8qgtemdc46pg" path="res://escenas/Personajes/Jugador/jugador_skin_chica.tres" id="4_0aaiv"]
 
@@ -16,12 +15,6 @@ collision_mask = 100
 script = ExtResource("1_2x0lx")
 animacion_chico = NodePath("AnimacionChico")
 animacion_chica = NodePath("AnimacionChica")
-
-[node name="AnimacionAntigua" type="AnimatedSprite2D" parent="." unique_id=476995953]
-visible = false
-position = Vector2(0, 1)
-sprite_frames = ExtResource("2_6fvno")
-animation = &"correr_arriba"
 
 [node name="AnimacionChico" type="AnimatedSprite2D" parent="." unique_id=304709248]
 sprite_frames = ExtResource("3_llj8d")
