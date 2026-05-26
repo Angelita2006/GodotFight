@@ -1,7 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://b6mfaiggcwfco"]
 
 [ext_resource type="Texture2D" uid="uid://coewtmwuht5mx" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Fences.png" id="1_esb3m"]
-[ext_resource type="Texture2D" uid="uid://bp5oftds3by6q" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Doors.png" id="2_2bnlp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtv55"]
 texture = ExtResource("1_esb3m")
@@ -38,14 +37,6 @@ texture = ExtResource("1_esb3m")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.6978817, -2.5180225, 2.8777409, -1.2590122, 3.956892, 1.6187286, 3.956892, 2.6978798, 2.8777409, 2.877739, -5.755479, 1.4388695, -8, -1.978447, -8, -3.2374573, -5.755479, -3.057599, -3.956891, -8, -4.13675)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g4oe"]
-texture = ExtResource("2_2bnlp")
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-0:3/0 = 0
-
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dtv55")
-sources/1 = SubResource("TileSetAtlasSource_2g4oe")

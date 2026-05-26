@@ -55,7 +55,7 @@ position = Vector2(261.99997, 316)
 scale = Vector2(0.79484296, 0.8037538)
 script = ExtResource("3_na1s8")
 
-[node name="Colisiones" parent="PersonajePrincipal" index="3" unique_id=565766791]
+[node name="Colisiones" parent="PersonajePrincipal" index="2" unique_id=565766791]
 visible = false
 position = Vector2(8.829193, -8.709137)
 scale = Vector2(1.597443, 14.149987)

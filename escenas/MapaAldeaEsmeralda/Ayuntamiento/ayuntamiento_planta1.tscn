@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dwcqj20551jhg" path="res://escenas/MapaAldeaEsmeralda/Ayuntamiento/ayuntamiento_planta1_script.gd" id="1_xm87m"]
 [ext_resource type="Texture2D" uid="uid://cy5vhc5wvcmpc" path="res://assets/juego/mapa/aldeaesmeralda/pack2/Interior.png" id="2_4h530"]
 [ext_resource type="Texture2D" uid="uid://dnjci5c0jy8lm" path="res://assets/juego/mapa/aldeaesmeralda/pack2/walls_floor.png" id="3_6gomi"]
-[ext_resource type="Texture2D" uid="uid://b7cwi5ogotx0b" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Wooden_House_Walls_Tilset.png" id="4_fudli"]
 [ext_resource type="PackedScene" uid="uid://cpoasa60yigg1" path="res://escenas/Personajes/NPCs/Presidente/Concejales.tscn" id="5_4h530"]
 [ext_resource type="PackedScene" uid="uid://b8unpr85iow3c" path="res://escenas/Personajes/Jugador/jugador.tscn" id="5_tc7lh"]
 
@@ -377,27 +376,9 @@ texture = ExtResource("3_6gomi")
 2:14/0 = 0
 3:14/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7l3l"]
-texture = ExtResource("4_fudli")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_s3vdt"]
 sources/0 = SubResource("TileSetAtlasSource_qb6bh")
 sources/1 = SubResource("TileSetAtlasSource_jsf2x")
-sources/2 = SubResource("TileSetAtlasSource_b7l3l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1acep"]
 texture = ExtResource("3_6gomi")
