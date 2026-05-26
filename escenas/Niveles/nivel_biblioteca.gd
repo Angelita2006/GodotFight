@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var elementosSecretosEncontrados: int = 0
+@onready var libros: int = 0
 
 var interactuando: bool = false
 
@@ -61,65 +61,66 @@ func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	Global.llave_purpura_obtenida = true
-	$AudioStreamPlayer.stop()
-	$AudioStreamPlayer2.play()
-	$Final2.show()
-	$Personaje_Codigo/Camera2D.enabled = false
-	await $AudioStreamPlayer2.finished
-	Database.guardar_partida()
-	puntos = 10 * elementosSecretosEncontrados
-	Database.guardar_tiempo(11, tiempo_total, puntos)
-	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
+	if libros == 6:
+		Global.llave_purpura_obtenida = true
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.play()
+		$Final2.show()
+		$Personaje_Codigo/Camera2D.enabled = false
+		await $AudioStreamPlayer2.finished
+		Database.guardar_partida()
+		puntos = 10 * libros
+		Database.guardar_tiempo(11, tiempo_total, puntos)
+		# ir al mapa
+		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto.hide()
-	$ElementoSecreto/CollisionShape2D.set_deferred("disabled", true)
+	$Libro1.hide()
+	$Libro1/CollisionShape2D.set_deferred("disabled", true)
 	$Plataforma2.hide()
 	$Plataforma2.set_deferred("collision_enabled", false)
 	$Plataformas3.show()
 	$Plataformas3.set_deferred("collision_enabled", true)
-	$ElementoSecreto2.show()
-	$ElementoSecreto2/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	$Libro2.show()
+	$Libro2/CollisionShape2D.set_deferred("disabled", false)
+	libros += 1
 
 func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto2.hide()
-	$ElementoSecreto2/CollisionShape2D.set_deferred("disabled", true)
+	$Libro2.hide()
+	$Libro2/CollisionShape2D.set_deferred("disabled", true)
 	$Plataforma3.hide()
 	$Plataforma3.set_deferred("collision_enabled", false)
 	$Plataformas4.show()
 	$Plataformas4.set_deferred("collision_enabled", true)
-	$ElementoSecreto3.show()
-	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	$Libro3.show()
+	$Libro3/CollisionShape2D.set_deferred("disabled", false)
+	libros += 1
 
 func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto3.hide()
-	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", true)
+	$Libro3.hide()
+	$Libro3/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas3.hide()
 	$Plataformas3.set_deferred("collision_enabled", false)
 	$Plataformas5.show()
 	$Plataformas5.set_deferred("collision_enabled", true)
-	$ElementoSecreto4.show()
-	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	$Libro4.show()
+	$Libro4/CollisionShape2D.set_deferred("disabled", false)
+	libros += 1
 
 func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto4.hide()
-	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", true)
+	$Libro4.hide()
+	$Libro4/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas4.hide()
 	$Plataformas4.set_deferred("collision_enabled", false)
 	$Plataformas6.show()
 	$Plataformas6.set_deferred("collision_enabled", true)
-	$ElementoSecreto5.show()
-	$ElementoSecreto5/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	$Libro5.show()
+	$Libro5/CollisionShape2D.set_deferred("disabled", false)
+	libros += 1
 
 func _on_elemento_secreto_5_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto5.hide()
-	$ElementoSecreto5/CollisionShape2D.set_deferred("disabled", true)
+	$Libro5.hide()
+	$Libro5/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas5.hide()
 	$Plataformas5.set_deferred("collision_enabled", false)
 	$Plataformas7.show()
@@ -127,11 +128,11 @@ func _on_elemento_secreto_5_body_entered(_body: Node2D) -> void:
 	await get_tree().create_timer(1).timeout
 	$Plataformas6.hide()
 	$Plataformas6.set_deferred("collision_enabled", false)
-	$ElementoSecreto6.show()
-	$ElementoSecreto6/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	$Libro6.show()
+	$Libro6/CollisionShape2D.set_deferred("disabled", false)
+	libros += 1
 
 func _on_elemento_secreto_6_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto6.hide()
-	$ElementoSecreto6/CollisionShape2D.set_deferred("disabled", true)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	$Libro6.hide()
+	$Libro6/CollisionShape2D.set_deferred("disabled", true)
+	libros += 1

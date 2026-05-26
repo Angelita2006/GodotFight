@@ -1,8 +1,6 @@
 extends Node2D
 
-var interactuando: bool = false
-
-var palabra_tocada = false
+@onready var oro: int = 0
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
@@ -20,21 +18,6 @@ func _process(delta: float) -> void:
 	var milesimas: int = int((tiempo_total - segundos) * 1000)
 	tiempo = "%03d:%03d" % [segundos, milesimas]
 	$Personaje_Codigo/Tiempo.text = tiempo
-
-func _input(_event: InputEvent) -> void:
-	if interactuando and Input.is_action_just_pressed("interactuar"):
-		$"Palabra faltante".hide()
-		$Plataformas/Codigo_Incompleto.hide()
-		$Plataformas/Codigo_Completo.show()
-		$Plataformas2.show()
-
-func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
-	interactuando = true
-	palabra_tocada = true
-	$Plataformas1/Codigo_Incompleto.hide()
-	$Plataformas1/Codigo_Completo.show()
-	$Plataforma2.show() 
-	$Palabra_faltante.hide()
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Nivel_Banco_Mision.show()
@@ -55,13 +38,41 @@ func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	Global.llave_dorada_obtenida = true
-	$AudioStreamPlayer.stop()
-	$AudioStreamPlayer2.play()
-	$Final2.show()
-	$Personaje_Codigo/Camera2D.enabled = false
-	await $AudioStreamPlayer2.finished
-	Database.guardar_partida()
-	Database.guardar_tiempo(13, tiempo_total, 0)
-	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
+	if oro == 5:
+		Global.llave_dorada_obtenida = true
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.play()
+		$Final2.show()
+		$Personaje_Codigo/Camera2D.enabled = false
+		await $AudioStreamPlayer2.finished
+		Database.guardar_partida()
+		Database.guardar_tiempo(13, tiempo_total, 0)
+		# ir al mapa
+		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
+
+func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
+	$Plataformas1/Codigo_Incompleto.hide()
+	$Plataformas1/Codigo_Completo.show()
+	$Plataforma3.show() 
+	$Plataforma3.set_deferred("enabled", true)
+	$Oro1.show()
+	$Oro1/CollisionShape2D.set_deferred("disabled", false)
+	$Palabra_faltante.hide()
+
+func _on_oro_1_body_entered(body: Node2D) -> void:
+	$Oro1.hide()
+	$Oro1/CollisionShape2D.set_deferred("disabled", true)
+	$Oro2.show()
+	$Oro2/CollisionShape2D.set_deferred("disabled", false)
+
+func _on_oro_2_body_entered(body: Node2D) -> void:
+	$Oro2.hide()
+	$Oro2/CollisionShape2D.set_deferred("disabled", true)
+	$Plataformas2.show()
+	$Plataformas2.set_deferred("enabled", true)
+	$Activador_Pincho.show()
+	$Plataforma3.hide()
+	$Plataforma3.set_deferred("enabled", false)
+	$Oro3.show()
+	$Oro3/CollisionShape2D.set_deferred("disabled", false)
+	

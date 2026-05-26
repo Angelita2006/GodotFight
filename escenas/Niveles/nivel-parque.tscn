@@ -296,62 +296,62 @@ position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("9_f3jcd")
 
-[node name="ElementoSecreto" type="Area2D" parent="." unique_id=1396796261]
+[node name="Arbol1" type="Area2D" parent="." unique_id=1396796261]
 position = Vector2(2922, 1891)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto" unique_id=1019100148]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arbol1" unique_id=1019100148]
 shape = SubResource("CircleShape2D_nrhkc")
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto" unique_id=733735761]
+[node name="Sprite2D" type="Sprite2D" parent="Arbol1" unique_id=733735761]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("9_pnfhu")
 
-[node name="ElementoSecreto2" type="Area2D" parent="." unique_id=1090063608]
+[node name="Arbol2" type="Area2D" parent="." unique_id=1090063608]
 position = Vector2(4356, 1704)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto2" unique_id=1240106290]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arbol2" unique_id=1240106290]
 shape = SubResource("CircleShape2D_nrhkc")
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto2" unique_id=1393577799]
+[node name="Sprite2D" type="Sprite2D" parent="Arbol2" unique_id=1393577799]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("9_pnfhu")
 
-[node name="ElementoSecreto3" type="Area2D" parent="." unique_id=1791144822]
+[node name="Arbol3" type="Area2D" parent="." unique_id=1791144822]
 visible = false
 position = Vector2(3941, 1563)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto3" unique_id=1178979862]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arbol3" unique_id=1178979862]
 shape = SubResource("CircleShape2D_nrhkc")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto3" unique_id=1343116687]
+[node name="Sprite2D" type="Sprite2D" parent="Arbol3" unique_id=1343116687]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("9_pnfhu")
 
-[node name="ElementoSecreto4" type="Area2D" parent="." unique_id=946985006]
+[node name="Arbol4" type="Area2D" parent="." unique_id=946985006]
 visible = false
 position = Vector2(4345, 1443)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto4" unique_id=1856371058]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arbol4" unique_id=1856371058]
 shape = SubResource("CircleShape2D_nrhkc")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto4" unique_id=132069855]
+[node name="Sprite2D" type="Sprite2D" parent="Arbol4" unique_id=132069855]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("9_pnfhu")
@@ -459,31 +459,6 @@ theme_override_font_sizes/font_size = 100
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Nivel_Tutorial_Mision" type="RichTextLabel" parent="Personaje_Codigo" unique_id=381095813]
-visible = false
-offset_left = -1519.0
-offset_top = -844.0
-offset_right = -329.18457
-offset_bottom = -559.7744
-scale = Vector2(0.9219916, 0.8144987)
-theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/normal_font = ExtResource("6_6bfat")
-theme_override_font_sizes/normal_font_size = 67
-text = "El código de la siguiente plataforma está incompleto.
-Acércate al fragmento faltante para colocarlo.  _"
-
-[node name="Mensaje_Final_Nivel" type="RichTextLabel" parent="Personaje_Codigo" unique_id=1650036771]
-visible = false
-offset_left = -1538.0
-offset_top = -857.0
-offset_right = -437.0
-offset_bottom = -616.0
-theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/normal_font = ExtResource("6_6bfat")
-theme_override_font_sizes/normal_font_size = 63
-text = "Para arreglar tu juego deberás arreglar el código de todos los elementos que se 
-encuentren corruptos.  _"
 
 [node name="Mision" type="Label" parent="Personaje_Codigo" unique_id=298152639]
 visible = false
@@ -636,7 +611,7 @@ theme_override_fonts/font = ExtResource("6_6bfat")
 theme_override_font_sizes/font_size = 100
 text = "Misión del parque completada
 
-¡Has conseguido la llave verde!"
+¡Has conseguido la llave verde! _"
 horizontal_alignment = 1
 
 [node name="Fondo_llave" type="Panel" parent="Final2" unique_id=1745186753]
@@ -663,10 +638,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_34gxf")
 [connection signal="body_entered" from="Pato1" to="." method="_on_pato_1_body_entered"]
 [connection signal="body_entered" from="Pato2" to="." method="_on_pato_2_body_entered"]
 [connection signal="body_entered" from="Pato3" to="." method="_on_pato_3_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto" to="." method="_on_elemento_secreto_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto2" to="." method="_on_elemento_secreto_2_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto3" to="." method="_on_elemento_secreto_3_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto4" to="." method="_on_elemento_secreto_4_body_entered"]
+[connection signal="body_entered" from="Arbol1" to="." method="_on_elemento_secreto_body_entered"]
+[connection signal="body_entered" from="Arbol2" to="." method="_on_elemento_secreto_2_body_entered"]
+[connection signal="body_entered" from="Arbol3" to="." method="_on_elemento_secreto_3_body_entered"]
+[connection signal="body_entered" from="Arbol4" to="." method="_on_elemento_secreto_4_body_entered"]
 [connection signal="body_entered" from="PalabraFaltante" to="." method="_on_palabra_faltante_body_entered"]
 [connection signal="body_entered" from="PalabraFaltante2" to="." method="_on_palabra_faltante_2_body_entered"]
 [connection signal="pressed" from="Personaje_Codigo/Advertencia/Fondo_Boton2/Aceptar" to="." method="_on_aceptar_pressed"]

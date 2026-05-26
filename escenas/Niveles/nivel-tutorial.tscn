@@ -294,7 +294,7 @@ theme_override_fonts/font = ExtResource("6_xpkg2")
 theme_override_font_sizes/font_size = 100
 text = "Misión del tutorial completada
 
-¡Has conseguido pasar la fase de entrenamiento!"
+¡Has conseguido pasar la fase de entrenamiento! _"
 horizontal_alignment = 1
 
 [node name="Fondo_diploma" type="Panel" parent="Final2" unique_id=1156277443]

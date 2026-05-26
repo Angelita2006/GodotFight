@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var patos: int = 0
 
-@onready var elementosSecretosEncontrados: int = 0
+@onready var arboles: int = 0
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
@@ -47,7 +47,6 @@ func _on_muerte_body_entered(_body: Node2D) -> void:
 	get_tree().reload_current_scene()
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	# GUARDAR QUE EL NIVEL HA SIDO COMPLETADO Y SI EL COLECCIONABLE SECRETO HA SIDO RECOGIDO
 	if patos == 3:
 		Global.llave_verde_obtenida = true
 		$AudioStreamPlayer.stop()
@@ -56,7 +55,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Database.guardar_partida()
-		puntos = 10 * elementosSecretosEncontrados
+		puntos = 10 * arboles
 		Database.guardar_tiempo(10, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
@@ -103,7 +102,7 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto.hide()
 	$ElementoSecreto/CollisionShape2D.set_deferred("disabled", true)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	arboles += 1
 
 func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto2.hide()
@@ -113,7 +112,7 @@ func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$Plataformas7.set_deferred("collision_enabled", true)
 	$ElementoSecreto3.show()
 	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	arboles += 1
 
 func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto3.hide()
@@ -123,7 +122,7 @@ func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$Plataformas8.set_deferred("collision_enabled", true)
 	$ElementoSecreto4.show()
 	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	arboles += 1
 
 func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto4.hide()
@@ -131,4 +130,4 @@ func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$Plataformas7.hide()
 	$Plataformas9.show()
 	$Plataformas9.set_deferred("collision_enabled", true)
-	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
+	arboles += 1

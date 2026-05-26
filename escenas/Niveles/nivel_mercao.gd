@@ -63,8 +63,8 @@ func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
 
 func _on_secreto_body_entered(_body: Node2D) -> void:
-	$Secreto.hide()
-	$Secreto/CollisionShape2D.set_deferred("disabled", true)
+	$Fruta.hide()
+	$Fruta/CollisionShape2D.set_deferred("disabled", true)
 	secretoEncontrado = true
 	puntos = 10
 

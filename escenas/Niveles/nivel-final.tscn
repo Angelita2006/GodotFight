@@ -427,7 +427,7 @@ theme_override_fonts/font = ExtResource("5_08un3")
 theme_override_font_sizes/font_size = 100
 text = "Misión final completada
 
-¡Has conseguido el trofeo final!"
+¡Has conseguido el trofeo final! _"
 horizontal_alignment = 1
 
 [node name="Fondo_trofeo" type="Panel" parent="Final2" unique_id=1156277443]

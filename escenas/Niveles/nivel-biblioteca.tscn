@@ -272,7 +272,7 @@ scale = Vector2(0.9219916, 0.8144987)
 theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 theme_override_fonts/normal_font = ExtResource("6_3s7lb")
 theme_override_font_sizes/normal_font_size = 67
-text = "A continuación, recoge los libros que se han caído de la estantería para poder colocarlos.  _
+text = "A continuación, recoge los libros que se han caído de la estantería para poder colocarlos. 
 Cuidado con las últimas plataformas. _"
 
 [node name="Fondo_Temporizador" type="Panel" parent="Personaje_Codigo" unique_id=626381402]
@@ -399,96 +399,96 @@ position = Vector2(4, -228)
 shape = SubResource("CircleShape2D_nrhkc")
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="ElementoSecreto" type="Area2D" parent="." unique_id=488323469]
+[node name="Libro1" type="Area2D" parent="." unique_id=488323469]
 position = Vector2(880, 1428)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto" unique_id=1415207279]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Libro1" unique_id=1415207279]
 shape = SubResource("CircleShape2D_yi7je")
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto" unique_id=2000946860]
+[node name="Sprite2D" type="Sprite2D" parent="Libro1" unique_id=2000946860]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("8_xmy4q")
 
-[node name="ElementoSecreto2" type="Area2D" parent="." unique_id=1657728900]
+[node name="Libro2" type="Area2D" parent="." unique_id=1657728900]
 visible = false
 position = Vector2(427, 1250)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto2" unique_id=277273186]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Libro2" unique_id=277273186]
 shape = SubResource("CircleShape2D_yi7je")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto2" unique_id=649143383]
+[node name="Sprite2D" type="Sprite2D" parent="Libro2" unique_id=649143383]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("8_xmy4q")
 
-[node name="ElementoSecreto3" type="Area2D" parent="." unique_id=825485487]
+[node name="Libro3" type="Area2D" parent="." unique_id=825485487]
 visible = false
 position = Vector2(884, 1157)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto3" unique_id=82501409]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Libro3" unique_id=82501409]
 shape = SubResource("CircleShape2D_yi7je")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto3" unique_id=1004900399]
+[node name="Sprite2D" type="Sprite2D" parent="Libro3" unique_id=1004900399]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("8_xmy4q")
 
-[node name="ElementoSecreto4" type="Area2D" parent="." unique_id=770024415]
+[node name="Libro4" type="Area2D" parent="." unique_id=770024415]
 visible = false
 position = Vector2(422, 992)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto4" unique_id=201201561]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Libro4" unique_id=201201561]
 shape = SubResource("CircleShape2D_yi7je")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto4" unique_id=255902563]
+[node name="Sprite2D" type="Sprite2D" parent="Libro4" unique_id=255902563]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("8_xmy4q")
 
-[node name="ElementoSecreto5" type="Area2D" parent="." unique_id=684635111]
+[node name="Libro5" type="Area2D" parent="." unique_id=684635111]
 visible = false
 position = Vector2(880, 916)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto5" unique_id=290622338]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Libro5" unique_id=290622338]
 shape = SubResource("CircleShape2D_yi7je")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto5" unique_id=13824614]
+[node name="Sprite2D" type="Sprite2D" parent="Libro5" unique_id=13824614]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("8_xmy4q")
 
-[node name="ElementoSecreto6" type="Area2D" parent="." unique_id=2117291805]
+[node name="Libro6" type="Area2D" parent="." unique_id=2117291805]
 visible = false
 position = Vector2(1316, 1094)
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElementoSecreto6" unique_id=1449116246]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Libro6" unique_id=1449116246]
 shape = SubResource("CircleShape2D_yi7je")
 disabled = true
 debug_color = Color(0.8673987, 0.0005536962, 0.8583064, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="ElementoSecreto6" unique_id=1675675157]
+[node name="Sprite2D" type="Sprite2D" parent="Libro6" unique_id=1675675157]
 position = Vector2(1.424551e-05, -2.9981136e-05)
 scale = Vector2(5.2874994, 5.2874994)
 texture = ExtResource("8_xmy4q")
@@ -538,7 +538,7 @@ theme_override_fonts/font = ExtResource("6_3s7lb")
 theme_override_font_sizes/font_size = 100
 text = "Misión de la biblioteca completada
 
-¡Has conseguido la llave púrpura!"
+¡Has conseguido la llave púrpura! _"
 horizontal_alignment = 1
 
 [node name="Fondo_llave" type="Panel" parent="Final2" unique_id=1628479045]
@@ -566,10 +566,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_yi7je")
 [connection signal="pressed" from="Personaje_Codigo/Advertencia/Fondo_Boton/Cancelar" to="." method="_on_cancelar_pressed"]
 [connection signal="body_entered" from="Palabra_faltante" to="." method="_on_palabra_faltante_body_entered"]
 [connection signal="body_exited" from="Palabra_faltante" to="." method="_on_palabra_faltante_body_exited"]
-[connection signal="body_entered" from="ElementoSecreto" to="." method="_on_elemento_secreto_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto2" to="." method="_on_elemento_secreto_2_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto3" to="." method="_on_elemento_secreto_3_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto4" to="." method="_on_elemento_secreto_4_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto5" to="." method="_on_elemento_secreto_5_body_entered"]
-[connection signal="body_entered" from="ElementoSecreto6" to="." method="_on_elemento_secreto_6_body_entered"]
+[connection signal="body_entered" from="Libro1" to="." method="_on_elemento_secreto_body_entered"]
+[connection signal="body_entered" from="Libro2" to="." method="_on_elemento_secreto_2_body_entered"]
+[connection signal="body_entered" from="Libro3" to="." method="_on_elemento_secreto_3_body_entered"]
+[connection signal="body_entered" from="Libro4" to="." method="_on_elemento_secreto_4_body_entered"]
+[connection signal="body_entered" from="Libro5" to="." method="_on_elemento_secreto_5_body_entered"]
+[connection signal="body_entered" from="Libro6" to="." method="_on_elemento_secreto_6_body_entered"]
 [connection signal="body_entered" from="Muerte" to="." method="_on_muerte_body_entered"]
