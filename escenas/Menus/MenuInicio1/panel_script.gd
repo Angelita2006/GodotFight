@@ -49,3 +49,10 @@ func mostrar_ranking():
 		label3.text = tiempo_formateado
 		label3.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		$Contenedor.add_child(label3)
+		
+		var label4 = Label.new()
+		label4.add_theme_font_override("font", font)
+		label4.add_theme_font_size_override("font_size", 22)
+		label4.text = str(resultado["puntos"])
+		label4.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		$Contenedor.add_child(label4)

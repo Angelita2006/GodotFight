@@ -20,7 +20,8 @@ func crear_tablas_si_no_existen():
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
 			jugador TEXT NOT NULL,
 			nivel INTEGER NOT NULL,
-			duracion REAL NOT NULL
+			duracion REAL NOT NULL,
+			puntos INTEGER NOT NULL
 		);
 	"""
 	db.query(sql)
@@ -207,26 +208,26 @@ func obtener_datos_ajustes():
 	print(resultado)
 	return resultado
 
-func guardar_tiempo(nivel: int, duracion: float):
+func guardar_tiempo(nivel: int, duracion: float, puntos: int):
 	# 1. Asegurar tablas
 	crear_tablas_si_no_existen()
 	
 	# 2. Abrir para operar
 	abrir_db()
-	#db.query("DELETE FROM tiempos")
 
-	var sql = "INSERT INTO tiempos (jugador, nivel, duracion) VALUES (?, ?, ?);"
+	var sql = "INSERT INTO tiempos (jugador, nivel, duracion, puntos) VALUES (?, ?, ?, ?);"
 	var parametros = [
 		str(Global.jugador_nombre), 
 		str(nivel), 
-		str(duracion)
+		str(duracion),
+		str(puntos)
 	]
 	
 	db.query_with_bindings(sql, parametros)
 	
 	# Comprobación limpia
-	db.query("SELECT * FROM tiempos")
-	print("Tiempos guardados: ", db.query_result)
+	#db.query("SELECT * FROM tiempos")
+	#print("Tiempos guardados: ", db.query_result)
 	
 	cerrar_db()
 

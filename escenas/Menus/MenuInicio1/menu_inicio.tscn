@@ -624,20 +624,20 @@ script = ExtResource("7_14j3c")
 
 [node name="Top" type="Label" parent="RANKING/Panel" unique_id=745706193]
 layout_mode = 0
-offset_left = -221.69458
-offset_top = -463.43033
-offset_right = -41.69458
-offset_bottom = -423.43033
+offset_left = -311.10226
+offset_top = -469.52527
+offset_right = -131.10226
+offset_bottom = -429.52527
 size_flags_horizontal = 4
 size_flags_stretch_ratio = 0.0
 text = "Posicion"
 
 [node name="Nivel" type="Label" parent="RANKING/Panel" unique_id=1282071694]
 layout_mode = 0
-offset_left = 83.02144
-offset_top = -468.30627
-offset_right = 243.02144
-offset_bottom = -428.30627
+offset_left = -62.037987
+offset_top = -470.74426
+offset_right = 97.96201
+offset_bottom = -430.74426
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
@@ -647,10 +647,10 @@ horizontal_alignment = 1
 
 [node name="DuracionPartida" type="Label" parent="RANKING/Panel" unique_id=1604292620]
 layout_mode = 0
-offset_left = 310.18994
-offset_top = -468.30627
-offset_right = 610.18994
-offset_bottom = -428.30627
+offset_left = 150.53334
+offset_top = -473.18222
+offset_right = 450.53333
+offset_bottom = -433.18222
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"
 theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
@@ -658,15 +658,28 @@ theme_override_fonts/font = ExtResource("8_naxbc")
 text = "Record de tiempo "
 horizontal_alignment = 1
 
+[node name="PuntosExtra" type="Label" parent="RANKING/Panel" unique_id=1540059050]
+layout_mode = 0
+offset_left = 438.82755
+offset_top = -469.5254
+offset_right = 738.8275
+offset_bottom = -429.5254
+theme = ExtResource("1_4v0q5")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.5254902, 0.36862746, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("8_naxbc")
+text = "Puntos extra"
+horizontal_alignment = 1
+
 [node name="Contenedor" type="GridContainer" parent="RANKING/Panel" unique_id=1074645397]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -80.28445
-offset_top = -350.06433
-offset_right = -277.52676
-offset_bottom = -321.06433
+offset_left = -166.04285
+offset_top = -352.50232
+offset_right = -363.28516
+offset_bottom = -323.50232
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.0229053, 1.334803)
@@ -675,7 +688,7 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 10
-columns = 3
+columns = 4
 
 [node name="Volver" type="Button" parent="RANKING" unique_id=2070979893]
 layout_mode = 2

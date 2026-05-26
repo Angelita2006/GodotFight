@@ -71,6 +71,6 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Camera2D.enabled = false
 	await $AudioStreamPlayer2.finished
 	Database.guardar_partida()
-	Database.guardar_tiempo(14, tiempo_total)
+	Database.guardar_tiempo(14, tiempo_total, 0)
 	# ir a la escena final del alcalde
 	Cargador.cargar_escena("uid://dnyq6bak8a6c3", false)

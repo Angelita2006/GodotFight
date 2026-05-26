@@ -7,6 +7,8 @@ extends Node2D
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
 
+var puntos: int = 0
+
 func _ready() -> void:
 	$Personaje_Codigo/Primer_Mensaje.show()
 	$Personaje_Codigo/Mensaje_mision.hide()
@@ -54,7 +56,8 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Database.guardar_partida()
-		Database.guardar_tiempo(10, tiempo_total)
+		puntos = 10 * elementosSecretosEncontrados
+		Database.guardar_tiempo(10, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
@@ -100,32 +103,32 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto.hide()
 	$ElementoSecreto/CollisionShape2D.set_deferred("disabled", true)
-	elementosSecretosEncontrados = 1
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto2.hide()
 	$ElementoSecreto2/CollisionShape2D.set_deferred("disabled", true)
-	elementosSecretosEncontrados = 2
 	$Plataformas5.hide()
 	$Plataformas7.show()
 	$Plataformas7.set_deferred("collision_enabled", true)
 	$ElementoSecreto3.show()
 	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto3.hide()
 	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", true)
-	elementosSecretosEncontrados = 3
 	$Plataformas6.hide()
 	$Plataformas8.show()
 	$Plataformas8.set_deferred("collision_enabled", true)
 	$ElementoSecreto4.show()
 	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto4.hide()
 	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", true)
-	elementosSecretosEncontrados = 4
 	$Plataformas7.hide()
 	$Plataformas9.show()
 	$Plataformas9.set_deferred("collision_enabled", true)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1

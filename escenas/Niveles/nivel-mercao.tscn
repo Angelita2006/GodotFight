@@ -21,7 +21,7 @@ size = Vector2(776, 105)
 size = Vector2(145, 278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22ext"]
-size = Vector2(781, 83)
+size = Vector2(615, 120)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a1hmr"]
 radius = 88.20431
@@ -307,7 +307,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plataformas2/Activar_Mensaje_Pista" unique_id=1104236523]
-position = Vector2(0, 0.5)
+position = Vector2(-12.5, -18)
 shape = SubResource("RectangleShape2D_22ext")
 
 [node name="Label_Plataforma2" type="Label" parent="Plataformas2" unique_id=962604761]

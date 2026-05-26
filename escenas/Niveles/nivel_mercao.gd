@@ -9,6 +9,8 @@ var palabra3: bool = false
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
 
+var puntos: int = 0
+
 func _ready() -> void:
 	$Pincho.hide()
 	$Plataformas1.show()
@@ -42,10 +44,10 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
 	$Final2.show()
-	$Personaje_Codigo/Camera2D.enabled = false
+	$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 	await $AudioStreamPlayer2.finished
 	Database.guardar_partida()
-	Database.guardar_tiempo(12, tiempo_total)
+	Database.guardar_tiempo(12, tiempo_total, puntos)
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
@@ -53,7 +55,7 @@ func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
 
 func _on_aceptar_pressed() -> void:
-	$Personaje_Codigo/Camera2D.enabled = false
+	$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
@@ -64,6 +66,7 @@ func _on_secreto_body_entered(_body: Node2D) -> void:
 	$Secreto.hide()
 	$Secreto/CollisionShape2D.set_deferred("disabled", true)
 	secretoEncontrado = true
+	puntos = 10
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Nivel_Mision.show()

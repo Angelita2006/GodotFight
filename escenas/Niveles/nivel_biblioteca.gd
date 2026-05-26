@@ -1,11 +1,15 @@
 extends Node2D
 
+@onready var elementosSecretosEncontrados: int = 0
+
 var interactuando: bool = false
 
 var palabra_tocada = false
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
+
+var puntos: int = 0
 
 func _ready() -> void:
 	$"Personaje_Codigo/Nivel_Biblioteca_Mision".hide()
@@ -64,7 +68,8 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Camera2D.enabled = false
 	await $AudioStreamPlayer2.finished
 	Database.guardar_partida()
-	Database.guardar_tiempo(11, tiempo_total)
+	puntos = 10 * elementosSecretosEncontrados
+	Database.guardar_tiempo(11, tiempo_total, puntos)
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
@@ -77,6 +82,7 @@ func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$Plataformas3.set_deferred("collision_enabled", true)
 	$ElementoSecreto2.show()
 	$ElementoSecreto2/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto2.hide()
@@ -87,6 +93,7 @@ func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$Plataformas4.set_deferred("collision_enabled", true)
 	$ElementoSecreto3.show()
 	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto3.hide()
@@ -97,6 +104,7 @@ func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$Plataformas5.set_deferred("collision_enabled", true)
 	$ElementoSecreto4.show()
 	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto4.hide()
@@ -107,6 +115,7 @@ func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$Plataformas6.set_deferred("collision_enabled", true)
 	$ElementoSecreto5.show()
 	$ElementoSecreto5/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_5_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto5.hide()
@@ -120,7 +129,9 @@ func _on_elemento_secreto_5_body_entered(_body: Node2D) -> void:
 	$Plataformas6.set_deferred("collision_enabled", false)
 	$ElementoSecreto6.show()
 	$ElementoSecreto6/CollisionShape2D.set_deferred("disabled", false)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
 
 func _on_elemento_secreto_6_body_entered(_body: Node2D) -> void:
 	$ElementoSecreto6.hide()
 	$ElementoSecreto6/CollisionShape2D.set_deferred("disabled", true)
+	elementosSecretosEncontrados = elementosSecretosEncontrados + 1
