@@ -323,7 +323,7 @@ texture = ExtResource("6_ah4yb")
 
 [node name="Pincho" type="Area2D" parent="." unique_id=1042595112]
 visible = false
-position = Vector2(-4400, 1190)
+position = Vector2(-4400, 1147)
 rotation = -1.5860847
 collision_layer = 24
 collision_mask = 4
@@ -387,22 +387,9 @@ scale = Vector2(0.9219916, 0.8144987)
 theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 theme_override_fonts/normal_font = ExtResource("5_3p1mc")
 theme_override_font_sizes/normal_font_size = 67
-text = "Devuelve todo el oro a su lugar.  
+text = "Ha aparecido un corrupto y va a por ti.  
 
-Consíguelo todo antes de que se lo lleven. _"
-
-[node name="Nivel_Banco_Mision3" type="RichTextLabel" parent="Personaje_Codigo" unique_id=1650228137]
-visible = false
-offset_left = -1519.0
-offset_top = -844.0
-offset_right = -329.18457
-offset_bottom = -559.7744
-scale = Vector2(0.9219916, 0.8144987)
-theme_override_colors/default_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
-theme_override_fonts/normal_font = ExtResource("5_3p1mc")
-theme_override_font_sizes/normal_font_size = 67
-text = "El código del banco está estropeado.
-Acércate al fragmento faltante para colocarlo.  _"
+Esquívalo antes de que te atrape. _"
 
 [node name="Fondo_Temporizador" type="Panel" parent="Personaje_Codigo" unique_id=888990844]
 offset_left = -1605.0
@@ -602,7 +589,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_jifyo")
 [connection signal="body_entered" from="Oro3" to="." method="_on_oro_3_body_entered"]
 [connection signal="body_entered" from="Oro4" to="." method="_on_oro_4_body_entered"]
 [connection signal="body_entered" from="Pincho" to="." method="_on_pincho_body_entered"]
-[connection signal="body_entered" from="Activador_Pincho" to="Pincho" method="_on_activador_pincho_body_entered"]
 [connection signal="pressed" from="Personaje_Codigo/Advertencia/Fondo_Boton2/Aceptar" to="." method="_on_aceptar_pressed"]
 [connection signal="pressed" from="Personaje_Codigo/Advertencia/Fondo_Boton/Cancelar" to="." method="_on_cancelar_pressed"]
 [connection signal="body_entered" from="Palabra_faltante" to="." method="_on_palabra_faltante_body_entered"]

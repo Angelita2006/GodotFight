@@ -51,6 +51,8 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
+	$Personaje_Codigo/Nivel_Banco_Mision.hide()
+	$Personaje_Codigo/Nivel_Banco_Mision2.show()
 	$Plataformas1/Codigo_Incompleto.hide()
 	$Plataformas1/Codigo_Completo.show()
 	$Plataforma3.show() 
@@ -59,20 +61,46 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Oro1/CollisionShape2D.set_deferred("disabled", false)
 	$Palabra_faltante.hide()
 
-func _on_oro_1_body_entered(body: Node2D) -> void:
+func _on_oro_1_body_entered(_body: Node2D) -> void:
 	$Oro1.hide()
 	$Oro1/CollisionShape2D.set_deferred("disabled", true)
 	$Oro2.show()
 	$Oro2/CollisionShape2D.set_deferred("disabled", false)
+	oro += 1
 
-func _on_oro_2_body_entered(body: Node2D) -> void:
+func _on_oro_2_body_entered(_body: Node2D) -> void:
 	$Oro2.hide()
 	$Oro2/CollisionShape2D.set_deferred("disabled", true)
+	$Oro3.show()
+	$Oro3/CollisionShape2D.set_deferred("disabled", false)
+	oro += 1
+
+func _on_oro_3_body_entered(_body: Node2D) -> void:
+	$Personaje_Codigo/Nivel_Banco_Mision2.hide()
+	$Personaje_Codigo/Nivel_Banco_Mision3.show()
+	$Oro3.hide()
+	$Oro3/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas2.show()
 	$Plataformas2.set_deferred("enabled", true)
 	$Activador_Pincho.show()
+	$Activador_Pincho/CollisionShape2D.set_deferred("disabled", false)
+	$Pincho.show()
+	$Pincho/CollisionShape2D.set_deferred("disabled", false)
 	$Plataforma3.hide()
 	$Plataforma3.set_deferred("enabled", false)
-	$Oro3.show()
-	$Oro3/CollisionShape2D.set_deferred("disabled", false)
-	
+	$Oro4.show()
+	$Oro4/CollisionShape2D.set_deferred("disabled", false)
+	oro += 1
+
+func _on_oro_4_body_entered(_body: Node2D) -> void:
+	$Oro4.hide()
+	$Oro4/CollisionShape2D.set_deferred("disabled", true)
+	$Plataforma4.show()
+	$Plataforma4.set_deferred("enabled", true)
+	$Plataforma2.show()
+	$Plataforma2.set_deferred("enabled", true)
+	oro += 1
+
+func _on_pincho_body_entered(_body: Node2D) -> void:
+	# ir al nivel-banco
+	get_tree().reload_current_scene()
