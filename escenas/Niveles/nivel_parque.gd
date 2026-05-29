@@ -100,33 +100,33 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 	$Plataformas3.set_deferred("collision_enabled", true)
 
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto.hide()
-	$ElementoSecreto/CollisionShape2D.set_deferred("disabled", true)
+	$Arbol1.hide()
+	$Arbol1/CollisionShape2D.set_deferred("disabled", true)
 	arboles += 1
 
 func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto2.hide()
-	$ElementoSecreto2/CollisionShape2D.set_deferred("disabled", true)
+	$Arbol2.hide()
+	$Arbol2/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas5.hide()
 	$Plataformas7.show()
 	$Plataformas7.set_deferred("collision_enabled", true)
-	$ElementoSecreto3.show()
-	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", false)
+	$Arbol3.show()
+	$Arbol3/CollisionShape2D.set_deferred("disabled", false)
 	arboles += 1
 
 func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto3.hide()
-	$ElementoSecreto3/CollisionShape2D.set_deferred("disabled", true)
+	$Arbol3.hide()
+	$Arbol3/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas6.hide()
 	$Plataformas8.show()
 	$Plataformas8.set_deferred("collision_enabled", true)
-	$ElementoSecreto4.show()
-	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", false)
+	$Arbol4.show()
+	$Arbol4/CollisionShape2D.set_deferred("disabled", false)
 	arboles += 1
 
 func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
-	$ElementoSecreto4.hide()
-	$ElementoSecreto4/CollisionShape2D.set_deferred("disabled", true)
+	$Arbol4.hide()
+	$Arbol4/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas7.hide()
 	$Plataformas9.show()
 	$Plataformas9.set_deferred("collision_enabled", true)

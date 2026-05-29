@@ -604,7 +604,6 @@ polygon = PackedVector2Array(43, -25, 9694, 65, 9812, 2869, -4748, 2788, -4677, 
 
 [node name="Activador_Pincho" type="Area2D" parent="." unique_id=1049894143]
 position = Vector2(3230, 1243)
-collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Activador_Pincho" unique_id=1876723047]
