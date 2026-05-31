@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ts2chlmk3opn"]
+[gd_scene load_steps=9 format=3 uid="uid://ts2chlmk3opn"]
 
 [ext_resource type="Script" uid="uid://c7qbxr5cph1li" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Hacker/escena_hacker_final.gd" id="1_k71jb"]
 [ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="2_k338d"]
@@ -59,27 +59,29 @@ _data = {
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qx6fr"]
 texture = ExtResource("3_0hyrv")
 
-[node name="Escena Hacker" type="Node2D" unique_id=1439402940]
+[node name="Escena Hacker" type="Node2D"]
 script = ExtResource("1_k71jb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=770883164]
-libraries/ = SubResource("AnimationLibrary_uei1j")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uei1j")
+}
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=2042888868]
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.748922, 16.161886)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1076927924]
+[node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_k338d")
 volume_db = -10.0
 autoplay = true
 bus = &"SFX"
 parameters/looping = true
 
-[node name="Hacker" type="Panel" parent="." unique_id=359858062]
+[node name="Hacker" type="Panel" parent="."]
 offset_left = 1.0
 offset_top = -1.0
 offset_right = 770.0
@@ -87,7 +89,7 @@ offset_bottom = 454.0
 scale = Vector2(1.4899901, 1.4258133)
 theme_override_styles/panel = SubResource("StyleBoxTexture_qx6fr")
 
-[node name="Dialogo1" type="RichTextLabel" parent="." unique_id=670869397]
+[node name="Dialogo1" type="RichTextLabel" parent="."]
 offset_left = 300.0
 offset_top = 461.00003
 offset_right = 769.93854
@@ -97,7 +99,7 @@ bbcode_enabled = true
 text = "[b][color=#F5F5F8][shake]Por ahora has logrado arreglar el código, pero la próxima vez no será tan fácil.[/shake][/color][/b]"
 scroll_active = false
 
-[node name="Dialogo2" type="RichTextLabel" parent="." unique_id=1676877932]
+[node name="Dialogo2" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 300.0
 offset_top = 459.99997
@@ -108,7 +110,7 @@ bbcode_enabled = true
 text = "[b][color=#F5F5F8][shake]Nos volveremos a ver pronto.[/shake][/color][/b]"
 scroll_active = false
 
-[node name="Avanzar" type="Label" parent="." unique_id=528797138]
+[node name="Avanzar" type="Label" parent="."]
 offset_left = 725.0
 offset_top = 550.0
 offset_right = 931.0

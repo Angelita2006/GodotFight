@@ -39,16 +39,55 @@ func cargar_datos_partida():
 			Global.llave_final_obtenida = true
 
 func _ready() -> void:
+	
+	if Global.misiones_principales_completadas == true:
+		$PersonajePrincipal/Camera2D/TextoMision4.hide()
+		$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision4.hide()
+		$PersonajePrincipal/Camera2D/TextoMision3.hide()
+		$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision3.hide()
+		$PersonajePrincipal/Camera2D/TextoMision2.hide()
+		$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision2.hide()
+		$PersonajePrincipal/Camera2D/TextoMision1.hide()
+		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+		$PersonajePrincipal/Camera2D/TextoMision5.show()
+		$PersonajePrincipal/Camera2D/Mision5NoCompleta.show()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal2.show()
+	elif Global.mision_final_completada == true:
+		$PersonajePrincipal/Camera2D/TextoMision4.hide()
+		$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision4.hide()
+		$PersonajePrincipal/Camera2D/TextoMision3.hide()
+		$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision3NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision3.hide()
+		$PersonajePrincipal/Camera2D/TextoMision2.hide()
+		$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision2NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision2.hide()
+		$PersonajePrincipal/Camera2D/TextoMision1.hide()
+		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/TextoMision5.show()
+		$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/Mision5Completa.show()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal2.show()
+	
 	$AnimationPlayer.play("fade_in")
 	
 	if Global.volviendo_de_biblioteca:
 		$PersonajePrincipal.global_position = $Biblioteca/Puerta/Area.global_position
-		$PersonajePrincipal.global_position.y += 25
+		$PersonajePrincipal.global_position.y += 30
 		Global.volviendo_de_biblioteca = false
 		
 	elif Global.volviendo_de_ayuntamiento:
 		$PersonajePrincipal.global_position = $Ayuntamiento/Puerta/Area.global_position
-		$PersonajePrincipal.global_position.y += 25
+		$PersonajePrincipal.global_position.y += 30
 		Global.volviendo_de_ayuntamiento = false
 	
 	elif Global.volviendo_de_banco:
@@ -87,41 +126,49 @@ func _process(_delta: float) -> void:
 		menu_pausa.show()
 		$PersonajePrincipal/Camera2D.enabled = false
 	
-	if Global.llave_verde_obtenida:
-		$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
-		$PersonajePrincipal/Camera2D/Mision1Completa.show()
+	if Global.misiones_principales_completadas == true:
+		return
+	else:
+		if Global.llave_verde_obtenida:
+			$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
+			$PersonajePrincipal/Camera2D/Mision1Completa.show()
+		
+		if Global.llave_purpura_obtenida:
+			$PersonajePrincipal/Camera2D/Mision2NoCompleta.hide()
+			$PersonajePrincipal/Camera2D/Mision2Completa.show()
+		
+		if Global.llave_plateada_obtenida:
+			$PersonajePrincipal/Camera2D/Mision3NoCompleta.hide()
+			$PersonajePrincipal/Camera2D/Mision3Completa.show()
+		
+		if Global.llave_dorada_obtenida:
+			$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
+			$PersonajePrincipal/Camera2D/Mision4Completa.show()
+			await get_tree().create_timer(1).timeout
+			$PersonajePrincipal/Camera2D/TextoMision4.hide()
+			$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision4.hide()
+			$PersonajePrincipal/Camera2D/TextoMision3.hide()
+			$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision3.hide()
+			$PersonajePrincipal/Camera2D/TextoMision2.hide()
+			$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision2.hide()
+			$PersonajePrincipal/Camera2D/TextoMision1.hide()
+			$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+			$PersonajePrincipal/Camera2D/TextoMision5.show()
+			$PersonajePrincipal/Camera2D/Mision5NoCompleta.show()
+			$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
+			$PersonajePrincipal/Camera2D/TextoMisionPrincipal2.show()
+			Global.misiones_principales_completadas = true
 	
-	if Global.llave_purpura_obtenida:
-		$PersonajePrincipal/Camera2D/Mision2NoCompleta.hide()
-		$PersonajePrincipal/Camera2D/Mision2Completa.show()
-	
-	if Global.llave_plateada_obtenida:
-		$PersonajePrincipal/Camera2D/Mision3NoCompleta.hide()
-		$PersonajePrincipal/Camera2D/Mision3Completa.show()
-	
-	if Global.llave_dorada_obtenida:
-		$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
-		$PersonajePrincipal/Camera2D/Mision4Completa.show()
-		await get_tree().create_timer(1).timeout
-		$PersonajePrincipal/Camera2D/TextoMision4.hide()
-		$PersonajePrincipal/Camera2D/Mision4Completa.hide()
-		$PersonajePrincipal/Camera2D/Mision4.hide()
-		$PersonajePrincipal/Camera2D/TextoMision3.hide()
-		$PersonajePrincipal/Camera2D/Mision3Completa.hide()
-		$PersonajePrincipal/Camera2D/Mision3.hide()
-		$PersonajePrincipal/Camera2D/TextoMision2.hide()
-		$PersonajePrincipal/Camera2D/Mision2Completa.hide()
-		$PersonajePrincipal/Camera2D/Mision2.hide()
-		$PersonajePrincipal/Camera2D/TextoMision1.hide()
-		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
-		$PersonajePrincipal/Camera2D/TextoMision5.show()
-		$PersonajePrincipal/Camera2D/Mision5NoCompleta.show()
-		$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
-		$PersonajePrincipal/Camera2D/TextoMisionPrincipal2.show()
-	
-	if Global.llave_final_obtenida:
-		$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()
-		$PersonajePrincipal/Camera2D/Mision5Completa.show()
+	if Global.mision_final_completada == true:
+		return
+	else:
+		if Global.llave_final_obtenida:
+			$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()
+			$PersonajePrincipal/Camera2D/Mision5Completa.show()
+			Global.mision_final_completada = true
 
 func _on_menu_pausa_hidden() -> void:
 	$PersonajePrincipal/Camera2D.enabled = true

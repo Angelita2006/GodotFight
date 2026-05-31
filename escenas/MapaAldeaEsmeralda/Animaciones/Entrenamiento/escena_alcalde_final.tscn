@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dnyq6bak8a6c3"]
+[gd_scene load_steps=9 format=3 uid="uid://dnyq6bak8a6c3"]
 
 [ext_resource type="Script" uid="uid://bxonrfxu4qs00" path="res://escenas/MapaAldeaEsmeralda/Animaciones/Entrenamiento/escena_alcalde_final.gd" id="1_r056l"]
 [ext_resource type="AudioStream" uid="uid://cy2d7vwxi2efc" path="res://assets/ui/audio/sonido_hacker.mp3" id="2_ynydt"]
@@ -59,33 +59,35 @@ _data = {
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqrn5"]
 texture = ExtResource("3_qrtbn")
 
-[node name="Escena Alcalde Tutorial" type="Node2D" unique_id=230285218]
+[node name="Escena Alcalde Tutorial" type="Node2D"]
 script = ExtResource("1_r056l")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1692741831]
-libraries/ = SubResource("AnimationLibrary_uei1j")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uei1j")
+}
 
-[node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=2011780515]
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.748922, 16.161886)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1882178249]
+[node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ynydt")
 volume_db = -10.0
 autoplay = true
 bus = &"SFX"
 parameters/looping = true
 
-[node name="Alcalde" type="Panel" parent="." unique_id=2081162282]
+[node name="Alcalde" type="Panel" parent="."]
 offset_top = -24.0
 offset_right = 1150.0
 offset_bottom = 671.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_sqrn5")
 
-[node name="Dialogo1" type="RichTextLabel" parent="." unique_id=1845301926]
+[node name="Dialogo1" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 284.0
 offset_top = 488.0
@@ -96,7 +98,7 @@ bbcode_enabled = true
 text = "[b][color=#F5F5F8]Finalmente hemos conseguido arreglar la Aldea Esmeralda.[/color][/b]"
 scroll_active = false
 
-[node name="Dialogo2" type="RichTextLabel" parent="." unique_id=1235292419]
+[node name="Dialogo2" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 284.0
 offset_top = 488.0
@@ -107,7 +109,7 @@ bbcode_enabled = true
 text = "[b][color=#F5F5F8]Y no podría haber sido posible de no ser por tu gran ayuda.[/color][/b]"
 scroll_active = false
 
-[node name="Dialogo3" type="RichTextLabel" parent="." unique_id=569339599]
+[node name="Dialogo3" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 284.0
 offset_top = 488.0
@@ -118,7 +120,7 @@ bbcode_enabled = true
 text = "[b][color=#F5F5F8]Esperamos que el hacker no haga de las suyas de nuevo.[/color][/b]"
 scroll_active = false
 
-[node name="Avanzar" type="Label" parent="." unique_id=380861401]
+[node name="Avanzar" type="Label" parent="."]
 offset_left = 732.0
 offset_top = 577.0
 offset_right = 938.0

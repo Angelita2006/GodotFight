@@ -21,7 +21,7 @@ func cambiar_dialogo():
 		$Dialogo.text = "Gracias por salvar nuestra Aldea Esmeralda, "+str(Global.jugador_nombre)
 		dialogo_actual = 3
 	elif not Global.llave_dorada_obtenida or not Global.llave_plateada_obtenida or not Global.llave_purpura_obtenida or not Global.llave_verde_obtenida:
-		$Dialogo.text = "Todavía no estás preparado, tienes que ayudar a los demás primero"
+		$Dialogo.text = "Todavía tienes que ayudar a los demás."
 	else:
 		$Dialogo.text = "Buenas, "+str(Global.jugador_nombre)+", finalmente tendrás que ayudarnos a reconstruir el ayuntamiento\n(Sí) Pulsa E"
 		dialogo_actual = 2

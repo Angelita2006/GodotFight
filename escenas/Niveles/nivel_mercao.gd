@@ -84,6 +84,7 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 		$Plataformas1/Codigo_Incompleto3.show()
 		
 		$Palabra_faltante.hide()
+		$Palabra_faltante/CollisionShape2D.set_deferred("disabled", true)
 
 func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 	palabra1 = true
@@ -91,6 +92,7 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 	$Plataformas1/Codigo_Incompleto2.show()
 	
 	$Palabra_faltante2.hide()
+	$Palabra_faltante2/CollisionShape2D.set_deferred("disabled", true)
 
 func _on_palabra_faltante_3_body_entered(_body: Node2D) -> void:
 	if !palabra2:
@@ -103,10 +105,10 @@ func _on_palabra_faltante_3_body_entered(_body: Node2D) -> void:
 		$Palabra_faltante3.hide()
 		
 		$Plataformas2.hide()
-		$Plataformas2.collision_enabled = false
+		$Plataformas2.set_deferred("colision_enabled", false)
 		
 		$Plataformas3.show()
-		$Plataformas3.collision_enabled = true
+		$Plataformas3.set_deferred("collision_enabled", true)
 		$Pincho.show()
 
 func _on_activar_aviso_body_entered(_body: Node2D) -> void:

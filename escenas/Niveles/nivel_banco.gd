@@ -30,7 +30,7 @@ func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
 
 func _on_aceptar_pressed() -> void:
-	$Personaje_Codigo/Camera2D.enabled = false
+	$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
@@ -38,12 +38,12 @@ func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	if oro == 5:
+	if oro == 4:
 		Global.llave_dorada_obtenida = true
 		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer2.play()
 		$Final2.show()
-		$Personaje_Codigo/Camera2D.enabled = false
+		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Database.guardar_partida()
 		Database.guardar_tiempo(13, tiempo_total, 0)
@@ -60,6 +60,7 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Oro1.show()
 	$Oro1/CollisionShape2D.set_deferred("disabled", false)
 	$Palabra_faltante.hide()
+	$Palabra_faltante/CollisionShape2D.set_deferred("disabled", true)
 
 func _on_oro_1_body_entered(_body: Node2D) -> void:
 	$Oro1.hide()
@@ -80,10 +81,10 @@ func _on_oro_3_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Nivel_Banco_Mision3.show()
 	$Oro3.hide()
 	$Oro3/CollisionShape2D.set_deferred("disabled", true)
-	$Plataformas2.show()
-	$Plataformas2.set_deferred("enabled", true)
 	$Activador_Pincho.show()
 	$Activador_Pincho/CollisionShape2D.set_deferred("disabled", false)
+	$Plataformas2.show()
+	$Plataformas2.set_deferred("enabled", true)
 	$Pincho.show()
 	$Pincho/CollisionShape2D.set_deferred("disabled", false)
 	$Plataforma3.hide()
