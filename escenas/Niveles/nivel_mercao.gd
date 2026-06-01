@@ -36,18 +36,17 @@ func _process(delta: float) -> void:
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# volver al nivel-mercao
-	get_tree().change_scene_to_file("uid://ut7fnsn5cbc3")
+	get_tree().call_deferred("reload_current_scene")
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	## GUARDAR QUE EL NIVEL HA SIDO COMPLETADO Y SI EL COLECCIONABLE SECRETO HA SIDO RECOGIDO
 	Global.llave_plateada_obtenida = true
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer2.play()
 	$Final2.show()
 	$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 	await $AudioStreamPlayer2.finished
-	Database.guardar_partida()
-	Database.guardar_tiempo(12, tiempo_total, puntos)
+	Global.guardar_partida()
+	Global.guardar_tiempo(12, tiempo_total, puntos)
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 

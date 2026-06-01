@@ -55,6 +55,6 @@ func _on_vendedor_body_exited(body: Node2D) -> void:
 		activo = false
 
 func entrar_nivel():
-	Database.guardar_partida()
+	Global.guardar_partida()
 	# ir al nivel-mercao
 	Cargador.cargar_escena("uid://ut7fnsn5cbc3", false)

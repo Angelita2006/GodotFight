@@ -55,6 +55,6 @@ func _on_banquero_body_exited(body: Node2D) -> void:
 		activo = false
 
 func entrar_nivel():
-	Database.guardar_partida()
+	Global.guardar_partida()
 	# ir al nivel-banco
 	Cargador.cargar_escena("uid://dd8vtcnvb8gy1", false)

@@ -4,7 +4,7 @@ var quitar_glitch = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var fila = Database.obtener_datos_ultima_partida()
+	var fila = Global.obtener_datos_ultima_partida()
 	if fila:
 		if fila[0]["llave_dorada_conseguida"] == 0:
 			quitar_glitch = false

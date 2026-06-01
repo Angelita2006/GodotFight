@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b5iedpw7s5iny"]
+[gd_scene format=3 uid="uid://b5iedpw7s5iny"]
 
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_4v0q5"]
 [ext_resource type="Script" uid="uid://d1n61wwmh5opu" path="res://escenas/Menus/MenuInicio1/menu_inicio_script.gd" id="2_efmvd"]
@@ -143,7 +143,7 @@ texture_margin_left = 3.0
 texture_margin_right = 3.0
 region_rect = Rect2(227, 162, 42, 44)
 
-[node name="Menu Inicio" type="Control" node_paths=PackedStringArray("inicio", "modohistoria", "modopractica", "ranking", "opciones", "editor", "titulo_modohistoria", "titulo_modopractica", "titulo_ranking", "titulo_opciones", "titulojuego", "boton_modo_historia", "boton_modo_practica", "boton_editar_personaje", "boton_ranking", "boton_opciones", "boton_salir", "volver_historia", "volver_practica", "volver_ranking", "volver_opciones", "volver_editor", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "fondo_aldea_esmeralda", "preview_aldea_esmeralda", "fondo_aldea_desierta", "preview_aldea_desierta", "fondo_aldea_helada", "preview_aldea_helada", "fondo_aldea_tropical", "preview_aldea_tropical", "fondo_aldea_volcanica", "preview_aldea_volcanica", "idiomaO", "chico_boton", "chica_boton", "nombre_editor", "fondo_mensaje", "mensaje")]
+[node name="Menu Inicio" type="Control" unique_id=512372797 node_paths=PackedStringArray("inicio", "modohistoria", "modopractica", "ranking", "opciones", "editor", "titulo_modohistoria", "titulo_modopractica", "titulo_ranking", "titulo_opciones", "titulojuego", "boton_modo_historia", "boton_modo_practica", "boton_editar_personaje", "boton_ranking", "boton_opciones", "boton_salir", "volver_historia", "volver_practica", "volver_ranking", "volver_opciones", "volver_editor", "idiomat", "idioma", "volument", "volumen", "controlest", "controles", "creditost", "creditos", "fondo_aldea_esmeralda", "preview_aldea_esmeralda", "fondo_aldea_desierta", "preview_aldea_desierta", "fondo_aldea_helada", "preview_aldea_helada", "fondo_aldea_tropical", "preview_aldea_tropical", "fondo_aldea_volcanica", "preview_aldea_volcanica", "idiomaO", "chico_boton", "chica_boton", "nombre_editor", "fondo_mensaje", "mensaje")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -202,7 +202,7 @@ nombre_editor = NodePath("Editor De Personaje/NombreEditor")
 fondo_mensaje = NodePath("Fondo Mensaje")
 mensaje = NodePath("Mensaje guardado")
 
-[node name="Fondo" type="Panel" parent="."]
+[node name="Fondo" type="Panel" parent="." unique_id=236050583]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.999998
@@ -214,7 +214,7 @@ theme = ExtResource("1_4v0q5")
 theme_override_styles/panel = ExtResource("2_k48sw")
 script = ExtResource("4_iukku")
 
-[node name="TituloJuego" type="Label" parent="."]
+[node name="TituloJuego" type="Label" parent="." unique_id=419764664]
 layout_mode = 0
 offset_left = -20.0
 offset_top = 69.00001
@@ -225,7 +225,7 @@ theme_type_variation = &"HeaderLarge"
 theme_override_styles/normal = SubResource("StyleBoxTexture_y7003")
 script = ExtResource("4_iukku")
 
-[node name="Inicio" type="VBoxContainer" parent="."]
+[node name="Inicio" type="VBoxContainer" parent="." unique_id=1129615488]
 texture_filter = 1
 layout_mode = 0
 offset_left = 775.0
@@ -239,7 +239,7 @@ theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="ModoHistoria" type="Button" parent="Inicio"]
+[node name="ModoHistoria" type="Button" parent="Inicio" unique_id=258792934]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -247,7 +247,7 @@ theme_override_fonts/font = SubResource("FontVariation_sej2m")
 theme_override_font_sizes/font_size = 25
 text = "Modo Historia"
 
-[node name="ModoPractica" type="Button" parent="Inicio"]
+[node name="ModoPractica" type="Button" parent="Inicio" unique_id=99345782]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -256,7 +256,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 disabled = true
 text = "Modo Práctica"
 
-[node name="EditarPersonaje" type="Button" parent="Inicio"]
+[node name="EditarPersonaje" type="Button" parent="Inicio" unique_id=967908629]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -264,7 +264,7 @@ theme_override_fonts/font = SubResource("FontVariation_sej2m")
 theme_override_font_sizes/font_size = 25
 text = "Editar Personaje"
 
-[node name="Ranking" type="Button" parent="Inicio"]
+[node name="Ranking" type="Button" parent="Inicio" unique_id=363961980]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -272,7 +272,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Mejores Tiempos"
 
-[node name="Opciones" type="Button" parent="Inicio"]
+[node name="Opciones" type="Button" parent="Inicio" unique_id=382489890]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -280,7 +280,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Opciones"
 
-[node name="Salir" type="Button" parent="Inicio"]
+[node name="Salir" type="Button" parent="Inicio" unique_id=438444283]
 layout_mode = 2
 theme = SubResource("Theme_nflbw")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -288,7 +288,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ejoup")
 text = "Salir"
 
-[node name="Modo Historia" type="Label" parent="."]
+[node name="Modo Historia" type="Label" parent="." unique_id=537815855]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -308,7 +308,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="Fondo Preview" type="Panel" parent="."]
+[node name="Fondo Preview" type="Panel" parent="." unique_id=1985244658]
 visible = false
 layout_mode = 0
 offset_left = 561.0
@@ -319,7 +319,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5wn5b")
 script = ExtResource("4_iukku")
 
-[node name="Preview Aldea Esmeralda" type="Panel" parent="."]
+[node name="Preview Aldea Esmeralda" type="Panel" parent="." unique_id=1918919819]
 visible = false
 layout_mode = 0
 offset_left = 563.0
@@ -330,7 +330,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ylgfl")
 script = ExtResource("4_iukku")
 
-[node name="Fondo Preview2" type="Panel" parent="."]
+[node name="Fondo Preview2" type="Panel" parent="." unique_id=522244489]
 visible = false
 layout_mode = 0
 offset_left = 562.0
@@ -341,7 +341,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5wn5b")
 script = ExtResource("4_iukku")
 
-[node name="Preview Aldea Desierta" type="Panel" parent="."]
+[node name="Preview Aldea Desierta" type="Panel" parent="." unique_id=1848101838]
 visible = false
 layout_mode = 0
 offset_left = 564.0
@@ -352,7 +352,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_jxng7")
 script = ExtResource("4_iukku")
 
-[node name="Fondo Preview3" type="Panel" parent="."]
+[node name="Fondo Preview3" type="Panel" parent="." unique_id=1292447076]
 visible = false
 layout_mode = 0
 offset_left = 561.0
@@ -363,7 +363,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5wn5b")
 script = ExtResource("4_iukku")
 
-[node name="Preview Aldea Helada" type="Panel" parent="."]
+[node name="Preview Aldea Helada" type="Panel" parent="." unique_id=1109732082]
 visible = false
 layout_mode = 0
 offset_left = 563.0
@@ -374,7 +374,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_sv4qk")
 script = ExtResource("4_iukku")
 
-[node name="Fondo Preview4" type="Panel" parent="."]
+[node name="Fondo Preview4" type="Panel" parent="." unique_id=1558741424]
 visible = false
 layout_mode = 0
 offset_left = 563.0
@@ -385,7 +385,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5wn5b")
 script = ExtResource("4_iukku")
 
-[node name="Preview Aldea Tropical" type="Panel" parent="."]
+[node name="Preview Aldea Tropical" type="Panel" parent="." unique_id=1596287785]
 visible = false
 layout_mode = 0
 offset_left = 565.0
@@ -396,7 +396,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_wwt0m")
 script = ExtResource("4_iukku")
 
-[node name="Fondo Preview5" type="Panel" parent="."]
+[node name="Fondo Preview5" type="Panel" parent="." unique_id=555836221]
 visible = false
 layout_mode = 0
 offset_left = 564.0
@@ -407,7 +407,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5wn5b")
 script = ExtResource("4_iukku")
 
-[node name="Preview Aldea Volcanica" type="Panel" parent="."]
+[node name="Preview Aldea Volcanica" type="Panel" parent="." unique_id=366066864]
 visible = false
 layout_mode = 0
 offset_left = 566.0
@@ -418,7 +418,7 @@ scale = Vector2(0.94626635, 0.89878786)
 theme_override_styles/panel = SubResource("StyleBoxTexture_b8u60")
 script = ExtResource("4_iukku")
 
-[node name="MODO HISTORIA" type="VBoxContainer" parent="."]
+[node name="MODO HISTORIA" type="VBoxContainer" parent="." unique_id=1090809064]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -433,7 +433,7 @@ theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="Mapa Aldea Esmeralda" type="Button" parent="MODO HISTORIA"]
+[node name="Mapa Aldea Esmeralda" type="Button" parent="MODO HISTORIA" unique_id=1338840]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"FlatButton"
@@ -442,7 +442,7 @@ theme_override_fonts/font = SubResource("FontVariation_hymay")
 theme_override_font_sizes/font_size = 25
 text = "Aldea Esmeralda"
 
-[node name="Mapa Aldea Desierta" type="Button" parent="MODO HISTORIA"]
+[node name="Mapa Aldea Desierta" type="Button" parent="MODO HISTORIA" unique_id=1214558512]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -451,7 +451,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 disabled = true
 text = "Aldea Desierta"
 
-[node name="Mapa Aldea Helada" type="Button" parent="MODO HISTORIA"]
+[node name="Mapa Aldea Helada" type="Button" parent="MODO HISTORIA" unique_id=803793190]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -460,7 +460,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 disabled = true
 text = "Aldea Helada"
 
-[node name="Mapa Aldea Tropical" type="Button" parent="MODO HISTORIA"]
+[node name="Mapa Aldea Tropical" type="Button" parent="MODO HISTORIA" unique_id=867589960]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -469,7 +469,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 disabled = true
 text = "Aldea Tropical"
 
-[node name="Mapa Aldea Volcánica" type="Button" parent="MODO HISTORIA"]
+[node name="Mapa Aldea Volcánica" type="Button" parent="MODO HISTORIA" unique_id=414132820]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -479,7 +479,7 @@ disabled = true
 text = "Aldea Volcánica
 "
 
-[node name="Volver" type="Button" parent="."]
+[node name="Volver" type="Button" parent="." unique_id=1220205993]
 visible = false
 layout_mode = 0
 offset_left = 335.0
@@ -494,7 +494,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 text = "Volver"
 script = ExtResource("4_iukku")
 
-[node name="Modo Practica" type="Label" parent="."]
+[node name="Modo Practica" type="Label" parent="." unique_id=780666699]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -514,7 +514,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="MODO PRACTICA" type="VBoxContainer" parent="."]
+[node name="MODO PRACTICA" type="VBoxContainer" parent="." unique_id=1956705974]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -529,7 +529,7 @@ theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="Mapa Aldea Esmeralda" type="Button" parent="MODO PRACTICA"]
+[node name="Mapa Aldea Esmeralda" type="Button" parent="MODO PRACTICA" unique_id=1911477465]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"FlatButton"
@@ -538,7 +538,7 @@ theme_override_fonts/font = SubResource("FontVariation_hymay")
 theme_override_font_sizes/font_size = 25
 text = "Aldea Esmeralda"
 
-[node name="Mapa Aldea Desierta" type="Button" parent="MODO PRACTICA"]
+[node name="Mapa Aldea Desierta" type="Button" parent="MODO PRACTICA" unique_id=1136237501]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -547,7 +547,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 disabled = true
 text = "Aldea Desierta"
 
-[node name="Mapa Aldea Helada" type="Button" parent="MODO PRACTICA"]
+[node name="Mapa Aldea Helada" type="Button" parent="MODO PRACTICA" unique_id=924765908]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -556,7 +556,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 disabled = true
 text = "Aldea Helada"
 
-[node name="Mapa Aldea Tropical" type="Button" parent="MODO PRACTICA"]
+[node name="Mapa Aldea Tropical" type="Button" parent="MODO PRACTICA" unique_id=181179531]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -565,7 +565,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 disabled = true
 text = "Aldea Tropical"
 
-[node name="Mapa Aldea Volcánica" type="Button" parent="MODO PRACTICA"]
+[node name="Mapa Aldea Volcánica" type="Button" parent="MODO PRACTICA" unique_id=601090583]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -575,7 +575,7 @@ disabled = true
 text = "Aldea Volcánica
 "
 
-[node name="Volver" type="Button" parent="MODO PRACTICA"]
+[node name="Volver" type="Button" parent="MODO PRACTICA" unique_id=1428630335]
 layout_mode = 2
 theme = SubResource("Theme_dw6y1")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -583,7 +583,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_ta11n")
 text = "Volver"
 
-[node name="Ranking" type="Label" parent="."]
+[node name="Ranking" type="Label" parent="." unique_id=1709803976]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -603,7 +603,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="RANKING" type="VBoxContainer" parent="."]
+[node name="RANKING" type="VBoxContainer" parent="." unique_id=954743996]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -618,11 +618,11 @@ theme_override_constants/separation = 50
 alignment = 2
 script = ExtResource("4_iukku")
 
-[node name="Panel" type="Panel" parent="RANKING"]
+[node name="Panel" type="Panel" parent="RANKING" unique_id=1929391759]
 layout_mode = 2
 script = ExtResource("7_14j3c")
 
-[node name="Top" type="Label" parent="RANKING/Panel"]
+[node name="Top" type="Label" parent="RANKING/Panel" unique_id=1530279245]
 layout_mode = 0
 offset_left = -260.01215
 offset_top = -469.5252
@@ -632,7 +632,7 @@ size_flags_horizontal = 4
 size_flags_stretch_ratio = 0.0
 text = "Posición"
 
-[node name="Nivel" type="Label" parent="RANKING/Panel"]
+[node name="Nivel" type="Label" parent="RANKING/Panel" unique_id=971125606]
 layout_mode = 0
 offset_left = -10.947876
 offset_top = -470.74432
@@ -645,11 +645,11 @@ theme_override_fonts/font = ExtResource("8_naxbc")
 text = "Nivel       "
 horizontal_alignment = 1
 
-[node name="DuracionPartida" type="Label" parent="RANKING/Panel"]
+[node name="DuracionPartida" type="Label" parent="RANKING/Panel" unique_id=1794898766]
 layout_mode = 0
-offset_left = 160.56891
+offset_left = 201.6235
 offset_top = -473.18225
-offset_right = 460.5689
+offset_right = 501.6235
 offset_bottom = -433.18225
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"
@@ -658,11 +658,11 @@ theme_override_fonts/font = ExtResource("8_naxbc")
 text = "Record de tiempo "
 horizontal_alignment = 1
 
-[node name="PuntosExtra" type="Label" parent="RANKING/Panel"]
+[node name="PuntosExtra" type="Label" parent="RANKING/Panel" unique_id=1238109577]
 layout_mode = 0
-offset_left = 416.9318
+offset_left = 480.7945
 offset_top = -469.5252
-offset_right = 716.93225
+offset_right = 780.7949
 offset_bottom = -429.5252
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"
@@ -671,7 +671,7 @@ theme_override_fonts/font = ExtResource("8_naxbc")
 text = "Puntos"
 horizontal_alignment = 1
 
-[node name="Contenedor" type="GridContainer" parent="RANKING/Panel"]
+[node name="Contenedor" type="GridContainer" parent="RANKING/Panel" unique_id=1596877847]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -690,7 +690,7 @@ theme_override_constants/h_separation = 80
 theme_override_constants/v_separation = 10
 columns = 4
 
-[node name="Volver" type="Button" parent="RANKING"]
+[node name="Volver" type="Button" parent="RANKING" unique_id=994692755]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -700,7 +700,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_aojvl")
 text = "Volver"
 
-[node name="Opciones" type="Label" parent="."]
+[node name="Opciones" type="Label" parent="." unique_id=316201674]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -720,7 +720,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="OPCIONES" type="VBoxContainer" parent="."]
+[node name="OPCIONES" type="VBoxContainer" parent="." unique_id=92908888]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -735,7 +735,7 @@ theme_override_constants/separation = 50
 alignment = 1
 script = ExtResource("4_iukku")
 
-[node name="Idioma" type="Button" parent="OPCIONES"]
+[node name="Idioma" type="Button" parent="OPCIONES" unique_id=1644358299]
 layout_mode = 2
 theme = SubResource("Theme_synl5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -743,7 +743,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
 text = "Idioma"
 
-[node name="Audio" type="Button" parent="OPCIONES"]
+[node name="Audio" type="Button" parent="OPCIONES" unique_id=340257944]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"FlatButton"
@@ -752,7 +752,7 @@ theme_override_fonts/font = SubResource("FontVariation_5mkd5")
 theme_override_font_sizes/font_size = 25
 text = "Audio"
 
-[node name="Controles" type="Button" parent="OPCIONES"]
+[node name="Controles" type="Button" parent="OPCIONES" unique_id=332915368]
 layout_mode = 2
 theme = SubResource("Theme_synl5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -760,7 +760,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
 text = "Controles"
 
-[node name="Créditos" type="Button" parent="OPCIONES"]
+[node name="Créditos" type="Button" parent="OPCIONES" unique_id=2003105073]
 layout_mode = 2
 theme = SubResource("Theme_synl5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -768,7 +768,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
 text = "Créditos"
 
-[node name="Volver" type="Button" parent="OPCIONES"]
+[node name="Volver" type="Button" parent="OPCIONES" unique_id=1991201211]
 layout_mode = 2
 theme = SubResource("Theme_synl5")
 theme_override_colors/font_color = Color(0.5047524, 0.343952, 0.30208102, 1)
@@ -776,7 +776,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_hymay")
 text = "Volver"
 
-[node name="IdiomaT" type="Label" parent="."]
+[node name="IdiomaT" type="Label" parent="." unique_id=1094718581]
 visible = false
 layout_mode = 0
 offset_left = 763.0
@@ -785,7 +785,7 @@ offset_right = 903.0
 offset_bottom = 206.00002
 text = "Idioma"
 
-[node name="CambiarIdioma" type="VBoxContainer" parent="."]
+[node name="CambiarIdioma" type="VBoxContainer" parent="." unique_id=1931286267]
 visible = false
 layout_mode = 0
 offset_left = 620.0
@@ -794,7 +794,7 @@ offset_right = 1040.0
 offset_bottom = 383.0001
 theme = ExtResource("1_4v0q5")
 
-[node name="Idioma2" type="OptionButton" parent="CambiarIdioma"]
+[node name="Idioma2" type="OptionButton" parent="CambiarIdioma" unique_id=1671473257]
 layout_mode = 2
 theme = ExtResource("1_4v0q5")
 language = "es"
@@ -808,7 +808,7 @@ popup/item_1/text = "english"
 popup/item_1/icon = ExtResource("10_muuqm")
 popup/item_1/id = 1
 
-[node name="VolumenT" type="Label" parent="."]
+[node name="VolumenT" type="Label" parent="." unique_id=1438846457]
 visible = false
 layout_mode = 0
 offset_left = 742.0
@@ -817,7 +817,7 @@ offset_right = 897.0
 offset_bottom = 289.00003
 text = "Volumen"
 
-[node name="Volumen" type="HSlider" parent="."]
+[node name="Volumen" type="HSlider" parent="." unique_id=253848745]
 visible = false
 layout_mode = 0
 offset_left = 541.99994
@@ -837,7 +837,7 @@ max_value = 1.5
 step = 0.005
 value = 0.9
 
-[node name="ControlesT" type="Label" parent="."]
+[node name="ControlesT" type="Label" parent="." unique_id=312305286]
 visible = false
 layout_mode = 0
 offset_left = 733.0
@@ -846,7 +846,7 @@ offset_right = 898.0
 offset_bottom = 186.00002
 text = "Controles"
 
-[node name="Controles" type="Panel" parent="."]
+[node name="Controles" type="Panel" parent="." unique_id=1980580746]
 visible = false
 layout_mode = 0
 offset_left = 608.0
@@ -856,7 +856,7 @@ offset_bottom = 197.00003
 scale = Vector2(9.874621, 12.064967)
 theme_override_styles/panel = SubResource("StyleBoxTexture_7hf8v")
 
-[node name="CreditosT" type="Label" parent="."]
+[node name="CreditosT" type="Label" parent="." unique_id=1753208698]
 visible = false
 layout_mode = 0
 offset_left = 738.0
@@ -866,7 +866,7 @@ offset_bottom = 177.00002
 theme = ExtResource("1_4v0q5")
 text = "Créditos"
 
-[node name="Creditos" type="RichTextLabel" parent="."]
+[node name="Creditos" type="RichTextLabel" parent="." unique_id=1334424558]
 visible = false
 layout_mode = 0
 offset_left = 536.0
@@ -896,27 +896,27 @@ María Chico Sánchez
 María de los Ángeles García Valera"
 horizontal_alignment = 1
 
-[node name="Editor De Personaje" parent="." instance=ExtResource("12_muuqm")]
+[node name="Editor De Personaje" parent="." unique_id=1231225056 instance=ExtResource("12_muuqm")]
 visible = false
 layout_mode = 1
 script = null
 
-[node name="Chico" parent="Editor De Personaje" index="5"]
+[node name="Chico" parent="Editor De Personaje" index="5" unique_id=1145532898]
 scale = Vector2(1.0497688, 0.88502854)
 
-[node name="Chica" parent="Editor De Personaje" index="7"]
+[node name="Chica" parent="Editor De Personaje" index="7" unique_id=1811855567]
 scale = Vector2(1.000059, 0.8111811)
 
-[node name="Nombre" parent="Editor De Personaje" index="8"]
+[node name="Nombre" parent="Editor De Personaje" index="8" unique_id=1391089787]
 scale = Vector2(1.4075543, 1.1044825)
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=603376826]
 stream = ExtResource("9_naxbc")
 autoplay = true
 bus = &"SFX"
 parameters/looping = true
 
-[node name="Fondo Mensaje" type="Panel" parent="."]
+[node name="Fondo Mensaje" type="Panel" parent="." unique_id=1842296717]
 visible = false
 layout_mode = 0
 offset_left = 210.00003
@@ -927,7 +927,7 @@ scale = Vector2(2.0999618, 2.4435885)
 theme_override_styles/panel = SubResource("StyleBoxTexture_pj7r2")
 script = ExtResource("4_iukku")
 
-[node name="Mensaje guardado" type="Label" parent="."]
+[node name="Mensaje guardado" type="Label" parent="." unique_id=69995803]
 visible = false
 layout_mode = 0
 offset_left = 271.0

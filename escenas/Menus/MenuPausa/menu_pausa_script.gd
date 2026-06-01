@@ -20,10 +20,9 @@ extends Control
 
 @onready var mensaje_guardado: Label = $"Mensaje guardado"
 @onready var fondo_guardado: Panel = $"Fondo Mensaje"
-var config = ConfigFile.new()
 
 func cargar_ajustes():
-	var fila = Database.obtener_datos_ajustes()
+	var fila = Global.obtener_datos_ajustes()
 	if fila:
 		Global.volumen = fila[0]["volumen"]
 		Global.idioma = fila[0]["idioma"]
@@ -31,11 +30,7 @@ func cargar_ajustes():
 		Global.jugador_nombre = fila[0]["jugador_nombre"]
 
 func _ready() -> void:
-	# Obtener los ajustes de volumen e idioma
 	cargar_ajustes()
-	config.load("user://config.cfg")
-	var idiomaConf = config.get_value("config","idioma",Global.idioma)
-	TranslationServer.set_locale(idiomaConf)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(Global.volumen))
 	volumen.value = Global.volumen
 	if Global.idioma == "es":
@@ -57,7 +52,7 @@ func _on_opciones_pressed() -> void:
 	titulo_opciones.show()
 
 func _on_guardar_pressed() -> void:
-	Database.guardar_partida()
+	Global.guardar_partida()
 	fondo_guardado.show()
 	mensaje_guardado.show()
 	await get_tree().create_timer(1).timeout

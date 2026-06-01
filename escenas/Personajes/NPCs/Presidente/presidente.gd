@@ -57,6 +57,6 @@ func _on_presidente_body_exited(body: Node2D) -> void:
 		activo = false
 
 func entrar_nivel():
-	Database.guardar_partida()
+	Global.guardar_partida()
 	# ir al nivel-final
 	Cargador.cargar_escena("uid://cws4x5uu4r10r", false)

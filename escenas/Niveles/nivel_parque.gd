@@ -44,7 +44,7 @@ func _on_cancelar_pressed() -> void:
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-parque
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	if patos == 3:
@@ -54,9 +54,9 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Final2.show()
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
-		Database.guardar_partida()
+		Global.guardar_partida()
 		puntos = 10 * arboles
-		Database.guardar_tiempo(10, tiempo_total, puntos)
+		Global.guardar_tiempo(10, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 

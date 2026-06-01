@@ -57,12 +57,10 @@ extends Control
 @export var fondo_mensaje: Panel
 @export var mensaje: Label
 
-var config = ConfigFile.new()
-
 var partida_nueva :bool = true
 
 func cargar_ajustes():
-	var fila = Database.obtener_datos_ajustes()
+	var fila = Global.obtener_datos_ajustes()
 	if fila:
 		Global.volumen = fila[0]["volumen"]
 		Global.idioma = fila[0]["idioma"]
@@ -72,9 +70,6 @@ func cargar_ajustes():
 func _ready() -> void:
 	# Obtener los ajustes de volumen e idioma
 	cargar_ajustes()
-	config.load("user://config.cfg")
-	var idiomaConf = config.get_value("config","idioma",Global.idioma)
-	TranslationServer.set_locale(idiomaConf)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(Global.volumen))
 	volumen.value = Global.volumen
 	if Global.idioma == "es":
@@ -240,7 +235,7 @@ func on_opciones_pressed(contenedor: VBoxContainer) -> void:
 	idiomat.show()
 
 func _on_mapa_aldea_esmeralda_pressed() -> void:
-	if !Database.hay_partida_guardada():
+	if !Global.hay_partida_guardada():
 		# ir a la animación del alcalde
 		Cargador.cargar_escena("uid://ysdgfhl3llyi", false)
 	else:
@@ -250,7 +245,7 @@ func _on_mapa_aldea_esmeralda_pressed() -> void:
 func _on_volumen_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(volumen.value))
 	Global.volumen = volumen.value
-	Database.guardar_ajustes()
+	Global.guardar_ajustes()
 
 func _on_audio_pressed() -> void:
 	volumen.show()
@@ -307,7 +302,7 @@ func _on_guardar_pressed() -> void:
 		else:
 			Global.jugador_nombre = "Lisa"
 	
-	Database.guardar_ajustes()
+	Global.guardar_ajustes()
 	
 	fondo_mensaje.show()
 	mensaje.show()
@@ -319,18 +314,12 @@ func _on_idioma_item_selected(index: int) -> void:
 	match index:
 		0:
 			TranslationServer.set_locale("es")
-			guardar_idioma("es")
 			Global.idioma = "es"
-			Database.guardar_ajustes()
+			Global.guardar_ajustes()
 		1:
 			TranslationServer.set_locale("en")
-			guardar_idioma("en")
 			Global.idioma = "en"
-			Database.guardar_ajustes()
-
-func guardar_idioma(idiomaLanguage):
-	config.set_value("config","idioma",idiomaLanguage)
-	config.save("user://config.cfg")
+			Global.guardar_ajustes()
 
 func _on_chico_boton_pressed() -> void:
 	chica_boton.button_pressed = false

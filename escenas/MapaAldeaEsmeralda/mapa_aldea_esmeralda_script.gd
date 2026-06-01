@@ -4,11 +4,11 @@ extends Node2D
 
 func cargar_datos_partida():
 	
-	# Si no hay partida guardada
-	if !Database.hay_partida_guardada():
+	if !Global.hay_partida_guardada():
 		return
 
-	var fila = Database.obtener_datos_ultima_partida()
+	var fila = Global.obtener_datos_ultima_partida()
+	
 	if fila:
 		if fila[0]["pos_x"] != 0:
 			$PersonajePrincipal.global_position.x = fila[0]["pos_x"]

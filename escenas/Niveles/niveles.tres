@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://d3ciuql4c57ow"]
+[gd_resource type="TileSet" format=3 uid="uid://d3ciuql4c57ow"]
 
 [ext_resource type="Texture2D" uid="uid://d0dldaqh3q2tm" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles plataformas.png" id="1_1eq2q"]
 [ext_resource type="Texture2D" uid="uid://cyyhxcw2k1yj4" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles doble plataforma.png" id="2_26t6h"]

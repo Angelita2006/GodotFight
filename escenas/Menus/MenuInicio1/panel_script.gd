@@ -3,14 +3,11 @@ extends Panel
 @onready var tabla := $Contenedor
 
 func _ready() -> void:
-	Database.crear_tablas_si_no_existen()
-	#Database.reiniciar_datos()
-	#Database.insertar_datos_ejemplo()
 	mostrar_ranking()
 
 func mostrar_ranking():
 	
-	var resultados = Database.obtener_todo()
+	var resultados = Global.obtener_todo()
 	
 	# Limpiar filas anteriores (dejando cabecera)
 	var index = 0

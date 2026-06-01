@@ -55,6 +55,6 @@ func _on_bibliotecaria_body_exited(body: Node2D) -> void:
 		activo = false
 
 func entrar_nivel():
-	Database.guardar_partida()
+	Global.guardar_partida()
 	# ir al nivel-biblioteca
 	Cargador.cargar_escena("uid://c725xxgdnccq1", false)

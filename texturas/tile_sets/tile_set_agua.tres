@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dga4njxrd6o6"]
+[gd_resource type="TileSet" format=3 uid="uid://dga4njxrd6o6"]
 
 [ext_resource type="Texture2D" uid="uid://c3fq4ib0altgf" path="res://assets/juego/mapa/aldeaesmeralda/pack1/Water.png" id="1_o2o3e"]
 

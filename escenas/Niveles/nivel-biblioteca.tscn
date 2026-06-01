@@ -116,7 +116,7 @@ position = Vector2(-15.5, 25.5)
 shape = SubResource("RectangleShape2D_ecmox")
 
 [node name="Final" type="StaticBody2D" parent="." unique_id=1553235015]
-position = Vector2(1872, 1136)
+position = Vector2(2224, 1127)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Final" unique_id=60605389]

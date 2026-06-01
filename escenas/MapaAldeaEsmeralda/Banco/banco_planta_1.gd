@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 func _ready() -> void:
 	if Global.volviendo_de_banco:
 		$PersonajePrincipal.position.x = 527
@@ -16,4 +15,3 @@ func _on_salida_body_entered(body: Node2D) -> void:
 		Global.volviendo_de_banco = true
 		# ir al mapa
 		get_tree().call_deferred("change_scene_to_file", "uid://c61j2kork7ar5")
-	

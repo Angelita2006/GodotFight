@@ -12,7 +12,6 @@ func _ready() -> void:
 	tween.tween_property(dialogo1, "visible_characters", dialogo1.get_total_character_count(), 2)
 	dialogo2.hide()
 	dialogo3.hide()
-	#dialogo4.hide()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("continuar"):

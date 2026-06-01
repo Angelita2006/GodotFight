@@ -47,7 +47,7 @@ func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-tutorial
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
@@ -68,9 +68,9 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Final2.show()
 		$Personaje_Codigo/Camera2D.enabled = false
 		await $AudioStreamPlayer2.finished
-		Database.guardar_partida()
+		Global.guardar_partida()
 		puntos = 10 * libros
-		Database.guardar_tiempo(11, tiempo_total, puntos)
+		Global.guardar_tiempo(11, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 

@@ -9,7 +9,7 @@ func _physics_process(_delta):
 	if Global.jugador_aspecto == "chico":
 		
 		animacion_chica.hide()
-		animacion_chico.show()		
+		animacion_chico.show()
 		
 		if Input.is_action_pressed("correr"):
 			_velocidad = 90

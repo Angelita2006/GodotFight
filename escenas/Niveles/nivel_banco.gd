@@ -24,7 +24,7 @@ func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
 	# ir al nivel-banco
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
 
 func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
@@ -45,8 +45,8 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Final2.show()
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
-		Database.guardar_partida()
-		Database.guardar_tiempo(13, tiempo_total, 0)
+		Global.guardar_partida()
+		Global.guardar_tiempo(13, tiempo_total, 0)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
