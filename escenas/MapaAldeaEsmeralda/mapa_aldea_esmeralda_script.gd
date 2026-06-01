@@ -43,15 +43,19 @@ func _ready() -> void:
 	if Global.misiones_principales_completadas == true:
 		$PersonajePrincipal/Camera2D/TextoMision4.hide()
 		$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
 		$PersonajePrincipal/Camera2D/Mision4.hide()
 		$PersonajePrincipal/Camera2D/TextoMision3.hide()
 		$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision3NoCompleta.hide()
 		$PersonajePrincipal/Camera2D/Mision3.hide()
 		$PersonajePrincipal/Camera2D/TextoMision2.hide()
 		$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision2NoCompleta.hide()
 		$PersonajePrincipal/Camera2D/Mision2.hide()
 		$PersonajePrincipal/Camera2D/TextoMision1.hide()
 		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
 		$PersonajePrincipal/Camera2D/TextoMision5.show()
 		$PersonajePrincipal/Camera2D/Mision5NoCompleta.show()
 		$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
@@ -127,8 +131,20 @@ func _process(_delta: float) -> void:
 		$PersonajePrincipal/Camera2D.enabled = false
 	
 	if Global.misiones_principales_completadas == true:
-		return
+		$PersonajePrincipal/Camera2D/TextoMision4.hide()
+		$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision4.hide()
+		$PersonajePrincipal/Camera2D/TextoMision3.hide()
+		$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision3.hide()
+		$PersonajePrincipal/Camera2D/TextoMision2.hide()
+		$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision2.hide()
+		$PersonajePrincipal/Camera2D/TextoMision1.hide()
+		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
 	else:
+		$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()
+		
 		if Global.llave_verde_obtenida:
 			$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
 			$PersonajePrincipal/Camera2D/Mision1Completa.show()
@@ -144,18 +160,25 @@ func _process(_delta: float) -> void:
 		if Global.llave_dorada_obtenida:
 			$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
 			$PersonajePrincipal/Camera2D/Mision4Completa.show()
+		
+		if Global.llave_dorada_obtenida and Global.llave_plateada_obtenida and Global.llave_purpura_obtenida and Global.llave_verde_obtenida:
 			await get_tree().create_timer(1).timeout
 			$PersonajePrincipal/Camera2D/TextoMision4.hide()
 			$PersonajePrincipal/Camera2D/Mision4Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision4NoCompleta.hide()
 			$PersonajePrincipal/Camera2D/Mision4.hide()
 			$PersonajePrincipal/Camera2D/TextoMision3.hide()
 			$PersonajePrincipal/Camera2D/Mision3Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision3NoCompleta.hide()
 			$PersonajePrincipal/Camera2D/Mision3.hide()
 			$PersonajePrincipal/Camera2D/TextoMision2.hide()
 			$PersonajePrincipal/Camera2D/Mision2Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision2NoCompleta.hide()
 			$PersonajePrincipal/Camera2D/Mision2.hide()
 			$PersonajePrincipal/Camera2D/TextoMision1.hide()
 			$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+			$PersonajePrincipal/Camera2D/Mision1NoCompleta.hide()
+			
 			$PersonajePrincipal/Camera2D/TextoMision5.show()
 			$PersonajePrincipal/Camera2D/Mision5NoCompleta.show()
 			$PersonajePrincipal/Camera2D/TextoMisionPrincipal.hide()
@@ -163,7 +186,16 @@ func _process(_delta: float) -> void:
 			Global.misiones_principales_completadas = true
 	
 	if Global.mision_final_completada == true:
-		return
+		#return
+		$PersonajePrincipal/Camera2D/MisionPrincipal.hide()
+		$PersonajePrincipal/Camera2D/Mision1.hide()
+		$PersonajePrincipal/Camera2D/Mision2.hide()
+		$PersonajePrincipal/Camera2D/Mision1Completa.hide()
+		$PersonajePrincipal/Camera2D/Mision5Completa.hide()
+		
+		$PersonajePrincipal/Camera2D/TextoMision5.hide()
+		$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()
+		$PersonajePrincipal/Camera2D/TextoMisionPrincipal2.hide()
 	else:
 		if Global.llave_final_obtenida:
 			$PersonajePrincipal/Camera2D/Mision5NoCompleta.hide()

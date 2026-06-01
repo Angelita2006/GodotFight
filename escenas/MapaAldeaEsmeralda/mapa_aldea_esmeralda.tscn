@@ -836,6 +836,12 @@ menu_pausa = NodePath("Menu Pausa")
 libraries/ = SubResource("AnimationLibrary_uei1j")
 
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer" unique_id=99176328]
+visible = false
+anchors_preset = -1
+anchor_left = -0.3984375
+anchor_top = -0.8410495
+anchor_right = -0.37153304
+anchor_bottom = -0.7478065
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.748922, 16.161886)
@@ -1110,7 +1116,6 @@ offset_bottom = 51.603577
 theme_override_styles/panel = SubResource("StyleBoxTexture_kvbp6")
 
 [node name="Mision5NoCompleta" type="Panel" parent="PersonajePrincipal/Camera2D" unique_id=1651251900]
-visible = false
 offset_left = 435.61475
 offset_top = -365.51318
 offset_right = 475.61475
