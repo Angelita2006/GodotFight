@@ -2,13 +2,14 @@ extends Node2D
 
 var interactuando: bool = false
 
-var palabra_tocada = false
+var palabra1: bool = false
+var palabra2: bool = false
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
 
 func _ready() -> void:
-	$"Personaje_Codigo/Nivel_Tutorial_Mision".hide()
+	$"Personaje_Codigo/Nivel_Final_Mision".hide()
 	$"Personaje_Codigo/Mensaje_Final_Nivel".hide()
 	$Plataforma2.hide()
 	$Palabra_faltante.show()
@@ -31,21 +32,23 @@ func _input(_event: InputEvent) -> void:
 		$Plataformas2.show()
 
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
-	interactuando = true
-	palabra_tocada = true
+	$Plataformas1/Activar_Primer_Mensaje2/CollisionShape2D.set_deferred("disabled", false)
 	$Plataformas1/Codigo_Incompleto.hide()
 	$Plataformas1/Codigo_Completo.show()
-	$Plataforma2.show() 
 	$Palabra_faltante.hide()
+	$Plataforma3.show()
+	$Plataforma3.set_deferred("collision_enabled", true)
+	$Concejal1.show()
+	$Concejal1/CollisionShape2D.set_deferred("disabled", false)
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Primer_Mensaje.hide()
 	$Personaje_Codigo/Mensaje_Final_Nivel.hide()
-	$Personaje_Codigo/Nivel_Tutorial_Mision.show()
+	$Personaje_Codigo/Nivel_Final_Mision.show()
 
 func _on_activar_ultimo_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Primer_Mensaje.hide()
-	$Personaje_Codigo/Nivel_Tutorial_Mision.hide()
+	$Personaje_Codigo/Nivel_Final_Mision2.hide()
 	$Personaje_Codigo/Mensaje_Final_Nivel.show()
 
 func _on_muerte_body_entered(_body: Node2D) -> void:
@@ -74,3 +77,71 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 	Global.guardar_tiempo(14, tiempo_total, 0)
 	# ir a la escena final del alcalde
 	Cargador.cargar_escena("uid://dnyq6bak8a6c3", false)
+
+func _on_concejal_1_body_entered(_body: Node2D) -> void:
+	$Concejal1.hide()
+	$Concejal1/CollisionShape2D.set_deferred("disabled", true)
+	$Plataforma3.hide()
+	$Plataforma3.set_deferred("collision_enabled", false)
+	$Plataforma4.show()
+	$Plataforma4.set_deferred("collision_enabled", true)
+	$Pincho.show()
+	$Pincho/CollisionShape2D.set_deferred("disabled", false)
+	$Activador_Pincho.show()
+	$Activador_Pincho/CollisionShape2D.set_deferred("disabled", false)
+	$Concejal2.show()
+	$Concejal2/CollisionShape2D.set_deferred("disabled", false)
+
+func _on_concejal_2_body_entered(_body: Node2D) -> void:
+	$Concejal2.hide()
+	$Concejal2/CollisionShape2D.set_deferred("disabled", true)
+	$Plataforma5.show()
+	$Plataforma5.set_deferred("enabled", true)
+	$Plataforma6.show()
+	$Plataforma6.set_deferred("enabled", true)
+	$Pincho2.show()
+	$Pincho2/CollisionShape2D.set_deferred("disabled", false)
+	$Activador_Pincho2.show()
+	$Activador_Pincho2/CollisionShape2D.set_deferred("disabled", false)
+	$Concejal3.show()
+	$Concejal3/CollisionShape2D.set_deferred("disabled", false)
+
+func _on_concejal_3_body_entered(_body: Node2D) -> void:
+	$Concejal3.hide()
+	$Concejal3/CollisionShape2D.set_deferred("disabled", true)
+	$Plataformas2.show()
+	$Plataformas2.set_deferred("collision_enabled", true)
+	$Palabra_faltante2.show()
+	$Palabra_faltante2/CollisionShape2D.set_deferred("disabled", false)
+	$Palabra_faltante3.show()
+	$Palabra_faltante3/CollisionShape2D.set_deferred("disabled", false)
+
+func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
+	palabra1 = true
+	$Palabra_faltante2.hide()
+	$Palabra_faltante2/CollisionShape2D.set_deferred("disabled", true)
+	$Plataformas2/Codigo_Incompleto.hide()
+	$Plataformas2/Codigo_Incompleto2.show()
+
+func _on_palabra_faltante_3_body_entered(_body: Node2D) -> void:
+	if palabra1:
+		palabra2 = true
+		$Palabra_faltante3.hide()
+		$Palabra_faltante3/CollisionShape2D.set_deferred("disabled", true)
+		$Plataforma7.show()
+		$Plataforma7.set_deferred("collision_enabled", true)
+		$Plataformas2/Codigo_Incompleto2.hide()
+		$Plataformas2/Codigo_Completo.show()
+		$Plataforma2.show()
+		$Plataforma2.set_deferred("collision_enabled", true)
+	else:
+		$Plataformas2.hide()
+		$Plataformas2.set_deferred("collision_enabled", false)
+
+func _on_pincho_body_entered(_body: Node2D) -> void:
+	# ir al nivel-final
+	get_tree().call_deferred("reload_current_scene")
+
+func _on_activar_primer_mensaje_2_body_entered(_body: Node2D) -> void:
+	$Personaje_Codigo/Nivel_Final_Mision.hide()
+	$Personaje_Codigo/Nivel_Final_Mision2.show()
