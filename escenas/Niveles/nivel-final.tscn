@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://l8kte67wymi1" path="res://escenas/Niveles/nivel-final-pincho1.gd" id="11_rm5by"]
 [ext_resource type="Texture2D" uid="uid://dlikxooqcusye" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Obstaculos.png" id="12_cuuwd"]
 [ext_resource type="Texture2D" uid="uid://ch6ua10tx7vnp" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/concejal.png" id="13_cuuwd"]
-[ext_resource type="Script" uid="uid://d3xfnptcjv6t0" path="res://escenas/Niveles/nivel-mercao-pincho.gd" id="14_08un3"]
+[ext_resource type="Script" uid="uid://kgbdnx3nxasd" path="res://escenas/Niveles/nivel-final-pincho2.gd" id="14_08un3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
 size = Vector2(776, 105)
