@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func mostrar_ranking():
 	
-	var resultados = Global.obtener_todo()
+	var resultados = Database.obtener_todo()
 	
 	# Limpiar filas anteriores (dejando cabecera)
 	var index = 0

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bxlcdd87dnudb" path="res://escenas/Menus/MenuAspecto/editordepersonaje_script.gd" id="1_6p3b6"]
 [ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="3_jenc8"]
 [ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="4_475in"]
-[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="5_we3q0"]
+[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio/animacionflota_script.gd" id="5_we3q0"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="6_475in"]
 [ext_resource type="SpriteFrames" uid="uid://b7cdx0eaiy8xo" path="res://escenas/Personajes/Jugador/jugador_skin_chico.tres" id="7_x30dt"]
 [ext_resource type="SpriteFrames" uid="uid://8qgtemdc46pg" path="res://escenas/Personajes/Jugador/jugador_skin_chica.tres" id="8_4xyqr"]

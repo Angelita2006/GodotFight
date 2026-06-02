@@ -19,16 +19,12 @@ var idioma: String = ""
 
 const RUTA_PARTIDA = "user://partida.json"
 const RUTA_AJUSTES = "user://configuracion.cfg"
-const RUTA_TIEMPOS = "user://tiempos.json"
 
 func _ready() -> void:
 	# Inicializa los archivos con valores por defecto si no existen
 	_crear_archivos_si_no_existen()
 
 func _crear_archivos_si_no_existen() -> void:
-	# Inicializar tiempos
-	if not FileAccess.file_exists(RUTA_TIEMPOS):
-		_guardar_json(RUTA_TIEMPOS, [])
 	
 	# Inicializar ajustes por defecto
 	if not FileAccess.file_exists(RUTA_AJUSTES):
@@ -56,16 +52,6 @@ func _cargar_json(ruta: String) -> Variant:
 		if json.parse(contenido) == OK:
 			return json.get_data()
 	return null
-
-func insertar_datos_ejemplo() -> void:
-	var ejemplos = [
-		{"jugador": "Ana", "nivel": 1, "duracion": 300.0, "puntos": 0},
-		{"jugador": "Ana", "nivel": 2, "duracion": 240.0, "puntos": 0}
-	]
-	_guardar_json(RUTA_TIEMPOS, ejemplos)
-
-func reiniciar_datos() -> void:
-	_guardar_json(RUTA_TIEMPOS, [])
 
 func hay_partida_guardada() -> bool:
 	return FileAccess.file_exists(RUTA_PARTIDA)
@@ -118,30 +104,3 @@ func obtener_datos_ajustes() -> Array:
 		print([datos])
 		return [datos] # Mantiene el formato de Array que esperaba tu lógica
 	return []
-
-func guardar_tiempo(nivel: int, duracion: float, puntos: int) -> void:
-	var tiempos = _cargar_json(RUTA_TIEMPOS)
-	if not tiempos is Array:
-		tiempos = []
-		
-	var nuevo_tiempo = {
-		"jugador": str(Global.jugador_nombre),
-		"nivel": nivel,
-		"duracion": duracion,
-		"puntos": puntos
-	}
-	
-	tiempos.append(nuevo_tiempo)
-	_guardar_json(RUTA_TIEMPOS, tiempos)
-
-func obtener_todo() -> Array:
-	var tiempos = _cargar_json(RUTA_TIEMPOS)
-	
-	# Si el archivo no existe o está vacío, devolvemos un array vacío
-	if not tiempos is Array or tiempos.is_empty():
-		return []
-	
-	# Ordenamos el array de menor a mayor duración (ASC)
-	tiempos.sort_custom(func(a, b): return a["duracion"] < b["duracion"])
-	
-	return tiempos

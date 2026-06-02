@@ -11,7 +11,7 @@
 [ext_resource type="FontFile" uid="uid://31cepyt2ycy0" path="res://assets/ui/fuentes/Silver.ttf" id="9_7xcs1"]
 [ext_resource type="Texture2D" uid="uid://detp5de33uw43" path="res://assets/ui/Inventory_Spritesheet.png" id="10_75too"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="10_cmpdd"]
-[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="11_7xcs1"]
+[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio/animacionflota_script.gd" id="11_7xcs1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xj00"]
 texture = ExtResource("4_f5nv7")

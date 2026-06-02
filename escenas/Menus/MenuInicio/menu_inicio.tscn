@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b5iedpw7s5iny"]
 
 [ext_resource type="Theme" uid="uid://c5oao02nxar0q" path="res://texturas/tema_menus/tema.tres" id="1_4v0q5"]
-[ext_resource type="Script" uid="uid://d1n61wwmh5opu" path="res://escenas/Menus/MenuInicio1/menu_inicio_script.gd" id="2_efmvd"]
+[ext_resource type="Script" uid="uid://d1n61wwmh5opu" path="res://escenas/Menus/MenuInicio/menu_inicio_script.gd" id="2_efmvd"]
 [ext_resource type="StyleBox" uid="uid://c7jt2ypr4twlw" path="res://texturas/tema_menus/fondo.tres" id="2_k48sw"]
 [ext_resource type="FontFile" uid="uid://c71sxsrs2qm1m" path="res://assets/ui/fuentes/mokoto-mokoto-regular-400.otf" id="3_8mefa"]
-[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio1/animacionflota_script.gd" id="4_iukku"]
+[ext_resource type="Script" uid="uid://b55vkciv3fj2c" path="res://escenas/Menus/MenuInicio/animacionflota_script.gd" id="4_iukku"]
 [ext_resource type="Texture2D" uid="uid://cwjnpooklxj8g" path="res://assets/ui/imagenes/titulo_juego.png" id="5_k48sw"]
 [ext_resource type="Texture2D" uid="uid://d1vrjt2oo82sh" path="res://assets/ui/basic_ui_sprites.png" id="5_rkwmd"]
-[ext_resource type="Script" uid="uid://dvd02i0wi5n2c" path="res://escenas/Menus/MenuInicio1/panel_script.gd" id="7_14j3c"]
+[ext_resource type="Script" uid="uid://dvd02i0wi5n2c" path="res://escenas/Menus/MenuInicio/panel_script.gd" id="7_14j3c"]
 [ext_resource type="Texture2D" uid="uid://dewgw45o33h5w" path="res://assets/ui/imagenes/previewAldeaEsmeralda2.png" id="8_7hf8v"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="8_naxbc"]
 [ext_resource type="Texture2D" uid="uid://detp5de33uw43" path="res://assets/ui/Inventory_Spritesheet.png" id="8_ylgfl"]
@@ -660,9 +660,9 @@ horizontal_alignment = 1
 
 [node name="PuntosExtra" type="Label" parent="RANKING/Panel" unique_id=1238109577]
 layout_mode = 0
-offset_left = 480.7945
+offset_left = 464.3727
 offset_top = -469.5252
-offset_right = 780.7949
+offset_right = 764.37317
 offset_bottom = -429.5252
 theme = ExtResource("1_4v0q5")
 theme_type_variation = &"HeaderLarge"

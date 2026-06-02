@@ -56,7 +56,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		await $AudioStreamPlayer2.finished
 		Global.guardar_partida()
 		puntos = 10 * arboles
-		Global.guardar_tiempo(10, tiempo_total, puntos)
+		Database.guardar_tiempo(10, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 

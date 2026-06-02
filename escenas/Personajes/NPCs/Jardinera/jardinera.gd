@@ -52,6 +52,7 @@ func _on_jardinera_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$Dialogo.hide()
 		$Fondo_dialogo.hide()
+		$Colisiones2.set_deferred("disabled", true)
 		activo = false
 	
 func entrar_nivel():

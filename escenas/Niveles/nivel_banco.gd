@@ -46,7 +46,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Global.guardar_partida()
-		Global.guardar_tiempo(13, tiempo_total, 0)
+		Database.guardar_tiempo(13, tiempo_total, 0)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
