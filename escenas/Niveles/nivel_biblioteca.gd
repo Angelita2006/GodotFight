@@ -41,6 +41,9 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Palabra_faltante.hide()
 	$Personaje_Codigo/Nivel_Biblioteca_Mision.hide()
 	$Personaje_Codigo/Nivel_Biblioteca_Mision2.show()
+	$Personaje_Codigo/Fondo_Mision.show()
+	$Personaje_Codigo/Mision.show()
+	$Personaje_Codigo/Estado_Mision.show()
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Nivel_Biblioteca_Mision.show()
@@ -69,12 +72,12 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.enabled = false
 		await $AudioStreamPlayer2.finished
 		Global.guardar_partida()
-		puntos = 10 * libros
+		puntos = libros * 10
 		Database.guardar_tiempo(11, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
-func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
+func _on_libro_body_entered(_body: Node2D) -> void:
 	$Libro1.hide()
 	$Libro1/CollisionShape2D.set_deferred("disabled", true)
 	$Plataforma2.hide()
@@ -83,9 +86,10 @@ func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$Plataformas3.set_deferred("collision_enabled", true)
 	$Libro2.show()
 	$Libro2/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "1")
 	libros += 1
 
-func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
+func _on_libro_2_body_entered(_body: Node2D) -> void:
 	$Libro2.hide()
 	$Libro2/CollisionShape2D.set_deferred("disabled", true)
 	$Plataforma3.hide()
@@ -94,9 +98,10 @@ func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$Plataformas4.set_deferred("collision_enabled", true)
 	$Libro3.show()
 	$Libro3/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "2")
 	libros += 1
 
-func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
+func _on_libro_3_body_entered(_body: Node2D) -> void:
 	$Libro3.hide()
 	$Libro3/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas3.hide()
@@ -105,9 +110,10 @@ func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$Plataformas5.set_deferred("collision_enabled", true)
 	$Libro4.show()
 	$Libro4/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "3")
 	libros += 1
 
-func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
+func _on_libro_4_body_entered(_body: Node2D) -> void:
 	$Libro4.hide()
 	$Libro4/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas4.hide()
@@ -116,9 +122,10 @@ func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$Plataformas6.set_deferred("collision_enabled", true)
 	$Libro5.show()
 	$Libro5/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "4")
 	libros += 1
 
-func _on_elemento_secreto_5_body_entered(_body: Node2D) -> void:
+func _on_libro_5_body_entered(_body: Node2D) -> void:
 	$Libro5.hide()
 	$Libro5/CollisionShape2D.set_deferred("disabled", true)
 	$Plataformas5.hide()
@@ -130,9 +137,11 @@ func _on_elemento_secreto_5_body_entered(_body: Node2D) -> void:
 	$Plataformas6.set_deferred("collision_enabled", false)
 	$Libro6.show()
 	$Libro6/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "5")
 	libros += 1
 
-func _on_elemento_secreto_6_body_entered(_body: Node2D) -> void:
+func _on_libro_6_body_entered(_body: Node2D) -> void:
 	$Libro6.hide()
 	$Libro6/CollisionShape2D.set_deferred("disabled", true)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "6")
 	libros += 1

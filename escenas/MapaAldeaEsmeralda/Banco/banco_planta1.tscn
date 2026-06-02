@@ -828,8 +828,8 @@ position = Vector2(519.57153, 526.83344)
 shape = SubResource("RectangleShape2D_lnalw")
 
 [node name="PersonajePrincipal" parent="." unique_id=1043364792 instance=ExtResource("4_j7okl")]
-position = Vector2(518.32556, 494.59473)
-scale = Vector2(0.176, 0.195)
+position = Vector2(519, 499)
+scale = Vector2(0.15593973, 0.17969519)
 collision_layer = 1
 collision_mask = 1
 

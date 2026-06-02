@@ -38,6 +38,10 @@ region_rect = Rect2(24, 24, 912, 912)
 texture = ExtResource("7_6l5sf")
 region_rect = Rect2(24, 24, 912, 912)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08un3"]
+texture = ExtResource("7_6l5sf")
+region_rect = Rect2(24, 24, 912, 912)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hwu0n"]
 texture = ExtResource("7_6l5sf")
 region_rect = Rect2(24, 24, 912, 912)
@@ -464,6 +468,36 @@ theme_override_font_sizes/font_size = 100
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Fondo_Mision" type="Panel" parent="Personaje_Codigo" unique_id=70741866]
+visible = false
+offset_left = 1061.0
+offset_top = -881.0
+offset_right = 1613.0
+offset_bottom = -781.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_08un3")
+
+[node name="Mision" type="Label" parent="Personaje_Codigo" unique_id=76667289]
+visible = false
+offset_left = 1093.0
+offset_top = -857.0
+offset_right = 1626.0
+offset_bottom = -814.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("5_08un3")
+theme_override_font_sizes/font_size = 42
+text = "Concejales encontrados:   /3"
+
+[node name="Estado_Mision" type="Label" parent="Personaje_Codigo" unique_id=1918780946]
+visible = false
+offset_left = 1529.0
+offset_top = -857.0
+offset_right = 1576.0
+offset_bottom = -814.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("5_08un3")
+theme_override_font_sizes/font_size = 42
+text = "0"
 
 [node name="Advertencia" type="Control" parent="Personaje_Codigo" unique_id=1815830428]
 visible = false

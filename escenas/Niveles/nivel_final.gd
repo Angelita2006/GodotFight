@@ -1,9 +1,10 @@
 extends Node2D
 
-var interactuando: bool = false
-
 var palabra1: bool = false
 var palabra2: bool = false
+
+@onready var concejales: int = 0
+var puntos: int = 0
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
@@ -24,13 +25,6 @@ func _process(delta: float) -> void:
 	tiempo = "%03d:%03d" % [segundos, milesimas]
 	$Personaje_Codigo/Tiempo.text = tiempo
 
-func _input(_event: InputEvent) -> void:
-	if interactuando and Input.is_action_just_pressed("interactuar"):
-		$"Palabra faltante".hide()
-		$Plataformas/Codigo_Incompleto.hide()
-		$Plataformas/Codigo_Completo.show()
-		$Plataformas2.show()
-
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Plataformas1/Activar_Primer_Mensaje2/CollisionShape2D.set_deferred("disabled", false)
 	$Plataformas1/Codigo_Incompleto.hide()
@@ -40,6 +34,9 @@ func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Plataforma3.set_deferred("collision_enabled", true)
 	$Concejal1.show()
 	$Concejal1/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Fondo_Mision.show()
+	$Personaje_Codigo/Mision.show()
+	$Personaje_Codigo/Estado_Mision.show()
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Primer_Mensaje.hide()
@@ -67,16 +64,18 @@ func _on_cancelar_pressed() -> void:
 	$Personaje_Codigo/Advertencia.hide()
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	Global.llave_final_obtenida = true
-	$AudioStreamPlayer.stop()
-	$AudioStreamPlayer2.play()
-	$Final2.show()
-	$Personaje_Codigo/Camera2D.enabled = false
-	await $AudioStreamPlayer2.finished
-	Global.guardar_partida()
-	Database.guardar_tiempo(14, tiempo_total, 0)
-	# ir a la escena final del alcalde
-	Cargador.cargar_escena("uid://dnyq6bak8a6c3", false)
+	if concejales == 3:
+		Global.llave_final_obtenida = true
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.play()
+		$Final2.show()
+		$Personaje_Codigo/Camera2D.enabled = false
+		await $AudioStreamPlayer2.finished
+		Global.guardar_partida()
+		puntos = concejales * 10
+		Database.guardar_tiempo(14, tiempo_total, puntos)
+		# ir a la escena final del alcalde
+		Cargador.cargar_escena("uid://dnyq6bak8a6c3", false)
 
 func _on_concejal_1_body_entered(_body: Node2D) -> void:
 	$Concejal1.hide()
@@ -91,6 +90,8 @@ func _on_concejal_1_body_entered(_body: Node2D) -> void:
 	$Activador_Pincho/CollisionShape2D.set_deferred("disabled", false)
 	$Concejal2.show()
 	$Concejal2/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "1")
+	concejales += 1
 
 func _on_concejal_2_body_entered(_body: Node2D) -> void:
 	$Concejal2.hide()
@@ -105,6 +106,8 @@ func _on_concejal_2_body_entered(_body: Node2D) -> void:
 	$Activador_Pincho2/CollisionShape2D.set_deferred("disabled", false)
 	$Concejal3.show()
 	$Concejal3/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "2")
+	concejales += 1
 
 func _on_concejal_3_body_entered(_body: Node2D) -> void:
 	$Concejal3.hide()
@@ -115,6 +118,8 @@ func _on_concejal_3_body_entered(_body: Node2D) -> void:
 	$Palabra_faltante2/CollisionShape2D.set_deferred("disabled", false)
 	$Palabra_faltante3.show()
 	$Palabra_faltante3/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "3")
+	concejales += 1
 
 func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 	palabra1 = true

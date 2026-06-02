@@ -416,14 +416,6 @@ offset_right = -1093.0
 offset_bottom = -414.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
 
-[node name="Fondo_Mision" type="Panel" parent="Personaje_Codigo" unique_id=1940133434]
-visible = false
-offset_left = 1061.0
-offset_top = -881.0
-offset_right = 1613.0
-offset_bottom = -781.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
-
 [node name="Primer_Mensaje" type="Label" parent="Personaje_Codigo" unique_id=1469666679]
 visible = false
 offset_left = -1511.0
@@ -446,7 +438,8 @@ theme_override_fonts/font = ExtResource("6_6bfat")
 theme_override_font_sizes/font_size = 59
 text = "Los patos del parque han desaparecido del 
 código. Encuentra a los patitos y arregla el 
-código para que funcione correctamente  _"
+código para que funcione correctamente.  
+También puedes plantar algún árbol. _"
 
 [node name="Tiempo" type="Label" parent="Personaje_Codigo" unique_id=742757373]
 offset_left = -1574.0
@@ -459,6 +452,14 @@ theme_override_font_sizes/font_size = 100
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Fondo_Mision" type="Panel" parent="Personaje_Codigo" unique_id=1940133434]
+visible = false
+offset_left = 1061.0
+offset_top = -881.0
+offset_right = 1613.0
+offset_bottom = -781.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
 
 [node name="Mision" type="Label" parent="Personaje_Codigo" unique_id=298152639]
 visible = false
@@ -477,6 +478,36 @@ offset_left = 1502.0
 offset_top = -855.0
 offset_right = 1523.0
 offset_bottom = -812.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_6bfat")
+theme_override_font_sizes/font_size = 42
+text = "0"
+
+[node name="Fondo_Mision2" type="Panel" parent="Personaje_Codigo" unique_id=2014811752]
+visible = false
+offset_left = 1061.0
+offset_top = -762.0
+offset_right = 1613.0
+offset_bottom = -662.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_exnjc")
+
+[node name="Mision2" type="Label" parent="Personaje_Codigo" unique_id=983132107]
+visible = false
+offset_left = 1094.0
+offset_top = -736.0
+offset_right = 1570.0
+offset_bottom = -693.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_6bfat")
+theme_override_font_sizes/font_size = 42
+text = "Árboles encontrados:     /4"
+
+[node name="Estado_Mision2" type="Label" parent="Personaje_Codigo" unique_id=2028908763]
+visible = false
+offset_left = 1502.0
+offset_top = -736.0
+offset_right = 1523.0
+offset_bottom = -693.0
 theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
 theme_override_fonts/font = ExtResource("6_6bfat")
 theme_override_font_sizes/font_size = 42

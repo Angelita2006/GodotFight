@@ -29,6 +29,10 @@ region_rect = Rect2(24, 24, 912, 912)
 texture = ExtResource("8_52mnl")
 region_rect = Rect2(24, 24, 912, 912)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3s7lb"]
+texture = ExtResource("8_52mnl")
+region_rect = Rect2(24, 24, 912, 912)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7oetq"]
 texture = ExtResource("8_52mnl")
 region_rect = Rect2(24, 24, 912, 912)
@@ -293,6 +297,36 @@ theme_override_font_sizes/font_size = 100
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Fondo_Mision" type="Panel" parent="Personaje_Codigo" unique_id=1771996440]
+visible = false
+offset_left = 1061.0
+offset_top = -881.0
+offset_right = 1613.0
+offset_bottom = -781.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3s7lb")
+
+[node name="Mision" type="Label" parent="Personaje_Codigo" unique_id=1418308688]
+visible = false
+offset_left = 1094.0
+offset_top = -855.0
+offset_right = 1570.0
+offset_bottom = -812.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_3s7lb")
+theme_override_font_sizes/font_size = 42
+text = "Libros encontrados:        /6"
+
+[node name="Estado_Mision" type="Label" parent="Personaje_Codigo" unique_id=1336670177]
+visible = false
+offset_left = 1493.0
+offset_top = -855.0
+offset_right = 1540.0
+offset_bottom = -812.0
+theme_override_colors/font_color = Color(0.41568628, 0.74509805, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("6_3s7lb")
+theme_override_font_sizes/font_size = 42
+text = "0"
 
 [node name="Advertencia" type="Control" parent="Personaje_Codigo" unique_id=1537116052]
 visible = false
@@ -566,10 +600,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_yi7je")
 [connection signal="pressed" from="Personaje_Codigo/Advertencia/Fondo_Boton/Cancelar" to="." method="_on_cancelar_pressed"]
 [connection signal="body_entered" from="Palabra_faltante" to="." method="_on_palabra_faltante_body_entered"]
 [connection signal="body_exited" from="Palabra_faltante" to="." method="_on_palabra_faltante_body_exited"]
-[connection signal="body_entered" from="Libro1" to="." method="_on_elemento_secreto_body_entered"]
-[connection signal="body_entered" from="Libro2" to="." method="_on_elemento_secreto_2_body_entered"]
-[connection signal="body_entered" from="Libro3" to="." method="_on_elemento_secreto_3_body_entered"]
-[connection signal="body_entered" from="Libro4" to="." method="_on_elemento_secreto_4_body_entered"]
-[connection signal="body_entered" from="Libro5" to="." method="_on_elemento_secreto_5_body_entered"]
-[connection signal="body_entered" from="Libro6" to="." method="_on_elemento_secreto_6_body_entered"]
+[connection signal="body_entered" from="Libro1" to="." method="_on_libro_body_entered"]
+[connection signal="body_entered" from="Libro2" to="." method="_on_libro_2_body_entered"]
+[connection signal="body_entered" from="Libro3" to="." method="_on_libro_3_body_entered"]
+[connection signal="body_entered" from="Libro4" to="." method="_on_libro_4_body_entered"]
+[connection signal="body_entered" from="Libro5" to="." method="_on_libro_5_body_entered"]
+[connection signal="body_entered" from="Libro6" to="." method="_on_libro_6_body_entered"]
 [connection signal="body_entered" from="Muerte" to="." method="_on_muerte_body_entered"]

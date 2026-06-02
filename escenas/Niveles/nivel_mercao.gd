@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var secretoEncontrado: bool = false
-
 var palabra1: bool = false
 var palabra2: bool = false
 var palabra3: bool = false
@@ -9,6 +7,7 @@ var palabra3: bool = false
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
 
+@onready var fruta: int = 0
 var puntos: int = 0
 
 func _ready() -> void:
@@ -39,16 +38,18 @@ func _on_muerte_body_entered(_body: Node2D) -> void:
 	get_tree().call_deferred("reload_current_scene")
 
 func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
-	Global.llave_plateada_obtenida = true
-	$AudioStreamPlayer.stop()
-	$AudioStreamPlayer2.play()
-	$Final2.show()
-	$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
-	await $AudioStreamPlayer2.finished
-	Global.guardar_partida()
-	Database.guardar_tiempo(12, tiempo_total, puntos)
-	# ir al mapa
-	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
+	if fruta ==  1:
+		Global.llave_plateada_obtenida = true
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer2.play()
+		$Final2.show()
+		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
+		await $AudioStreamPlayer2.finished
+		Global.guardar_partida()
+		puntos = fruta * 10
+		Database.guardar_tiempo(12, tiempo_total, puntos)
+		# ir al mapa
+		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_puerta_de_salida_body_entered(_body: CharacterBody2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
@@ -64,10 +65,16 @@ func _on_cancelar_pressed() -> void:
 func _on_secreto_body_entered(_body: Node2D) -> void:
 	$Fruta.hide()
 	$Fruta/CollisionShape2D.set_deferred("disabled", true)
-	secretoEncontrado = true
-	puntos = 10
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "1")
+	
+	$Plataformas3.hide()
+	$Plataformas3.set_deferred("collision_enabled", false)
+	$Plataformas4.show()
+	$Plataformas4.set_deferred("collision_enabled", true)
+	fruta += 1
 
 func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
+	$Personaje_Codigo/Aviso.hide()
 	$Personaje_Codigo/Nivel_Mision.show()
 
 func _on_activar_mensaje_pista_body_entered(_body: Node2D) -> void:
@@ -108,12 +115,20 @@ func _on_palabra_faltante_3_body_entered(_body: Node2D) -> void:
 		
 		$Plataformas3.show()
 		$Plataformas3.set_deferred("collision_enabled", true)
+		
+		$Personaje_Codigo/Fondo_Mision.show()
+		$Personaje_Codigo/Mision.show()
+		$Personaje_Codigo/Estado_Mision.show()
+		
+		$Personaje_Codigo/Nivel_Mision.hide()
+		$Personaje_Codigo/Nivel_Mision2.show()
+		
 		$Pincho.show()
 
 func _on_activar_aviso_body_entered(_body: Node2D) -> void:
-	$Personaje_Codigo/Aviso.show()
-	$Personaje_Codigo/Nivel_Mision.hide()
+	$Personaje_Codigo/Nivel_Mision2.hide()
 	$Personaje_Codigo/Pista_Mision.hide()
+	$Personaje_Codigo/Aviso.show()
 
 func _on_pincho_body_entered(_body: Node2D) -> void:
 	# volver al nivel-mercao

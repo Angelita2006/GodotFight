@@ -1124,8 +1124,8 @@ rotation = 3.1402545
 polygon = PackedVector2Array(-1, -1, 96.58389, 1.3728333, 97.37149, 33.535614, 30.918396, 34.315918, 32.345917, 209.03424, 98.72034, 209.1323, 97.67749, 241.13092, -2.321106, 239.9971)
 
 [node name="PersonajePrincipal" parent="." unique_id=1118911247 instance=ExtResource("4_eldc3")]
-position = Vector2(520, 493.00003)
-scale = Vector2(0.176, 0.195)
+position = Vector2(519.00006, 497.99997)
+scale = Vector2(0.15506993, 0.16277564)
 collision_layer = 1
 collision_mask = 1
 

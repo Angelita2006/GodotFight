@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var oro: int = 0
+var puntos: int = 0
 
 var tiempo: String = "00:00"
 var tiempo_total: float = 0.0
@@ -46,13 +47,17 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Global.guardar_partida()
-		Database.guardar_tiempo(13, tiempo_total, 0)
+		puntos = oro * 10
+		Database.guardar_tiempo(13, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Nivel_Banco_Mision.hide()
 	$Personaje_Codigo/Nivel_Banco_Mision2.show()
+	$Personaje_Codigo/Fondo_Mision.show()
+	$Personaje_Codigo/Mision.show()
+	$Personaje_Codigo/Estado_Mision.show()
 	$Plataformas1/Codigo_Incompleto.hide()
 	$Plataformas1/Codigo_Completo.show()
 	$Plataforma3.show() 
@@ -67,6 +72,7 @@ func _on_oro_1_body_entered(_body: Node2D) -> void:
 	$Oro1/CollisionShape2D.set_deferred("disabled", true)
 	$Oro2.show()
 	$Oro2/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "1")
 	oro += 1
 
 func _on_oro_2_body_entered(_body: Node2D) -> void:
@@ -74,6 +80,7 @@ func _on_oro_2_body_entered(_body: Node2D) -> void:
 	$Oro2/CollisionShape2D.set_deferred("disabled", true)
 	$Oro3.show()
 	$Oro3/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "2")
 	oro += 1
 
 func _on_oro_3_body_entered(_body: Node2D) -> void:
@@ -91,6 +98,7 @@ func _on_oro_3_body_entered(_body: Node2D) -> void:
 	$Plataforma3.set_deferred("enabled", false)
 	$Oro4.show()
 	$Oro4/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "3")
 	oro += 1
 
 func _on_oro_4_body_entered(_body: Node2D) -> void:
@@ -100,6 +108,7 @@ func _on_oro_4_body_entered(_body: Node2D) -> void:
 	$Plataforma4.set_deferred("enabled", true)
 	$Plataforma2.show()
 	$Plataforma2.set_deferred("enabled", true)
+	$Personaje_Codigo/Estado_Mision.set_deferred("text", "4")
 	oro += 1
 
 func _on_pincho_body_entered(_body: Node2D) -> void:

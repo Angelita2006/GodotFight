@@ -55,7 +55,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Global.guardar_partida()
-		puntos = 10 * arboles
+		puntos = arboles * 10
 		Database.guardar_tiempo(10, tiempo_total, puntos)
 		# ir al mapa
 		Cargador.cargar_escena("uid://c61j2kork7ar5", false)
@@ -67,6 +67,10 @@ func _on_activar_primer_mensaje_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Fondo_Mision.show()
 	$Personaje_Codigo/Estado_Mision.show()
 	$Personaje_Codigo/Mision.show()
+	
+	$Personaje_Codigo/Fondo_Mision2.show()
+	$Personaje_Codigo/Estado_Mision2.show()
+	$Personaje_Codigo/Mision2.show()
 
 func _on_palabra_faltante_body_entered(_body: Node2D) -> void:
 	$PalabraFaltante.hide()
@@ -102,6 +106,7 @@ func _on_palabra_faltante_2_body_entered(_body: Node2D) -> void:
 func _on_elemento_secreto_body_entered(_body: Node2D) -> void:
 	$Arbol1.hide()
 	$Arbol1/CollisionShape2D.set_deferred("disabled", true)
+	$Personaje_Codigo/Estado_Mision2.set_deferred("text", "1")
 	arboles += 1
 
 func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
@@ -112,6 +117,7 @@ func _on_elemento_secreto_2_body_entered(_body: Node2D) -> void:
 	$Plataformas7.set_deferred("collision_enabled", true)
 	$Arbol3.show()
 	$Arbol3/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision2.set_deferred("text", "2")
 	arboles += 1
 
 func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
@@ -122,6 +128,7 @@ func _on_elemento_secreto_3_body_entered(_body: Node2D) -> void:
 	$Plataformas8.set_deferred("collision_enabled", true)
 	$Arbol4.show()
 	$Arbol4/CollisionShape2D.set_deferred("disabled", false)
+	$Personaje_Codigo/Estado_Mision2.set_deferred("text", "3")
 	arboles += 1
 
 func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
@@ -130,4 +137,5 @@ func _on_elemento_secreto_4_body_entered(_body: Node2D) -> void:
 	$Plataformas7.hide()
 	$Plataformas9.show()
 	$Plataformas9.set_deferred("collision_enabled", true)
+	$Personaje_Codigo/Estado_Mision2.set_deferred("text", "4")
 	arboles += 1
