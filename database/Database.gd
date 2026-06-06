@@ -11,7 +11,7 @@ func cerrar_db():
 	db.close_db()
 	return true
 
-func crear_tablas_si_no_existen():
+func crear_tabla_si_no_existe():
 	# Abrimos la base de datos antes de crear las tablas
 	abrir_db()
 	
@@ -49,8 +49,8 @@ func reiniciar_datos():
 func guardar_tiempo(nivel: int, duracion: float, puntos: int):
 	print("DEBUG: guardando tiempo para el nivel: ", nivel)
 	
-	# 1. Asegurar tablas
-	crear_tablas_si_no_existen()
+	# 1. Asegurar tabla
+	crear_tabla_si_no_existe()
 	
 	# 2. Abrir para operar
 	abrir_db()
@@ -71,8 +71,8 @@ func guardar_tiempo(nivel: int, duracion: float, puntos: int):
 	
 	cerrar_db()
 
-func obtener_todo():
-	crear_tablas_si_no_existen()
+func obtener_tiempos():
+	crear_tabla_si_no_existe()
 	abrir_db()
 	db.query("SELECT * FROM tiempos ORDER BY duracion ASC;")
 	var resultado = db.query_result

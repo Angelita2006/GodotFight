@@ -21,19 +21,8 @@ const RUTA_PARTIDA = "user://partida.json"
 const RUTA_AJUSTES = "user://configuracion.cfg"
 
 func _ready() -> void:
-	# Inicializa los archivos con valores por defecto si no existen
-	_crear_archivos_si_no_existen()
-
-func _crear_archivos_si_no_existen() -> void:
-	
 	# Inicializar ajustes por defecto
-	if not FileAccess.file_exists(RUTA_AJUSTES):
-		var config = ConfigFile.new()
-		config.set_value("ajustes", "volumen", 0.7)
-		config.set_value("ajustes", "idioma", "es")
-		config.set_value("ajustes", "jugador_aspecto", "chico")
-		config.set_value("ajustes", "jugador_nombre", "Mike")
-		config.save(RUTA_AJUSTES)
+	_inicializar_ajustes_predeterminados()
 
 func _guardar_json(ruta: String, datos: Variant) -> void:
 	var archivo = FileAccess.open(ruta, FileAccess.WRITE)
@@ -78,6 +67,17 @@ func obtener_datos_ultima_partida() -> Array:
 	if datos:
 		return [datos] # Devolvemos un Array para mantener compatibilidad con tu código original
 	return []
+
+func _inicializar_ajustes_predeterminados() -> void:
+	
+	# Inicializar ajustes por defecto
+	if not FileAccess.file_exists(RUTA_AJUSTES):
+		var config = ConfigFile.new()
+		config.set_value("ajustes", "volumen", 0.7)
+		config.set_value("ajustes", "idioma", "es")
+		config.set_value("ajustes", "jugador_aspecto", "chico")
+		config.set_value("ajustes", "jugador_nombre", "Mike")
+		config.save(RUTA_AJUSTES)
 
 func guardar_ajustes() -> void:
 	var config = ConfigFile.new()

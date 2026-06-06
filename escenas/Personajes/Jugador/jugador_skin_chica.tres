@@ -79,7 +79,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ijjfp")
 }],
 "loop": true,
-"name": &"correr_abajo_chica",
+"name": &"caminar_abajo_chica",
 "speed": 5.0
 }, {
 "frames": [{
@@ -93,7 +93,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_6wmu6")
 }],
 "loop": true,
-"name": &"correr_arriba_chica",
+"name": &"caminar_arriba_chica",
 "speed": 5.0
 }, {
 "frames": [{

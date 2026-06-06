@@ -21,22 +21,22 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("move_right"):
 			velocity.x = _velocidad
 			velocity.y = 0
-			animacion_chico.play("correr_derecha_chico")
+			animacion_chico.play("caminar_derecha_chico")
 			ultima_direccion = "derecha"
 		elif Input.is_action_pressed("move_left"):
 			velocity.x = - _velocidad
 			velocity.y = 0
-			animacion_chico.play("correr_izquierda_chico")
+			animacion_chico.play("caminar_izquierda_chico")
 			ultima_direccion = "izquierda"
 		elif Input.is_action_pressed("move_up"):
 			velocity.y = - _velocidad
 			velocity.x = 0
-			animacion_chico.play("correr_arriba_chico")
+			animacion_chico.play("caminar_arriba_chico")
 			ultima_direccion = "arriba"
 		elif Input.is_action_pressed("move_down"):
 			velocity.y = _velocidad
 			velocity.x = 0
-			animacion_chico.play("correr_abajo_chico")
+			animacion_chico.play("caminar_abajo_chico")
 			ultima_direccion = "abajo"
 		else:
 			velocity.x = 0
@@ -66,22 +66,22 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("move_right"):
 			velocity.x = _velocidad
 			velocity.y = 0
-			animacion_chica.play("correr_derecha_chica")
+			animacion_chica.play("caminar_derecha_chica")
 			ultima_direccion = "derecha"
 		elif Input.is_action_pressed("move_left"):
 			velocity.x = - _velocidad
 			velocity.y = 0
-			animacion_chica.play("correr_izquierda_chica")
+			animacion_chica.play("caminar_izquierda_chica")
 			ultima_direccion = "izquierda"
 		elif Input.is_action_pressed("move_up"):
 			velocity.y = - _velocidad
 			velocity.x = 0
-			animacion_chica.play("correr_arriba_chica")
+			animacion_chica.play("caminar_arriba_chica")
 			ultima_direccion = "arriba"
 		elif Input.is_action_pressed("move_down"):
 			velocity.y = _velocidad
 			velocity.x = 0
-			animacion_chica.play("correr_abajo_chica")
+			animacion_chica.play("caminar_abajo_chica")
 			ultima_direccion = "abajo"
 		else:
 			velocity.x = 0

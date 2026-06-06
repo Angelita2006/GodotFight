@@ -79,7 +79,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_x72kd")
 }],
 "loop": true,
-"name": &"correr_abajo_chico",
+"name": &"caminar_abajo_chico",
 "speed": 5.0
 }, {
 "frames": [{
@@ -93,7 +93,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kvgne")
 }],
 "loop": true,
-"name": &"correr_arriba_chico",
+"name": &"caminar_arriba_chico",
 "speed": 5.0
 }, {
 "frames": [{
@@ -107,7 +107,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jf1f2")
 }],
 "loop": true,
-"name": &"correr_derecha_chico",
+"name": &"caminar_derecha_chico",
 "speed": 5.0
 }, {
 "frames": [{
@@ -121,7 +121,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bfh7t")
 }],
 "loop": true,
-"name": &"correr_izquierda_chico",
+"name": &"caminar_izquierda_chico",
 "speed": 5.0
 }, {
 "frames": [{
