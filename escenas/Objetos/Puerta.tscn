@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://lr60lw0cq7or"]
+[gd_scene format=3 uid="uid://lr60lw0cq7or"]
 
 [ext_resource type="Script" uid="uid://be3bh6x0a4spn" path="res://escenas/Objetos/puerta.gd" id="1_ab6ke"]
 [ext_resource type="Texture2D" uid="uid://bmjftjp383ea6" path="res://assets/juego/mapa/aldeaesmeralda/pack2/Doors_windows_animation.png" id="2_ab6ke"]
@@ -91,28 +91,29 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqivo"]
 size = Vector2(10, 30)
 
-[node name="Puerta" type="StaticBody2D"]
+[node name="Puerta" type="StaticBody2D" unique_id=1736592771]
 script = ExtResource("1_ab6ke")
 
-[node name="Animacion" type="AnimatedSprite2D" parent="."]
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=793861179]
 sprite_frames = SubResource("SpriteFrames_i2op3")
 animation = &"cerrar"
 autoplay = "cerrada"
 
-[node name="Colision" type="CollisionShape2D" parent="."]
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=1195985119]
 shape = SubResource("RectangleShape2D_7dsoy")
 disabled = true
 
-[node name="Area" type="Area2D" parent="."]
+[node name="Area" type="Area2D" parent="." unique_id=1858966680]
 collision_layer = 0
 
-[node name="Colision2" type="CollisionShape2D" parent="Area"]
+[node name="Colision2" type="CollisionShape2D" parent="Area" unique_id=926910581]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_xqivo")
 debug_color = Color(0.79899746, 0.042726353, 0.9999998, 0.41960785)
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1048154223]
 stream = ExtResource("3_hpf1c")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_area_2d_body_exited"]

@@ -23,7 +23,7 @@ autoplay = "quieto_abajo_chico"
 
 [node name="AnimacionChica" type="AnimatedSprite2D" parent="." unique_id=1947578027]
 sprite_frames = ExtResource("4_0aaiv")
-animation = &"caminar_izquierda_chica"
+animation = &"caminar_derecha_chica"
 autoplay = "quieto_abajo_chica"
 
 [node name="Colisiones" type="CollisionShape2D" parent="." unique_id=565766791]

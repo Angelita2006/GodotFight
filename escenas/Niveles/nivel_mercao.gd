@@ -132,4 +132,4 @@ func _on_activar_aviso_body_entered(_body: Node2D) -> void:
 
 func _on_pincho_body_entered(_body: Node2D) -> void:
 	# volver al nivel-mercao
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")

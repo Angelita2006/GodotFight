@@ -56,7 +56,7 @@ func _on_puerta_de_salida_body_entered(_body: Node2D) -> void:
 	$Personaje_Codigo/Advertencia.show()
 
 func _on_aceptar_pressed() -> void:
-	$Personaje_Codigo/Camera2D.enabled = false
+	$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 	# ir al mapa
 	Cargador.cargar_escena("uid://c61j2kork7ar5", false)
 
@@ -69,7 +69,7 @@ func _on_puerta_de_meta_body_entered(_body: Node2D) -> void:
 		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer2.play()
 		$Final2.show()
-		$Personaje_Codigo/Camera2D.enabled = false
+		$Personaje_Codigo/Camera2D.set_deferred("enabled", false)
 		await $AudioStreamPlayer2.finished
 		Global.guardar_partida()
 		puntos = concejales * 10

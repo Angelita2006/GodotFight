@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://d3ciuql4c57ow" path="res://escenas/Niveles/niveles.tres" id="4_8at6c"]
 [ext_resource type="FontFile" uid="uid://bjhaef5mywkp3" path="res://assets/ui/fuentes/Pixuf.ttf" id="6_xpkg2"]
 [ext_resource type="PackedScene" uid="uid://b71uvctsc6mtj" path="res://escenas/Personajes/Jugador/jugador_codigo.tscn" id="7_jifyo"]
-[ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="8_pinyf"]
+[ext_resource type="AudioStream" uid="uid://bti0teleemfms" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.mp3" id="8_pinyf"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_xha85"]
 [ext_resource type="AudioStream" uid="uid://bfw088jxlcalw" path="res://assets/ui/audio/gameon.wav" id="9_nkopo"]
 [ext_resource type="Texture2D" uid="uid://c85ku47huegdq" path="res://assets/juego/mapa/aldeaesmeralda/eastereggs/eastereggs.png" id="10_bd4qn"]
@@ -261,9 +261,12 @@ polygon = PackedVector2Array(43, -25, 3940, 250, 4047, 2776, -4748, 2788, -4677,
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1509677638]
 stream = ExtResource("8_pinyf")
 autoplay = true
+bus = &"SFX"
+parameters/looping = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1287994709]
 stream = ExtResource("9_nkopo")
+bus = &"SFX"
 
 [node name="Final2" type="Control" parent="." unique_id=1262965621]
 visible = false

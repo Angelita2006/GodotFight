@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://deq68l5ygdcs6" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Oro.png" id="6_ah4yb"]
 [ext_resource type="Script" uid="uid://dhc4wiv7ie4i0" path="res://escenas/Niveles/nivel-banco-pincho.gd" id="7_40n58"]
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="7_uuis0"]
-[ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="8_jiq5f"]
 [ext_resource type="AudioStream" uid="uid://bfw088jxlcalw" path="res://assets/ui/audio/gameon.wav" id="9_xvc78"]
 [ext_resource type="Texture2D" uid="uid://dgmwimft4hlty" path="res://assets/juego/mapa/aldeaesmeralda/llaves/llaves.png" id="10_245xk"]
+[ext_resource type="AudioStream" uid="uid://bti0teleemfms" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.mp3" id="11_40n58"]
 [ext_resource type="Texture2D" uid="uid://dlikxooqcusye" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Obstaculos.png" id="13_3p1mc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2s0r"]
@@ -573,11 +573,14 @@ position = Vector2(5750, -4130)
 polygon = PackedVector2Array(43, -25, 3940, 250, 4047, 2776, -4748, 2788, -4677, 142, 43, 47, -64, -370, -6166, -370, -6155, 3455, 6205, 3455, 6145, -156, -5, -394)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=883118048]
-stream = ExtResource("8_jiq5f")
+stream = ExtResource("11_40n58")
 autoplay = true
+bus = &"SFX"
+parameters/looping = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1432524796]
 stream = ExtResource("9_xvc78")
+bus = &"SFX"
 
 [node name="Final2" type="Control" parent="." unique_id=2063598453]
 visible = false

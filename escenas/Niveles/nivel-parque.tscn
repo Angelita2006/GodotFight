@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3d085xgn0duq" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/Niveles Muros.png" id="8_t0j2o"]
 [ext_resource type="Texture2D" uid="uid://br8gfgk10epuw" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/pato-coleccionable.png" id="9_f3jcd"]
 [ext_resource type="Texture2D" uid="uid://ecty42ka26qn" path="res://assets/juego/mapa/aldeaesmeralda/Niveles/arbol.png" id="9_pnfhu"]
-[ext_resource type="AudioStream" uid="uid://5u0xnuwoy63w" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.wav" id="10_03m3b"]
+[ext_resource type="AudioStream" uid="uid://bti0teleemfms" path="res://assets/ui/audio/ComputerInteriorLong_EVL02_14.mp3" id="10_03m3b"]
 [ext_resource type="AudioStream" uid="uid://bfw088jxlcalw" path="res://assets/ui/audio/gameon.wav" id="11_6bfat"]
 [ext_resource type="Texture2D" uid="uid://dgmwimft4hlty" path="res://assets/juego/mapa/aldeaesmeralda/llaves/llaves.png" id="12_r8dqe"]
 
@@ -609,9 +609,12 @@ polygon = PackedVector2Array(43, -25, 5060, 204, 5068, 2813, -4748, 2788, -4677,
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1023825828]
 stream = ExtResource("10_03m3b")
 autoplay = true
+bus = &"SFX"
+parameters/looping = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1137546531]
 stream = ExtResource("11_6bfat")
+bus = &"SFX"
 
 [node name="Final2" type="Control" parent="." unique_id=553615664]
 visible = false

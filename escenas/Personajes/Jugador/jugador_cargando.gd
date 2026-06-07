@@ -14,11 +14,11 @@ func _process(_delta: float) -> void:
 		animacion_chico.hide()
 		animacion_chica.show()
 		
-		animacion_chica.play("correr_derecha_chica")
+		animacion_chica.play("caminar_derecha_chica")
 		
 	elif Global.jugador_aspecto == "chico":
 		
 		animacion_chico.show()
 		animacion_chica.hide()
 		
-		animacion_chico.play("correr_derecha_chico")
+		animacion_chico.play("caminar_derecha_chico")
